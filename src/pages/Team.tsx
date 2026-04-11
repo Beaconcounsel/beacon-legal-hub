@@ -366,7 +366,7 @@ const TeamPage = () => (
               focus: "Legal & Corporate Governance, Compliance",
               desc: "Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory. Skilled in developing governance frameworks, negotiating complex legal documentation, and mitigating legal risks to enhance operational efficiency and transparency.",
               memberships: ["Advocate, High Court of Rwanda", "East African Law Society"],
-              education: "LL.B, University of Rwanda",
+              education: "LL.M, University of Groningen; LL.B, National University of Rwanda; PGDip Legal Practice, ILPD; FICP, Luxembourg School of Business",
               languages: ["English", "French", "Kinyarwanda"],
             },
             {
