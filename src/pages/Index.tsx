@@ -34,11 +34,6 @@ const clientCategories = [
     description: "We advise on governance frameworks, regulatory compliance, employment matters, and institutional structuring for development-sector entities.",
     icon: Users,
   },
-  {
-    title: "State-Owned Enterprises",
-    description: "We represent SOEs in complex procurement, governance, and regulatory matters with the discretion and rigor these engagements demand.",
-    icon: Landmark,
-  },
 ];
 
 const practiceAreas = [
