@@ -3,9 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const aboutDropdownItems = [
-  { label: "About Beacon Attorneyes", path: "/#about" },
-  { label: "Our People", path: "/#team" },
-  { label: "Industries We Serve", path: "/#industries" },
+  { label: "About Beacon Attorneyes", path: "/home#about" },
+  { label: "Our People", path: "/home#team" },
+  { label: "Industries We Serve", path: "/home#industries" },
   { label: "How to Get in Touch", path: "/contact" },
 ];
 
