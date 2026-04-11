@@ -555,7 +555,7 @@ const HomePage = () => {
         </section>
 
         {/* Industries */}
-        <section className="section-padding bg-card">
+        <section id="industries" className="section-padding bg-card">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Industries We Serve</h2>
