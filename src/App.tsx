@@ -5,7 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
-import About from "./pages/About";
+
 import PracticeAreas from "./pages/PracticeAreas";
 import International from "./pages/International";
 
@@ -25,7 +25,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
+          
           <Route path="/practice-areas" element={<PracticeAreas />} />
           <Route path="/international" element={<International />} />
           
