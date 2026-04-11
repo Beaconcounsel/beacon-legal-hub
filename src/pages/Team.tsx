@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Globe, Award, Briefcase, GraduationCap, MapPin, Users, Shield, BookOpen } from "lucide-react";
+import danielPhoto from "@/assets/daniel-mutiganda.jpg";
 
 const TeamPage = () => (
   <Layout>
@@ -25,8 +26,8 @@ const TeamPage = () => (
           {/* Header */}
           <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-start gap-8">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-primary/20">
-                <span className="text-primary font-serif text-3xl md:text-4xl font-bold">DM</span>
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full flex-shrink-0 border-2 border-primary/20 overflow-hidden">
+                <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1">
                 <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Lead Partner</p>
