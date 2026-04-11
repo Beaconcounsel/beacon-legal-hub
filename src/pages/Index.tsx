@@ -34,6 +34,11 @@ const clientCategories = [
     description: "We advise on governance frameworks, regulatory compliance, employment matters, and institutional structuring for development-sector entities.",
     icon: Users,
   },
+  {
+    title: "Small & Medium Enterprises",
+    description: "We support SMEs with practical legal guidance on contracts, compliance, employment law, and dispute prevention to help them grow with confidence.",
+    icon: Briefcase,
+  },
 ];
 
 const practiceAreas = [
