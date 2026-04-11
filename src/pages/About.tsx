@@ -21,8 +21,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">About Us</span>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">About Beacon</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2 text-primary">About Beacon</h1>
               <div className="line-gold mt-4 mb-6" />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
@@ -43,8 +42,7 @@ const AboutPage = () => {
         <section className="section-padding">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">What Drives Us</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Our Values</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Our Values</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -67,8 +65,7 @@ const AboutPage = () => {
             <div className="reveal relative max-w-2xl mx-auto text-center">
               <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
               <div className="relative bg-card border border-border rounded-xl p-12">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our Purpose</span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif">Our Mission</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Our Mission</h2>
                 <div className="line-gold mx-auto mt-4 mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   To deliver strategic, partner-led legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
