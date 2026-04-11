@@ -131,7 +131,7 @@
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 .btn-glow:hover {
-  box-shadow: 0 0 20px hsl(43 76% 55% / 0.3), 0 0 40px hsl(43 76% 55% / 0.1);
+  box-shadow: 0 0 20px hsl(39 44% 60% / 0.3), 0 0 40px hsl(39 44% 60% / 0.1);
   transform: translateY(-1px);
 }
 
