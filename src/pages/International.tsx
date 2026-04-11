@@ -6,7 +6,7 @@ import kigaliImg from "@/assets/kigali-skyline.jpg";
 
 const services = [
   { icon: Globe, title: "Market Entry Advisory", desc: "We guide international investors through Rwanda's regulatory requirements, company registration, licensing, and sector-specific compliance for seamless market entry." },
-  { icon: Scale, title: "Cross-Border Legal Coordination", desc: "We coordinate with international counsel to ensure alignment across jurisdictions, managing multi-party transactions with precision." },
+  { icon: Scale, title: "Cross-Border Legal Coordination", desc: "We coordinate with international Law firms to ensure alignment across jurisdictions, managing multi-party transactions with precision." },
   { icon: MapPin, title: "Local Regulatory Expertise", desc: "Our deep understanding of Rwanda's legal framework ensures compliance with investment codes, tax incentives, and sector regulations." },
   { icon: Shield, title: "Risk Mitigation", desc: "We identify and address legal, regulatory, and political risks to protect your investment and ensure long-term sustainability." },
   { icon: Handshake, title: "Joint Ventures & Partnerships", desc: "We structure partnerships with local entities, negotiate JV agreements, and ensure governance frameworks that protect all stakeholders." },
