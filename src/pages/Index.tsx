@@ -157,35 +157,28 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Practice Areas */}
+        {/* Practice Areas Teaser */}
         <section className="section-padding bg-card">
           <div className="container">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">Practice Areas</h2>
-                <div className="line-gold mt-4 mb-6" />
-                <p className="text-muted-foreground mb-10 leading-relaxed">We advise across the full spectrum of business law, structured to address the complex needs of sophisticated clients.</p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {practiceAreas.map((area) => (
-                    <div key={area} className="flex items-center gap-3 text-sm group">
-                      <div className="w-2 h-2 rounded-full bg-primary/70 group-hover:bg-primary transition-colors" />
-                      <span className="text-foreground/80 group-hover:text-foreground transition-colors">{area}</span>
-                    </div>
-                  ))}
+            <div className="text-center max-w-2xl mx-auto mb-12 reveal">
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">Practice Areas</h2>
+              <div className="line-gold mx-auto mt-4 mb-6" />
+              <p className="text-muted-foreground leading-relaxed">We advise across the full spectrum of business law, structured to address the complex needs of sophisticated clients.</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mb-10 reveal">
+              {practiceAreas.map((area) => (
+                <div key={area} className="flex items-center gap-3 bg-secondary/40 border border-border px-6 py-4 rounded-xl text-sm font-medium text-foreground/80">
+                  <div className="w-2 h-2 rounded-full bg-primary/70" />
+                  {area}
                 </div>
-                <Link to="/practice-areas" className="inline-block mt-10">
-                  <Button variant="gold-outline" className="gap-2">
-                    View All Practice Areas <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
-              <div className="relative reveal">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl" />
-                <img src={teamImg} alt="Beacon Attorneys legal team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
-                <div className="absolute -bottom-5 -left-5 bg-primary text-primary-foreground px-7 py-4 rounded-xl text-sm font-semibold shadow-lg">
-                  Partner-Led Advisory
-                </div>
-              </div>
+              ))}
+            </div>
+            <div className="text-center reveal">
+              <Link to="/practice-areas">
+                <Button variant="gold-outline" className="gap-2">
+                  View All 16 Practice Areas <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
