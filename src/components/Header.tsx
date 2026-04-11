@@ -72,11 +72,6 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-border mt-2">
-              <Link to="/contact" onClick={() => setMobileOpen(false)}>
-                <Button variant="gold" className="w-full">Request Consultation</Button>
-              </Link>
-            </div>
           </nav>
         </div>
       )}
