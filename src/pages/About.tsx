@@ -42,7 +42,7 @@ const AboutPage = () => {
         <section className="section-padding">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Our Values</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
             <div className="grid md:grid-cols-3 gap-8">
