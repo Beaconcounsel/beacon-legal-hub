@@ -41,7 +41,7 @@ const Landing = () => {
               A Law Firm for Individuals, Businesses, Institutions, and International Investors
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-              With over 30 years of combined experience, Beacon Attorneyes & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
+              With over 30 years of combined experience, Beacon Attorneys & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
@@ -77,7 +77,7 @@ const Landing = () => {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Why Beacon Attorneyes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Why Beacon Attorneys</h2>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mt-4 mb-6" />
             <p className="text-muted-foreground leading-relaxed">
               A trusted partner for legal matters that demand expertise, discretion, and a deep understanding of Rwanda's commercial landscape.
