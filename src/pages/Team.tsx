@@ -21,9 +21,9 @@ const TeamPage = () => (
 
     {/* Partners */}
     <section className="section-padding pt-0">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-8">
-      <div className="container">
+      <div className="container space-y-8">
+
+        {/* Daniel Mutiganda */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
@@ -346,74 +346,63 @@ const TeamPage = () => (
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    {/* Additional Team Members */}
-    <section className="section-padding pt-0">
-      <div className="container">
-        <div className="mb-12">
-          <div className="line-gold mb-4" />
-          <h2 className="text-3xl font-bold font-serif mb-4">Our Legal Team</h2>
-          <p className="text-muted-foreground max-w-2xl">
-            Our team of dedicated legal professionals brings diverse expertise across practice areas, delivering strategic counsel with precision and integrity.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              initials: "KM",
-              name: "Katusime Mbombo Moses",
-              role: "Partner",
-              focus: "Legal & Corporate Governance, Compliance",
-              desc: "Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory. Skilled in developing governance frameworks, negotiating complex legal documentation, and mitigating legal risks to enhance operational efficiency and transparency.",
-              memberships: ["Advocate, High Court of Rwanda", "East African Law Society"],
-              education: "LL.M, University of Groningen; LL.B, National University of Rwanda; PGDip Legal Practice, ILPD; FICP, Luxembourg School of Business",
-              languages: ["English", "French", "Kinyarwanda"],
-            },
-          ].map((member) => (
-            <div key={member.name} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors group">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:border-primary/40 transition-colors">
-                  <span className="text-primary font-serif text-lg font-bold">{member.initials}</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold font-serif">{member.name}</h3>
-                  <p className="text-primary text-xs font-semibold uppercase tracking-wider">{member.role}</p>
-                </div>
+        {/* Moses Katusime Mbombo */}
+        <div className="bg-card border border-border rounded-2xl overflow-hidden">
+          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-start gap-8">
+              <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
+                <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
               </div>
-              <p className="text-sm font-semibold text-foreground/90 mb-2">{member.focus}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{member.desc}</p>
-
-              <div className="space-y-3 border-t border-border pt-4">
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1.5">Memberships</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {member.memberships.map((m) => (
-                      <span key={m} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{m}</span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Education</p>
-                  <p className="text-xs text-foreground/70">{member.education}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1.5">Languages</p>
-                  <div className="flex gap-1.5">
-                    {member.languages.map((l) => (
-                      <span key={l} className="text-xs bg-muted/50 text-foreground/70 px-2 py-1 rounded-full">{l}</span>
-                    ))}
-                  </div>
+              <div className="flex-1">
+                <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Partner</p>
+                <h2 className="text-3xl md:text-4xl font-bold font-serif mb-2">Katusime Mbombo Moses</h2>
+                <p className="text-foreground/80 text-lg mb-4">Legal & Corporate Governance, Compliance</p>
+                <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                  Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory. Skilled in developing governance frameworks, negotiating complex legal documentation, and mitigating legal risks to enhance operational efficiency and transparency.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-6">
+                  <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Advocate, High Court of Rwanda</span>
+                  <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="p-8 md:p-12 space-y-8">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <GraduationCap className="w-5 h-5 text-primary" />
+                <h3 className="text-xl font-bold font-serif">Education & Certifications</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  { degree: "Master of Laws (LL.M)", school: "University of Groningen" },
+                  { degree: "Bachelor of Laws (LL.B)", school: "National University of Rwanda" },
+                  { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" },
+                  { degree: "Financial Industry Management (FICP)", school: "Luxembourg School of Business" },
+                ].map((item) => (
+                  <div key={item.degree} className="border border-border rounded-lg p-4">
+                    <p className="font-semibold text-sm">{item.degree}</p>
+                    <p className="text-xs text-muted-foreground">{item.school}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Languages</p>
+              <div className="flex gap-2">
+                <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">English</span>
+                <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
+                <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Kinyarwanda</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Join Our Team CTA */}
-        <div className="mt-16 bg-card border border-border rounded-lg p-10 text-center max-w-2xl mx-auto">
+        <div className="mt-8 bg-card border border-border rounded-lg p-10 text-center max-w-2xl mx-auto">
           <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
           <p className="text-muted-foreground leading-relaxed mb-6">
             We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
