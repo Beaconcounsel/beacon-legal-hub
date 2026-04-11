@@ -21,7 +21,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2 text-primary">About Beacon</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2 text-primary">About Beacon Attorneys</h1>
               <div className="line-gold mt-4 mb-6" />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>

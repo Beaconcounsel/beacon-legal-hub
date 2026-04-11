@@ -184,7 +184,7 @@ const HomePage = () => {
               </div>
               <div className="relative reveal">
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl" />
-                <img src={teamImg} alt="Beacon legal team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
+                <img src={teamImg} alt="Beacon Attorneys legal team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
                 <div className="absolute -bottom-5 -left-5 bg-primary text-primary-foreground px-7 py-4 rounded-xl text-sm font-semibold shadow-lg">
                   Partner-Led Advisory
                 </div>
