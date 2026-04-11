@@ -3,21 +3,26 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Globe, Award, Briefcase, GraduationCap, MapPin, Users, Shield, BookOpen } from "lucide-react";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const TeamPage = () => (
-  <Layout>
-    {/* Hero */}
-    <section className="section-padding pb-0">
-      <div className="container">
-        <div className="max-w-3xl mb-16">
-          <div className="line-gold mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Every engagement at Beacon is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
-          </p>
+const TeamPage = () => {
+  const revealRef = useScrollReveal();
+
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="section-padding pb-0">
+        <div className="container">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-2">Our Team</h1>
+            <div className="line-gold mt-4 mb-6" />
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Every engagement at Beacon is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     {/* Partners */}
     <section className="section-padding pt-0">
