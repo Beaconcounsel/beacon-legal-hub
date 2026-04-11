@@ -29,9 +29,9 @@ const Header = () => {
     setAboutOpen(false);
     setMobileOpen(false);
 
-    if (!path.startsWith("/#")) return;
+    if (!path.includes("#")) return;
 
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       navigate(path, { replace: true });
     } else {
       navigate(path);
