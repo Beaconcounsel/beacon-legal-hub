@@ -244,7 +244,7 @@ const HomePage = () => {
 
             <Accordion type="multiple" className="space-y-8">
               {/* Daniel Mutiganda */}
-              <AccordionItem value="daniel" className="border-0">
+              <AccordionItem value="daniel" className="border-0 group/daniel">
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                     <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 md:p-12 w-full text-left">
@@ -265,8 +265,9 @@ const HomePage = () => {
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">CIArb, UK</span>
                           </div>
                           <div className="flex items-center gap-2 mt-6 text-primary text-sm font-medium">
-                            <span>View Full Profile</span>
-                            <ChevronDown className="w-4 h-4 transition-transform duration-200" />
+                            <span className="group-data-[state=open]/daniel:hidden">View Full Profile</span>
+                            <span className="hidden group-data-[state=open]/daniel:inline">Hide Profile</span>
+                            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-data-[state=open]/daniel:rotate-180" />
                           </div>
                         </div>
                       </div>
@@ -493,7 +494,7 @@ const HomePage = () => {
               </AccordionItem>
 
               {/* Moses Katusime Mbombo */}
-              <AccordionItem value="moses" className="border-0">
+              <AccordionItem value="moses" className="border-0 group/moses">
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                     <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 md:p-12 w-full text-left">
@@ -513,8 +514,9 @@ const HomePage = () => {
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
                           </div>
                           <div className="flex items-center gap-2 mt-6 text-primary text-sm font-medium">
-                            <span>View Full Profile</span>
-                            <ChevronDown className="w-4 h-4 transition-transform duration-200" />
+                            <span className="group-data-[state=open]/moses:hidden">View Full Profile</span>
+                            <span className="hidden group-data-[state=open]/moses:inline">Hide Profile</span>
+                            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-data-[state=open]/moses:rotate-180" />
                           </div>
                         </div>
                       </div>
