@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Shield, Globe, Building2, Scale, Briefcase, Users } from "lucide-react";
+import { ArrowRight, Phone, Scale, Briefcase, Globe, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero-kigali.jpg";
 
 const stats = [
