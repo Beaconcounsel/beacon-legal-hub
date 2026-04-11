@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
+import Landing from "./pages/Landing";
 
 import PracticeAreas from "./pages/PracticeAreas";
 import International from "./pages/International";
