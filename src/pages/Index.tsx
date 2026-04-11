@@ -204,31 +204,8 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Practice Areas Teaser */}
-        <section className="section-padding bg-card">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12 reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">Practice Areas</h2>
-              <div className="line-gold mx-auto mt-4 mb-6" />
-              <p className="text-muted-foreground leading-relaxed">We advise across the full spectrum of business law, structured to address the complex needs of sophisticated clients.</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 mb-10 reveal">
-              {practiceAreas.map((area) => (
-                <div key={area} className="flex items-center gap-3 bg-secondary/40 border border-border px-6 py-4 rounded-xl text-sm font-medium text-foreground/80">
-                  <div className="w-2 h-2 rounded-full bg-primary/70" />
-                  {area}
-                </div>
-              ))}
-            </div>
-            <div className="text-center reveal">
-              <Link to="/practice-areas">
-                <Button variant="gold-outline" className="gap-2">
-                  View All 16 Practice Areas <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+
+
 
         {/* Our Team Section */}
         <section id="team" className="section-padding scroll-mt-20">
