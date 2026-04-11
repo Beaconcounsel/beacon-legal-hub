@@ -25,7 +25,7 @@ const Header = () => {
           <span className="text-gradient-gold font-serif text-xl md:text-2xl font-bold tracking-tight leading-none">
             Beacon
           </span>
-          <span className="text-foreground/70 text-[10px] md:text-xs font-sans uppercase tracking-[0.15em] leading-none mt-0.5">
+          <span className="text-foreground/70 text-[8px] md:text-[10px] font-sans uppercase tracking-[0.15em] leading-none mt-0.5">
             Attorneys & Consultants
           </span>
         </Link>
