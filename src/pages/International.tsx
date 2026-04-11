@@ -37,7 +37,7 @@ const InternationalPage = () => (
             <h2 className="text-3xl font-bold mb-6 font-serif">Rwanda as an Investment Destination</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>Rwanda has emerged as one of Africa's most attractive investment destinations, recognized globally for political stability, regulatory transparency, and a business-friendly environment.</p>
-              <p>Ranked among the easiest places to do business in Africa, Rwanda offers streamlined company registration, investor-friendly tax incentives, and a commitment to innovation that has positioned Kigali as a regional hub for finance, technology, and infrastructure development.</p>
+              <p>Ranked the top easiest places to do business in Africa, Rwanda offers streamlined company registration, investor-friendly tax incentives, and a commitment to innovation that has positioned Kigali as a regional hub for finance, technology, and infrastructure development.</p>
               <p>Our firm provides the local expertise and strategic perspective to help international clients capitalize on these opportunities while navigating the nuances of the Rwandan legal system.</p>
             </div>
           </div>
