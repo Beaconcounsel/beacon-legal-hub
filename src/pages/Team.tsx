@@ -421,6 +421,7 @@ const TeamPage = () => {
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default TeamPage;
