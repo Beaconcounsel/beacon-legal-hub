@@ -3,9 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const aboutDropdownItems = [
-  { label: "About Beacon Attorneyes", path: "/#about" },
-  { label: "Our People", path: "/#team" },
-  { label: "Industries We Serve", path: "/#industries" },
+  { label: "About Beacon Attorneyes", path: "/home#about" },
+  { label: "Our People", path: "/home#team" },
+  { label: "Industries We Serve", path: "/home#industries" },
   { label: "How to Get in Touch", path: "/contact" },
 ];
 
@@ -29,9 +29,9 @@ const Header = () => {
     setAboutOpen(false);
     setMobileOpen(false);
 
-    if (!path.startsWith("/#")) return;
+    if (!path.includes("#")) return;
 
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       navigate(path, { replace: true });
     } else {
       navigate(path);
@@ -84,7 +84,7 @@ const Header = () => {
             {aboutOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl shadow-xl py-2 animate-fade-in">
                 {aboutDropdownItems.map((item) =>
-                  item.path.startsWith("/#") ? (
+                  item.path.includes("#") ? (
                     <button
                       key={item.path}
                       onClick={() => handleSectionClick(item.path)}
@@ -151,7 +151,7 @@ const Header = () => {
             {mobileAboutOpen && (
               <div className="ml-4 border-l border-border/50 pl-4 flex flex-col gap-1">
                 {aboutDropdownItems.map((item) =>
-                  item.path.startsWith("/#") ? (
+                  item.path.includes("#") ? (
                     <button
                       key={item.path}
                       onClick={() => handleSectionClick(item.path)}
