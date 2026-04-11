@@ -67,7 +67,16 @@ const values = [
 ];
 
 const HomePage = () => {
-  const revealRef = useScrollReveal();
+  const location = useLocation();
+
+  // Determine active section from hash
+  const activeSection = useMemo(() => {
+    const hash = location.hash.replace("#", "");
+    if (["about", "team", "industries"].includes(hash)) return hash;
+    return null;
+  }, [location.hash]);
+
+  const revealRef = useScrollReveal([activeSection]);
   const heroImgRef = useRef<HTMLImageElement>(null);
   const location = useLocation();
 

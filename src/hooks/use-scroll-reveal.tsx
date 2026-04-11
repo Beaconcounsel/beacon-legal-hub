@@ -1,13 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, DependencyList } from "react";
 
-export function useScrollReveal() {
+export function useScrollReveal(deps: DependencyList = []) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const children = el.querySelectorAll(".reveal");
+    const children = el.querySelectorAll(".reveal:not(.revealed)");
     if (children.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -24,7 +24,8 @@ export function useScrollReveal() {
 
     children.forEach((child) => observer.observe(child));
     return () => observer.disconnect();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
   return ref;
 }
