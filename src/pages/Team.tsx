@@ -19,8 +19,10 @@ const TeamPage = () => (
       </div>
     </section>
 
-    {/* Lead Partner Feature */}
+    {/* Partners */}
     <section className="section-padding pt-0">
+      <div className="container">
+        <div className="grid lg:grid-cols-2 gap-8">
       <div className="container">
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
           {/* Header */}
