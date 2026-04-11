@@ -421,6 +421,7 @@ const TeamPage = () => {
         </div>
       </div>
     </section>
+    </div>
   </Layout>
   );
 };
