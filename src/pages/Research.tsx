@@ -19,7 +19,7 @@ const ResearchPage = () => (
           <div className="line-gold mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Consultancy & Training</h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Beacon is committed to strengthening legal capacity across Rwanda. Through targeted research, education programs, and practical training, we simplify complex legal concepts and empower communities, organizations, and businesses to operate within a clear legal framework.
+            Beacon Firm is committed to advancing justice through strengthening legal capacity across Rwanda. Through targeted research, education programs, and practical training, we simplify complex legal concepts and empower communities, organizations, and businesses to operate within a clear legal framework.
           </p>
         </div>
 
