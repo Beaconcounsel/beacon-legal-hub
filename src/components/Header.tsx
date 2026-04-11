@@ -26,7 +26,7 @@ const Header = () => {
             Beacon
           </span>
           <span className="hidden sm:inline text-foreground/70 text-xs font-sans uppercase tracking-[0.2em]">
-            Attorneys & Consultants
+            Attorneyes & Consultants
           </span>
         </Link>
 
