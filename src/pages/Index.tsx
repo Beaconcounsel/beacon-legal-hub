@@ -549,26 +549,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Mission */}
-        <section className="section-padding">
-          <div className="container">
-            <div className="reveal relative max-w-2xl mx-auto text-center">
-              <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
-              <div className="relative bg-card border border-border rounded-xl p-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Our Purpose</h2>
-                <div className="line-gold mx-auto mt-4 mb-6" />
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
-                </p>
-                <Link to="/contact">
-                  <Button variant="gold" className="gap-2">
-                    Work With Us <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* CTA */}
         <section className="section-padding relative overflow-hidden">
