@@ -52,7 +52,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Beacon Attorneyes & Consultants. All rights reserved.</p></p>
+        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Beacon Attorneyes & Consultants. All rights reserved.</p>
         <p className="text-xs text-muted-foreground">Kigali, Rwanda</p>
       </div>
     </div>

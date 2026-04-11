@@ -19,7 +19,7 @@ const AboutPage = () => (
             <div className="line-gold mb-4" />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Beacon</h1>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p><p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p> law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
+              <p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
               <p>With over 30 years of combined experience across our partnership, we bring deep sector expertise, a rigorous advisory approach, and the discretion that high-stakes engagements require.</p>
               <p>Our partner-led model ensures that every client receives direct access to senior counsel who understand both the legal intricacies and the commercial realities of their business.</p>
             </div>
