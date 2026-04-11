@@ -8,7 +8,7 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Practice Areas", path: "/practice-areas" },
   { label: "International Clients", path: "/international" },
-  { label: "Team", path: "/team" },
+  
   { label: "Insights", path: "/insights" },
   { label: "Research & Training", path: "/research" },
   { label: "Contact", path: "/contact" },

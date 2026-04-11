@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import PracticeAreas from "./pages/PracticeAreas";
 import International from "./pages/International";
-import Team from "./pages/Team";
+
 import Insights from "./pages/Insights";
 import Research from "./pages/Research";
 import Contact from "./pages/Contact";
@@ -26,7 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/practice-areas" element={<PracticeAreas />} />
           <Route path="/international" element={<International />} />
-          <Route path="/team" element={<Team />} />
+          
           <Route path="/insights" element={<Insights />} />
           <Route path="/research" element={<Research />} />
           <Route path="/contact" element={<Contact />} />
