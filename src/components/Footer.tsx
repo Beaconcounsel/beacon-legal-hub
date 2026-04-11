@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container section-padding">
       <div className="grid md:grid-cols-4 gap-12">
         <div className="md:col-span-1">
-          <span className="text-gradient-gold font-serif text-2xl font-bold">Beacon</span>
+          <span className="text-gradient-gold font-serif text-2xl font-bold">Beacon Attorneys</span>
           <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
             Strategic legal counsel for businesses, institutions, and global investors.
           </p>
