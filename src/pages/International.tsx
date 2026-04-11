@@ -44,7 +44,7 @@ const InternationalPage = () => (
           <div className="bg-card border border-border rounded-lg p-8">
             <h3 className="text-xl font-bold mb-6 font-serif text-primary">Why Rwanda?</h3>
             <ul className="space-y-4">
-              {["Ranked 1st in Africa for ease of doing business in 2025", "Political stability and strong governance", "Strategic access to East and Central African markets", "Growing tech and financial services hub", "Investor protection and incentive frameworks"].map((item) => (
+              {["Ranked 1st in Africa for ease of doing business in 2025", "Stable Political, Security, Public governance environments", "Strategic access to East and Central African markets", "Growing tech and financial services hub", "Investor protection and incentive frameworks"].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
                   {item}
