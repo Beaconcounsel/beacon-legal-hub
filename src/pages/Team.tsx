@@ -18,7 +18,7 @@ const TeamPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-2">Our Team</h1>
             <div className="line-gold mt-4 mb-6" />
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Every engagement at Beacon is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
+              Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
             </p>
           </div>
         </div>
