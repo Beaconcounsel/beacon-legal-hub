@@ -89,7 +89,7 @@ const practiceAreas = [
 
 const PracticeAreasPage = () => (
   <Layout>
-    <section className="section-padding">
+    <section className="pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32">
       <div className="container">
         <div className="max-w-3xl mb-16">
           <div className="line-gold mb-4" />
