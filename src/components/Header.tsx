@@ -22,7 +22,33 @@ const Header = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleSectionClick = useCallback((path: string) => {
+    setAboutOpen(false);
+    setMobileOpen(false);
+
+    if (!path.startsWith("/#")) return;
+
+    const hash = path.slice(1); // e.g. "#about"
+    const id = hash.slice(1);   // e.g. "about"
+
+    const scrollToEl = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    if (location.pathname === "/") {
+      scrollToEl();
+    } else {
+      navigate("/");
+      // Wait for page to render, then scroll
+      setTimeout(scrollToEl, 100);
+    }
+  }, [location.pathname, navigate]);
 
   // Close dropdown on outside click
   useEffect(() => {
