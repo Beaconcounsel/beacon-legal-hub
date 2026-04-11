@@ -19,7 +19,7 @@ const highlights = [
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <Layout>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -127,7 +127,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 
