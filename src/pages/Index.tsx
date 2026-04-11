@@ -87,17 +87,18 @@ const HomePage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             ref={heroImgRef}
             src={heroImg}
-            alt="Kigali professional office"
-            className="w-full h-full object-cover hero-parallax scale-105"
+            alt="Kigali skyline"
+            className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
