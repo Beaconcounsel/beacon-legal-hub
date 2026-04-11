@@ -407,17 +407,21 @@ const TeamPage = () => {
           </div>
         </div>
 
-        {/* Join Our Team CTA */}
-        <div className="mt-8 bg-card border border-border rounded-lg p-10 text-center max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
-          </p>
-          <Link to="/contact">
-            <Button variant="gold" className="gap-2">
-              Get in Touch <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
+        <div className="mt-8 reveal relative max-w-2xl mx-auto">
+          <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
+          <div className="relative bg-card border border-border rounded-xl p-12 text-center">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
+            <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneyes</h3>
+            <div className="line-gold mx-auto mt-4 mb-6" />
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
+            </p>
+            <Link to="/contact">
+              <Button variant="gold" className="gap-2">
+                Get in Touch <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
