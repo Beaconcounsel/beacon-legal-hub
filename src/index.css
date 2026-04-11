@@ -140,6 +140,12 @@
   transform: translateY(0);
 }
 
+/* Skip reveal animation when filtering sections */
+.force-reveal .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Stagger children */
 .reveal:nth-child(2) { transition-delay: 0.08s; }
 .reveal:nth-child(3) { transition-delay: 0.16s; }
