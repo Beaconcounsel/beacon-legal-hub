@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Scale, Briefcase, Globe, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-kigali.jpg";
+import heroImg from "@/assets/kigali-city.jpg";
 
 const stats = [
   { value: "30+", label: "Years Combined Experience" },
