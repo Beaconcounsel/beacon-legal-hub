@@ -607,7 +607,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
           <div className="container relative">
             <div className="text-center max-w-2xl mx-auto reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Engage Experienced Legal Counsel Today</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Connect With Us Today</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
               <p className="text-muted-foreground mb-10 leading-relaxed">Whether you are navigating a complex transaction, entering a new market, or protecting your business interests, our partners are ready to advise.</p>
               <div className="flex flex-wrap justify-center gap-4">
