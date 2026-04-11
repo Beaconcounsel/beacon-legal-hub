@@ -24,6 +24,7 @@ const TeamPage = () => {
         </div>
       </section>
 
+    <div ref={revealRef}>
     {/* Partners */}
     <section className="section-padding pt-0">
       <div className="container space-y-8">
