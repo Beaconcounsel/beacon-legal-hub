@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown } from "lucide-react";
