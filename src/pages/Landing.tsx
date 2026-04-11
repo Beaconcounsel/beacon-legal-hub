@@ -41,7 +41,8 @@ const Landing = () => {
               A Law Firm for Individuals, Businesses, Institutions, and International Investors
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-              With over 30 years of combined experience, Beacon Attorneys & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
+              Global experience + local knowledge drives service excellence.
+            </p>
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
