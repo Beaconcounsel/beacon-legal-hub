@@ -7,10 +7,22 @@ export function useScrollReveal(deps: DependencyList = []) {
     const el = ref.current;
     if (!el) return;
 
-    // Small delay to let newly rendered elements settle in the DOM
-    const timeout = setTimeout(() => {
+    // Use requestAnimationFrame to ensure DOM has painted
+    const raf = requestAnimationFrame(() => {
       const children = el.querySelectorAll(".reveal:not(.revealed)");
       if (children.length === 0) return;
+
+      // Immediately reveal elements already in viewport
+      children.forEach((child) => {
+        const rect = child.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          child.classList.add("revealed");
+        }
+      });
+
+      // Observe remaining unrevealed elements
+      const remaining = el.querySelectorAll(".reveal:not(.revealed)");
+      if (remaining.length === 0) return;
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -21,16 +33,22 @@ export function useScrollReveal(deps: DependencyList = []) {
             }
           });
         },
-        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
       );
 
-      children.forEach((child) => observer.observe(child));
+      remaining.forEach((child) => observer.observe(child));
+      
+      // Store for cleanup
+      (el as any).__observer = observer;
+    });
 
-      // Cleanup observer on next effect run
-      return () => observer.disconnect();
-    }, 50);
-
-    return () => clearTimeout(timeout);
+    return () => {
+      cancelAnimationFrame(raf);
+      if ((el as any).__observer) {
+        (el as any).__observer.disconnect();
+        delete (el as any).__observer;
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
