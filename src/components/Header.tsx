@@ -47,15 +47,6 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="tel:+250780000000" className="hidden md:flex items-center gap-1.5 text-sm text-primary">
-            <Phone className="w-3.5 h-3.5" />
-            <span>Call Now</span>
-          </a>
-          <Link to="/contact">
-            <Button variant="gold" size="sm" className="hidden md:inline-flex">
-              Request Consultation
-            </Button>
-          </Link>
           <button
             className="lg:hidden text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
