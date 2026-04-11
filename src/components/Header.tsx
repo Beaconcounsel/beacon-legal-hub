@@ -10,7 +10,7 @@ const navLinks = [
   
   
   { label: "Research & Training", path: "/research" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact Us", path: "/contact" },
 ];
 
 const Header = () => {
