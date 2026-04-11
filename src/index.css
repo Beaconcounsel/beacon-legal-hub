@@ -75,20 +75,20 @@
 @layer utilities {
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(43 76% 55%), hsl(43 70% 70%));
+    background-image: linear-gradient(135deg, hsl(39 44% 60%), hsl(39 38% 72%));
   }
 
   .border-gold {
-    border-color: hsl(43 76% 55%);
+    border-color: hsl(39 44% 60%);
   }
 
   .bg-gold-gradient {
-    background: linear-gradient(135deg, hsl(43 76% 55%), hsl(43 80% 40%));
+    background: linear-gradient(135deg, hsl(39 44% 60%), hsl(39 50% 45%));
   }
 
   .line-gold {
     @apply h-px w-16;
-    background: linear-gradient(90deg, hsl(43 76% 55%), transparent);
+    background: linear-gradient(90deg, hsl(39 44% 60%), transparent);
   }
 
   .section-padding {
