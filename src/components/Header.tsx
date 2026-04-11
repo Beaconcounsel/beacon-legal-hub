@@ -31,22 +31,10 @@ const Header = () => {
 
     if (!path.startsWith("/#")) return;
 
-    const hash = path.slice(1); // e.g. "#about"
-    const id = hash.slice(1);   // e.g. "about"
-
-    const scrollToEl = () => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    };
-
     if (location.pathname === "/") {
-      scrollToEl();
+      navigate(path, { replace: true });
     } else {
-      navigate("/");
-      // Wait for page to render, then scroll
-      setTimeout(scrollToEl, 100);
+      navigate(path);
     }
   }, [location.pathname, navigate]);
 
