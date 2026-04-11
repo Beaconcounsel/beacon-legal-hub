@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Practice Areas", path: "/practice-areas" },
   { label: "International Clients", path: "/international" },
   
-  { label: "Insights", path: "/insights" },
+  
   { label: "Research & Training", path: "/research" },
   { label: "Contact", path: "/contact" },
 ];
