@@ -14,7 +14,7 @@ const services = [
 
 const InternationalPage = () => (
   <Layout>
-    <section className="relative py-20">
+    <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
         <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover" loading="lazy" width={1200} height={600} />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/70" />
@@ -24,7 +24,7 @@ const InternationalPage = () => (
           <div className="line-gold mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">International Clients</h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We bridge international expectations with local legal execution. For global investors and multinational organizations, Beacon provides the strategic counsel and on-the-ground expertise required to operate confidently in Rwanda and the East African region.
+            We bridge international expectations with local legal execution. For global investors and multinational organizations, Beacon Attorneys provides the strategic counsel and on-the-ground expertise required to operate confidently in Rwanda and the East African region.
           </p>
         </div>
       </div>
@@ -70,8 +70,8 @@ const InternationalPage = () => (
 
         <div className="text-center">
           <Link to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              Schedule an International Consultation <ArrowRight className="w-4 h-4" />
+            <Button variant="gold" size="lg" className="gap-2 whitespace-normal">
+              Schedule a Consultation <ArrowRight className="w-4 h-4 shrink-0" />
             </Button>
           </Link>
         </div>
