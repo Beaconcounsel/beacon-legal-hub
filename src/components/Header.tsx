@@ -95,16 +95,26 @@ const Header = () => {
             </button>
             {aboutOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl shadow-xl py-2 animate-fade-in">
-                {aboutDropdownItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setAboutOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {aboutDropdownItems.map((item) =>
+                  item.path.startsWith("/#") ? (
+                    <button
+                      key={item.path}
+                      onClick={() => handleSectionClick(item.path)}
+                      className="block w-full text-left px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setAboutOpen(false)}
+                      className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>
@@ -152,16 +162,26 @@ const Header = () => {
             </button>
             {mobileAboutOpen && (
               <div className="ml-4 border-l border-border/50 pl-4 flex flex-col gap-1">
-                {aboutDropdownItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {aboutDropdownItems.map((item) =>
+                  item.path.startsWith("/#") ? (
+                    <button
+                      key={item.path}
+                      onClick={() => handleSectionClick(item.path)}
+                      className="w-full text-left px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
 
