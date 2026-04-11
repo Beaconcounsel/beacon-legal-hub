@@ -54,7 +54,7 @@ const Footer = () => (
       {/* Careers */}
       <div className="border-t border-border mt-12 pt-10 text-center max-w-2xl mx-auto">
         <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-        <h3 className="text-xl font-bold font-serif mb-3">Join Beacon Attorneyes</h3>
+        <h3 className="text-xl font-bold font-serif mb-3">Join Beacon Attorneys</h3>
         <p className="text-sm text-muted-foreground leading-relaxed mb-6">
           We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
         </p>

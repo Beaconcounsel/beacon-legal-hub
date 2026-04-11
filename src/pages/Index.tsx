@@ -179,17 +179,17 @@ const HomePage = () => {
               <div className="grid lg:grid-cols-2 gap-16 items-center reveal">
                 <div>
                   <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">About Us</span>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif text-primary">About Beacon Attorneyes</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif text-primary">About Beacon Attorneys</h2>
                   <div className="line-gold mt-4 mb-6" />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
+                    <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
                     <p>With over 30 years of combined experience across our partnership, we bring deep sector expertise, a rigorous advisory approach, and the discretion that high-stakes engagements require.</p>
                     <p>Our partner-led model ensures that every client receives direct access to senior counsel who understand both the legal intricacies and the commercial realities of their business.</p>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl" />
-                  <img src={teamImg} alt="Beacon Attorneyes team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
+                  <img src={teamImg} alt="Beacon Attorneys team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@ const HomePage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our People</h2>
                 <div className="line-gold mt-4 mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Every engagement at Beacon Attorneyes is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
+                  Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
                 </p>
               </div>
 
