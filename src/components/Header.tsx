@@ -54,27 +54,17 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {/* Home */}
-          <Link
-            to="/"
-            className={`px-3 py-2 text-sm font-medium transition-colors ${
-              location.pathname === "/" && !location.hash
-                ? "text-primary"
-                : "text-foreground/70 hover:text-foreground"
-            }`}
-          >
-            Home
-          </Link>
-
-          {/* About Dropdown */}
+          {/* Home with Dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
-                aboutOpen ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                location.pathname === "/" || aboutOpen
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-foreground"
               }`}
             >
-              About
+              Home
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""}`} />
             </button>
             {aboutOpen && (
