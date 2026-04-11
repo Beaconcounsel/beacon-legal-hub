@@ -84,7 +84,7 @@ const Header = () => {
             {aboutOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl shadow-xl py-2 animate-fade-in">
                 {aboutDropdownItems.map((item) =>
-                  item.path.startsWith("/#") ? (
+                  item.path.includes("#") ? (
                     <button
                       key={item.path}
                       onClick={() => handleSectionClick(item.path)}
@@ -151,7 +151,7 @@ const Header = () => {
             {mobileAboutOpen && (
               <div className="ml-4 border-l border-border/50 pl-4 flex flex-col gap-1">
                 {aboutDropdownItems.map((item) =>
-                  item.path.startsWith("/#") ? (
+                  item.path.includes("#") ? (
                     <button
                       key={item.path}
                       onClick={() => handleSectionClick(item.path)}
