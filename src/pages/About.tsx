@@ -25,7 +25,7 @@ const AboutPage = () => (
             </div>
           </div>
           <div>
-            <img src={teamImg} <img src={teamImg} alt="Beacon Attorneyes team" className="rounded-lg shadow-2xl" loading="lazy" width={1024} height={1024} /> className="rounded-lg shadow-2xl" loading="lazy" width={1024} height={1024} />
+            <img src={teamImg} alt="Beacon Attorneyes team" className="rounded-lg shadow-2xl" loading="lazy" width={1024} height={1024} /> alt="Beacon Attorneyes team" className="rounded-lg shadow-2xl" loading="lazy" width={1024} height={1024} /> className="rounded-lg shadow-2xl" loading="lazy" width={1024} height={1024} />
           </div>
         </div>
 
