@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
+  
   { label: "Practice Areas", path: "/practice-areas" },
   { label: "International Clients", path: "/international" },
   
