@@ -108,7 +108,7 @@ const HomePage = () => {
               <span className="text-gradient-gold">Global Investors</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
-              With over 30 years of combined experience, Beacon Attorneys & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
+              With over 30 years of combined experience, Beacon Attorneyes & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Link to="/contact">
