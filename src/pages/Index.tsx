@@ -151,7 +151,7 @@ const HomePage = () => {
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Clients</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
-              <p className="text-muted-foreground leading-relaxed">We act for a select clientele across industries and borders, delivering partner-led advisory at every stage.</p>
+              <p className="text-muted-foreground leading-relaxed">We act for our clientele across industries and borders, delivering partner-led advisory at every stage.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {clientCategories.map((cat) => (
