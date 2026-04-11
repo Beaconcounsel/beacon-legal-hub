@@ -81,6 +81,18 @@ const HomePage = () => {
 
   const show = (section: string) => !activeSection || activeSection === section;
 
+  // When filtering to a single section, immediately reveal its elements
+  useEffect(() => {
+    if (activeSection && revealRef.current) {
+      const timer = setTimeout(() => {
+        revealRef.current?.querySelectorAll(".reveal:not(.revealed)").forEach((el) => {
+          el.classList.add("revealed");
+        });
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [activeSection, revealRef]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (heroImgRef.current) {
@@ -159,7 +171,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <div ref={revealRef}>
+      <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
           {/* About Section */}
           <section id="about" className="section-padding scroll-mt-20">
