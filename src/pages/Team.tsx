@@ -471,7 +471,7 @@ const TeamPage = () => (
 
         {/* Join Our Team CTA */}
         <div className="mt-16 bg-card border border-border rounded-lg p-10 text-center max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneyes</h3>
+          <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
           <p className="text-muted-foreground leading-relaxed mb-6">
             We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
           </p>
