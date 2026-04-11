@@ -140,7 +140,7 @@ const HomePage = () => {
 
       <div ref={revealRef}>
         {/* About Section */}
-        <section id="about" className="section-padding">
+        <section id="about" className="section-padding scroll-mt-20">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-16 items-center reveal">
               <div>
@@ -231,7 +231,7 @@ const HomePage = () => {
         </section>
 
         {/* Our Team Section */}
-        <section id="team" className="section-padding">
+        <section id="team" className="section-padding scroll-mt-20">
           <div className="container">
             <div className="max-w-3xl mb-16 reveal">
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
@@ -555,7 +555,7 @@ const HomePage = () => {
         </section>
 
         {/* Industries */}
-        <section id="industries" className="section-padding bg-card">
+        <section id="industries" className="section-padding bg-card scroll-mt-20">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Industries We Serve</h2>

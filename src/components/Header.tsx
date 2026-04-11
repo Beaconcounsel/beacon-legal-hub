@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const aboutDropdownItems = [
@@ -22,7 +22,33 @@ const Header = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleSectionClick = useCallback((path: string) => {
+    setAboutOpen(false);
+    setMobileOpen(false);
+
+    if (!path.startsWith("/#")) return;
+
+    const hash = path.slice(1); // e.g. "#about"
+    const id = hash.slice(1);   // e.g. "about"
+
+    const scrollToEl = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    if (location.pathname === "/") {
+      scrollToEl();
+    } else {
+      navigate("/");
+      // Wait for page to render, then scroll
+      setTimeout(scrollToEl, 100);
+    }
+  }, [location.pathname, navigate]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -69,16 +95,26 @@ const Header = () => {
             </button>
             {aboutOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl shadow-xl py-2 animate-fade-in">
-                {aboutDropdownItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setAboutOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {aboutDropdownItems.map((item) =>
+                  item.path.startsWith("/#") ? (
+                    <button
+                      key={item.path}
+                      onClick={() => handleSectionClick(item.path)}
+                      className="block w-full text-left px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setAboutOpen(false)}
+                      className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>
@@ -126,16 +162,26 @@ const Header = () => {
             </button>
             {mobileAboutOpen && (
               <div className="ml-4 border-l border-border/50 pl-4 flex flex-col gap-1">
-                {aboutDropdownItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {aboutDropdownItems.map((item) =>
+                  item.path.startsWith("/#") ? (
+                    <button
+                      key={item.path}
+                      onClick={() => handleSectionClick(item.path)}
+                      className="w-full text-left px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
 
