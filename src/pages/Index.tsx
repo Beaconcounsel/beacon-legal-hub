@@ -52,13 +52,6 @@ const practiceAreas = [
   "Regulatory Compliance",
 ];
 
-const transactions = [
-  "Advised a multinational consortium on a $120M cross-border investment into Rwandan infrastructure",
-  "Structured a multi-jurisdictional corporate reorganization for an East African financial services group",
-  "Acted as local counsel for international investors in a large-scale real estate development",
-  "Provided regulatory advisory for a government-backed energy project",
-  "Represented institutional investors in complex dispute resolution proceedings",
-];
 
 const industries = [
   { icon: Zap, label: "Energy & Infrastructure" },
@@ -200,24 +193,6 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Representative Experience */}
-        <section className="section-padding">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Representative Experience</h2>
-              <div className="line-gold mx-auto mt-4 mb-6" />
-              <p className="text-muted-foreground leading-relaxed">Selected transactions reflecting the scope and complexity of our advisory work.</p>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-5">
-              {transactions.map((t, i) => (
-                <div key={i} className="reveal flex gap-5 items-start bg-card border border-border rounded-xl p-7 hover:border-primary/30 hover:shadow-[0_0_20px_hsl(43_76%_55%/0.04)] transition-all duration-300">
-                  <span className="text-primary font-serif text-xl font-bold mt-0.5 shrink-0">0{i + 1}</span>
-                  <p className="text-foreground/80 text-sm leading-relaxed">{t}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Industries */}
         <section className="section-padding bg-card">
