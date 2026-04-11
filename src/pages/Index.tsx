@@ -172,8 +172,7 @@ const HomePage = () => {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="reveal">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Expertise</span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">Practice Areas</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">Practice Areas</h2>
                 <div className="line-gold mt-4 mb-6" />
                 <p className="text-muted-foreground mb-10 leading-relaxed">We advise across the full spectrum of business law, structured to address the complex needs of sophisticated clients.</p>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -205,8 +204,7 @@ const HomePage = () => {
         <section className="section-padding">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Track Record</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Representative Experience</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Representative Experience</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
               <p className="text-muted-foreground leading-relaxed">Selected transactions reflecting the scope and complexity of our advisory work.</p>
             </div>
@@ -225,8 +223,7 @@ const HomePage = () => {
         <section className="section-padding bg-card">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Sectors</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Industries We Serve</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Industries We Serve</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
             <div className="flex flex-wrap justify-center gap-5">
@@ -245,8 +242,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
           <div className="container relative">
             <div className="text-center max-w-2xl mx-auto reveal">
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Get Started</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Engage Experienced Legal Counsel Today</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Engage Experienced Legal Counsel Today</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
               <p className="text-muted-foreground mb-10 leading-relaxed">Whether you are navigating a complex transaction, entering a new market, or protecting your business interests, our partners are ready to advise.</p>
               <div className="flex flex-wrap justify-center gap-4">
