@@ -43,7 +43,6 @@ const Landing = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
               Global experience + local knowledge drives service excellence.
             </p>
-            </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
                 <Button variant="gold" size="lg" className="gap-2 text-base">
