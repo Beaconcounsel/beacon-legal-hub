@@ -103,9 +103,8 @@ const HomePage = () => {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <div className="line-gold mb-6 animate-fade-in" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Strategic Legal Counsel for Businesses, Institutions, and{" "}
-              <span className="text-gradient-gold">Global Investors</span>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 animate-fade-up text-foreground" style={{ animationDelay: "0.1s" }}>
+              Strategic Legal Counsel for Businesses, Institutions, and Global Investors
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
               With over 30 years of combined experience, Beacon Attorneyes & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
