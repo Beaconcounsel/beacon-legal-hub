@@ -21,11 +21,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-gradient-gold font-serif text-xl md:text-2xl font-bold tracking-tight">
+        <Link to="/" className="flex flex-col items-start">
+          <span className="text-gradient-gold font-serif text-xl md:text-2xl font-bold tracking-tight leading-none">
             Beacon
           </span>
-          <span className="hidden sm:inline text-foreground/70 text-xs font-sans uppercase tracking-[0.2em]">
+          <span className="text-primary text-[10px] md:text-xs font-sans uppercase tracking-[0.15em] leading-none mt-0.5">
             Attorneys & Consultants
           </span>
         </Link>
