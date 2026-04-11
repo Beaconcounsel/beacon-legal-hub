@@ -171,7 +171,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <div ref={revealRef}>
+      <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
           {/* About Section */}
           <section id="about" className="section-padding scroll-mt-20">
