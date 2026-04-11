@@ -47,9 +47,6 @@ const practiceAreas = [
   "Dispute Resolution & Arbitration",
   "Real Estate & Property",
   "Energy & Infrastructure",
-  "Tax & Corporate Structuring",
-  "Private Wealth & Succession",
-  "Regulatory Compliance",
 ];
 
 
