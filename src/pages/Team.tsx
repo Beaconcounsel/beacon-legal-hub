@@ -360,6 +360,16 @@ const TeamPage = () => (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
+              initials: "KM",
+              name: "Katusime Mbombo Moses",
+              role: "Partner",
+              focus: "Legal & Corporate Governance, Compliance",
+              desc: "Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory. Skilled in developing governance frameworks, negotiating complex legal documentation, and mitigating legal risks to enhance operational efficiency and transparency.",
+              memberships: ["Advocate, High Court of Rwanda", "East African Law Society"],
+              education: "LL.B, University of Rwanda",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+            {
               initials: "AN",
               name: "Aline Niyonzima",
               role: "Senior Associate",
