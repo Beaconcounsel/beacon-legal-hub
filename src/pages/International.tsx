@@ -70,8 +70,8 @@ const InternationalPage = () => (
 
         <div className="text-center">
           <Link to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              Schedule an International Consultation <ArrowRight className="w-4 h-4" />
+            <Button variant="gold" size="lg" className="gap-2 whitespace-normal">
+              Schedule a Consultation <ArrowRight className="w-4 h-4 shrink-0" />
             </Button>
           </Link>
         </div>
