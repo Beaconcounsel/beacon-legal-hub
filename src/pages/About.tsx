@@ -68,7 +68,7 @@ const AboutPage = () => {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Our Purpose</h2>
                 <div className="line-gold mx-auto mt-4 mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  To deliver strategic, partner-led legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
+                  To pursue justice through strategic, partner-led legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
                 </p>
                 <Link to="/contact">
                   <Button variant="gold" className="gap-2">
