@@ -7,47 +7,43 @@ export function useScrollReveal(deps: DependencyList = []) {
     const el = ref.current;
     if (!el) return;
 
-    // Use requestAnimationFrame to ensure DOM has painted
-    const raf = requestAnimationFrame(() => {
+    let observer: IntersectionObserver | null = null;
+
+    // Use setTimeout to ensure React has flushed DOM updates
+    const timeout = setTimeout(() => {
       const children = el.querySelectorAll(".reveal:not(.revealed)");
       if (children.length === 0) return;
 
       // Immediately reveal elements already in viewport
       children.forEach((child) => {
         const rect = child.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (rect.top < window.innerHeight + 40 && rect.bottom > 0) {
           child.classList.add("revealed");
         }
       });
 
-      // Observe remaining unrevealed elements
+      // Observe remaining unrevealed elements for scroll
       const remaining = el.querySelectorAll(".reveal:not(.revealed)");
       if (remaining.length === 0) return;
 
-      const observer = new IntersectionObserver(
+      observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("revealed");
-              observer.unobserve(entry.target);
+              observer?.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
       );
 
-      remaining.forEach((child) => observer.observe(child));
-      
-      // Store for cleanup
-      (el as any).__observer = observer;
-    });
+      remaining.forEach((child) => observer!.observe(child));
+    }, 100);
 
     return () => {
-      cancelAnimationFrame(raf);
-      if ((el as any).__observer) {
-        (el as any).__observer.disconnect();
-        delete (el as any).__observer;
-      }
+      clearTimeout(timeout);
+      observer?.disconnect();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
