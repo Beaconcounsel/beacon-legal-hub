@@ -65,10 +65,31 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4 {
     @apply font-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  h1 {
+    @apply font-extrabold;
+  }
+
+  h2 {
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply font-semibold;
+  }
+
+  p {
+    line-height: 1.75;
   }
 }
 
