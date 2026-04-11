@@ -411,7 +411,7 @@ const TeamPage = () => {
           <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
           <div className="relative bg-card border border-border rounded-xl p-12 text-center">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-            <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneyes</h3>
+            <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
             <div className="line-gold mx-auto mt-4 mb-6" />
             <p className="text-muted-foreground leading-relaxed mb-8">
               We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
