@@ -345,6 +345,134 @@ const TeamPage = () => (
         </div>
       </div>
     </section>
+
+    {/* Additional Team Members */}
+    <section className="section-padding pt-0">
+      <div className="container">
+        <div className="mb-12">
+          <div className="line-gold mb-4" />
+          <h2 className="text-3xl font-bold font-serif mb-4">Our Legal Team</h2>
+          <p className="text-muted-foreground max-w-2xl">
+            Our team of dedicated legal professionals brings diverse expertise across practice areas, delivering strategic counsel with precision and integrity.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              initials: "AN",
+              name: "Aline Niyonzima",
+              role: "Senior Associate",
+              focus: "Corporate & Commercial Law",
+              desc: "Advises on corporate transactions, regulatory compliance, and commercial agreements for local and international clients.",
+              memberships: ["Rwanda Bar Association"],
+              education: "LL.B, University of Rwanda",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+            {
+              initials: "JH",
+              name: "Jean-Pierre Habimana",
+              role: "Senior Associate",
+              focus: "Banking, Finance & Investment",
+              desc: "Specialises in banking regulations, investment structuring, and financial services advisory for institutions and private equity firms.",
+              memberships: ["Rwanda Bar Association", "East African Law Society"],
+              education: "LL.M, University of Cape Town",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+            {
+              initials: "CU",
+              name: "Claire Uwimana",
+              role: "Associate",
+              focus: "Dispute Resolution & Arbitration",
+              desc: "Represents clients in complex commercial disputes, arbitration proceedings, and regulatory enforcement matters.",
+              memberships: ["Rwanda Bar Association"],
+              education: "LL.B, University of Rwanda",
+              languages: ["English", "Kinyarwanda"],
+            },
+            {
+              initials: "EM",
+              name: "Eric Mugisha",
+              role: "Associate",
+              focus: "Real Estate & Property Law",
+              desc: "Advises on property transactions, land rights, development agreements, and real estate investment structuring.",
+              memberships: ["Rwanda Bar Association"],
+              education: "LL.B, University of Rwanda",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+            {
+              initials: "GK",
+              name: "Grace Kamikazi",
+              role: "Associate",
+              focus: "Employment & Labour Law",
+              desc: "Counsels businesses on employment contracts, labour compliance, executive recruitment structures, and workplace governance.",
+              memberships: ["Rwanda Bar Association"],
+              education: "LL.M, University of London",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+            {
+              initials: "PN",
+              name: "Patrick Ndayisaba",
+              role: "Associate",
+              focus: "Tax & Corporate Structuring",
+              desc: "Provides strategic tax advisory, corporate structuring guidance, and compliance support for businesses operating in Rwanda and the region.",
+              memberships: ["Rwanda Bar Association"],
+              education: "LL.B, University of Rwanda; CPA",
+              languages: ["English", "French", "Kinyarwanda"],
+            },
+          ].map((member) => (
+            <div key={member.name} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors group">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border border-primary/20 group-hover:border-primary/40 transition-colors">
+                  <span className="text-primary font-serif text-lg font-bold">{member.initials}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold font-serif">{member.name}</h3>
+                  <p className="text-primary text-xs font-semibold uppercase tracking-wider">{member.role}</p>
+                </div>
+              </div>
+              <p className="text-sm font-semibold text-foreground/90 mb-2">{member.focus}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{member.desc}</p>
+
+              <div className="space-y-3 border-t border-border pt-4">
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1.5">Memberships</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.memberships.map((m) => (
+                      <span key={m} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{m}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">Education</p>
+                  <p className="text-xs text-foreground/70">{member.education}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1.5">Languages</p>
+                  <div className="flex gap-1.5">
+                    {member.languages.map((l) => (
+                      <span key={l} className="text-xs bg-muted/50 text-foreground/70 px-2 py-1 rounded-full">{l}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Join Our Team CTA */}
+        <div className="mt-16 bg-card border border-border rounded-lg p-10 text-center max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneyes</h3>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
+          </p>
+          <Link to="/contact">
+            <Button variant="gold" className="gap-2">
+              Get in Touch <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
   </Layout>
 );
 
