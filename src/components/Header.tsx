@@ -54,27 +54,17 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {/* Home */}
-          <Link
-            to="/"
-            className={`px-3 py-2 text-sm font-medium transition-colors ${
-              location.pathname === "/" && !location.hash
-                ? "text-primary"
-                : "text-foreground/70 hover:text-foreground"
-            }`}
-          >
-            Home
-          </Link>
-
-          {/* About Dropdown */}
+          {/* Home with Dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
-                aboutOpen ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                location.pathname === "/" || aboutOpen
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-foreground"
               }`}
             >
-              About
+              Home
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""}`} />
             </button>
             {aboutOpen && (
@@ -122,25 +112,16 @@ const Header = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-background border-t border-border">
           <nav className="container py-4 flex flex-col gap-1">
-            {/* Home */}
-            <Link
-              to="/"
-              onClick={() => setMobileOpen(false)}
-              className={`px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                location.pathname === "/" && !location.hash
+            {/* Home with sub-items */}
+            <button
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              className={`flex items-center justify-between px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                location.pathname === "/"
                   ? "text-primary bg-secondary"
                   : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
               }`}
             >
               Home
-            </Link>
-
-            {/* About Accordion */}
-            <button
-              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-              className="flex items-center justify-between px-4 py-3 rounded-md text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-            >
-              About
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`} />
             </button>
             {mobileAboutOpen && (
