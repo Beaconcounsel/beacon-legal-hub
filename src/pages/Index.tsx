@@ -264,8 +264,7 @@ const HomePage = () => {
           <section id="team" className="section-padding scroll-mt-20">
             <div className="container">
               <div className="max-w-3xl mb-16 reveal">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our Team</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our People</h2>
                 <div className="line-gold mt-4 mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Every engagement at Beacon Attorneyes is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
