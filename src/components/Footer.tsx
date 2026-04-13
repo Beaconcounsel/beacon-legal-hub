@@ -29,6 +29,7 @@ const Footer = () => (
             <li><Link to="/insights" className="hover:text-primary transition-colors">Insights</Link></li>
             <li><Link to="/international" className="hover:text-primary transition-colors">International Clients</Link></li>
             <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <li><Link to="/contact" className="hover:text-primary transition-colors">Careers</Link></li>
           </ul>
         </div>
 
@@ -51,17 +52,6 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Careers */}
-      <div className="border-t border-border mt-12 pt-10 text-center max-w-2xl mx-auto">
-        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-        <h3 className="text-xl font-bold font-serif mb-3">Join Beacon Attorneys</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-          We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
-        </p>
-        <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition-colors">
-          Get in Touch →
-        </Link>
-      </div>
 
       <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Beacon Attorneys & Consultants. All rights reserved.</p>
