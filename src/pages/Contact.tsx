@@ -76,7 +76,7 @@ const ContactPage = () => {
               <div className="space-y-8 reveal">
                 <div className="bg-card border border-border rounded-xl p-8">
                   <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">Reach Us</span>
-                  <h3 className="text-lg font-semibold font-serif mb-6">Contact Information</h3>
+                  <h3 className="text-lg font-semibold font-heading mb-6">Contact Information</h3>
                   <ul className="space-y-5">
                     {[
                       { icon: MapPin, text: "Kigali, Rwanda", href: undefined },

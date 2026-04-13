@@ -43,7 +43,7 @@ const AboutPage = () => {
         <section className="section-padding">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading text-primary">What Drives Us</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -52,7 +52,7 @@ const AboutPage = () => {
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors">
                     <v.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 font-serif">{v.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3 font-heading">{v.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
                 </div>
               ))}
@@ -65,7 +65,7 @@ const AboutPage = () => {
           <div className="container">
             <div className="max-w-3xl mb-16">
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our Team</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 font-heading">Our Team</h2>
               <div className="line-gold mt-4 mb-6" />
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
@@ -82,7 +82,7 @@ const AboutPage = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Lead Partner</p>
-                      <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Daniel Mutiganda</h3>
+                      <h3 className="text-3xl md:text-4xl font-bold font-heading mb-2">Daniel Mutiganda</h3>
                       <p className="text-foreground/80 text-lg mb-4">Corporate, Transactions & Cross-Border Advisory</p>
                       <p className="text-muted-foreground leading-relaxed max-w-2xl">
                         Advising on legal risk and business strategy, and representing clients in transactions and regulatory matters in Rwanda and across emerging markets.
@@ -109,7 +109,7 @@ const AboutPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-6">
                       <Award className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">What Sets Him Apart</h4>
+                      <h4 className="text-xl font-bold font-heading">What Sets Him Apart</h4>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       {[
@@ -131,7 +131,7 @@ const AboutPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <Briefcase className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">Multi-Disciplinary Experience</h4>
+                      <h4 className="text-xl font-bold font-heading">Multi-Disciplinary Experience</h4>
                     </div>
                     <p className="text-muted-foreground text-sm mb-6 ml-8">
                       Daniel brings experience across key sectors, enabling practical, business-oriented advice and effective representation.
@@ -156,7 +156,7 @@ const AboutPage = () => {
                   <div className="bg-muted/20 rounded-xl p-8 border border-border">
                     <div className="flex items-center gap-3 mb-3">
                       <Globe className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">International Perspective, Local Execution</h4>
+                      <h4 className="text-xl font-bold font-heading">International Perspective, Local Execution</h4>
                     </div>
                     <p className="text-foreground/80 text-sm leading-relaxed mb-6">
                       Daniel advises and represents international clients entering Rwanda while supporting local businesses to structure, scale, and transact effectively.
@@ -181,7 +181,7 @@ const AboutPage = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <Shield className="w-5 h-5 text-primary" />
-                        <h4 className="text-xl font-bold font-serif">Core Practice Areas</h4>
+                        <h4 className="text-xl font-bold font-heading">Core Practice Areas</h4>
                       </div>
                       <ul className="space-y-3">
                         {[
@@ -203,7 +203,7 @@ const AboutPage = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <Briefcase className="w-5 h-5 text-primary" />
-                        <h4 className="text-xl font-bold font-serif">Sector Focus</h4>
+                        <h4 className="text-xl font-bold font-heading">Sector Focus</h4>
                       </div>
                       <div className="space-y-4">
                         {[
@@ -226,7 +226,7 @@ const AboutPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-6">
                       <BookOpen className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">Representative Experience</h4>
+                      <h4 className="text-xl font-bold font-heading">Representative Experience</h4>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       {[
@@ -249,7 +249,7 @@ const AboutPage = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <Users className="w-5 h-5 text-primary" />
-                        <h4 className="text-xl font-bold font-serif">Clients & Engagements</h4>
+                        <h4 className="text-xl font-bold font-heading">Clients & Engagements</h4>
                       </div>
                       <ul className="space-y-3">
                         {[
@@ -269,7 +269,7 @@ const AboutPage = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <MapPin className="w-5 h-5 text-primary" />
-                        <h4 className="text-xl font-bold font-serif">Geographic Focus</h4>
+                        <h4 className="text-xl font-bold font-heading">Geographic Focus</h4>
                       </div>
                       <div className="space-y-4">
                         <div className="border border-border rounded-lg p-4">
@@ -290,7 +290,7 @@ const AboutPage = () => {
 
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-xl font-bold font-serif mb-6">Board & Regulatory Advisory</h4>
+                      <h4 className="text-xl font-bold font-heading mb-6">Board & Regulatory Advisory</h4>
                       <ul className="space-y-3">
                         {[
                           "Advises and represents boards and executive teams on governance, compliance, and risk",
@@ -305,7 +305,7 @@ const AboutPage = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold font-serif mb-6">Leadership & Institutional Experience</h4>
+                      <h4 className="text-xl font-bold font-heading mb-6">Leadership & Institutional Experience</h4>
                       <ul className="space-y-3">
                         {[
                           "Led organizational growth from under 1,000 to over 3,500 employees",
@@ -326,7 +326,7 @@ const AboutPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-6">
                       <GraduationCap className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">Education & Professional Foundation</h4>
+                      <h4 className="text-xl font-bold font-heading">Education & Professional Foundation</h4>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-4">
@@ -364,7 +364,7 @@ const AboutPage = () => {
                   </div>
 
                   <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-8 border border-primary/20">
-                    <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
+                    <blockquote className="text-lg md:text-xl font-heading italic text-foreground/90 leading-relaxed">
                       "I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity."
                     </blockquote>
                     <p className="text-primary text-sm font-semibold mt-4">— Daniel Mutiganda</p>
@@ -390,11 +390,11 @@ const AboutPage = () => {
                 <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
                   <div className="flex flex-col md:flex-row items-start gap-8">
                     <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
-                      <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
+                      <span className="text-primary font-heading text-4xl md:text-5xl font-bold">KM</span>
                     </div>
                     <div className="flex-1">
                       <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Partner</p>
-                      <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Katusime Mbombo Moses</h3>
+                      <h3 className="text-3xl md:text-4xl font-bold font-heading mb-2">Katusime Mbombo Moses</h3>
                       <p className="text-foreground/80 text-lg mb-4">Legal & Corporate Governance, Compliance</p>
                       <p className="text-muted-foreground leading-relaxed max-w-2xl">
                         Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory. Skilled in developing governance frameworks, negotiating complex legal documentation, and mitigating legal risks to enhance operational efficiency and transparency.
@@ -411,7 +411,7 @@ const AboutPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-6">
                       <GraduationCap className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-bold font-serif">Education & Certifications</h4>
+                      <h4 className="text-xl font-bold font-heading">Education & Certifications</h4>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       {[
@@ -444,7 +444,7 @@ const AboutPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
                 <div className="relative bg-card border border-border rounded-xl p-12 text-center">
                   <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-                  <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
+                  <h3 className="text-2xl font-bold font-heading mb-4">Join Beacon Attorneys</h3>
                   <div className="line-gold mx-auto mt-4 mb-6" />
                   <p className="text-muted-foreground leading-relaxed mb-8">
                     We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
@@ -466,7 +466,7 @@ const AboutPage = () => {
             <div className="reveal relative max-w-2xl mx-auto text-center">
               <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
               <div className="relative bg-card border border-border rounded-xl p-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Our Purpose</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-primary">Our Purpose</h2>
                 <div className="line-gold mx-auto mt-4 mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
