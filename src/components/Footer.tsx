@@ -31,7 +31,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Contact</h4>
+          <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-[#0d3d4a] mb-2">Contact</h4>
           <ul className="space-y-2 text-xs text-[#1a5c6b]/60">
             <li className="flex items-start gap-2">
               <MapPin className="w-3.5 h-3.5 mt-0.5 text-[#1a5c6b]" />
@@ -51,7 +51,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Careers</h4>
+          <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-[#0d3d4a] mb-2">Careers</h4>
           <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
             <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Join Our Team</Link></li>
             <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Internship Programme</Link></li>
