@@ -68,7 +68,7 @@ const Landing = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Why Beacon Attorneyes</h2>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
             <p className="text-muted-foreground leading-relaxed">
-              A trusted partner for legal matters that demand expertise, discretion, and a deep understanding of Rwanda's commercial landscape.
+              Combining global perspective with local insight to navigate Rwanda's evolving legal and commercial landscape.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
