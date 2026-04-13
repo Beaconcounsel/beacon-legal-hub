@@ -123,7 +123,6 @@ const PracticeAreasPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Our Practice Areas</h1>
             <div className="line-gold mb-6" />
             <p className="text-muted-foreground text-lg leading-relaxed">
               We are a business law firm. We advise and represent across the full spectrum of business law with a focus on strategic value, risk management, and client-centered solutions.
