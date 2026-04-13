@@ -17,7 +17,8 @@ const InternationalPage = () => (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
         <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover" loading="lazy" width={1200} height={600} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
       </div>
       <div className="container relative z-10 section-padding">
         <div className="max-w-2xl">
