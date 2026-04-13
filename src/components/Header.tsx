@@ -58,9 +58,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-20 md:h-24">
+      <div className="container flex items-center justify-between h-24 md:h-28">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-20 md:h-24 w-auto drop-shadow-[0_0_24px_hsl(48_85%_55%/0.5)] filter brightness-105" />
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -68,7 +68,7 @@ const Header = () => {
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${
                 location.pathname === "/" || aboutOpen
                   ? "text-[#1a5c6b]"
                   : "text-[#1a5c6b]/70 hover:text-[#1a5c6b]"
@@ -108,7 +108,7 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`px-3 py-2 text-sm font-medium transition-colors ${
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${
                 location.pathname === link.path
                   ? "text-[#1a5c6b]"
                   : "text-[#1a5c6b]/70 hover:text-[#1a5c6b]"
