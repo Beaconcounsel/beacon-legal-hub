@@ -6,7 +6,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const aboutDropdownItems = [
   { label: "Who We Are", path: "/home#about" },
   { label: "Our People", path: "/home#team" },
-  { label: "Industries We Serve", path: "/home#industries" },
   { label: "How to Get in Touch", path: "/contact" },
 ];
 
