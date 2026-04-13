@@ -13,7 +13,7 @@ const Footer = () => (
     <div className="container py-8">
       <div className="grid md:grid-cols-3 gap-6">
         <div>
-          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-24 md:h-28 w-auto mb-2" />
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto mb-2" />
           <p className="text-xs text-[#1a5c6b]/60 leading-relaxed">
             A Law Firm for Individuals, Businesses, Institutions, and International Investors.
           </p>
@@ -60,7 +60,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-2">
-        <p className="text-[11px] text-[#1a5c6b]/40">© {new Date().getFullYear()} Beacon Attorneyes & Consultants. All rights reserved.</p>
+        <p className="text-[11px] text-[#1a5c6b]/40">© {new Date().getFullYear()} Beacon Attorneys & Consultants. All rights reserved.</p>
         <p className="text-[11px] text-[#1a5c6b]/40">KG 190 St, RIM House, 1st Floor, Kigali, Rwanda</p>
       </div>
     </div>

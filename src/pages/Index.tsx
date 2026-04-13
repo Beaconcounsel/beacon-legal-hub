@@ -137,7 +137,7 @@ const HomePage = () => {
             </h1>
             <div className="line-gold mx-auto mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
             <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
-              Beacon Attorneyes & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
+              Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
             </p>
           </div>
         </div>
@@ -169,7 +169,7 @@ const HomePage = () => {
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Who We Are</h2>
                   <div className="line-gold mb-6" />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, serving businesses, institutions, and international clients across a broad range of legal and commercial matters.</p>
+                    <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, serving businesses, institutions, and international clients across a broad range of legal and commercial matters.</p>
                     <p>Our partnership brings deep sector expertise and a rigorous advisory approach shaped by decades of practice across multiple industries and jurisdictions.</p>
                     <p>Every engagement is partner-led, ensuring direct access to senior counsel who understand both the legal intricacies and the commercial realities of your business.</p>
                   </div>

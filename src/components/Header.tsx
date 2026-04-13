@@ -75,7 +75,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
       <div className="container flex items-center justify-between h-24 md:h-28">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-24 md:h-28 w-auto" />
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto" />
         </Link>
 
         <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1">
