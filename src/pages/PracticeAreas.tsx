@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight } from "lucide-react";
+import practiceHeroImg from "@/assets/practice-areas-hero.jpg";
 
 const practiceAreas = [
   {
@@ -172,15 +173,18 @@ const PracticeAreasPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
-        <div className="container relative z-10">
-          <div className="max-w-3xl">
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+      <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={practiceHeroImg} alt="Kigali business district" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+        </div>
+        <div className="container relative z-10 pt-20 md:pt-24 py-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">
               We are a business law firm. We advise and represent across the full spectrum of business law with a focus on strategic value, risk management, and client-centered solutions.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-md font-medium leading-relaxed text-foreground/80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               Explore our practice areas, the industries we serve, and the range of services we deliver to clients across Rwanda and beyond.
             </p>
           </div>
