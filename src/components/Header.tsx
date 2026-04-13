@@ -57,10 +57,10 @@ const Header = () => {
   }, [location.pathname, location.hash]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
+      <div className="container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-14 md:h-18 w-auto drop-shadow-[0_0_18px_hsl(48_85%_55%/0.4)] filter brightness-105" />
+          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-20 md:h-24 w-auto drop-shadow-[0_0_24px_hsl(48_85%_55%/0.5)] filter brightness-105" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -70,8 +70,8 @@ const Header = () => {
               onClick={() => setAboutOpen(!aboutOpen)}
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
                 location.pathname === "/" || aboutOpen
-                  ? "text-primary"
-                  : "text-foreground/70 hover:text-foreground"
+                  ? "text-[#1a5c6b]"
+                  : "text-[#1a5c6b]/70 hover:text-[#1a5c6b]"
               }`}
             >
               Home
@@ -110,8 +110,8 @@ const Header = () => {
               to={link.path}
               className={`px-3 py-2 text-sm font-medium transition-colors ${
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-foreground/70 hover:text-foreground"
+                  ? "text-[#1a5c6b]"
+                  : "text-[#1a5c6b]/70 hover:text-[#1a5c6b]"
               }`}
             >
               {link.label}
@@ -121,7 +121,7 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <button
-            className="lg:hidden text-foreground"
+            className="lg:hidden text-[#1a5c6b]"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -130,15 +130,15 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-t border-border">
+        <div className="lg:hidden bg-[#F8F9FB] border-t border-border">
           <nav className="container py-4 flex flex-col gap-1">
             {/* Home with sub-items */}
             <button
               onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               className={`flex items-center justify-between px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                 location.pathname === "/"
-                  ? "text-primary bg-secondary"
-                  : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
+                  ? "text-[#1a5c6b] bg-[#1a5c6b]/10"
+                  : "text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
               }`}
             >
               Home
@@ -177,8 +177,8 @@ const Header = () => {
                 onClick={() => setMobileOpen(false)}
                 className={`px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                   location.pathname === link.path
-                    ? "text-primary bg-secondary"
-                    : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
+                    ? "text-[#1a5c6b] bg-[#1a5c6b]/10"
+                    : "text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
                 }`}
               >
                 {link.label}
