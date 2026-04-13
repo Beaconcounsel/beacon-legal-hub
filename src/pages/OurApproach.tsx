@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, TrendingUp, Lightbulb, Handshake, Globe, Shield, MapPin, Scale, Heart } from "lucide-react";
 import approachHeroImg from "@/assets/our-approach-hero.jpg";
+import kigaliImg from "@/assets/kigali-skyline.jpg";
 
 const servePillars = [
   { icon: Target, title: "Results-Driven Counsel", desc: "We don't stop at recommendations. Our team drives toward actionable outcomes that create tangible value for your business." },
