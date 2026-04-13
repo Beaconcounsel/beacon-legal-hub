@@ -24,10 +24,10 @@ const ContactPage = () => {
         <div className="container">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Contact Us</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">Request a Private Consultation</h1>
-            <div className="line-gold mt-4 mb-6" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-2">Request a Consultation</h1>
+            <div className="line-gold mt-4 mb-4" />
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether you require strategic counsel on a complex transaction or ongoing advisory for your business, our partners are ready to discuss your needs in confidence.
+              Our partners are ready to discuss your needs in confidence.
             </p>
           </div>
         </div>
