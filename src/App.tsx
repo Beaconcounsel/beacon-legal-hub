@@ -5,6 +5,10 @@ import LanguageRouter from "./components/LanguageRouter";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
+import CookiePreferencesModal from "@/components/CookiePreferencesModal";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Index from "./pages/Index";
 import Landing from "./pages/Landing";
 import PracticeAreas from "./pages/PracticeAreas";
@@ -12,6 +16,9 @@ import Insights from "./pages/Insights";
 import Research from "./pages/Research";
 import OurApproach from "./pages/OurApproach";
 import Contact from "./pages/Contact";
+import CookiePolicy from "./pages/CookiePolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +34,9 @@ const AppRoutes = () => (
       <Route path="/research" element={<Research />} />
       <Route path="/our-approach" element={<OurApproach />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/cookie-policy" element={<CookiePolicy />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-use" element={<TermsOfUse />} />
 
       {/* French routes */}
       <Route path="/fr" element={<Landing />} />
@@ -36,6 +46,9 @@ const AppRoutes = () => (
       <Route path="/fr/research" element={<Research />} />
       <Route path="/fr/our-approach" element={<OurApproach />} />
       <Route path="/fr/contact" element={<Contact />} />
+      <Route path="/fr/cookie-policy" element={<CookiePolicy />} />
+      <Route path="/fr/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/fr/terms-of-use" element={<TermsOfUse />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
@@ -45,12 +58,17 @@ const AppRoutes = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <AppRoutes />
-      </BrowserRouter>
+      <CookieConsentProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <GoogleAnalytics />
+          <AppRoutes />
+          <CookieConsentBanner />
+          <CookiePreferencesModal />
+        </BrowserRouter>
+      </CookieConsentProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

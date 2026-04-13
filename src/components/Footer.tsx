@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/beacon-logo.png";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
+import { useCookieConsent } from "@/contexts/CookieConsentContext";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -13,6 +14,7 @@ const XIcon = ({ className }: { className?: string }) => (
 const Footer = () => {
   const { t } = useTranslation();
   const { localePath } = useLocalizedPath();
+  const { openPreferences } = useCookieConsent();
 
   return (
     <footer className="bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
@@ -82,9 +84,15 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-[11px] text-[#1a5c6b]/40">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
             <div className="flex items-center gap-2 text-[11px] text-[#1a5c6b]/40">
-              <span>{t("footer.privacyPolicy")}</span>
+              <Link to={localePath("/privacy-policy")} className="hover:text-[#1a5c6b] transition-colors">{t("footer.privacyPolicy")}</Link>
               <span>·</span>
-              <span>{t("footer.termsOfUse")}</span>
+              <Link to={localePath("/terms-of-use")} className="hover:text-[#1a5c6b] transition-colors">{t("footer.termsOfUse")}</Link>
+              <span>·</span>
+              <Link to={localePath("/cookie-policy")} className="hover:text-[#1a5c6b] transition-colors">{t("footer.cookiePolicy")}</Link>
+              <span>·</span>
+              <button onClick={openPreferences} className="hover:text-[#1a5c6b] transition-colors">
+                {t("footer.cookieSettings")}
+              </button>
             </div>
           </div>
         </div>

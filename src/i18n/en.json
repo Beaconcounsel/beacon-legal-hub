@@ -36,7 +36,9 @@
     },
     "disclaimer": "The information on this website is for general informational purposes only and does not constitute legal advice.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfUse": "Terms of Use"
+    "termsOfUse": "Terms of Use",
+    "cookiePolicy": "Cookie Policy",
+    "cookieSettings": "Cookie Settings"
   },
   "sticky": {
     "consult": "Consult"
@@ -304,5 +306,127 @@
     "contactDesc": "Get in touch with Beacon Attorneys & Consultants in Kigali, Rwanda.",
     "insightsTitle": "Insights | Beacon Attorneys & Consultants",
     "insightsDesc": "Legal insights and publications from Beacon Attorneys & Consultants."
+  },
+  "cookies": {
+    "bannerTitle": "We Value Your Privacy",
+    "bannerText": "We use cookies to enhance your browsing experience, serve personalised content, and analyse our traffic. You can choose which cookies you consent to by clicking the options below.",
+    "acceptAll": "Accept All",
+    "rejectNonEssential": "Reject Non-Essential",
+    "customize": "Customize Preferences",
+    "preferencesTitle": "Cookie Preferences",
+    "preferencesDesc": "Manage your cookie preferences below. Strictly necessary cookies cannot be disabled as they are essential for the website to function properly.",
+    "alwaysActive": "Always Active",
+    "cancel": "Cancel",
+    "savePreferences": "Save Preferences",
+    "categories": {
+      "necessary": {
+        "title": "Strictly Necessary",
+        "desc": "These cookies are essential for the website to function properly. They enable core features such as security, network management, and accessibility. These cookies cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "desc": "These cookies help us understand how visitors interact with the website by collecting and reporting information anonymously. This helps us improve our website and services."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "desc": "These cookies may be used to deliver relevant advertisements and track advertising campaign performance. They may be set by our advertising partners."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "whatAreCookies": {
+      "title": "What Are Cookies?",
+      "text": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to the website owners. Beacon Attorneys & Consultants uses cookies to improve your experience on our website."
+    },
+    "howWeUse": {
+      "title": "How We Use Cookies",
+      "text": "We use cookies to understand how you use our website, to remember your preferences, and to improve our services. We respect your privacy and will only use non-essential cookies with your explicit consent."
+    },
+    "categories": {
+      "title": "Cookie Categories",
+      "text": "Strictly Necessary Cookies: Essential for the website to function. These cannot be disabled.\n\nAnalytics Cookies: Help us understand website usage patterns through anonymised data collection. We use Google Analytics with IP anonymisation enabled.\n\nMarketing Cookies: May be used to deliver relevant content and measure campaign effectiveness. Currently, we do not use marketing cookies."
+    },
+    "duration": {
+      "title": "Cookie Duration",
+      "text": "Session cookies are deleted when you close your browser. Persistent cookies remain on your device for a set period or until you delete them. Our consent preferences are stored for 12 months."
+    },
+    "manage": {
+      "title": "Managing Your Cookies",
+      "text": "You can manage or withdraw your cookie consent at any time by clicking \"Cookie Settings\" in the website footer. You can also configure your browser to refuse cookies, though this may affect website functionality."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "text": "We may update this Cookie Policy from time to time to reflect changes in our practices or for legal, regulatory, or operational reasons. We encourage you to review this page periodically."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "infoWeCollect": {
+      "title": "Information We Collect",
+      "text": "We may collect personal information that you voluntarily provide when you contact us, such as your name, email address, phone number, and the content of your enquiry. We also collect anonymised usage data through cookies when you have given consent."
+    },
+    "howWeUseInfo": {
+      "title": "How We Use Your Information",
+      "text": "We use the information we collect to:\n• Respond to your enquiries and provide legal services\n• Improve our website and user experience\n• Analyse website traffic and usage patterns\n• Comply with legal and regulatory obligations"
+    },
+    "analytics": {
+      "title": "Analytics and Tracking",
+      "text": "With your consent, we use Google Analytics to collect anonymised data about website usage. IP addresses are anonymised, and no personally identifiable information is collected through analytics. You can manage your analytics preferences via our Cookie Settings."
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "text": "We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. However, no method of transmission over the internet is completely secure."
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "text": "You have the right to:\n• Access the personal data we hold about you\n• Request correction of inaccurate data\n• Request deletion of your data\n• Withdraw consent for data processing\n• Object to data processing\n\nTo exercise any of these rights, please contact us at info@beaconattorneys.rw."
+    },
+    "thirdParty": {
+      "title": "Third-Party Services",
+      "text": "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "text": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "text": "If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us:\n\nBeacon Attorneys & Consultants\nKG 190 St, RIM House, 1st Floor\nKigali, Rwanda\nEmail: info@beaconattorneys.rw\nPhone: +250 788 55 96 03"
+    }
+  },
+  "termsOfUse": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: {{date}}",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "text": "By accessing and using this website, you accept and agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please discontinue use of the website immediately."
+    },
+    "useOfSite": {
+      "title": "Use of the Website",
+      "text": "This website is provided for general informational purposes about Beacon Attorneys & Consultants and our legal services. You agree to use the website only for lawful purposes and in a manner that does not infringe upon the rights of others."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "text": "All content on this website, including text, graphics, logos, images, and software, is the property of Beacon Attorneys & Consultants and is protected by applicable intellectual property laws. Unauthorised reproduction, distribution, or modification is prohibited."
+    },
+    "noLegalAdvice": {
+      "title": "No Legal Advice",
+      "text": "The information provided on this website does not constitute legal advice. No attorney-client relationship is formed by accessing or using this website. For specific legal advice, please contact us directly to arrange a consultation."
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "text": "Beacon Attorneys & Consultants shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this website or reliance on any information provided herein."
+    },
+    "governingLaw": {
+      "title": "Governing Law",
+      "text": "These Terms of Use shall be governed by and construed in accordance with the laws of the Republic of Rwanda. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Rwanda."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For questions regarding these Terms of Use, please contact us at info@beaconattorneys.rw."
+    }
   }
 }
