@@ -22,10 +22,7 @@ const ContactPage = () => {
       {/* Hero */}
       <section className="section-padding pb-0">
         <div className="container">
-          <div className="max-w-3xl mb-16">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Contact Us</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">Request a Consultation</h1>
-            <div className="line-gold mt-4 mb-4" />
+          <div className="max-w-3xl mb-8">
             <p className="text-muted-foreground text-lg leading-relaxed">
               Our partners are ready to discuss your needs in confidence.
             </p>

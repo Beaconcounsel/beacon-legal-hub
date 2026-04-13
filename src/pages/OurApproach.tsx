@@ -40,8 +40,6 @@ const OurApproachPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Our Approach</h1>
-            <div className="line-gold mx-auto mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
               At Beacon Attorneys, we bring more than legal expertise—we bring executive insight. Our founding partners have held senior business and legal leadership roles across multiple industries and jurisdictions.
             </p>
