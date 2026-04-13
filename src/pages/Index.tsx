@@ -131,27 +131,14 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
         <div className="container relative z-10 py-20">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 animate-fade-in text-foreground">
-
               Law Firm for Individuals, Businesses, Institutions, and International Investors
             </h1>
-            <div className="line-gold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            <div className="line-gold mx-auto mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
+            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
               Beacon Attorneyes & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <Link to="/contact">
-                <Button variant="gold" size="lg" className="gap-2">
-                  Request a Private Consultation <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              <a href="tel:+250780000000">
-                <Button variant="ghost" size="lg" className="gap-2 text-primary">
-                  <Phone className="w-4 h-4" /> Call Now
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
       </section>
