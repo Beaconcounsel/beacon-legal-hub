@@ -5,32 +5,12 @@ import logo from "@/assets/beacon-logo.png";
 const Footer = () => (
   <footer className="bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
     <div className="container py-8">
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         <div>
           <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-24 md:h-28 w-auto mb-2" />
           <p className="text-xs text-[#1a5c6b]/60 leading-relaxed">
             A Law Firm for Individuals, Businesses, Institutions, and International Investors.
           </p>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Practice Areas</h4>
-          <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
-            {["Corporate & Commercial", "Banking & Finance", "Dispute Resolution", "Real Estate", "Energy & Infrastructure", "Tax & Structuring"].map((a) => (
-              <li key={a}><Link to="/practice-areas" className="hover:text-[#1a5c6b] transition-colors">{a}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Firm</h4>
-          <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
-            <li><Link to="/home#about" className="hover:text-[#1a5c6b] transition-colors">About Us</Link></li>
-            <li><Link to="/our-approach" className="hover:text-[#1a5c6b] transition-colors">Our Approach</Link></li>
-            <li><Link to="/our-approach#international" className="hover:text-[#1a5c6b] transition-colors">International Clients</Link></li>
-            <li><Link to="/research" className="hover:text-[#1a5c6b] transition-colors">Research & Training</Link></li>
-            <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Contact</Link></li>
-          </ul>
         </div>
 
         <div>
@@ -48,6 +28,14 @@ const Footer = () => (
               <Mail className="w-3.5 h-3.5 text-[#1a5c6b]" />
               <a href="mailto:info@beaconlaw.rw" className="hover:text-[#1a5c6b] transition-colors">info@beaconlaw.rw</a>
             </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Careers</h4>
+          <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
+            <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Join Our Team</Link></li>
+            <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Internship Programme</Link></li>
           </ul>
         </div>
       </div>

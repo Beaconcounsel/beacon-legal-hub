@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat } from "lucide-react";
+import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight } from "lucide-react";
 
 const practiceAreas = [
   {
@@ -32,7 +32,7 @@ const practiceAreas = [
     clients: "Energy companies, infrastructure developers, government agencies, investors",
   },
   {
-    title: "Banking, Finance & Investment Law",
+    title: "Banking & Financial Services",
     description: "We structure and advise on project finance, banking regulations, securities, fund formation, and cross-border investment transactions with precision and speed.",
     clients: "Banks, investment funds, private equity, institutional investors",
   },
@@ -104,6 +104,57 @@ const ourServices = [
   { icon: ClipboardList, title: "Legal Transaction Documentation", desc: "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation." },
 ];
 
+const ServicesCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  const total = ourServices.length;
+
+  const next = () => setCurrent((c) => (c + 1) % total);
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {ourServices.map((s) => (
+            <div key={s.title} className="w-full flex-shrink-0 px-2">
+              <div className="bg-card border border-border rounded-xl p-10 md:p-14 text-center max-w-2xl mx-auto">
+                <s.icon className="w-12 h-12 text-primary mb-6 mx-auto" />
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 font-serif">{s.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-center gap-6 mt-8">
+        <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
+          <ChevronLeft className="w-5 h-5 text-foreground" />
+        </button>
+        <div className="flex gap-2">
+          {ourServices.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-primary" : "bg-border hover:bg-primary/40"}`}
+            />
+          ))}
+        </div>
+        <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
+          <ChevronRight className="w-5 h-5 text-foreground" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const PracticeAreasPage = () => {
   const location = useLocation();
 
@@ -119,13 +170,18 @@ const PracticeAreasPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
         <div className="container relative z-10">
           <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-4xl font-bold font-serif text-foreground mb-4">Areas of Expertise</h1>
             <div className="line-gold mb-6" />
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               We are a business law firm. We advise and represent across the full spectrum of business law with a focus on strategic value, risk management, and client-centered solutions.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Explore our practice areas, the industries we serve, and the range of services we deliver to clients across Rwanda and beyond.
             </p>
           </div>
         </div>
@@ -134,8 +190,6 @@ const PracticeAreasPage = () => {
       {/* Areas of Expertise */}
       <section id="expertise" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Areas of Expertise</h2>
-          <div className="line-gold mb-12" />
           <div className="space-y-8">
             {practiceAreas.map((area, i) => (
               <div key={i} className="bg-card border border-border rounded-lg p-8 md:p-10 hover:border-primary/30 transition-colors">
@@ -192,25 +246,19 @@ const PracticeAreasPage = () => {
         </div>
       </section>
 
-      {/* Our Services */}
+      {/* Our Services - Carousel */}
       <section id="services" className="section-padding scroll-mt-28">
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Our Services</h2>
           <div className="line-gold mb-12" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {ourServices.map((s) => (
-              <div key={s.title} className="bg-card border border-border rounded-xl p-8 hover:border-primary/30 transition-colors">
-                <s.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
+          <ServicesCarousel />
+          <div className="text-center mt-10">
+            <Link to="/contact">
+              <Button variant="gold" size="lg" className="gap-2">
+                Discuss Your Needs <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
-          <Link to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              Discuss Your Needs <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
         </div>
       </section>
     </Layout>
