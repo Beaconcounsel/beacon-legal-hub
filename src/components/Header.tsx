@@ -122,10 +122,10 @@ const Header = () => {
               ) : (
                 <Link
                   to={link.path}
-                  className={`px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${
+                  className={`px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors ${
                     location.pathname === link.path
-                      ? "text-[#1a5c6b]"
-                      : "text-[#1a5c6b]/70 hover:text-[#1a5c6b]"
+                      ? "text-[#0d3d4a]"
+                      : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
                   }`}
                 >
                   {link.label}
