@@ -94,8 +94,19 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
+const fallback: CookieConsentContextType = {
+  consentGiven: false,
+  preferences: defaultPreferences,
+  showBanner: false,
+  showPreferences: false,
+  acceptAll: () => {},
+  rejectNonEssential: () => {},
+  savePreferences: () => {},
+  openPreferences: () => {},
+  closePreferences: () => {},
+};
+
 export const useCookieConsent = () => {
   const ctx = useContext(CookieConsentContext);
-  if (!ctx) throw new Error("useCookieConsent must be used within CookieConsentProvider");
-  return ctx;
+  return ctx ?? fallback;
 };
