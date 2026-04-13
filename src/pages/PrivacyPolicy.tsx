@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
 
   return (
     <Layout>
-      <SEOHead page="privacyPolicy" />
+      <SEOHead titleKey="privacyPolicy.title" descKey="privacyPolicy.infoWeCollect.text" />
       <div className="bg-[#F8F9FB] min-h-screen">
         <div className="container max-w-3xl py-16 md:py-24">
           <h1 className="text-2xl md:text-3xl font-bold text-[#0d3d4a] mb-8 font-playfair">

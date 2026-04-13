@@ -16,7 +16,7 @@ const CookiePolicy = () => {
 
   return (
     <Layout>
-      <SEOHead page="cookiePolicy" />
+      <SEOHead titleKey="cookiePolicy.title" descKey="cookiePolicy.whatAreCookies.text" />
       <div className="bg-[#F8F9FB] min-h-screen">
         <div className="container max-w-3xl py-16 md:py-24">
           <h1 className="text-2xl md:text-3xl font-bold text-[#0d3d4a] mb-8 font-playfair">
