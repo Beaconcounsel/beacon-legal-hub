@@ -36,8 +36,8 @@ const Landing = () => {
 
         <div className="container relative z-10 pt-20 md:pt-24 py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6">
-              Welcome to Beacon Attorneys
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">
+              Welcome to Beacon Attorneyes
             </h1>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
             <p className="text-lg md:text-xl lg:text-2xl font-medium mb-10 leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
@@ -65,8 +65,8 @@ const Landing = () => {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Why Beacon Attorneys</h2>
-            <div className="h-1 w-16 bg-primary rounded-full mx-auto mt-4 mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Why Beacon Attorneyes</h2>
+            <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
             <p className="text-muted-foreground leading-relaxed">
               A trusted partner for legal matters that demand expertise, discretion, and a deep understanding of Rwanda's commercial landscape.
             </p>
@@ -94,8 +94,8 @@ const Landing = () => {
           <div className="relative max-w-2xl mx-auto text-center">
             <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
             <div className="relative bg-background border border-border rounded-xl p-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Ready to Discuss Your Matter?</h2>
-              <div className="h-1 w-16 bg-primary rounded-full mx-auto mt-4 mb-6" />
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">Ready to Discuss Your Matter?</h2>
+              <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Contact us for a confidential consultation. Our partners are ready to advise on your most complex legal and business challenges.
               </p>
