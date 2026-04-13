@@ -19,13 +19,13 @@ const Footer = () => {
   return (
     <footer className="bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
       <div className="container py-8">
+        <p className="text-xs text-[#1a5c6b]/60 leading-relaxed mb-6">
+          {t("footer.tagline")}
+        </p>
+
         <div className="grid md:grid-cols-4 gap-6">
           <div>
-            <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto mb-2" />
-            <p className="text-xs text-[#1a5c6b]/60 leading-relaxed">
-              {t("footer.tagline")}
-            </p>
-            <div className="flex items-center gap-3 mt-3">
+            <div className="flex items-center gap-3 mt-1">
               <a href="https://www.linkedin.com/company/beaconattorneys" target="_blank" rel="noopener noreferrer" className="text-[#1a5c6b]/60 hover:text-[#1a5c6b] transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -79,8 +79,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4 space-y-2">
-          <p className="text-[11px] text-[#1a5c6b]/40 italic">{t("footer.disclaimer")}</p>
+        <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-[11px] text-[#1a5c6b]/40">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
             <div className="flex items-center gap-2 text-[11px] text-[#1a5c6b]/40">
