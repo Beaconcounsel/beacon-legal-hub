@@ -16,6 +16,12 @@ const approachDropdownItems = [
   { label: "Pro Bono Services", path: "/our-approach#pro-bono" },
 ];
 
+const practiceDropdownItems = [
+  { label: "Areas of Expertise", path: "/practice-areas#expertise" },
+  { label: "Industries We Serve", path: "/practice-areas#industries" },
+  { label: "Our Services", path: "/practice-areas#services" },
+];
+
 const researchDropdownItems = [
   { label: "Research", path: "/research#research" },
   { label: "Training", path: "/research#training" },
@@ -24,9 +30,9 @@ const researchDropdownItems = [
 
 const navLinks = [
   { label: "About Us", path: "/", dropdown: aboutDropdownItems },
-  { label: "Practice Areas", path: "/practice-areas" },
+  { label: "Our Practice Areas", path: "/practice-areas", dropdown: practiceDropdownItems },
   { label: "Our Approach", path: "/our-approach", dropdown: approachDropdownItems },
-  { label: "Research & Training", path: "/research", dropdown: researchDropdownItems },
+  { label: "Research & Development", path: "/research", dropdown: researchDropdownItems },
 ];
 
 const Header = () => {

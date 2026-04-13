@@ -23,7 +23,7 @@ const ResearchPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Research & Training</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Research & Development</h1>
             <div className="line-gold mx-auto mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
               Beacon Attorneyes advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
