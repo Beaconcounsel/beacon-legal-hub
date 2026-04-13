@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import Landing from "./pages/Landing";
 
 import PracticeAreas from "./pages/PracticeAreas";
-import International from "./pages/International";
+
 
 import Insights from "./pages/Insights";
 import Research from "./pages/Research";
@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/home" element={<Index />} />
           
           <Route path="/practice-areas" element={<PracticeAreas />} />
-          <Route path="/international" element={<International />} />
+          
           
           <Route path="/insights" element={<Insights />} />
           <Route path="/research" element={<Research />} />
