@@ -25,11 +25,11 @@ const Footer = () => (
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1a5c6b] mb-2">Firm</h4>
           <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
-            <li><Link to="/#about" className="hover:text-[#1a5c6b] transition-colors">About Us</Link></li>
-            <li><Link to="/insights" className="hover:text-[#1a5c6b] transition-colors">Insights</Link></li>
-            <li><Link to="/international" className="hover:text-[#1a5c6b] transition-colors">International Clients</Link></li>
+            <li><Link to="/home#about" className="hover:text-[#1a5c6b] transition-colors">About Us</Link></li>
+            <li><Link to="/our-approach" className="hover:text-[#1a5c6b] transition-colors">Our Approach</Link></li>
+            <li><Link to="/our-approach#international" className="hover:text-[#1a5c6b] transition-colors">International Clients</Link></li>
+            <li><Link to="/research" className="hover:text-[#1a5c6b] transition-colors">Research & Training</Link></li>
             <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Contact</Link></li>
-            <li><Link to="/contact" className="hover:text-[#1a5c6b] transition-colors">Careers</Link></li>
           </ul>
         </div>
 
@@ -53,7 +53,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-2">
-        <p className="text-[11px] text-[#1a5c6b]/40">© {new Date().getFullYear()} Beacon Attorneys & Consultants. All rights reserved.</p>
+        <p className="text-[11px] text-[#1a5c6b]/40">© {new Date().getFullYear()} Beacon Attorneyes & Consultants. All rights reserved.</p>
         <p className="text-[11px] text-[#1a5c6b]/40">Kigali, Rwanda</p>
       </div>
     </div>
