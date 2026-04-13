@@ -14,8 +14,8 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "Practice Areas", path: "/practice-areas" },
   { label: "International Clients", path: "/international" },
-  { label: "Consultancy & Training", path: "/research" },
-  { label: "Contact Us", path: "/contact" },
+  { label: "Research & Training", path: "/research" },
+  { label: "Our Approach", path: "/our-approach" },
 ];
 
 const Header = () => {
@@ -60,7 +60,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-14 md:h-16 w-auto drop-shadow-[0_0_12px_hsl(48_85%_55%/0.3)]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

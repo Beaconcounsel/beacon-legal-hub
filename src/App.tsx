@@ -12,6 +12,7 @@ import International from "./pages/International";
 
 import Insights from "./pages/Insights";
 import Research from "./pages/Research";
+import OurApproach from "./pages/OurApproach";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +34,7 @@ const App = () => (
           
           <Route path="/insights" element={<Insights />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/our-approach" element={<OurApproach />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
