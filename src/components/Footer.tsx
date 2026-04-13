@@ -65,9 +65,6 @@ const Footer = () => {
               <li><a href="https://www.rdb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rdb")}</a></li>
               <li><a href="https://www.rgb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rgb")}</a></li>
               <li><a href="https://www.rra.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rra")}</a></li>
-              <li><a href="https://www.rib.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rib")}</a></li>
-              <li><a href="https://www.nppa.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.nppa")}</a></li>
-              <li><a href="https://www.primature.gov.rw/index.php?id=2" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.gazette")}</a></li>
             </ul>
           </div>
 
@@ -80,9 +77,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="text-[11px] text-[#1a5c6b]/40">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
-          <p className="text-[11px] text-[#1a5c6b]/40">{t("footer.address")}</p>
+        <div className="border-t border-[#1a5c6b]/10 mt-6 pt-4 space-y-2">
+          <p className="text-[11px] text-[#1a5c6b]/40 italic">{t("footer.disclaimer")}</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            <p className="text-[11px] text-[#1a5c6b]/40">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
+            <div className="flex items-center gap-2 text-[11px] text-[#1a5c6b]/40">
+              <span>{t("footer.privacyPolicy")}</span>
+              <span>·</span>
+              <span>{t("footer.termsOfUse")}</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -32,11 +32,11 @@
       "bar": "Barreau du Rwanda",
       "rdb": "Office Rwandais de Développement",
       "rgb": "Office Rwandais de Gouvernance",
-      "rra": "Office Rwandais des Recettes",
-      "rib": "Bureau Rwandais d'Investigation",
-      "nppa": "Autorité Nationale des Poursuites Publiques",
-      "gazette": "Journal Officiel"
-    }
+      "rra": "Office Rwandais des Recettes"
+    },
+    "disclaimer": "Les informations contenues sur ce site sont fournies à titre informatif uniquement et ne constituent pas un avis juridique.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfUse": "Conditions d'Utilisation"
   },
   "sticky": {
     "consult": "Consulter"
