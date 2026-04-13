@@ -27,14 +27,14 @@ const ResearchPage = () => (
           {programs.map((p) => (
             <div key={p.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
               <p.icon className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 font-serif">{p.title}</h3>
+              <h3 className="text-lg font-semibold mb-3 font-heading">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="bg-card border border-border rounded-lg p-10 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4 font-serif">Our Approach</h2>
+          <h2 className="text-2xl font-bold mb-4 font-heading">Our Approach</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>Every training program is designed with practical application in mind. We translate complex legal frameworks into actionable knowledge, ensuring participants can immediately apply what they learn.</p>
             <p>Our programs contribute to Rwanda's sustainable development goals by building legal awareness, promoting compliance culture, and strengthening institutional capacity at every level.</p>

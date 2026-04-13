@@ -28,7 +28,7 @@ const OurApproachPage = () => (
           {pillars.map((p) => (
             <div key={p.title} className="bg-card border border-border rounded-xl p-8 hover:border-primary/30 transition-colors">
               <p.icon className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 font-serif">{p.title}</h3>
+              <h3 className="text-lg font-semibold mb-3 font-heading">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
             </div>
           ))}
