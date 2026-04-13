@@ -59,7 +59,7 @@ const InsightsPage = () => (
                   <Calendar className="w-3 h-3" /> {article.date}
                 </span>
               </div>
-              <h2 className="text-xl md:text-2xl font-bold mb-3 font-heading group-hover:text-primary transition-colors">{article.title}</h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-3 font-serif group-hover:text-primary transition-colors">{article.title}</h2>
               <p className="text-muted-foreground leading-relaxed">{article.excerpt}</p>
             </article>
           ))}
