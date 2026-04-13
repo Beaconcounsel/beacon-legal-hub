@@ -32,11 +32,11 @@
       "bar": "Rwanda Bar Association",
       "rdb": "Rwanda Development Board",
       "rgb": "Rwanda Governance Board",
-      "rra": "Rwanda Revenue Authority",
-      "rib": "Rwanda Investigation Bureau",
-      "nppa": "National Public Prosecution Authority",
-      "gazette": "Official Gazette"
-    }
+      "rra": "Rwanda Revenue Authority"
+    },
+    "disclaimer": "The information on this website is for general informational purposes only and does not constitute legal advice.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use"
   },
   "sticky": {
     "consult": "Consult"

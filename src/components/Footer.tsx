@@ -65,9 +65,6 @@ const Footer = () => {
               <li><a href="https://www.rdb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rdb")}</a></li>
               <li><a href="https://www.rgb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rgb")}</a></li>
               <li><a href="https://www.rra.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rra")}</a></li>
-              <li><a href="https://www.rib.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rib")}</a></li>
-              <li><a href="https://www.nppa.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.nppa")}</a></li>
-              <li><a href="https://www.primature.gov.rw/index.php?id=2" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.gazette")}</a></li>
             </ul>
           </div>
 
