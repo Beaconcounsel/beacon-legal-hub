@@ -21,7 +21,7 @@ const Landing = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImg}
@@ -34,9 +34,9 @@ const Landing = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10 pt-20 md:pt-24 py-20">
+        <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg md:text-xl lg:text-2xl font-medium mb-10 leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <p className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               With global experience and a sharp understanding of Rwanda's legal and business landscape, we deliver legal solutions that work—locally and beyond.
             </p>
           </div>

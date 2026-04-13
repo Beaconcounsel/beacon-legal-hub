@@ -20,13 +20,13 @@ const ResearchPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={researchHeroImg} alt="Legal professionals group photo" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 pt-20 md:pt-24 py-20">
+        <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               Beacon Attorneys advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
