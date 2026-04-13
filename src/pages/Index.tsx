@@ -132,11 +132,7 @@ const HomePage = () => {
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 animate-fade-in text-foreground">
-              Law Firm for Individuals, Businesses, Institutions, and International Investors
-            </h1>
-            <div className="line-gold mx-auto mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
-            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">
               Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
             </p>
           </div>
