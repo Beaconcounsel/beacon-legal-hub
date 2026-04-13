@@ -112,7 +112,7 @@ const ServicesCarousel = () => {
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 12000);
     return () => clearInterval(timer);
   }, []);
 
