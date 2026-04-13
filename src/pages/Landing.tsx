@@ -34,7 +34,7 @@ const Landing = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
         </div>
 
-        <div className="container relative z-10 pt-32 md:pt-40 py-20">
+        <div className="container relative z-10 pt-20 md:pt-24 py-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">
