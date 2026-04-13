@@ -36,7 +36,9 @@
     },
     "disclaimer": "Les informations contenues sur ce site sont fournies à titre informatif uniquement et ne constituent pas un avis juridique.",
     "privacyPolicy": "Politique de Confidentialité",
-    "termsOfUse": "Conditions d'Utilisation"
+    "termsOfUse": "Conditions d'Utilisation",
+    "cookiePolicy": "Politique de Cookies",
+    "cookieSettings": "Paramètres des Cookies"
   },
   "sticky": {
     "consult": "Consulter"
@@ -472,5 +474,127 @@
     "contactDesc": "Prenez contact avec Beacon Attorneyes & Consultants à Kigali, Rwanda.",
     "insightsTitle": "Analyses | Beacon Attorneyes & Consultants",
     "insightsDesc": "Analyses juridiques et publications de Beacon Attorneyes & Consultants."
+  },
+  "cookies": {
+    "bannerTitle": "Nous Respectons Votre Vie Privée",
+    "bannerText": "Nous utilisons des cookies pour améliorer votre expérience de navigation, proposer du contenu personnalisé et analyser notre trafic. Vous pouvez choisir les cookies que vous acceptez en cliquant sur les options ci-dessous.",
+    "acceptAll": "Tout Accepter",
+    "rejectNonEssential": "Refuser les Non-Essentiels",
+    "customize": "Personnaliser",
+    "preferencesTitle": "Préférences de Cookies",
+    "preferencesDesc": "Gérez vos préférences de cookies ci-dessous. Les cookies strictement nécessaires ne peuvent pas être désactivés car ils sont essentiels au bon fonctionnement du site.",
+    "alwaysActive": "Toujours Actif",
+    "cancel": "Annuler",
+    "savePreferences": "Enregistrer",
+    "categories": {
+      "necessary": {
+        "title": "Strictement Nécessaires",
+        "desc": "Ces cookies sont essentiels au fonctionnement du site. Ils permettent des fonctionnalités de base telles que la sécurité, la gestion du réseau et l'accessibilité. Ils ne peuvent pas être désactivés."
+      },
+      "analytics": {
+        "title": "Analytiques",
+        "desc": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site en collectant et rapportant des informations de manière anonyme. Cela nous permet d'améliorer notre site et nos services."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "desc": "Ces cookies peuvent être utilisés pour diffuser des publicités pertinentes et mesurer l'efficacité des campagnes publicitaires. Ils peuvent être définis par nos partenaires publicitaires."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "title": "Politique de Cookies",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "whatAreCookies": {
+      "title": "Qu'est-ce qu'un Cookie ?",
+      "text": "Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez un site web. Ils sont largement utilisés pour assurer le bon fonctionnement des sites et fournir des informations aux propriétaires. Beacon Attorneyes & Consultants utilise des cookies pour améliorer votre expérience sur notre site."
+    },
+    "howWeUse": {
+      "title": "Comment Nous Utilisons les Cookies",
+      "text": "Nous utilisons des cookies pour comprendre comment vous utilisez notre site, mémoriser vos préférences et améliorer nos services. Nous respectons votre vie privée et n'utiliserons les cookies non essentiels qu'avec votre consentement explicite."
+    },
+    "categories": {
+      "title": "Catégories de Cookies",
+      "text": "Cookies Strictement Nécessaires : Essentiels au fonctionnement du site. Ils ne peuvent pas être désactivés.\n\nCookies Analytiques : Nous aident à comprendre les habitudes d'utilisation du site grâce à une collecte de données anonymisées. Nous utilisons Google Analytics avec l'anonymisation des adresses IP.\n\nCookies Marketing : Peuvent être utilisés pour diffuser du contenu pertinent et mesurer l'efficacité des campagnes. Actuellement, nous n'utilisons pas de cookies marketing."
+    },
+    "duration": {
+      "title": "Durée des Cookies",
+      "text": "Les cookies de session sont supprimés lorsque vous fermez votre navigateur. Les cookies persistants restent sur votre appareil pendant une durée définie ou jusqu'à leur suppression. Vos préférences de consentement sont conservées pendant 12 mois."
+    },
+    "manage": {
+      "title": "Gestion de Vos Cookies",
+      "text": "Vous pouvez gérer ou retirer votre consentement aux cookies à tout moment en cliquant sur « Paramètres des Cookies » dans le pied de page du site. Vous pouvez également configurer votre navigateur pour refuser les cookies, bien que cela puisse affecter le fonctionnement du site."
+    },
+    "changes": {
+      "title": "Modifications de Cette Politique",
+      "text": "Nous pouvons mettre à jour cette Politique de Cookies de temps à autre pour refléter les changements dans nos pratiques ou pour des raisons juridiques, réglementaires ou opérationnelles. Nous vous encourageons à consulter cette page régulièrement."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "infoWeCollect": {
+      "title": "Informations que Nous Collectons",
+      "text": "Nous pouvons collecter des informations personnelles que vous fournissez volontairement lorsque vous nous contactez, telles que votre nom, adresse e-mail, numéro de téléphone et le contenu de votre demande. Nous collectons également des données d'utilisation anonymisées via des cookies lorsque vous avez donné votre consentement."
+    },
+    "howWeUseInfo": {
+      "title": "Comment Nous Utilisons Vos Informations",
+      "text": "Nous utilisons les informations collectées pour :\n• Répondre à vos demandes et fournir des services juridiques\n• Améliorer notre site et votre expérience utilisateur\n• Analyser le trafic et les habitudes d'utilisation du site\n• Respecter nos obligations légales et réglementaires"
+    },
+    "analytics": {
+      "title": "Analytiques et Suivi",
+      "text": "Avec votre consentement, nous utilisons Google Analytics pour collecter des données anonymisées sur l'utilisation du site. Les adresses IP sont anonymisées et aucune information personnellement identifiable n'est collectée via les analytiques. Vous pouvez gérer vos préférences via nos Paramètres des Cookies."
+    },
+    "dataSecurity": {
+      "title": "Sécurité des Données",
+      "text": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès, modification, divulgation ou destruction non autorisés. Toutefois, aucune méthode de transmission sur Internet n'est totalement sécurisée."
+    },
+    "yourRights": {
+      "title": "Vos Droits",
+      "text": "Vous avez le droit de :\n• Accéder aux données personnelles que nous détenons à votre sujet\n• Demander la correction de données inexactes\n• Demander la suppression de vos données\n• Retirer votre consentement au traitement des données\n• Vous opposer au traitement des données\n\nPour exercer l'un de ces droits, veuillez nous contacter à info@beaconattorneys.rw."
+    },
+    "thirdParty": {
+      "title": "Services Tiers",
+      "text": "Notre site peut contenir des liens vers des sites web tiers. Nous ne sommes pas responsables des pratiques de confidentialité de ces sites externes. Nous vous encourageons à consulter leurs politiques de confidentialité avant de fournir toute information personnelle."
+    },
+    "changes": {
+      "title": "Modifications de Cette Politique",
+      "text": "Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. Toute modification sera publiée sur cette page avec une date de révision mise à jour."
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "text": "Pour toute question concernant cette Politique de Confidentialité ou pour exercer vos droits, veuillez nous contacter :\n\nBeacon Attorneyes & Consultants\nKG 190 St, RIM House, 1er étage\nKigali, Rwanda\nE-mail : info@beaconattorneys.rw\nTéléphone : +250 788 55 96 03"
+    }
+  },
+  "termsOfUse": {
+    "title": "Conditions d'Utilisation",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "acceptance": {
+      "title": "Acceptation des Conditions",
+      "text": "En accédant à ce site et en l'utilisant, vous acceptez d'être lié par les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec une partie de ces conditions, veuillez cesser d'utiliser le site immédiatement."
+    },
+    "useOfSite": {
+      "title": "Utilisation du Site",
+      "text": "Ce site est fourni à des fins d'information générale sur Beacon Attorneyes & Consultants et nos services juridiques. Vous vous engagez à utiliser le site uniquement à des fins licites et de manière à ne pas porter atteinte aux droits d'autrui."
+    },
+    "intellectualProperty": {
+      "title": "Propriété Intellectuelle",
+      "text": "Tout le contenu de ce site, y compris les textes, graphiques, logos, images et logiciels, est la propriété de Beacon Attorneyes & Consultants et est protégé par les lois applicables en matière de propriété intellectuelle. Toute reproduction, distribution ou modification non autorisée est interdite."
+    },
+    "noLegalAdvice": {
+      "title": "Absence de Conseil Juridique",
+      "text": "Les informations fournies sur ce site ne constituent pas un avis juridique. Aucune relation avocat-client n'est établie par l'accès ou l'utilisation de ce site. Pour un conseil juridique spécifique, veuillez nous contacter directement afin d'organiser une consultation."
+    },
+    "liability": {
+      "title": "Limitation de Responsabilité",
+      "text": "Beacon Attorneyes & Consultants ne saurait être tenu responsable de tout dommage direct, indirect, accessoire ou consécutif découlant de l'utilisation de ce site ou de la confiance accordée aux informations fournies."
+    },
+    "governingLaw": {
+      "title": "Droit Applicable",
+      "text": "Les présentes Conditions d'Utilisation sont régies et interprétées conformément aux lois de la République du Rwanda. Tout litige découlant de ces conditions sera soumis à la compétence exclusive des tribunaux du Rwanda."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Pour toute question concernant les présentes Conditions d'Utilisation, veuillez nous contacter à info@beaconattorneys.rw."
+    }
   }
 }
