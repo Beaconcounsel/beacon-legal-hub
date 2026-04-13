@@ -498,7 +498,7 @@ const HomePage = () => {
                               Book a Consultation <ArrowRight className="w-4 h-4" />
                             </Button>
                           </Link>
-                          <a href="mailto:contact@beaconlaw.rw">
+                          <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
                               <Mail className="w-4 h-4" /> Email Daniel
                             </Button>
@@ -604,7 +604,7 @@ const HomePage = () => {
                     Request a Private Consultation <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-                <a href="tel:+250780000000">
+                <a href="tel:+250788559603">
                   <Button variant="gold-outline" size="lg" className="gap-2">
                     <Phone className="w-4 h-4" /> Call Now
                   </Button>
