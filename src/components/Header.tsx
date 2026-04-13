@@ -59,13 +59,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex flex-col items-start">
-          <span className="text-gradient-gold font-serif text-xl md:text-2xl font-bold tracking-tight leading-none">
-            Beacon
-          </span>
-          <span className="text-foreground/70 text-[7px] md:text-[9px] font-sans italic normal-case tracking-[0.1em] leading-none mt-0.5">
-            Attorneys & Consultants
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-10 md:h-12 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

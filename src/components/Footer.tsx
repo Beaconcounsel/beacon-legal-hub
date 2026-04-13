@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/bac-logo.jpg";
 
 const Footer = () => (
   <footer className="bg-card border-t border-border">
     <div className="container section-padding">
       <div className="grid md:grid-cols-4 gap-12">
         <div className="md:col-span-1">
-          <span className="text-gradient-gold font-serif text-2xl font-bold">Beacon Attorneys</span>
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-12 w-auto mb-3" />
           <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
             A Law Firm for Individuals, Businesses, Institutions, and International Investors.
           </p>
