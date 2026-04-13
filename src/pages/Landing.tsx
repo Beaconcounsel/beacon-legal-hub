@@ -43,18 +43,6 @@ const Landing = () => {
             <p className="text-lg md:text-xl lg:text-2xl font-medium mb-10 leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               With global experience and a sharp understanding of Rwanda's legal and business landscape, we deliver legal solutions that work—locally and beyond.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact">
-                <Button variant="gold" size="lg" className="gap-2 text-base">
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              <a href="tel:+250780000000">
-                <Button variant="ghost" size="lg" className="gap-2 text-primary text-base">
-                  <Phone className="w-4 h-4" /> Call Now
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
       </section>
