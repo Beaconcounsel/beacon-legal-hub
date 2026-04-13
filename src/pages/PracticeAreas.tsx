@@ -106,18 +106,20 @@ const ourServices = [
 
 const ServicesCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
   const total = ourServices.length;
 
   const next = () => setCurrent((c) => (c + 1) % total);
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
 
   useEffect(() => {
+    if (paused) return;
     const timer = setInterval(next, 12000);
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   return (
-    <div className="relative">
+    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
