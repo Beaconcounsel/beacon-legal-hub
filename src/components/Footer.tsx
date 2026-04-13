@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
       <div className="container py-8">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-4 gap-6">
           <div>
             <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto mb-2" />
             <p className="text-xs text-[#1a5c6b]/60 leading-relaxed">
@@ -53,6 +53,21 @@ const Footer = () => {
                 <Mail className="w-3.5 h-3.5 text-[#1a5c6b]" />
                 <a href="mailto:info@beaconattorneys.rw" className="hover:text-[#1a5c6b] transition-colors">info@beaconattorneys.rw</a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-[#0d3d4a] mb-2">{t("footer.legalResources")}</h4>
+            <ul className="space-y-1 text-xs text-[#1a5c6b]/60">
+              <li><a href="https://www.minijust.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.minijust")}</a></li>
+              <li><a href="https://www.judiciary.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.judiciary")}</a></li>
+              <li><a href="https://www.rwandabar.org.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.bar")}</a></li>
+              <li><a href="https://www.rdb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rdb")}</a></li>
+              <li><a href="https://www.rgb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rgb")}</a></li>
+              <li><a href="https://www.rra.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rra")}</a></li>
+              <li><a href="https://www.rib.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.rib")}</a></li>
+              <li><a href="https://www.nppa.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.nppa")}</a></li>
+              <li><a href="https://www.primature.gov.rw/index.php?id=2" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a5c6b] transition-colors">{t("footer.resources.gazette")}</a></li>
             </ul>
           </div>
 
