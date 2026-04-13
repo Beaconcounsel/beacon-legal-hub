@@ -223,7 +223,7 @@ const HomePage = () => {
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 md:p-12 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-8">
                           <div className="w-24 h-24 md:w-36 md:h-36 rounded-full flex-shrink-0 border-4 border-primary/30 overflow-hidden shadow-lg shadow-primary/10">
-                            <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover scale-150" />
+                            <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover scale-[1.8] object-top" />
                           </div>
                           <div className="flex-1">
                             <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.leadPartner")}</p>
