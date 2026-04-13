@@ -117,7 +117,7 @@ const HomePage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             ref={heroImgRef}
@@ -130,7 +130,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
-        <div className="container relative z-10 py-20">
+        <div className="container relative z-10 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">
               Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
