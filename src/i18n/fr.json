@@ -23,7 +23,7 @@
     "careers": "Carrières",
     "joinTeam": "Rejoignez Notre Équipe",
     "internship": "Programme de Stage",
-    "copyright": "© {{year}} Beacon Attorneys & Consultants. Tous droits réservés.",
+    "copyright": "© {{year}} Beacon Attorneyes & Consultants. Tous droits réservés.",
     "address": "KG 190 St, RIM House, 1er étage, Kigali, Rwanda"
   },
   "sticky": {
@@ -35,14 +35,14 @@
     "returnHome": "Retour à l'accueil"
   },
   "landing": {
-    "heroTagline": "Forts d'une expérience globale et d'une compréhension aiguë du paysage juridique et commercial rwandais, nous offrons des solutions juridiques efficaces—localement et au-delà.",
+    "heroTagline": "Forts d'une expérience internationale et d'une compréhension approfondie du paysage juridique et commercial rwandais, nous offrons des solutions juridiques sur mesure — au niveau local et au-delà.",
     "stats": {
       "experience": "Années d'Expérience Combinée",
       "practiceAreas": "Domaines de Pratique",
-      "clientsServed": "Clients Servis"
+      "clientsServed": "Clients Accompagnés"
     },
-    "whyBeacon": "Pourquoi choisir Beacon Attorneys",
-    "whyBeaconDesc": "Combiner une perspective mondiale avec une connaissance locale pour naviguer dans le paysage juridique et commercial en évolution du Rwanda.",
+    "whyBeacon": "Pourquoi choisir Beacon Attorneyes",
+    "whyBeaconDesc": "Allier une perspective internationale à une connaissance locale approfondie pour naviguer dans le paysage juridique et commercial en constante évolution du Rwanda.",
     "highlights": {
       "complexLegal": "Questions Juridiques Complexes",
       "complexLegalDesc": "Conseil précis pour les litiges à enjeux élevés, les transactions et les défis réglementaires.",
@@ -53,22 +53,22 @@
       "partnerLed": "Service Dirigé par les Associés",
       "partnerLedDesc": "Accès direct aux avocats seniors qui comprennent vos réalités juridiques et commerciales."
     },
-    "ctaTitle": "Prêt à Discuter de Votre Affaire ?",
-    "ctaDesc": "Contactez-nous pour une consultation confidentielle. Nos associés sont prêts à vous conseiller sur vos défis juridiques et commerciaux les plus complexes.",
+    "ctaTitle": "Prêt à Discuter de Votre Dossier ?",
+    "ctaDesc": "Contactez-nous pour une consultation confidentielle. Nos associés se tiennent à votre disposition pour vous conseiller sur vos enjeux juridiques et commerciaux les plus complexes.",
     "getInTouch": "Nous Contacter",
     "exploreFirm": "Découvrir Notre Cabinet"
   },
   "home": {
-    "heroTagline": "Beacon Attorneys & Consultants offre des conseils juridiques stratégiques sur des questions complexes avec la précision et la discrétion qu'exigent les engagements à enjeux élevés.",
+    "heroTagline": "Beacon Attorneyes & Consultants offre un conseil juridique stratégique sur des questions complexes, avec la précision et la discrétion qu'exigent les mandats à forts enjeux.",
     "trust": {
       "experience": "Plus de 30 Ans d'Expérience Combinée",
       "international": "Approuvé par des Clients Internationaux",
       "basedKigali": "Basé à Kigali, Rwanda"
     },
     "whoWeAre": "Qui Nous Sommes",
-    "whoWeAreP1": "Beacon Attorneys & Consultants est un cabinet d'avocats de premier plan basé à Kigali, au Rwanda, au service des entreprises, des institutions et des clients internationaux sur un large éventail de questions juridiques et commerciales.",
-    "whoWeAreP2": "Notre partenariat apporte une expertise sectorielle approfondie et une approche de conseil rigoureuse façonnée par des décennies de pratique dans diverses industries et juridictions.",
-    "whoWeAreP3": "Chaque engagement est dirigé par un associé, assurant un accès direct aux avocats seniors qui comprennent à la fois les subtilités juridiques et les réalités commerciales de votre entreprise.",
+    "whoWeAreP1": "Beacon Attorneyes & Consultants est un cabinet d'avocats de premier plan basé à Kigali, au Rwanda, au service des entreprises, des institutions et des clients internationaux sur un large éventail de questions juridiques et commerciales.",
+    "whoWeAreP2": "Notre partenariat repose sur une expertise sectorielle approfondie et une approche de conseil rigoureuse, forgée par des décennies de pratique dans diverses industries et juridictions.",
+    "whoWeAreP3": "Chaque mandat est dirigé par un associé, garantissant un accès direct à des avocats seniors qui maîtrisent aussi bien les subtilités juridiques que les réalités commerciales de votre entreprise.",
     "whatDrivesUs": "Ce qui Nous Anime",
     "values": {
       "excellence": "Excellence Stratégique",
@@ -79,10 +79,10 @@
       "partnershipsDesc": "Nous investissons dans des relations durables, agissant comme des conseillers de confiance à chaque étape de la croissance de nos clients."
     },
     "ourPurpose": "Notre Mission",
-    "ourPurposeDesc": "Poursuivre la justice par des conseils juridiques stratégiques qui autonomisent les entreprises, protègent les intérêts et favorisent une croissance durable au Rwanda et dans la région.",
+    "ourPurposeDesc": "Poursuivre la justice par un conseil juridique stratégique qui renforce les entreprises, protège les intérêts et favorise une croissance durable au Rwanda et dans la région.",
     "workWithUs": "Travaillez avec Nous",
     "ourClients": "Nos Clients",
-    "ourClientsDesc": "Nous agissons pour notre clientèle à travers les industries et les frontières, offrant des conseils dirigés par nos associés à chaque étape.",
+    "ourClientsDesc": "Nous accompagnons notre clientèle à travers les secteurs et les frontières, en offrant un conseil piloté par nos associés à chaque étape.",
     "clients": {
       "businesses": "Entreprises et Sociétés",
       "businessesDesc": "Nous conseillons sur la structuration d'entreprise, la conformité réglementaire, les fusions, les acquisitions et la stratégie commerciale pour protéger vos intérêts et accélérer la croissance.",
@@ -96,10 +96,10 @@
       "smesDesc": "Nous soutenons les PME avec des conseils juridiques pratiques sur les contrats, la conformité, le droit du travail et la prévention des litiges pour les aider à croître en toute confiance."
     },
     "ourPeople": "Notre Équipe",
-    "ourPeopleDesc": "Notre équipe combine une formation internationale avec une connaissance locale approfondie, garantissant que chaque client bénéficie des conseils de nos avocats seniors personnellement investis dans leur succès.",
+    "ourPeopleDesc": "Notre équipe allie une formation internationale à une connaissance locale approfondie, garantissant que chaque client bénéficie de l'accompagnement d'avocats seniors personnellement investis dans sa réussite.",
     "industriesWeServe": "Secteurs que Nous Servons",
     "connectWithUs": "Connectez-vous Avec Nous Aujourd'hui",
-    "connectDesc": "Que vous naviguiez dans une transaction complexe, entriez sur un nouveau marché ou protégiez vos intérêts commerciaux, nos associés sont prêts à vous conseiller.",
+    "connectDesc": "Que vous meniez une transaction complexe, pénétriez un nouveau marché ou protégiez vos intérêts commerciaux, nos associés se tiennent à votre disposition.",
     "requestConsultation": "Demander une Consultation Privée",
     "callNow": "Appelez Maintenant",
     "viewFullProfile": "Voir le Profil Complet",
@@ -126,14 +126,14 @@
     "languages": "Langues",
     "bookConsultation": "Prendre un Rendez-vous",
     "emailDaniel": "Envoyer un e-mail à Daniel",
-    "danielQuote": "« Je conseille et représente des clients sur des opérations commerciales juridiquement solides au Rwanda, en structurant des transactions d'investissement conformes tout en combinant une perspective internationale avec une connaissance locale approfondie pour gérer les risques, favoriser la croissance et obtenir des résultats AVEC intégrité. »",
+    "danielQuote": "« Je conseille et représente des clients sur des opérations commerciales juridiquement solides au Rwanda, en structurant des transactions d'investissement conformes tout en alliant une perspective internationale à une connaissance locale approfondie pour gérer les risques, favoriser la croissance et obtenir des résultats avec intégrité. »",
     "mosesRole": "Gouvernance Juridique et d'Entreprise, Conformité",
     "mosesSummary": "Praticien expérimenté en droit et gouvernance avec plus de 18 ans d'expertise en gouvernance d'entreprise, conformité, gestion des parties prenantes et conseil juridique stratégique.",
     "educationCerts": "Formation et Certifications"
   },
   "practiceAreas": {
-    "heroTagline1": "Nous sommes un cabinet d'avocats d'affaires. Nous conseillons et représentons sur tout le spectre du droit des affaires en mettant l'accent sur la valeur stratégique, la gestion des risques et des solutions centrées sur le client.",
-    "heroTagline2": "Explorez nos domaines de pratique, les industries que nous servons et la gamme de services que nous offrons à nos clients au Rwanda et au-delà.",
+    "heroTagline1": "Nous sommes un cabinet d'avocats d'affaires. Nous conseillons et représentons nos clients sur l'ensemble du spectre du droit des affaires, en privilégiant la valeur stratégique, la gestion des risques et des solutions centrées sur le client.",
+    "heroTagline2": "Découvrez nos domaines de pratique, les secteurs que nous servons et l'étendue des services que nous offrons à nos clients au Rwanda et au-delà.",
     "clientsLabel": "Clients :",
     "requestConsultation": "Demander une Consultation",
     "industriesWeServe": "Secteurs que Nous Servons",
@@ -254,9 +254,9 @@
     }
   },
   "approach": {
-    "heroTagline": "Chez Beacon Attorneys, nous apportons plus qu'une expertise juridique : nous apportons une perspicacité exécutive. Nos associés fondateurs ont occupé des postes de direction juridique et commerciale dans diverses industries et juridictions.",
-    "howWeServe": "Comment Nous Vous Servons",
-    "howWeServeDesc": "Nous combinons une analyse juridique rigoureuse avec une pensée commerciale stratégique pour livrer des résultats, pas seulement des recommandations.",
+    "heroTagline": "Chez Beacon Attorneyes, nous apportons bien plus qu'une expertise juridique : nous apportons une vision exécutive. Nos associés fondateurs ont occupé des postes de direction juridique et commerciale dans diverses industries et juridictions.",
+    "howWeServe": "Comment Nous Vous Accompagnons",
+    "howWeServeDesc": "Nous combinons une analyse juridique rigoureuse avec une réflexion commerciale stratégique pour produire des résultats concrets, et non de simples recommandations.",
     "scheduleConsultation": "Planifier une Consultation",
     "pillars": {
       "resultsDriven": {
@@ -281,7 +281,7 @@
       }
     },
     "internationalClients": "Clients Internationaux",
-    "internationalDesc": "Nous facilitons la conciliation entre les attentes internationales et l'exécution juridique locale pour les investisseurs mondiaux et les organisations multinationales opérant au Rwanda et en Afrique de l'Est.",
+    "internationalDesc": "Nous assurons la jonction entre les exigences internationales et l'exécution juridique locale pour les investisseurs mondiaux et les organisations multinationales opérant au Rwanda et en Afrique de l'Est.",
     "rwandaInvestment": "Le Rwanda comme Destination d'Investissement",
     "rwandaP1": "Le Rwanda s'est imposé comme l'une des destinations d'investissement les plus attrayantes d'Afrique, reconnu mondialement pour sa stabilité politique, sa transparence réglementaire et son environnement favorable aux affaires.",
     "rwandaP2": "Classé parmi les endroits les plus faciles pour faire des affaires en Afrique, le Rwanda offre une création d'entreprise simplifiée, des incitations fiscales favorables aux investisseurs et un engagement envers l'innovation qui a positionné Kigali comme un hub régional pour la finance, la technologie et le développement des infrastructures.",
@@ -318,8 +318,8 @@
     },
     "scheduleIntlConsultation": "Planifier une Consultation Internationale",
     "proBono": "Services Pro Bono",
-    "proBonoP1": "Beacon Attorneys s'engage à garantir que l'accès à la justice n'est pas limité par des considérations financières. Nous consacrons une part significative de notre pratique au travail pro bono, au service des individus et des communautés confrontés à des conditions difficiles et incapables de se permettre une représentation juridique.",
-    "proBonoP2": "En partenariat avec l'Ordre des avocats du Rwanda, le Legal Aid Forum et d'autres organisations nationales et internationales qui soutiennent les plus démunis, nous fournissons des conseils juridiques gratuits aux populations vulnérables – y compris les victimes de violence basée sur le genre, les réfugiés, les accusés indigents et les communautés marginalisées.",
+    "proBonoP1": "Beacon Attorneyes s'engage à garantir que l'accès à la justice ne soit pas limité par des considérations financières. Nous consacrons une part significative de notre pratique au travail pro bono, au service des personnes et des communautés en situation de vulnérabilité qui ne peuvent accéder à une représentation juridique.",
+    "proBonoP2": "En partenariat avec l'Ordre des avocats du Rwanda, le Legal Aid Forum et d'autres organisations nationales et internationales, nous fournissons des conseils juridiques gratuits aux populations vulnérables — notamment les victimes de violences basées sur le genre, les réfugiés, les prévenus indigents et les communautés marginalisées.",
     "proBonoP3": "Notre pratique pro bono reflète notre conviction que chaque personne mérite une représentation juridique compétente, quelle que soit sa situation économique. Nous travaillons aux côtés des organisations de la société civile pour faire progresser la justice systémique et renforcer l'État de droit à travers le Rwanda.",
     "proBonoPartners": "Nos Partenaires Pro Bono",
     "proBonoPartnersList": [
@@ -330,10 +330,10 @@
       "International Justice Mission (IJM)",
       "Autres organisations nationales et internationales d'accès à la justice"
     ],
-    "partnerProBono": "Partenarier avec Nous en Pro Bono"
+    "partnerProBono": "Collaborez avec Nous en Pro Bono"
   },
   "research": {
-    "heroTagline": "Beacon Attorneys promeut la justice et le développement des affaires par des recherches ciblées, des formations professionnelles et des conseils stratégiques qui renforcent les capacités juridiques au Rwanda.",
+    "heroTagline": "Beacon Attorneyes promeut la justice et le développement des affaires par des recherches ciblées, des formations professionnelles et des conseils stratégiques qui renforcent les capacités juridiques au Rwanda.",
     "research": "Recherche",
     "researchDesc": "Notre pratique de recherche génère des informations exploitables qui façonnent les politiques, éclairent la stratégie commerciale et font progresser l'État de droit. Nous contribuons à la base de connaissances juridiques et commerciales par une analyse rigoureuse des problèmes émergents.",
     "items": {
@@ -446,19 +446,19 @@
     }
   },
   "seo": {
-    "landingTitle": "Beacon Attorneys & Consultants | Conseil Juridique Stratégique, Kigali Rwanda",
-    "landingDesc": "Beacon Attorneys & Consultants — Conseil juridique stratégique pour les entreprises, les institutions et les investisseurs mondiaux à Kigali, Rwanda.",
-    "homeTitle": "À Propos de Nous | Beacon Attorneys & Consultants",
-    "homeDesc": "Découvrez Beacon Attorneys & Consultants, un cabinet d'avocats de premier plan à Kigali, Rwanda.",
-    "practiceAreasTitle": "Domaines de Pratique | Beacon Attorneys & Consultants",
-    "practiceAreasDesc": "Explorez nos domaines de pratique, y compris le droit des sociétés, les services bancaires, la résolution des litiges et bien plus encore.",
-    "approachTitle": "Notre Approche | Beacon Attorneys & Consultants",
-    "approachDesc": "Comment Beacon Attorneys offre des conseils juridiques stratégiques avec une perspicacité exécutive.",
-    "researchTitle": "Recherche et Développement | Beacon Attorneys & Consultants",
-    "researchDesc": "Services de recherche, de formation et de conseil par Beacon Attorneys.",
-    "contactTitle": "Nous Contacter | Beacon Attorneys & Consultants",
-    "contactDesc": "Prenez contact avec Beacon Attorneys & Consultants à Kigali, Rwanda.",
-    "insightsTitle": "Analyses | Beacon Attorneys & Consultants",
-    "insightsDesc": "Analyses juridiques et publications de Beacon Attorneys & Consultants."
+    "landingTitle": "Beacon Attorneyes & Consultants | Conseil Juridique Stratégique, Kigali Rwanda",
+    "landingDesc": "Beacon Attorneyes & Consultants — Conseil juridique stratégique pour les entreprises, les institutions et les investisseurs mondiaux à Kigali, Rwanda.",
+    "homeTitle": "À Propos de Nous | Beacon Attorneyes & Consultants",
+    "homeDesc": "Découvrez Beacon Attorneyes & Consultants, un cabinet d'avocats de premier plan à Kigali, Rwanda.",
+    "practiceAreasTitle": "Domaines de Pratique | Beacon Attorneyes & Consultants",
+    "practiceAreasDesc": "Explorez nos domaines de pratique : droit des sociétés, services bancaires, résolution des litiges et bien plus encore.",
+    "approachTitle": "Notre Approche | Beacon Attorneyes & Consultants",
+    "approachDesc": "Comment Beacon Attorneyes offre un conseil juridique stratégique allié à une vision exécutive.",
+    "researchTitle": "Recherche et Développement | Beacon Attorneyes & Consultants",
+    "researchDesc": "Services de recherche, de formation et de conseil par Beacon Attorneyes.",
+    "contactTitle": "Nous Contacter | Beacon Attorneyes & Consultants",
+    "contactDesc": "Prenez contact avec Beacon Attorneyes & Consultants à Kigali, Rwanda.",
+    "insightsTitle": "Analyses | Beacon Attorneyes & Consultants",
+    "insightsDesc": "Analyses juridiques et publications de Beacon Attorneyes & Consultants."
   }
 }
