@@ -165,7 +165,7 @@ const PracticeAreasPage = () => (
         <div className="text-center mt-16">
           <Link to="/contact">
             <Button variant="gold" size="lg" className="gap-2">
-              Discuss Your Legal Needs <ArrowRight className="w-4 h-4" />
+              Request a Consultation <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </div>

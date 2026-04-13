@@ -138,7 +138,7 @@ const HomePage = () => {
             </h1>
             <div className="line-gold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
-              With over 30 years of combined experience, Beacon Attorneys & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
+              Beacon Attorneyes & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Link to="/contact">
@@ -182,9 +182,9 @@ const HomePage = () => {
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Who We Are</h2>
                   <div className="line-gold mb-6" />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
-                    <p>With over 30 years of combined experience across our partnership, we bring deep sector expertise, a rigorous advisory approach, and the discretion that high-stakes engagements require.</p>
-                    <p>Our partner-led model ensures that every client receives direct access to senior counsel who understand both the legal intricacies and the commercial realities of their business.</p>
+                    <p>Beacon Attorneyes & Consultants is a premier law firm based in Kigali, Rwanda, serving businesses, institutions, and international clients across a broad range of legal and commercial matters.</p>
+                    <p>Our partnership brings deep sector expertise and a rigorous advisory approach shaped by decades of practice across multiple industries and jurisdictions.</p>
+                    <p>Every engagement is partner-led, ensuring direct access to senior counsel who understand both the legal intricacies and the commercial realities of your business.</p>
                   </div>
                 </div>
                 <div className="relative">
@@ -267,7 +267,7 @@ const HomePage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Our People</h2>
                 <div className="line-gold mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
+                  Our team combines international training with deep local knowledge, ensuring every client benefits from senior counsel personally invested in their success.
                 </p>
               </div>
 
@@ -608,7 +608,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
           <div className="container relative">
             <div className="text-center max-w-2xl mx-auto reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Connect With Us Today</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Connect With Us Today</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
               <p className="text-muted-foreground mb-10 leading-relaxed">Whether you are navigating a complex transaction, entering a new market, or protecting your business interests, our partners are ready to advise.</p>
               <div className="flex flex-wrap justify-center gap-4">
