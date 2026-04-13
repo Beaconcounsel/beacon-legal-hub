@@ -57,10 +57,10 @@ const Header = () => {
   }, [location.pathname, location.hash]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
+      <div className="container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-14 md:h-18 w-auto drop-shadow-[0_0_18px_hsl(48_85%_55%/0.4)] filter brightness-105" />
+          <img src={logo} alt="Beacon Attorneyes & Consultants" className="h-20 md:h-24 w-auto drop-shadow-[0_0_24px_hsl(48_85%_55%/0.5)] filter brightness-105" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
