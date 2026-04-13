@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Layout from "@/components/Layout";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,22 +12,21 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
   const revealRef = useScrollReveal();
+  const { t } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you. We will be in touch shortly.");
+    toast.success(t("contact.successMessage"));
     setForm({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
   };
 
   return (
     <Layout>
-      {/* Hero */}
+      <SEOHead titleKey="seo.contactTitle" descKey="seo.contactDesc" />
       <section className="section-padding pb-0">
         <div className="container">
           <div className="max-w-3xl mb-8">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Our partners are ready to discuss your needs in confidence.
-            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">{t("contact.tagline")}</p>
           </div>
         </div>
       </section>
@@ -34,52 +35,50 @@ const ContactPage = () => {
         <section className="section-padding pt-0">
           <div className="container">
             <div className="grid lg:grid-cols-3 gap-8">
-              {/* Form */}
               <div className="lg:col-span-2 reveal">
                 <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 md:p-10 space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Full Name *</label>
+                      <label className="text-sm font-medium mb-2 block">{t("contact.fullName")} *</label>
                       <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Email *</label>
+                      <label className="text-sm font-medium mb-2 block">{t("contact.email")} *</label>
                       <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Phone</label>
+                      <label className="text-sm font-medium mb-2 block">{t("contact.phone")}</label>
                       <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="bg-background border-border focus:border-primary/50 transition-colors" />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Company / Organization</label>
+                      <label className="text-sm font-medium mb-2 block">{t("contact.company")}</label>
                       <Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="bg-background border-border focus:border-primary/50 transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Subject *</label>
+                    <label className="text-sm font-medium mb-2 block">{t("contact.subject")} *</label>
                     <Input value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">How can we assist you? *</label>
+                    <label className="text-sm font-medium mb-2 block">{t("contact.message")} *</label>
                     <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} className="bg-background border-border focus:border-primary/50 transition-colors" />
                   </div>
-                  <Button type="submit" variant="gold" size="lg">Submit Inquiry</Button>
+                  <Button type="submit" variant="gold" size="lg">{t("contact.submit")}</Button>
                 </form>
               </div>
 
-              {/* Sidebar */}
               <div className="space-y-8 reveal">
                 <div className="bg-card border border-border rounded-xl p-8">
-                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">Reach Us</span>
-                  <h3 className="text-lg font-semibold font-serif mb-6">Contact Information</h3>
+                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">{t("contact.reachUs")}</span>
+                  <h3 className="text-lg font-semibold font-serif mb-6">{t("contact.contactInfo")}</h3>
                   <ul className="space-y-5">
                     {[
                       { icon: MapPin, text: "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda", href: "https://www.google.com/maps/search/KG+190+St,+RIM+House,+Kigali,+Rwanda" },
                       { icon: Phone, text: "+250 788 55 96 03", href: "tel:+250788559603" },
                       { icon: Mail, text: "info@beaconattorneys.rw", href: "mailto:info@beaconattorneys.rw" },
-                      { icon: Clock, text: "Mon – Fri: 8:00 AM – 6:00 PM", href: undefined },
+                      { icon: Clock, text: t("contact.hours"), href: undefined },
                     ].map((item) => (
                       <li key={item.text} className="flex items-start gap-4 text-sm group">
                         <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors">

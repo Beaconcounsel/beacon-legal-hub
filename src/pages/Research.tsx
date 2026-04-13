@@ -1,12 +1,16 @@
 import { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Layout from "@/components/Layout";
+import LocalizedLink from "@/components/LocalizedLink";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Search, GraduationCap, Briefcase, Users, Globe, Building2, Sprout, Scale } from "lucide-react";
 import researchHeroImg from "@/assets/research-hero.jpg";
 
 const ResearchPage = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (location.hash) {
@@ -17,8 +21,29 @@ const ResearchPage = () => {
     }
   }, [location.hash]);
 
+  const researchItems = [
+    { icon: Scale, title: t("research.items.legalFramework.title"), desc: t("research.items.legalFramework.desc") },
+    { icon: Globe, title: t("research.items.crossBorder.title"), desc: t("research.items.crossBorder.desc") },
+    { icon: BookOpen, title: t("research.items.policyReview.title"), desc: t("research.items.policyReview.desc") },
+  ];
+
+  const trainingItems = [
+    { icon: Users, title: t("research.trainingItems.youthLegal.title"), desc: t("research.trainingItems.youthLegal.desc") },
+    { icon: Sprout, title: t("research.trainingItems.womenBusiness.title"), desc: t("research.trainingItems.womenBusiness.desc") },
+    { icon: Building2, title: t("research.trainingItems.smeLegal.title"), desc: t("research.trainingItems.smeLegal.desc") },
+    { icon: Globe, title: t("research.trainingItems.farmerCoops.title"), desc: t("research.trainingItems.farmerCoops.desc") },
+    { icon: GraduationCap, title: t("research.trainingItems.ngoGovernance.title"), desc: t("research.trainingItems.ngoGovernance.desc") },
+  ];
+
+  const consultancyItems = [
+    { icon: Briefcase, title: t("research.consultancyItems.businessEnv.title"), desc: t("research.consultancyItems.businessEnv.desc") },
+    { icon: Search, title: t("research.consultancyItems.regulatoryImpact.title"), desc: t("research.consultancyItems.regulatoryImpact.desc") },
+    { icon: Scale, title: t("research.consultancyItems.justiceSector.title"), desc: t("research.consultancyItems.justiceSector.desc") },
+  ];
+
   return (
     <Layout>
+      <SEOHead titleKey="seo.researchTitle" descKey="seo.researchDesc" />
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -29,7 +54,7 @@ const ResearchPage = () => {
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              Beacon Attorneys advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
+              {t("research.heroTagline")}
             </p>
           </div>
         </div>
@@ -38,17 +63,11 @@ const ResearchPage = () => {
       {/* Research */}
       <section id="research" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Research</h2>
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.research")}</h2>
           <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
-            Our research practice generates actionable insights that shape policy, inform business strategy, and advance the rule of law. We contribute to the legal and commercial knowledge base through rigorous analysis of emerging issues.
-          </p>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">{t("research.researchDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {[
-              { icon: Scale, title: "Legal Framework Analysis", desc: "In-depth studies of Rwanda's evolving regulatory environment, identifying opportunities and compliance requirements for businesses and investors." },
-              { icon: Globe, title: "Cross-Border Investment Research", desc: "Comparative analysis of investment frameworks across East Africa, helping businesses understand market entry requirements and regulatory harmonization." },
-              { icon: BookOpen, title: "Policy & Legislative Review", desc: "Critical assessment of proposed legislation and policy changes, providing stakeholders with evidence-based perspectives on potential business impact." },
-            ].map((item) => (
+            {researchItems.map((item) => (
               <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
@@ -56,30 +75,22 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <Link to="/contact">
+          <LocalizedLink to="/contact">
             <Button variant="gold" size="lg" className="gap-2">
-              Commission Research <ArrowRight className="w-4 h-4" />
+              {t("research.commissionResearch")} <ArrowRight className="w-4 h-4" />
             </Button>
-          </Link>
+          </LocalizedLink>
         </div>
       </section>
 
       {/* Training */}
       <section id="training" className="section-padding bg-card scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Training</h2>
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.training")}</h2>
           <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
-            We design and deliver practical training programmes that equip professionals, communities, and organizations with the legal knowledge needed to operate confidently and compliantly.
-          </p>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">{t("research.trainingDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {[
-              { icon: Users, title: "Youth Legal Literacy & Entrepreneurship", desc: "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses." },
-              { icon: Sprout, title: "Women in Business Law", desc: "Targeted programmes covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs." },
-              { icon: Building2, title: "SME Legal Structuring", desc: "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises." },
-              { icon: Globe, title: "Farmer Cooperatives", desc: "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities." },
-              { icon: GraduationCap, title: "NGO Governance & Compliance", desc: "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices." },
-            ].map((item) => (
+            {trainingItems.map((item) => (
               <div key={item.title} className="bg-background border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
@@ -87,28 +98,22 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <Link to="/contact">
+          <LocalizedLink to="/contact">
             <Button variant="gold" size="lg" className="gap-2">
-              Inquire About Training Programmes <ArrowRight className="w-4 h-4" />
+              {t("research.inquireTraining")} <ArrowRight className="w-4 h-4" />
             </Button>
-          </Link>
+          </LocalizedLink>
         </div>
       </section>
 
       {/* Consultancy */}
       <section id="consultancy" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Consultancy</h2>
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.consultancy")}</h2>
           <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
-            Our consultancy practice provides strategic advisory services to organizations seeking to navigate complex legal, regulatory, and business environments with confidence.
-          </p>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">{t("research.consultancyDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {[
-              { icon: Briefcase, title: "Business Environment Advisory", desc: "Guiding investors and enterprises through Rwanda's business landscape, from market entry strategy to operational compliance and growth planning." },
-              { icon: Search, title: "Regulatory Impact Assessment", desc: "Evaluating how regulatory changes affect business operations, and developing compliance strategies that minimize disruption." },
-              { icon: Scale, title: "Justice Sector Strengthening", desc: "Partnering with institutions to improve access to justice, strengthen dispute resolution mechanisms, and promote the rule of law for all." },
-            ].map((item) => (
+            {consultancyItems.map((item) => (
               <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
@@ -116,11 +121,11 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <Link to="/contact">
+          <LocalizedLink to="/contact">
             <Button variant="gold" size="lg" className="gap-2">
-              Request a Consultancy Engagement <ArrowRight className="w-4 h-4" />
+              {t("research.requestConsultancy")} <ArrowRight className="w-4 h-4" />
             </Button>
-          </Link>
+          </LocalizedLink>
         </div>
       </section>
     </Layout>

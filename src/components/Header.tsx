@@ -1,38 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/beacon-logo.png";
 import { Menu, X, ChevronDown } from "lucide-react";
-
-const aboutDropdownItems = [
-  { label: "Who We Are", path: "/home#about" },
-  { label: "Our People", path: "/home#team" },
-  { label: "How to Get in Touch", path: "/contact" },
-];
-
-const approachDropdownItems = [
-  { label: "How We Serve You", path: "/our-approach#how-we-serve" },
-  { label: "International Clients", path: "/our-approach#international" },
-  { label: "Pro Bono Services", path: "/our-approach#pro-bono" },
-];
-
-const practiceDropdownItems = [
-  { label: "Areas of Expertise", path: "/practice-areas#expertise" },
-  { label: "Industries We Serve", path: "/practice-areas#industries" },
-  { label: "Our Services", path: "/practice-areas#services" },
-];
-
-const researchDropdownItems = [
-  { label: "Research", path: "/research#research" },
-  { label: "Training", path: "/research#training" },
-  { label: "Consultancy", path: "/research#consultancy" },
-];
-
-const navLinks = [
-  { label: "About Us", path: "/", dropdown: aboutDropdownItems },
-  { label: "Our Practice Areas", path: "/practice-areas", dropdown: practiceDropdownItems },
-  { label: "Our Approach", path: "/our-approach", dropdown: approachDropdownItems },
-  { label: "Research & Development", path: "/research", dropdown: researchDropdownItems },
-];
+import LanguageSwitch from "./LanguageSwitch";
+import { useLocalizedPath } from "@/hooks/use-localized-path";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,6 +13,39 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  const { localePath } = useLocalizedPath();
+
+  const aboutDropdownItems = [
+    { label: t("nav.whoWeAre"), path: "/home#about" },
+    { label: t("nav.ourPeople"), path: "/home#team" },
+    { label: t("nav.getInTouch"), path: "/contact" },
+  ];
+
+  const approachDropdownItems = [
+    { label: t("nav.howWeServe"), path: "/our-approach#how-we-serve" },
+    { label: t("nav.internationalClients"), path: "/our-approach#international" },
+    { label: t("nav.proBonoServices"), path: "/our-approach#pro-bono" },
+  ];
+
+  const practiceDropdownItems = [
+    { label: t("nav.areasOfExpertise"), path: "/practice-areas#expertise" },
+    { label: t("nav.industriesWeServe"), path: "/practice-areas#industries" },
+    { label: t("nav.ourServices"), path: "/practice-areas#services" },
+  ];
+
+  const researchDropdownItems = [
+    { label: t("nav.research"), path: "/research#research" },
+    { label: t("nav.training"), path: "/research#training" },
+    { label: t("nav.consultancy"), path: "/research#consultancy" },
+  ];
+
+  const navLinks = [
+    { label: t("nav.aboutUs"), path: "/", dropdown: aboutDropdownItems },
+    { label: t("nav.ourPracticeAreas"), path: "/practice-areas", dropdown: practiceDropdownItems },
+    { label: t("nav.ourApproach"), path: "/our-approach", dropdown: approachDropdownItems },
+    { label: t("nav.researchDev"), path: "/research", dropdown: researchDropdownItems },
+  ];
 
   const handleSectionClick = useCallback((path: string) => {
     setOpenDropdown(null);
@@ -48,13 +53,15 @@ const Header = () => {
 
     if (!path.includes("#")) return;
 
-    const [pathname] = path.split("#");
-    if (location.pathname === pathname) {
-      navigate(path, { replace: true });
+    const localizedPath = localePath(path);
+    const [pathname] = localizedPath.split("#");
+    const baseCurrent = location.pathname;
+    if (baseCurrent === pathname) {
+      navigate(localizedPath, { replace: true });
     } else {
-      navigate(path);
+      navigate(localizedPath);
     }
-  }, [location.pathname, navigate]);
+  }, [location.pathname, navigate, localePath]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -74,7 +81,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
       <div className="container flex items-center justify-between h-24 md:h-28">
-        <Link to="/" className="flex items-center">
+        <Link to={localePath("/")} className="flex items-center">
           <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto" />
         </Link>
 
@@ -86,7 +93,7 @@ const Header = () => {
                   <button
                     onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                     className={`flex items-center gap-1 px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors ${
-                      location.pathname === link.path || openDropdown === link.label
+                      openDropdown === link.label
                         ? "text-[#0d3d4a]"
                         : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
                     }`}
@@ -108,7 +115,7 @@ const Header = () => {
                         ) : (
                           <Link
                             key={item.path}
-                            to={item.path}
+                            to={localePath(item.path)}
                             onClick={() => setOpenDropdown(null)}
                             className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
                           >
@@ -121,21 +128,23 @@ const Header = () => {
                 </>
               ) : (
                 <Link
-                  to={link.path}
-                  className={`px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors ${
-                    location.pathname === link.path
-                      ? "text-[#0d3d4a]"
-                      : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
-                  }`}
+                  to={localePath(link.path)}
+                  className={`px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors text-[#0d3d4a]/80 hover:text-[#0d3d4a]`}
                 >
                   {link.label}
                 </Link>
               )}
             </div>
           ))}
+          <div className="ml-3">
+            <LanguageSwitch />
+          </div>
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="lg:hidden">
+            <LanguageSwitch />
+          </div>
           <button
             className="lg:hidden text-[#1a5c6b]"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -154,11 +163,7 @@ const Header = () => {
                   <>
                     <button
                       onClick={() => setMobileDropdown(mobileDropdown === link.label ? null : link.label)}
-                      className={`flex items-center justify-between w-full px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                        location.pathname === link.path
-                          ? "text-[#1a5c6b] bg-[#1a5c6b]/10"
-                          : "text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
-                      }`}
+                      className="flex items-center justify-between w-full px-4 py-3 rounded-md text-sm font-medium transition-colors text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
                     >
                       {link.label}
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropdown === link.label ? "rotate-180" : ""}`} />
@@ -177,7 +182,7 @@ const Header = () => {
                           ) : (
                             <Link
                               key={item.path}
-                              to={item.path}
+                              to={localePath(item.path)}
                               onClick={() => setMobileOpen(false)}
                               className="px-4 py-2.5 rounded-md text-sm text-foreground/60 hover:text-foreground hover:bg-secondary/50 transition-colors"
                             >
@@ -190,13 +195,9 @@ const Header = () => {
                   </>
                 ) : (
                   <Link
-                    to={link.path}
+                    to={localePath(link.path)}
                     onClick={() => setMobileOpen(false)}
-                    className={`px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                      location.pathname === link.path
-                        ? "text-[#1a5c6b] bg-[#1a5c6b]/10"
-                        : "text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
-                    }`}
+                    className="px-4 py-3 rounded-md text-sm font-medium transition-colors text-[#1a5c6b]/70 hover:text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
                   >
                     {link.label}
                   </Link>

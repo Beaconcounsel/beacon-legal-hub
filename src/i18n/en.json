@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "aboutUs": "About Us",
+    "ourPracticeAreas": "Our Practice Areas",
+    "ourApproach": "Our Approach",
+    "researchDev": "Research & Development",
+    "whoWeAre": "Who We Are",
+    "ourPeople": "Our People",
+    "getInTouch": "How to Get in Touch",
+    "areasOfExpertise": "Areas of Expertise",
+    "industriesWeServe": "Industries We Serve",
+    "ourServices": "Our Services",
+    "howWeServe": "How We Serve You",
+    "internationalClients": "International Clients",
+    "proBonoServices": "Pro Bono Services",
+    "research": "Research",
+    "training": "Training",
+    "consultancy": "Consultancy"
+  },
+  "footer": {
+    "tagline": "A Law Firm for Individuals, Businesses, Institutions, and International Investors.",
+    "contact": "Contact",
+    "careers": "Careers",
+    "joinTeam": "Join Our Team",
+    "internship": "Internship Programme",
+    "copyright": "© {{year}} Beacon Attorneys & Consultants. All rights reserved.",
+    "address": "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda"
+  },
+  "sticky": {
+    "consult": "Consult"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "landing": {
+    "heroTagline": "With global experience and a sharp understanding of Rwanda's legal and business landscape, we deliver legal solutions that work—locally and beyond.",
+    "stats": {
+      "experience": "Years Combined Experience",
+      "practiceAreas": "Practice Areas",
+      "clientsServed": "Clients Served"
+    },
+    "whyBeacon": "Why Beacon Attorneys",
+    "whyBeaconDesc": "Combining global perspective with local insight to navigate Rwanda's evolving legal and commercial landscape.",
+    "highlights": {
+      "complexLegal": "Complex Legal Matters",
+      "complexLegalDesc": "Precision counsel for high-stakes disputes, transactions, and regulatory challenges.",
+      "businessAdvisory": "Business Advisory",
+      "businessAdvisoryDesc": "Strategic guidance on corporate structuring, compliance, and commercial growth.",
+      "crossBorder": "Cross-Border Expertise",
+      "crossBorderDesc": "Trusted local counsel for international investors entering Rwanda and the region.",
+      "partnerLed": "Partner-Led Service",
+      "partnerLedDesc": "Direct access to senior counsel who understand your legal and commercial realities."
+    },
+    "ctaTitle": "Ready to Discuss Your Matter?",
+    "ctaDesc": "Contact us for a confidential consultation. Our partners are ready to advise on your most complex legal and business challenges.",
+    "getInTouch": "Get in Touch",
+    "exploreFirm": "Explore Our Firm"
+  },
+  "home": {
+    "heroTagline": "Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.",
+    "trust": {
+      "experience": "30+ Years Combined Experience",
+      "international": "Trusted by International Clients",
+      "basedKigali": "Based in Kigali, Rwanda"
+    },
+    "whoWeAre": "Who We Are",
+    "whoWeAreP1": "Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, serving businesses, institutions, and international clients across a broad range of legal and commercial matters.",
+    "whoWeAreP2": "Our partnership brings deep sector expertise and a rigorous advisory approach shaped by decades of practice across multiple industries and jurisdictions.",
+    "whoWeAreP3": "Every engagement is partner-led, ensuring direct access to senior counsel who understand both the legal intricacies and the commercial realities of your business.",
+    "whatDrivesUs": "What Drives Us",
+    "values": {
+      "excellence": "Strategic Excellence",
+      "excellenceDesc": "Every engagement is approached with the rigour and strategic thinking that complex matters demand.",
+      "discretion": "Discretion & Confidentiality",
+      "discretionDesc": "We handle sensitive matters with absolute discretion, earning the trust of clients who value privacy.",
+      "partnerships": "Long-Term Partnerships",
+      "partnershipsDesc": "We invest in lasting relationships, serving as trusted advisors through every stage of our clients' growth."
+    },
+    "ourPurpose": "Our Purpose",
+    "ourPurposeDesc": "To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.",
+    "workWithUs": "Work With Us",
+    "ourClients": "Our Clients",
+    "ourClientsDesc": "We act for our clientele across industries and borders, delivering partner-led advisory at every stage.",
+    "clients": {
+      "businesses": "Businesses & Corporations",
+      "businessesDesc": "We advise on corporate structuring, regulatory compliance, mergers, and commercial strategy to protect your interests and accelerate growth.",
+      "investors": "Investors & Entrepreneurs",
+      "investorsDesc": "We structure investments, negotiate joint ventures, and navigate Rwanda's regulatory landscape to secure your capital and maximize returns.",
+      "international": "International Clients & Organizations",
+      "internationalDesc": "We act as trusted local counsel for cross-border transactions, providing seamless legal coordination between jurisdictions.",
+      "ngos": "NGOs & Development Organizations",
+      "ngosDesc": "We advise on governance frameworks, regulatory compliance, employment matters, and institutional structuring for development-sector entities.",
+      "smes": "Small & Medium Enterprises",
+      "smesDesc": "We support SMEs with practical legal guidance on contracts, compliance, employment law, and dispute prevention to help them grow with confidence."
+    },
+    "ourPeople": "Our People",
+    "ourPeopleDesc": "Our team combines international training with deep local knowledge, ensuring every client benefits from senior counsel personally invested in their success.",
+    "industriesWeServe": "Industries We Serve",
+    "connectWithUs": "Connect With Us Today",
+    "connectDesc": "Whether you are navigating a complex transaction, entering a new market, or protecting your business interests, our partners are ready to advise.",
+    "requestConsultation": "Request a Private Consultation",
+    "callNow": "Call Now",
+    "viewFullProfile": "View Full Profile",
+    "hideProfile": "Hide Profile",
+    "leadPartner": "Lead Partner",
+    "partner": "Partner",
+    "danielRole": "Corporate, Transactions & Cross-Border Advisory",
+    "danielSummary": "Advising on legal risk and business strategy, and representing clients in transactions and regulatory matters in Rwanda and across emerging markets.",
+    "danielBio1": "Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising and representing international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.",
+    "danielBio2": "He works with clients to align legal risk, business strategy, and growth objectives, with a strong focus on structuring compliant investments, negotiating transactions, and representing client interests in regulatory and commercial engagements.",
+    "whatSetsHimApart": "What Sets Him Apart",
+    "multiDisciplinary": "Multi-Disciplinary Experience",
+    "internationalPerspective": "International Perspective, Local Execution",
+    "internationalPerspectiveDesc": "Daniel advises and represents international clients entering Rwanda while supporting local businesses to structure, scale, and transact effectively.",
+    "corePracticeAreas": "Core Practice Areas",
+    "sectorFocus": "Sector Focus",
+    "representativeExperience": "Representative Experience",
+    "clientsEngagements": "Clients & Engagements",
+    "geographicFocus": "Geographic Focus",
+    "boardRegulatory": "Board & Regulatory Advisory",
+    "leadershipInstitutional": "Leadership & Institutional Experience",
+    "educationFoundation": "Education & Professional Foundation",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "bookConsultation": "Book a Consultation",
+    "emailDaniel": "Email Daniel",
+    "danielQuote": "\"I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity.\"",
+    "mosesRole": "Legal & Corporate Governance, Compliance",
+    "mosesSummary": "Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory.",
+    "educationCerts": "Education & Certifications"
+  },
+  "practiceAreas": {
+    "heroTagline1": "We are a business law firm. We advise and represent across the full spectrum of business law with a focus on strategic value, risk management, and client-centered solutions.",
+    "heroTagline2": "Explore our practice areas, the industries we serve, and the range of services we deliver to clients across Rwanda and beyond.",
+    "clientsLabel": "Clients:",
+    "requestConsultation": "Request a Consultation",
+    "industriesWeServe": "Industries We Serve",
+    "ourServices": "Our Services",
+    "discussIndustry": "Discuss Your Industry Needs",
+    "discussNeeds": "Discuss Your Needs",
+    "areas": {
+      "corporateCommercial": { "title": "Corporate & Commercial Law", "description": "We advise businesses on formation, governance, mergers, acquisitions, and day-to-day commercial operations. Our team structures transactions that protect interests and drive growth.", "clients": "Corporations, SMEs, multinationals, joint ventures" },
+      "contractAdvisory": { "title": "Contract Advisory & Negotiation", "description": "We draft, review, and negotiate complex commercial contracts—from supply agreements to multi-party frameworks—ensuring enforceability and risk mitigation at every stage.", "clients": "All business entities, procurement teams, government agencies" },
+      "regulatoryCompliance": { "title": "Regulatory Compliance & Advisory", "description": "We navigate Rwanda's evolving regulatory landscape, advising on licensing, permits, sector-specific compliance, and government relations to ensure seamless operations.", "clients": "Financial institutions, energy companies, healthcare providers, fintechs" },
+      "employmentLabour": { "title": "Employment & Labour Law", "description": "We advise on employment contracts, workplace policies, dispute resolution, and compliance with Rwanda's labour code. Our Leadership Recruitment practice supports executive hiring, compensation structuring, and governance alignment for boards and C-suite positions.", "clients": "Employers, HR departments, boards of directors", "subsection": "Leadership Recruitment: We advise on executive search strategy, compensation structures, non-compete frameworks, and governance alignment for senior appointments." },
+      "oilGasEnergy": { "title": "Oil, Gas & Energy Law", "description": "We act for energy companies, governments, and investors on exploration agreements, production-sharing contracts, regulatory approvals, and environmental compliance across the energy value chain.", "clients": "Energy companies, infrastructure developers, government agencies, investors" },
+      "bankingFinancial": { "title": "Banking & Financial Services", "description": "We structure and advise on project finance, banking regulations, securities, fund formation, and cross-border investment transactions with precision and speed.", "clients": "Banks, investment funds, private equity, institutional investors" },
+      "disputeResolution": { "title": "Dispute Resolution & Arbitration", "description": "We represent clients in complex commercial disputes through litigation, arbitration, and mediation—both domestically and in international fora—with a focus on strategic, outcome-driven resolution.", "clients": "Corporations, investors, government entities, international organizations" },
+      "taxCorporate": { "title": "Tax & Corporate Structuring", "description": "We advise on tax-efficient structures, transfer pricing, VAT compliance, and cross-border tax planning to minimize exposure and optimize corporate architecture.", "clients": "Multinational companies, holding structures, HNWIs, family offices" },
+      "realEstate": { "title": "Real Estate & Property Law", "description": "We handle land acquisition, due diligence, development agreements, leasing, and property disputes—supporting clients from site selection through project completion.", "clients": "Real estate developers, investors, hospitality groups, institutions" },
+      "privateWealth": { "title": "Private Wealth & Succession Planning", "description": "We advise high-net-worth individuals and family business owners on asset protection, estate planning, succession strategies, and cross-border wealth considerations with the utmost discretion.", "clients": "HNWIs, family business owners, trusts, estates" },
+      "ngoGovernance": { "title": "NGO, Institutional & Governance Advisory", "description": "We advise NGOs, international organizations, and public institutions on governance structures, regulatory compliance, donor agreements, and institutional best practices.", "clients": "International NGOs, development agencies, foundations, public institutions" },
+      "intellectualProperty": { "title": "Intellectual Property Law", "description": "We protect brands, inventions, and creative works through trademark registration, patent advisory, licensing agreements, and IP enforcement strategies.", "clients": "Technology companies, creatives, manufacturers, pharmaceutical firms" },
+      "techDataProtection": { "title": "Technology & Data Protection Law", "description": "We advise on data privacy compliance, cybersecurity frameworks, technology licensing, and digital commerce regulations in Rwanda's rapidly evolving tech landscape.", "clients": "Tech startups, fintechs, e-commerce platforms, data processors" },
+      "migration": { "title": "Migration Law", "description": "We advise individuals and organizations on work permits, residence visas, investor permits, and immigration compliance for expatriate employees and international personnel.", "clients": "Expatriates, multinational employers, international organizations" },
+      "insolvency": { "title": "Insolvency & Restructuring Law", "description": "We represent creditors and debtors in insolvency proceedings, corporate restructuring, and turnaround strategies—protecting value and managing complex stakeholder dynamics.", "clients": "Distressed companies, creditors, banks, investors" },
+      "insurance": { "title": "Insurance Law", "description": "We advise insurers and policyholders on regulatory compliance, policy disputes, claims management, and reinsurance arrangements across all lines of coverage.", "clients": "Insurance companies, brokers, corporate policyholders" }
+    },
+    "services": {
+      "businessOperational": { "title": "Business & Operational Advisory", "desc": "Strategic counsel on business operations, corporate governance, and commercial decision-making to help organizations achieve their objectives within a sound legal framework." },
+      "representation": { "title": "Representation Before Regulatory Bodies & Courts", "desc": "We represent clients before regulatory authorities, tribunals, and courts of law—advocating for their interests with precision and authority across all levels of jurisdiction." },
+      "whitePaper": { "title": "White Paper & Policy Consultancy", "desc": "We draft and advise on white papers, policy documents, and position papers that shape industry standards and inform regulatory development." },
+      "procedureCompliance": { "title": "Procedure & Compliance Development", "desc": "We design internal procedures, compliance frameworks, and operational manuals that ensure organizations meet regulatory requirements and industry best practices." },
+      "transactionDoc": { "title": "Legal Transaction Documentation", "desc": "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation." }
+    },
+    "industries": {
+      "energy": "Energy & Infrastructure",
+      "financial": "Financial Services",
+      "realEstate": "Real Estate & Development",
+      "technology": "Technology & Innovation",
+      "agriculture": "Agriculture & Agribusiness"
+    }
+  },
+  "approach": {
+    "heroTagline": "At Beacon Attorneys, we bring more than legal expertise—we bring executive insight. Our founding partners have held senior business and legal leadership roles across multiple industries and jurisdictions.",
+    "howWeServe": "How We Serve You",
+    "howWeServeDesc": "We combine rigorous legal analysis with strategic business thinking to deliver outcomes, not just recommendations.",
+    "scheduleConsultation": "Schedule a Consultation",
+    "pillars": {
+      "resultsDriven": { "title": "Results-Driven Counsel", "desc": "We don't stop at recommendations. Our team drives toward actionable outcomes that create tangible value for your business." },
+      "executiveLevel": { "title": "Executive-Level Understanding", "desc": "Having held executive business and legal leadership roles, our partners understand the pressures, priorities, and pace of decision-making at the highest levels." },
+      "businessFirst": { "title": "Business-First Mindset", "desc": "We translate complex legal frameworks into clear business strategies. Every piece of advice is shaped by commercial reality, not just legal theory." },
+      "strategicProblem": { "title": "Strategic Problem Solving", "desc": "We anticipate challenges before they arise and design solutions that protect your interests while advancing your objectives." },
+      "partnership": { "title": "Partnership, Not Just Representation", "desc": "We embed ourselves in your operations, becoming an extension of your leadership team to deliver sustained, measurable impact." }
+    },
+    "internationalClients": "International Clients",
+    "internationalDesc": "We bridge international expectations with local legal execution for global investors and multinational organizations operating in Rwanda and East Africa.",
+    "rwandaInvestment": "Rwanda as an Investment Destination",
+    "rwandaP1": "Rwanda has emerged as one of Africa's most attractive investment destinations, recognized globally for political stability, regulatory transparency, and a business-friendly environment.",
+    "rwandaP2": "Ranked among the easiest places to do business in Africa, Rwanda offers streamlined company registration, investor-friendly tax incentives, and a commitment to innovation that has positioned Kigali as a regional hub for finance, technology, and infrastructure development.",
+    "whyRwanda": "Why Rwanda?",
+    "whyRwandaItems": [
+      "Ranked 1st in Africa for ease of doing business in 2025",
+      "Stable political, security, and governance environments",
+      "Strategic access to East and Central African markets",
+      "A premier MICE destination, ranked 2nd in Africa by ICCA",
+      "Growing tech and financial services hub",
+      "Investor protection and incentive frameworks"
+    ],
+    "intlServices": {
+      "marketEntry": { "title": "Market Entry Advisory", "desc": "We guide international investors through Rwanda's regulatory requirements, company registration, licensing, and sector-specific compliance for seamless market entry." },
+      "crossBorder": { "title": "Cross-Border Legal Coordination", "desc": "We coordinate with international law firms to ensure alignment across jurisdictions, managing multi-party transactions with precision." },
+      "localRegulatory": { "title": "Local Regulatory Expertise", "desc": "Our deep understanding of Rwanda's legal framework ensures compliance with investment codes, tax incentives, and sector regulations." },
+      "riskMitigation": { "title": "Risk Mitigation", "desc": "We identify and address legal, regulatory, and business risks to protect your investment and ensure long-term sustainability." },
+      "jointVentures": { "title": "Joint Ventures & Partnerships", "desc": "We structure partnerships with local entities, negotiate JV agreements, and ensure governance frameworks that protect all stakeholders." }
+    },
+    "scheduleIntlConsultation": "Schedule an International Consultation",
+    "proBono": "Pro Bono Services",
+    "proBonoP1": "Beacon Attorneys is committed to ensuring that access to justice is not limited by financial circumstances. We dedicate a meaningful portion of our practice to pro bono work, serving individuals and communities who face difficult conditions and cannot afford legal representation.",
+    "proBonoP2": "In partnership with the Rwanda Bar Association, Legal Aid Forum, and other national and international organizations that support the needy, we provide free legal counsel to vulnerable populations—including victims of gender-based violence, refugees, indigent defendants, and marginalized communities.",
+    "proBonoP3": "Our pro bono practice reflects our belief that every person deserves competent legal representation, regardless of their economic standing. We work alongside civil society organizations to advance systemic justice and strengthen the rule of law across Rwanda.",
+    "proBonoPartners": "Our Pro Bono Partners",
+    "proBonoPartnersList": [
+      "Rwanda Bar Association – Legal Aid Programme",
+      "Legal Aid Forum (LAF)",
+      "UNHCR – Refugee Legal Assistance",
+      "Haguruka – Women & Children's Rights",
+      "International Justice Mission (IJM)",
+      "Other national and international access-to-justice organizations"
+    ],
+    "partnerProBono": "Partner With Us on Pro Bono"
+  },
+  "research": {
+    "heroTagline": "Beacon Attorneys advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.",
+    "research": "Research",
+    "researchDesc": "Our research practice generates actionable insights that shape policy, inform business strategy, and advance the rule of law. We contribute to the legal and commercial knowledge base through rigorous analysis of emerging issues.",
+    "items": {
+      "legalFramework": { "title": "Legal Framework Analysis", "desc": "In-depth studies of Rwanda's evolving regulatory environment, identifying opportunities and compliance requirements for businesses and investors." },
+      "crossBorder": { "title": "Cross-Border Investment Research", "desc": "Comparative analysis of investment frameworks across East Africa, helping businesses understand market entry requirements and regulatory harmonization." },
+      "policyReview": { "title": "Policy & Legislative Review", "desc": "Critical assessment of proposed legislation and policy changes, providing stakeholders with evidence-based perspectives on potential business impact." }
+    },
+    "commissionResearch": "Commission Research",
+    "training": "Training",
+    "trainingDesc": "We design and deliver practical training programmes that equip professionals, communities, and organizations with the legal knowledge needed to operate confidently and compliantly.",
+    "trainingItems": {
+      "youthLegal": { "title": "Youth Legal Literacy & Entrepreneurship", "desc": "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses." },
+      "womenBusiness": { "title": "Women in Business Law", "desc": "Targeted programmes covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs." },
+      "smeLegal": { "title": "SME Legal Structuring", "desc": "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises." },
+      "farmerCoops": { "title": "Farmer Cooperatives", "desc": "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities." },
+      "ngoGovernance": { "title": "NGO Governance & Compliance", "desc": "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices." }
+    },
+    "inquireTraining": "Inquire About Training Programmes",
+    "consultancy": "Consultancy",
+    "consultancyDesc": "Our consultancy practice provides strategic advisory services to organizations seeking to navigate complex legal, regulatory, and business environments with confidence.",
+    "consultancyItems": {
+      "businessEnv": { "title": "Business Environment Advisory", "desc": "Guiding investors and enterprises through Rwanda's business landscape, from market entry strategy to operational compliance and growth planning." },
+      "regulatoryImpact": { "title": "Regulatory Impact Assessment", "desc": "Evaluating how regulatory changes affect business operations, and developing compliance strategies that minimize disruption." },
+      "justiceSector": { "title": "Justice Sector Strengthening", "desc": "Partnering with institutions to improve access to justice, strengthen dispute resolution mechanisms, and promote the rule of law for all." }
+    },
+    "requestConsultancy": "Request a Consultancy Engagement"
+  },
+  "contact": {
+    "tagline": "Our partners are ready to discuss your needs in confidence.",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company / Organization",
+    "subject": "Subject",
+    "message": "How can we assist you?",
+    "submit": "Submit Inquiry",
+    "successMessage": "Thank you. We will be in touch shortly.",
+    "reachUs": "Reach Us",
+    "contactInfo": "Contact Information",
+    "hours": "Mon – Fri: 8:00 AM – 6:00 PM"
+  },
+  "insights": {
+    "title": "Insights & Publications",
+    "tagline": "Our thought leadership reflects the depth of our expertise and our commitment to keeping clients informed on critical legal and regulatory developments.",
+    "subscribe": "Subscribe to Our Updates",
+    "articles": {
+      "foreignInvestors": { "title": "Legal Considerations for Foreign Investors in Rwanda", "excerpt": "An overview of Rwanda's investment code, regulatory requirements, and strategic considerations for international investors seeking to establish or expand operations in the country.", "date": "March 2026", "category": "Investment" },
+      "structuringInvestments": { "title": "Structuring Investments in Emerging Markets", "excerpt": "Key legal and tax structuring considerations for cross-border investments into East African markets, including holding structures, treaty planning, and risk allocation.", "date": "February 2026", "category": "Corporate" },
+      "corporateGovernance": { "title": "Corporate Governance Best Practices for Rwandan Entities", "excerpt": "A practical guide to board composition, shareholder agreements, conflict of interest policies, and governance frameworks aligned with international standards.", "date": "January 2026", "category": "Governance" },
+      "dataProtection": { "title": "Data Protection Compliance in Rwanda's Digital Economy", "excerpt": "An analysis of Rwanda's data protection framework, cross-border data transfer requirements, and compliance strategies for technology companies.", "date": "December 2025", "category": "Technology" },
+      "employmentLaw": { "title": "Navigating Employment Law in Rwanda: A Guide for Employers", "excerpt": "Essential considerations for employment contracts, workplace policies, termination procedures, and compliance with Rwanda's labour code.", "date": "November 2025", "category": "Employment" }
+    }
+  },
+  "seo": {
+    "landingTitle": "Beacon Attorneys & Consultants | Strategic Legal Counsel, Kigali Rwanda",
+    "landingDesc": "Beacon Attorneys & Consultants — Strategic legal counsel for businesses, institutions, and global investors in Kigali, Rwanda.",
+    "homeTitle": "About Us | Beacon Attorneys & Consultants",
+    "homeDesc": "Learn about Beacon Attorneys & Consultants, a premier law firm in Kigali, Rwanda.",
+    "practiceAreasTitle": "Practice Areas | Beacon Attorneys & Consultants",
+    "practiceAreasDesc": "Explore our practice areas including corporate law, banking, dispute resolution and more.",
+    "approachTitle": "Our Approach | Beacon Attorneys & Consultants",
+    "approachDesc": "How Beacon Attorneys delivers strategic legal counsel with executive insight.",
+    "researchTitle": "Research & Development | Beacon Attorneys & Consultants",
+    "researchDesc": "Research, training, and consultancy services by Beacon Attorneys.",
+    "contactTitle": "Contact Us | Beacon Attorneys & Consultants",
+    "contactDesc": "Get in touch with Beacon Attorneys & Consultants in Kigali, Rwanda.",
+    "insightsTitle": "Insights | Beacon Attorneys & Consultants",
+    "insightsDesc": "Legal insights and publications from Beacon Attorneys & Consultants."
+  }
+}

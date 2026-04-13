@@ -1,75 +1,51 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
-
 import Layout from "@/components/Layout";
+import LocalizedLink from "@/components/LocalizedLink";
+import SEOHead from "@/components/SEOHead";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-
-const trustItems = [
-  { icon: Shield, label: "30+ Years Combined Experience" },
-  { icon: Globe, label: "Trusted by International Clients" },
-  { icon: Building2, label: "Based in Kigali, Rwanda" },
-];
-
-const clientCategories = [
-  {
-    title: "Businesses & Corporations",
-    description: "We advise on corporate structuring, regulatory compliance, mergers, and commercial strategy to protect your interests and accelerate growth.",
-    icon: Building2,
-  },
-  {
-    title: "Investors & Entrepreneurs",
-    description: "We structure investments, negotiate joint ventures, and navigate Rwanda's regulatory landscape to secure your capital and maximize returns.",
-    icon: Briefcase,
-  },
-  {
-    title: "International Clients & Organizations",
-    description: "We act as trusted local counsel for cross-border transactions, providing seamless legal coordination between jurisdictions.",
-    icon: Globe,
-  },
-  {
-    title: "NGOs & Development Organizations",
-    description: "We advise on governance frameworks, regulatory compliance, employment matters, and institutional structuring for development-sector entities.",
-    icon: Users,
-  },
-  {
-    title: "Small & Medium Enterprises",
-    description: "We support SMEs with practical legal guidance on contracts, compliance, employment law, and dispute prevention to help them grow with confidence.",
-    icon: Briefcase,
-  },
-];
-
-const practiceAreas = [
-  "Corporate & Commercial Law",
-  "Banking, Finance & Investment",
-  "Dispute Resolution & Arbitration",
-  "Real Estate & Property",
-  "Energy & Infrastructure",
-];
-
-const industries = [
-  { icon: Zap, label: "Energy & Infrastructure" },
-  { icon: Landmark, label: "Financial Services" },
-  { icon: Building2, label: "Real Estate & Development" },
-  { icon: Laptop, label: "Technology & Innovation" },
-  { icon: Wheat, label: "Agriculture & Agribusiness" },
-];
-
-const values = [
-  { icon: Target, title: "Strategic Excellence", desc: "Every engagement is approached with the rigour and strategic thinking that complex matters demand." },
-  { icon: Eye, title: "Discretion & Confidentiality", desc: "We handle sensitive matters with absolute discretion, earning the trust of clients who value privacy." },
-  { icon: Shield, title: "Long-Term Partnerships", desc: "We invest in lasting relationships, serving as trusted advisors through every stage of our clients' growth." },
-];
+import { useLocalizedPath } from "@/hooks/use-localized-path";
 
 const HomePage = () => {
   const location = useLocation();
+  const { t } = useTranslation();
+  const { localePath } = useLocalizedPath();
 
-  // Determine active section from hash
+  const trustItems = [
+    { icon: Shield, label: t("home.trust.experience") },
+    { icon: Globe, label: t("home.trust.international") },
+    { icon: Building2, label: t("home.trust.basedKigali") },
+  ];
+
+  const clientCategories = [
+    { title: t("home.clients.businesses"), description: t("home.clients.businessesDesc"), icon: Building2 },
+    { title: t("home.clients.investors"), description: t("home.clients.investorsDesc"), icon: Briefcase },
+    { title: t("home.clients.international"), description: t("home.clients.internationalDesc"), icon: Globe },
+    { title: t("home.clients.ngos"), description: t("home.clients.ngosDesc"), icon: Users },
+    { title: t("home.clients.smes"), description: t("home.clients.smesDesc"), icon: Briefcase },
+  ];
+
+  const values = [
+    { icon: Target, title: t("home.values.excellence"), desc: t("home.values.excellenceDesc") },
+    { icon: Eye, title: t("home.values.discretion"), desc: t("home.values.discretionDesc") },
+    { icon: Shield, title: t("home.values.partnerships"), desc: t("home.values.partnershipsDesc") },
+  ];
+
+  const industries = [
+    { icon: Zap, label: t("practiceAreas.industries.energy") },
+    { icon: Landmark, label: t("practiceAreas.industries.financial") },
+    { icon: Building2, label: t("practiceAreas.industries.realEstate") },
+    { icon: Laptop, label: t("practiceAreas.industries.technology") },
+    { icon: Wheat, label: t("practiceAreas.industries.agriculture") },
+  ];
+
   const activeSection = useMemo(() => {
     const hash = location.hash.replace("#", "");
     if (["about", "team", "industries"].includes(hash)) return hash;
@@ -78,10 +54,8 @@ const HomePage = () => {
 
   const revealRef = useScrollReveal([activeSection]);
   const heroImgRef = useRef<HTMLImageElement>(null);
-
   const show = (section: string) => !activeSection || activeSection === section;
 
-  // When filtering to a single section, immediately reveal its elements
   useEffect(() => {
     if (activeSection && revealRef.current) {
       const timer = setTimeout(() => {
@@ -104,7 +78,6 @@ const HomePage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to section when hash changes
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);
@@ -116,25 +89,17 @@ const HomePage = () => {
 
   return (
     <Layout>
+      <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            ref={heroImgRef}
-            src={heroImg}
-            alt="Kigali skyline"
-            className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]"
-            width={1920}
-            height={1080}
-          />
+          <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">
-              Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.
-            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
@@ -162,12 +127,12 @@ const HomePage = () => {
             <div className="container">
               <div className="grid lg:grid-cols-2 gap-16 items-center reveal">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Who We Are</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
                   <div className="line-gold mb-6" />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, serving businesses, institutions, and international clients across a broad range of legal and commercial matters.</p>
-                    <p>Our partnership brings deep sector expertise and a rigorous advisory approach shaped by decades of practice across multiple industries and jurisdictions.</p>
-                    <p>Every engagement is partner-led, ensuring direct access to senior counsel who understand both the legal intricacies and the commercial realities of your business.</p>
+                    <p>{t("home.whoWeAreP1")}</p>
+                    <p>{t("home.whoWeAreP2")}</p>
+                    <p>{t("home.whoWeAreP3")}</p>
                   </div>
                 </div>
                 <div className="relative">
@@ -182,7 +147,7 @@ const HomePage = () => {
           <section className="section-padding bg-card">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">What Drives Us</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
               <div className="grid md:grid-cols-3 gap-8">
@@ -205,16 +170,14 @@ const HomePage = () => {
               <div className="reveal relative max-w-2xl mx-auto text-center">
                 <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
                 <div className="relative bg-card border border-border rounded-xl p-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">Our Purpose</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">{t("home.ourPurpose")}</h2>
                   <div className="line-gold mx-auto mb-6" />
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
-                  </p>
-                  <Link to="/contact">
+                  <p className="text-muted-foreground leading-relaxed mb-8">{t("home.ourPurposeDesc")}</p>
+                  <LocalizedLink to="/contact">
                     <Button variant="gold" className="gap-2">
-                      Work With Us <ArrowRight className="w-4 h-4" />
+                      {t("home.workWithUs")} <ArrowRight className="w-4 h-4" />
                     </Button>
-                  </Link>
+                  </LocalizedLink>
                 </div>
               </div>
             </div>
@@ -224,9 +187,9 @@ const HomePage = () => {
           <section className="section-padding">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Clients</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.ourClients")}</h2>
                 <div className="line-gold mx-auto mb-6" />
-                <p className="text-muted-foreground leading-relaxed">We act for our clientele across industries and borders, delivering partner-led advisory at every stage.</p>
+                <p className="text-muted-foreground leading-relaxed">{t("home.ourClientsDesc")}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {clientCategories.map((cat) => (
@@ -247,11 +210,9 @@ const HomePage = () => {
           <section id="team" className="section-padding scroll-mt-20">
             <div className="container">
               <div className="max-w-3xl mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Our People</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
                 <div className="line-gold mb-6" />
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our team combines international training with deep local knowledge, ensuring every client benefits from senior counsel personally invested in their success.
-                </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
               </div>
 
               <Accordion type="multiple" className="space-y-8">
@@ -265,20 +226,18 @@ const HomePage = () => {
                             <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover" />
                           </div>
                           <div className="flex-1">
-                            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Lead Partner</p>
+                            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.leadPartner")}</p>
                             <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Daniel Mutiganda</h3>
-                            <p className="text-foreground/80 text-lg mb-4">Corporate, Transactions & Cross-Border Advisory</p>
-                            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                              Advising on legal risk and business strategy, and representing clients in transactions and regulatory matters in Rwanda and across emerging markets.
-                            </p>
+                            <p className="text-foreground/80 text-lg mb-4">{t("home.danielRole")}</p>
+                            <p className="text-muted-foreground leading-relaxed max-w-2xl">{t("home.danielSummary")}</p>
                             <div className="flex flex-wrap gap-3 mt-6">
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Rwanda Bar Association</span>
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">CIArb, UK</span>
                             </div>
                             <div className="flex items-center gap-2 mt-6 text-primary text-sm font-medium">
-                              <span className="group-data-[state=open]/daniel:hidden">View Full Profile</span>
-                              <span className="hidden group-data-[state=open]/daniel:inline">Hide Profile</span>
+                              <span className="group-data-[state=open]/daniel:hidden">{t("home.viewFullProfile")}</span>
+                              <span className="hidden group-data-[state=open]/daniel:inline">{t("home.hideProfile")}</span>
                               <ChevronDown className="w-4 h-4 transition-transform duration-300 group-data-[state=open]/daniel:rotate-180" />
                             </div>
                           </div>
@@ -288,18 +247,14 @@ const HomePage = () => {
                     <AccordionContent className="pb-0">
                       <div className="p-8 md:p-12 space-y-12 border-t border-border">
                         <div className="max-w-3xl">
-                          <p className="text-foreground/80 leading-relaxed">
-                            Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising and representing international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.
-                          </p>
-                          <p className="text-foreground/80 leading-relaxed mt-4">
-                            He works with clients to align legal risk, business strategy, and growth objectives, with a strong focus on structuring compliant investments, negotiating transactions, and representing client interests in regulatory and commercial engagements.
-                          </p>
+                          <p className="text-foreground/80 leading-relaxed">{t("home.danielBio1")}</p>
+                          <p className="text-foreground/80 leading-relaxed mt-4">{t("home.danielBio2")}</p>
                         </div>
 
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <Award className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">What Sets Him Apart</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.whatSetsHimApart")}</h4>
                           </div>
                           <div className="grid md:grid-cols-2 gap-4">
                             {["Combines legal, executive, and public sector experience", "Strong track record across regulated and high-growth sectors", "Deep understanding of Rwanda's legal, regulatory, and business environment", "Aligns legal frameworks with commercial strategy and growth", "Advises on and represents clients in transactions and regulatory engagements", "Strong cross-cultural capability across international and local stakeholder environments"].map((item) => (
@@ -314,9 +269,9 @@ const HomePage = () => {
                         <div>
                           <div className="flex items-center gap-3 mb-3">
                             <Briefcase className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">Multi-Disciplinary Experience</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.multiDisciplinary")}</h4>
                           </div>
-                          <p className="text-muted-foreground text-sm mb-6 ml-8">Daniel brings experience across key sectors, enabling practical, business-oriented advice and effective representation.</p>
+                          <p className="text-muted-foreground text-sm mb-6 ml-8">{t("home.internationalPerspectiveDesc").split(".")[0]}.</p>
                           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {[{ sector: "Government & Public Sector", desc: "Legislative advisory, policy, and regulatory frameworks" }, { sector: "Financial Services", desc: "Banking, compliance, risk, and governance" }, { sector: "International Development", desc: "Advisory to NGOs, donors, and global institutions" }, { sector: "Health & Social Impact", desc: "Support to large-scale, mission-driven programs" }, { sector: "Corporate & Private Sector", desc: "Structuring, transactions, and business growth" }, { sector: "Consultancy & Legal Advisory", desc: "Cross-sector strategic advisory and representation" }].map((item) => (
                               <div key={item.sector} className="border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
@@ -330,9 +285,9 @@ const HomePage = () => {
                         <div className="bg-muted/20 rounded-xl p-8 border border-border">
                           <div className="flex items-center gap-3 mb-3">
                             <Globe className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">International Perspective, Local Execution</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.internationalPerspective")}</h4>
                           </div>
-                          <p className="text-foreground/80 text-sm leading-relaxed mb-6">Daniel advises and represents international clients entering Rwanda while supporting local businesses to structure, scale, and transact effectively.</p>
+                          <p className="text-foreground/80 text-sm leading-relaxed mb-6">{t("home.internationalPerspectiveDesc")}</p>
                           <div className="grid sm:grid-cols-2 gap-3">
                             {["Structuring compliant and scalable investments", "Managing legal and regulatory risk", "Representing clients in negotiations and regulatory processes", "Bridging international and local stakeholders", "Translating complexity into clear business decisions"].map((item) => (
                               <div key={item} className="flex items-start gap-2">
@@ -347,7 +302,7 @@ const HomePage = () => {
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <Shield className="w-5 h-5 text-primary" />
-                              <h4 className="text-xl font-bold font-serif">Core Practice Areas</h4>
+                              <h4 className="text-xl font-bold font-serif">{t("home.corePracticeAreas")}</h4>
                             </div>
                             <ul className="space-y-3">
                               {["Cross-Border Transactions & Market Entry", "Mergers & Acquisitions (M&A)", "Corporate Structuring & Restructuring", "Regulatory Compliance & Government Relations", "Corporate Governance & Board Advisory", "Investment & Institutional Advisory", "Commercial Contracts, Negotiation & Representation"].map((item) => (
@@ -361,7 +316,7 @@ const HomePage = () => {
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <Briefcase className="w-5 h-5 text-primary" />
-                              <h4 className="text-xl font-bold font-serif">Sector Focus</h4>
+                              <h4 className="text-xl font-bold font-serif">{t("home.sectorFocus")}</h4>
                             </div>
                             <div className="space-y-4">
                               {[{ sector: "Financial Services & Fintech", desc: "Banking, digital finance, compliance, and licensing" }, { sector: "Energy & Infrastructure", desc: "Project structuring, PPPs, and regulatory approvals" }, { sector: "Investment & Private Equity", desc: "Deal structuring, due diligence, and execution" }, { sector: "International Development & ESG", desc: "Governance, compliance, and sustainable investment" }, { sector: "Government & Public Sector", desc: "Regulatory frameworks and institutional advisory" }, { sector: "Corporate & Commercial", desc: "M&A, structuring, and business expansion" }].map((item) => (
@@ -377,7 +332,7 @@ const HomePage = () => {
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <BookOpen className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">Representative Experience</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.representativeExperience")}</h4>
                           </div>
                           <div className="grid md:grid-cols-2 gap-3">
                             {["Advised on and represented clients in cross-border investment transactions in regulated sectors", "Led corporate restructuring and shareholder transitions", "Supported market entry, licensing, and regulatory approvals for international investors", "Negotiated and represented clients in commercial agreements with international partners", "Strengthened governance frameworks, reducing legal and regulatory exposure", "Advised and represented boards and executive teams on risk, compliance, and strategic decision-making"].map((item) => (
@@ -393,7 +348,7 @@ const HomePage = () => {
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <Users className="w-5 h-5 text-primary" />
-                              <h4 className="text-xl font-bold font-serif">Clients & Engagements</h4>
+                              <h4 className="text-xl font-bold font-serif">{t("home.clientsEngagements")}</h4>
                             </div>
                             <ul className="space-y-3">
                               {["International investors and private equity firms", "Development finance institutions and global organizations", "Multinational corporations", "Financial institutions and regulated entities", "Local enterprises and high-growth businesses"].map((item) => (
@@ -407,7 +362,7 @@ const HomePage = () => {
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <MapPin className="w-5 h-5 text-primary" />
-                              <h4 className="text-xl font-bold font-serif">Geographic Focus</h4>
+                              <h4 className="text-xl font-bold font-serif">{t("home.geographicFocus")}</h4>
                             </div>
                             <div className="space-y-4">
                               {[{ name: "Rwanda", desc: "Core market" }, { name: "East Africa", desc: "Regional advisory and transactions" }, { name: "Cross-Border", desc: "Investment structuring" }].map((item) => (
@@ -422,7 +377,7 @@ const HomePage = () => {
 
                         <div className="grid md:grid-cols-2 gap-8">
                           <div>
-                            <h4 className="text-xl font-bold font-serif mb-6">Board & Regulatory Advisory</h4>
+                            <h4 className="text-xl font-bold font-serif mb-6">{t("home.boardRegulatory")}</h4>
                             <ul className="space-y-3">
                               {["Advises and represents boards and executive teams on governance, compliance, and risk", "Experience engaging regulators and navigating licensing frameworks", "Company secretarial and board-level advisory experience"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
@@ -433,7 +388,7 @@ const HomePage = () => {
                             </ul>
                           </div>
                           <div>
-                            <h4 className="text-xl font-bold font-serif mb-6">Leadership & Institutional Experience</h4>
+                            <h4 className="text-xl font-bold font-serif mb-6">{t("home.leadershipInstitutional")}</h4>
                             <ul className="space-y-3">
                               {["Led organizational growth from under 1,000 to over 3,500 employees", "Managed large operational teams and budgets", "Strengthened governance, compliance, and internal systems", "Worked closely with international leadership and investors", "Advised and represented executive teams on risk, strategy, and growth"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
@@ -448,7 +403,7 @@ const HomePage = () => {
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <GraduationCap className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">Education & Professional Foundation</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.educationFoundation")}</h4>
                           </div>
                           <div className="grid md:grid-cols-2 gap-4">
                             <div className="space-y-4">
@@ -460,7 +415,7 @@ const HomePage = () => {
                               ))}
                             </div>
                             <div>
-                              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Certifications</p>
+                              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">{t("home.certifications")}</p>
                               <div className="space-y-3">
                                 <div className="border border-border rounded-lg p-4">
                                   <p className="font-semibold text-sm">Certified Arbitrator (Associate)</p>
@@ -471,7 +426,7 @@ const HomePage = () => {
                                   <p className="text-xs text-muted-foreground">IABFM</p>
                                 </div>
                               </div>
-                              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 mt-6">Languages</p>
+                              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 mt-6">{t("home.languages")}</p>
                               <div className="flex gap-2">
                                 <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">English</span>
                                 <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
@@ -483,20 +438,20 @@ const HomePage = () => {
 
                         <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-8 border border-primary/20">
                           <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
-                            "I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity."
+                            {t("home.danielQuote")}
                           </blockquote>
                           <p className="text-primary text-sm font-semibold mt-4">— Daniel Mutiganda</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                          <Link to="/contact">
+                          <LocalizedLink to="/contact">
                             <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
-                              Book a Consultation <ArrowRight className="w-4 h-4" />
+                              {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
                             </Button>
-                          </Link>
+                          </LocalizedLink>
                           <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
-                              <Mail className="w-4 h-4" /> Email Daniel
+                              <Mail className="w-4 h-4" /> {t("home.emailDaniel")}
                             </Button>
                           </a>
                         </div>
@@ -515,19 +470,17 @@ const HomePage = () => {
                             <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
                           </div>
                           <div className="flex-1">
-                            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Partner</p>
+                            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.partner")}</p>
                             <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Katusime Mbombo Moses</h3>
-                            <p className="text-foreground/80 text-lg mb-4">Legal & Corporate Governance, Compliance</p>
-                            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                              Experienced legal and governance practitioner with over 18 years of expertise in corporate governance, compliance, stakeholder management, and strategic legal advisory.
-                            </p>
+                            <p className="text-foreground/80 text-lg mb-4">{t("home.mosesRole")}</p>
+                            <p className="text-muted-foreground leading-relaxed max-w-2xl">{t("home.mosesSummary")}</p>
                             <div className="flex flex-wrap gap-3 mt-6">
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Advocate, High Court of Rwanda</span>
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
                             </div>
                             <div className="flex items-center gap-2 mt-6 text-primary text-sm font-medium">
-                              <span className="group-data-[state=open]/moses:hidden">View Full Profile</span>
-                              <span className="hidden group-data-[state=open]/moses:inline">Hide Profile</span>
+                              <span className="group-data-[state=open]/moses:hidden">{t("home.viewFullProfile")}</span>
+                              <span className="hidden group-data-[state=open]/moses:inline">{t("home.hideProfile")}</span>
                               <ChevronDown className="w-4 h-4 transition-transform duration-300 group-data-[state=open]/moses:rotate-180" />
                             </div>
                           </div>
@@ -539,7 +492,7 @@ const HomePage = () => {
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <GraduationCap className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">Education & Certifications</h4>
+                            <h4 className="text-xl font-bold font-serif">{t("home.educationCerts")}</h4>
                           </div>
                           <div className="grid md:grid-cols-2 gap-4">
                             {[{ degree: "Master of Laws (LL.M)", school: "University of Groningen" }, { degree: "Bachelor of Laws (LL.B)", school: "National University of Rwanda" }, { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" }, { degree: "Financial Industry Management (FICP)", school: "Luxembourg School of Business" }].map((item) => (
@@ -551,7 +504,7 @@ const HomePage = () => {
                           </div>
                         </div>
                         <div>
-                          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Languages</p>
+                          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">{t("home.languages")}</p>
                           <div className="flex gap-2">
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">English</span>
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
@@ -571,7 +524,7 @@ const HomePage = () => {
           <section id="industries" className="section-padding bg-card scroll-mt-20">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Industries We Serve</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.industriesWeServe")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
               <div className="flex flex-wrap justify-center gap-5">
@@ -591,18 +544,18 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
           <div className="container relative">
             <div className="text-center max-w-2xl mx-auto reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Connect With Us Today</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.connectWithUs")}</h2>
               <div className="line-gold mx-auto mt-4 mb-6" />
-              <p className="text-muted-foreground mb-10 leading-relaxed">Whether you are navigating a complex transaction, entering a new market, or protecting your business interests, our partners are ready to advise.</p>
+              <p className="text-muted-foreground mb-10 leading-relaxed">{t("home.connectDesc")}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact">
+                <LocalizedLink to="/contact">
                   <Button variant="gold" size="lg" className="gap-2">
-                    Request a Private Consultation <ArrowRight className="w-4 h-4" />
+                    {t("home.requestConsultation")} <ArrowRight className="w-4 h-4" />
                   </Button>
-                </Link>
+                </LocalizedLink>
                 <a href="tel:+250788559603">
                   <Button variant="gold-outline" size="lg" className="gap-2">
-                    <Phone className="w-4 h-4" /> Call Now
+                    <Phone className="w-4 h-4" /> {t("home.callNow")}
                   </Button>
                 </a>
               </div>
