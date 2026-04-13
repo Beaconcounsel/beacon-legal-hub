@@ -132,10 +132,11 @@ const HomePage = () => {
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="line-gold mb-6 animate-fade-in" />
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 animate-fade-up text-foreground" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 animate-fade-in text-foreground">
+
               Law Firm for Individuals, Businesses, Institutions, and International Investors
             </h1>
+            <div className="line-gold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }} />
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.25s" }}>
               With over 30 years of combined experience, Beacon Attorneys & Consultants advises on complex legal and business matters with the precision and discretion that high-stakes engagements demand.
             </p>
@@ -178,8 +179,8 @@ const HomePage = () => {
             <div className="container">
               <div className="grid lg:grid-cols-2 gap-16 items-center reveal">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif text-primary">Who We Are</h2>
-                  <div className="line-gold mt-4 mb-6" />
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Who We Are</h2>
+                  <div className="line-gold mb-6" />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>Beacon Attorneys & Consultants is a premier law firm based in Kigali, Rwanda, advising businesses, institutions, and international clients on complex legal and commercial matters.</p>
                     <p>With over 30 years of combined experience across our partnership, we bring deep sector expertise, a rigorous advisory approach, and the discretion that high-stakes engagements require.</p>
@@ -198,8 +199,8 @@ const HomePage = () => {
           <section className="section-padding bg-card">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
-                <div className="line-gold mx-auto mt-4" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">What Drives Us</h2>
+                <div className="line-gold mx-auto" />
               </div>
               <div className="grid md:grid-cols-3 gap-8">
                 {values.map((v) => (
@@ -221,8 +222,8 @@ const HomePage = () => {
               <div className="reveal relative max-w-2xl mx-auto text-center">
                 <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
                 <div className="relative bg-card border border-border rounded-xl p-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-primary">Our Purpose</h2>
-                  <div className="line-gold mx-auto mt-4 mb-6" />
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">Our Purpose</h2>
+                  <div className="line-gold mx-auto mb-6" />
                   <p className="text-muted-foreground leading-relaxed mb-8">
                     To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.
                   </p>
@@ -240,8 +241,8 @@ const HomePage = () => {
           <section className="section-padding">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Clients</h2>
-                <div className="line-gold mx-auto mt-4 mb-6" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Clients</h2>
+                <div className="line-gold mx-auto mb-6" />
                 <p className="text-muted-foreground leading-relaxed">We act for our clientele across industries and borders, delivering partner-led advisory at every stage.</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -263,8 +264,8 @@ const HomePage = () => {
           <section id="team" className="section-padding scroll-mt-20">
             <div className="container">
               <div className="max-w-3xl mb-16 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our People</h2>
-                <div className="line-gold mt-4 mb-6" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">Our People</h2>
+                <div className="line-gold mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
                 </p>
