@@ -1,56 +1,127 @@
+import { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, Users, Sprout, Building2, Globe } from "lucide-react";
+import { ArrowRight, BookOpen, Search, GraduationCap, Briefcase, Users, Globe, Building2, Sprout, Scale } from "lucide-react";
 
-const programs = [
-  { icon: Users, title: "Youth Legal Literacy & Entrepreneurship", desc: "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses." },
-  { icon: Sprout, title: "Women in Business Law", desc: "Targeted programs covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs." },
-  { icon: Globe, title: "Farmer Cooperatives", desc: "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities and cooperatives." },
-  { icon: Building2, title: "SME Legal Structuring", desc: "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises." },
-  { icon: BookOpen, title: "NGO Governance & Compliance", desc: "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices." },
-];
+const ResearchPage = () => {
+  const location = useLocation();
 
-const ResearchPage = () => (
-  <Layout>
-    <section className="section-padding">
-      <div className="container">
-        <div className="max-w-3xl mb-16">
-          <div className="line-gold mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Consultancy & Training</h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Beacon Firm is committed to advancing justice through strengthening legal capacity across Rwanda. Through targeted research, education programs, and practical training, we simplify complex legal concepts and empower communities, organizations, and businesses to operate within a clear legal framework.
-          </p>
-        </div>
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [location.hash]);
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {programs.map((p) => (
-            <div key={p.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-              <p.icon className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 font-serif">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-card border border-border rounded-lg p-10 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4 font-serif">Our Approach</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Every training program is designed with practical application in mind. We translate complex legal frameworks into actionable knowledge, ensuring participants can immediately apply what they learn.</p>
-            <p>Our programs contribute to Rwanda's sustainable development goals by building legal awareness, promoting compliance culture, and strengthening institutional capacity at every level.</p>
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Research & Training</h1>
+            <div className="line-gold mx-auto mb-6" />
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Beacon Attorneyes advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div className="mt-16">
+      {/* Research */}
+      <section id="research" className="section-padding scroll-mt-28">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Research</h2>
+          <div className="line-gold mb-6" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+            Our research practice generates actionable insights that shape policy, inform business strategy, and advance the rule of law. We contribute to the legal and commercial knowledge base through rigorous analysis of emerging issues.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: Scale, title: "Legal Framework Analysis", desc: "In-depth studies of Rwanda's evolving regulatory environment, identifying opportunities and compliance requirements for businesses and investors." },
+              { icon: Globe, title: "Cross-Border Investment Research", desc: "Comparative analysis of investment frameworks across East Africa, helping businesses understand market entry requirements and regulatory harmonization." },
+              { icon: BookOpen, title: "Policy & Legislative Review", desc: "Critical assessment of proposed legislation and policy changes, providing stakeholders with evidence-based perspectives on potential business impact." },
+            ].map((item) => (
+              <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
           <Link to="/contact">
             <Button variant="gold" size="lg" className="gap-2">
-              Inquire About Training Programs <ArrowRight className="w-4 h-4" />
+              Commission Research <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </div>
-      </div>
-    </section>
-  </Layout>
-);
+      </section>
+
+      {/* Training */}
+      <section id="training" className="section-padding bg-card scroll-mt-28">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Training</h2>
+          <div className="line-gold mb-6" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+            We design and deliver practical training programmes that equip professionals, communities, and organizations with the legal knowledge needed to operate confidently and compliantly.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: Users, title: "Youth Legal Literacy & Entrepreneurship", desc: "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses." },
+              { icon: Sprout, title: "Women in Business Law", desc: "Targeted programmes covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs." },
+              { icon: Building2, title: "SME Legal Structuring", desc: "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises." },
+              { icon: Globe, title: "Farmer Cooperatives", desc: "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities." },
+              { icon: GraduationCap, title: "NGO Governance & Compliance", desc: "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices." },
+            ].map((item) => (
+              <div key={item.title} className="bg-background border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <Link to="/contact">
+            <Button variant="gold" size="lg" className="gap-2">
+              Inquire About Training Programmes <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Consultancy */}
+      <section id="consultancy" className="section-padding scroll-mt-28">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">Consultancy</h2>
+          <div className="line-gold mb-6" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+            Our consultancy practice provides strategic advisory services to organizations seeking to navigate complex legal, regulatory, and business environments with confidence.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: Briefcase, title: "Business Environment Advisory", desc: "Guiding investors and enterprises through Rwanda's business landscape, from market entry strategy to operational compliance and growth planning." },
+              { icon: Search, title: "Regulatory Impact Assessment", desc: "Evaluating how regulatory changes affect business operations, and developing compliance strategies that minimize disruption." },
+              { icon: Scale, title: "Justice Sector Strengthening", desc: "Partnering with institutions to improve access to justice, strengthen dispute resolution mechanisms, and promote the rule of law for all." },
+            ].map((item) => (
+              <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <Link to="/contact">
+            <Button variant="gold" size="lg" className="gap-2">
+              Request a Consultancy Engagement <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
+};
 
 export default ResearchPage;
