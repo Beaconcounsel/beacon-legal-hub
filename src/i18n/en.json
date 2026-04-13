@@ -24,7 +24,19 @@
     "joinTeam": "Join Our Team",
     "internship": "Internship Programme",
     "copyright": "© {{year}} Beacon Attorneys & Consultants. All rights reserved.",
-    "address": "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda"
+    "address": "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda",
+    "legalResources": "Legal Resources",
+    "resources": {
+      "minijust": "Ministry of Justice",
+      "judiciary": "Judiciary of Rwanda",
+      "bar": "Rwanda Bar Association",
+      "rdb": "Rwanda Development Board",
+      "rgb": "Rwanda Governance Board",
+      "rra": "Rwanda Revenue Authority",
+      "rib": "Rwanda Investigation Bureau",
+      "nppa": "National Public Prosecution Authority",
+      "gazette": "Official Gazette"
+    }
   },
   "sticky": {
     "consult": "Consult"
