@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "@/assets/bac-logo.jpg";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const aboutDropdownItems = [
