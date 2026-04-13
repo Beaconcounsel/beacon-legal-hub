@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Shield, MapPin, Scale, Handshake } from "lucide-react";
-import kigaliImg from "@/assets/kigali-skyline.jpg";
+import kigaliImg from "@/assets/international-bg.jpg";
 
 const services = [
   { icon: Globe, title: "Market Entry Advisory", desc: "We guide international investors through Rwanda's regulatory requirements, company registration, licensing, and sector-specific compliance for seamless market entry." },
