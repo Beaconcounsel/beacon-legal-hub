@@ -36,9 +36,12 @@ const Landing = () => {
 
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <div className="h-1 w-16 bg-primary rounded-full mb-8" />
-            <p className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-10 leading-relaxed text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              Global experience + local knowledge drives service excellence.
+            <div className="h-1 w-16 bg-primary rounded-full mb-6" />
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">
+              Welcome to Beacon Attorneyes
+            </h1>
+            <p className="text-lg md:text-xl lg:text-2xl font-medium mb-10 leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+              With global experience and a sharp understanding of Rwanda's legal and business landscape, we deliver legal solutions that work—locally and beyond.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
