@@ -119,7 +119,7 @@ const ServicesCarousel = () => {
   }, [paused]);
 
   return (
-    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
+    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
