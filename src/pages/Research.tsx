@@ -26,7 +26,7 @@ const ResearchPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Research & Development</h1>
             <div className="line-gold mx-auto mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Beacon Attorneyes advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
+              Beacon Attorneys advances justice and promotes doing business through targeted research, professional training, and strategic consultancy that strengthen legal capacity across Rwanda.
             </p>
           </div>
         </div>

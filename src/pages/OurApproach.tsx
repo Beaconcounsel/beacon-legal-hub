@@ -43,7 +43,7 @@ const OurApproachPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-foreground">Our Approach</h1>
             <div className="line-gold mx-auto mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Beacon Attorneyes, we bring more than legal expertise—we bring executive insight. Our founding partners have held senior business and legal leadership roles across multiple industries and jurisdictions.
+              At Beacon Attorneys, we bring more than legal expertise—we bring executive insight. Our founding partners have held senior business and legal leadership roles across multiple industries and jurisdictions.
             </p>
           </div>
         </div>
@@ -140,7 +140,7 @@ const OurApproachPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-10">
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Beacon Attorneyes is committed to ensuring that access to justice is not limited by financial circumstances. We dedicate a meaningful portion of our practice to pro bono work, serving individuals and communities who face difficult conditions and cannot afford legal representation.
+                Beacon Attorneys is committed to ensuring that access to justice is not limited by financial circumstances. We dedicate a meaningful portion of our practice to pro bono work, serving individuals and communities who face difficult conditions and cannot afford legal representation.
               </p>
               <p>
                 In partnership with the Rwanda Bar Association, Legal Aid Forum, and other national and international organizations that support the needy, we provide free legal counsel to vulnerable populations—including victims of gender-based violence, refugees, indigent defendants, and marginalized communities.

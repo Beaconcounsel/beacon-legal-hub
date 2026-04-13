@@ -107,7 +107,7 @@ const ContactPage = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Beacon Attorneyes location"
+                    title="Beacon Attorneys location"
                   />
                 </div>
               </div>
