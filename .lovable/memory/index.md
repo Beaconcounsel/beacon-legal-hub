@@ -1,6 +1,3 @@
-# Memory: index.md
-Updated: now
-
 # Project Memory
 
 ## Core
