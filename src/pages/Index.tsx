@@ -97,7 +97,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>
-        <div className="container relative z-10 py-16">
+        <div className="container relative z-10 py-12">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
           </div>

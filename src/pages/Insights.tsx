@@ -15,7 +15,7 @@ const InsightsPage = () => {
       <SEOHead titleKey="seo.insightsTitle" descKey="seo.insightsDesc" />
       <section className="section-padding">
         <div className="container">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-12">
             <div className="line-gold mb-4" />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("insights.title")}</h1>
             <p className="text-muted-foreground text-lg leading-relaxed">{t("insights.tagline")}</p>

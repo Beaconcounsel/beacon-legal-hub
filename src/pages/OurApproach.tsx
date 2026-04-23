@@ -51,7 +51,7 @@ const OurApproachPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 py-16">
+        <div className="container relative z-10 py-12">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               {t("approach.heroTagline")}
@@ -90,7 +90,7 @@ const OurApproachPage = () => {
             <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" loading="lazy" width={1920} height={1080} />
             <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-transparent" />
           </div>
-          <div className="container relative z-10 py-16">
+          <div className="container relative z-10 py-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalClients")}</h2>
             <div className="line-gold mb-6" />
             <p className="text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalDesc")}</p>
