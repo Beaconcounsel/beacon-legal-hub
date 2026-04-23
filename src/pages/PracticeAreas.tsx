@@ -164,7 +164,21 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
   }, [paused]);
 
   return (
-    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div
+      className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-xl"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Our services"
+      tabIndex={0}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") { e.preventDefault(); next(); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+      }}
+    >
       <div className="overflow-hidden">
         <div
           className="flex ease-in-out"
@@ -199,7 +213,7 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
         <button
           onClick={prev}
           aria-label="Previous slide"
-          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors"
+          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <ChevronLeft className="w-5 h-5 text-foreground" />
         </button>
@@ -209,7 +223,8 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+              aria-current={i === current ? "true" : undefined}
+              className={`w-2.5 h-2.5 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                 i === current ? "bg-primary" : "bg-border hover:bg-primary/40"
               }`}
             />
@@ -218,7 +233,7 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
         <button
           onClick={next}
           aria-label="Next slide"
-          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors"
+          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <ChevronRight className="w-5 h-5 text-foreground" />
         </button>
