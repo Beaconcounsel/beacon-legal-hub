@@ -20,9 +20,9 @@ const Footer = () => {
     <footer className="relative overflow-hidden bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 w-full h-full z-0"
+        className="pointer-events-none absolute inset-x-0 bottom-0 w-full h-32 md:h-40 z-0"
         viewBox="0 0 800 400"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="xMidYMax slice"
         xmlns="http://www.w3.org/2000/svg"
       >
         <style>{`
@@ -40,44 +40,38 @@ const Footer = () => {
             .footer-float-a, .footer-float-b, .footer-float-c, .footer-float-d, .footer-dot { animation: none; }
           }
         `}</style>
-        {/* Faint oversized atmospheric circles */}
-        <circle cx="120" cy="350" r="280" fill="#1d535e" opacity="0.14" />
-        <circle cx="720" cy="80" r="220" fill="#2e7ec4" opacity="0.14" />
-
-        {/* Dominant deep teal */}
+        {/* Dominant deep teal — bottom-left, fully contained */}
         <g className="footer-float-a">
-          <circle cx="80" cy="320" r="110" fill="#1d535e" opacity="0.4" />
-          <circle cx="80" cy="320" r="110" fill="none" stroke="#3a7886" strokeOpacity="0.7" strokeWidth="1.5" />
+          <circle cx="90" cy="330" r="55" fill="#1d535e" opacity="0.4" />
+          <circle cx="90" cy="330" r="55" fill="none" stroke="#3a7886" strokeOpacity="0.7" strokeWidth="1.5" />
         </g>
 
-        {/* Vibrant gold floating top */}
+        {/* Vibrant gold */}
         <g className="footer-float-b">
-          <circle cx="640" cy="60" r="42" fill="#f5c400" opacity="1" />
-          <circle cx="640" cy="60" r="42" fill="none" stroke="#fde27a" strokeOpacity="0.7" strokeWidth="1.5" />
+          <circle cx="650" cy="320" r="28" fill="#f5c400" opacity="1" />
+          <circle cx="650" cy="320" r="28" fill="none" stroke="#fde27a" strokeOpacity="0.7" strokeWidth="1.5" />
         </g>
 
-        {/* Coral/red-orange accent */}
+        {/* Coral accent */}
         <g className="footer-float-c">
-          <circle cx="730" cy="300" r="56" fill="#e05c4b" opacity="0.95" />
-          <circle cx="730" cy="300" r="56" fill="none" stroke="#f08a7c" strokeOpacity="0.7" strokeWidth="1.5" />
+          <circle cx="740" cy="350" r="32" fill="#e05c4b" opacity="0.95" />
+          <circle cx="740" cy="350" r="32" fill="none" stroke="#f08a7c" strokeOpacity="0.7" strokeWidth="1.5" />
         </g>
 
-        {/* Smaller blue contrast */}
+        {/* Blue contrast */}
         <g className="footer-float-d">
-          <circle cx="500" cy="360" r="32" fill="#2e7ec4" opacity="0.95" />
-          <circle cx="500" cy="360" r="32" fill="none" stroke="#6aa8de" strokeOpacity="0.7" strokeWidth="1.5" />
+          <circle cx="420" cy="360" r="20" fill="#2e7ec4" opacity="0.95" />
+          <circle cx="420" cy="360" r="20" fill="none" stroke="#6aa8de" strokeOpacity="0.7" strokeWidth="1.5" />
         </g>
 
-        {/* Scattered decorative dots */}
-        <circle className="footer-dot" style={{ animationDelay: "0s" }} cx="220" cy="80" r="4" fill="#f5c400" opacity="0.95" />
-        <circle className="footer-dot" style={{ animationDelay: "0.6s" }} cx="320" cy="140" r="3" fill="#1d535e" opacity="0.8" />
-        <circle className="footer-dot" style={{ animationDelay: "1.2s" }} cx="440" cy="40" r="5" fill="#e05c4b" opacity="0.9" />
-        <circle className="footer-dot" style={{ animationDelay: "1.8s" }} cx="560" cy="200" r="3" fill="#2e7ec4" opacity="0.9" />
-        <circle className="footer-dot" style={{ animationDelay: "2.4s" }} cx="180" cy="220" r="4" fill="#1d535e" opacity="0.7" />
-        <circle className="footer-dot" style={{ animationDelay: "0.9s" }} cx="380" cy="320" r="3" fill="#f5c400" opacity="0.9" />
-        <circle className="footer-dot" style={{ animationDelay: "1.5s" }} cx="600" cy="340" r="4" fill="#1d535e" opacity="0.7" />
-        <circle className="footer-dot" style={{ animationDelay: "2.1s" }} cx="700" cy="180" r="3" fill="#e05c4b" opacity="0.85" />
-        <circle className="footer-dot" style={{ animationDelay: "0.3s" }} cx="260" cy="360" r="3" fill="#2e7ec4" opacity="0.85" />
+        {/* Scattered decorative dots — kept low in the band */}
+        <circle className="footer-dot" style={{ animationDelay: "0s" }} cx="220" cy="370" r="4" fill="#f5c400" opacity="0.95" />
+        <circle className="footer-dot" style={{ animationDelay: "0.6s" }} cx="300" cy="345" r="3" fill="#1d535e" opacity="0.8" />
+        <circle className="footer-dot" style={{ animationDelay: "1.2s" }} cx="370" cy="380" r="4" fill="#e05c4b" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "1.8s" }} cx="500" cy="340" r="3" fill="#2e7ec4" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "2.4s" }} cx="180" cy="385" r="3" fill="#1d535e" opacity="0.7" />
+        <circle className="footer-dot" style={{ animationDelay: "0.9s" }} cx="560" cy="380" r="3" fill="#f5c400" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "2.1s" }} cx="700" cy="370" r="3" fill="#e05c4b" opacity="0.85" />
       </svg>
 
       <div className="container py-8 relative z-10">
