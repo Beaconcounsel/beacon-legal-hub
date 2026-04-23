@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
@@ -152,6 +152,40 @@ const ContactPage = () => {
     toast.success(t("contact.successMessage"));
     setForm(initialForm);
     setErrors({});
+  };
+
+  // "Speak with a Partner" — opens WhatsApp/mailto with whatever has been filled in.
+  // Does NOT enforce strict validation; uses placeholders so the partner has context.
+  const handleSpeakWithPartner = () => {
+    const data: InquiryForm = {
+      ...form,
+      name: form.name.trim() || "(name not provided)",
+      email: form.email.trim() || "(email not provided)",
+      entityType: form.entityType || "(entity type not specified)",
+      jurisdiction: form.jurisdiction || "(jurisdiction not specified)",
+      matterType: form.matterType || "(matter type not specified)",
+      message: form.message.trim() || "(no message yet — would like to speak with a partner)",
+    };
+
+    const subject = `Partner Consultation Request — ${data.matterType}`;
+    const intro = "Hello Beacon Attorneys, I would like to speak with a partner about the following matter:";
+    const body = `${intro}\n\n${buildBody(data)}`;
+
+    // Honor the user's selected channel; default to WhatsApp for the "Speak" action.
+    if (data.channel === "Email") {
+      window.location.href = `mailto:${FIRM_EMAIL}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+    } else {
+      const text = `${subject}\n\n${body}`;
+      window.open(
+        `https://wa.me/${FIRM_WHATSAPP}?text=${encodeURIComponent(text)}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+    toast.success("Opening your conversation with a partner…");
   };
 
   return (
@@ -306,7 +340,24 @@ const ContactPage = () => {
                     Submitting opens your {form.channel === "WhatsApp" ? "WhatsApp" : "email client"} with your inquiry pre-filled. No data is stored on this site.
                   </p>
 
-                  <Button type="submit" variant="gold" size="lg">{t("contact.submit")}</Button>
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                    <Button type="submit" variant="gold" size="lg" className="sm:flex-1">
+                      {t("contact.submit")}
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="justice"
+                      size="lg"
+                      onClick={handleSpeakWithPartner}
+                      className="sm:flex-1 gap-2"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      Speak with a Partner
+                    </Button>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground -mt-2">
+                    The "Speak with a Partner" button opens {form.channel === "Email" ? "your email" : "WhatsApp"} pre-filled with whatever you've entered above — fields can be left blank.
+                  </p>
                 </form>
               </div>
 
