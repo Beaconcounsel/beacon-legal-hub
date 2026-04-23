@@ -25,36 +25,59 @@ const Footer = () => {
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <style>{`
+          @keyframes footerFloatA { 0%,100% { transform: translate(0,0); } 50% { transform: translate(0,-10px); } }
+          @keyframes footerFloatB { 0%,100% { transform: translate(0,0); } 50% { transform: translate(6px,8px); } }
+          @keyframes footerFloatC { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-8px,-6px); } }
+          @keyframes footerFloatD { 0%,100% { transform: translate(0,0); } 50% { transform: translate(5px,-5px); } }
+          @keyframes footerDot { 0%,100% { transform: translate(0,0); opacity: var(--dot-o, 0.8); } 50% { transform: translate(0,-4px); opacity: 1; } }
+          .footer-float-a { animation: footerFloatA 9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+          .footer-float-b { animation: footerFloatB 11s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+          .footer-float-c { animation: footerFloatC 13s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+          .footer-float-d { animation: footerFloatD 10s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+          .footer-dot { animation: footerDot 7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+          @media (prefers-reduced-motion: reduce) {
+            .footer-float-a, .footer-float-b, .footer-float-c, .footer-float-d, .footer-dot { animation: none; }
+          }
+        `}</style>
         {/* Faint oversized atmospheric circles */}
-        <circle cx="120" cy="350" r="280" fill="#1d535e" opacity="0.08" />
-        <circle cx="720" cy="80" r="220" fill="#2e7ec4" opacity="0.08" />
+        <circle cx="120" cy="350" r="280" fill="#1d535e" opacity="0.14" />
+        <circle cx="720" cy="80" r="220" fill="#2e7ec4" opacity="0.14" />
 
         {/* Dominant deep teal */}
-        <circle cx="80" cy="320" r="110" fill="#1d535e" opacity="0.18" />
-        <circle cx="80" cy="320" r="110" fill="none" stroke="#3a7886" strokeOpacity="0.5" strokeWidth="1" />
+        <g className="footer-float-a">
+          <circle cx="80" cy="320" r="110" fill="#1d535e" opacity="0.4" />
+          <circle cx="80" cy="320" r="110" fill="none" stroke="#3a7886" strokeOpacity="0.7" strokeWidth="1.5" />
+        </g>
 
         {/* Vibrant gold floating top */}
-        <circle cx="640" cy="60" r="42" fill="#f5c400" opacity="0.85" />
-        <circle cx="640" cy="60" r="42" fill="none" stroke="#fde27a" strokeOpacity="0.5" strokeWidth="1" />
+        <g className="footer-float-b">
+          <circle cx="640" cy="60" r="42" fill="#f5c400" opacity="1" />
+          <circle cx="640" cy="60" r="42" fill="none" stroke="#fde27a" strokeOpacity="0.7" strokeWidth="1.5" />
+        </g>
 
         {/* Coral/red-orange accent */}
-        <circle cx="730" cy="300" r="56" fill="#e05c4b" opacity="0.75" />
-        <circle cx="730" cy="300" r="56" fill="none" stroke="#f08a7c" strokeOpacity="0.5" strokeWidth="1" />
+        <g className="footer-float-c">
+          <circle cx="730" cy="300" r="56" fill="#e05c4b" opacity="0.95" />
+          <circle cx="730" cy="300" r="56" fill="none" stroke="#f08a7c" strokeOpacity="0.7" strokeWidth="1.5" />
+        </g>
 
         {/* Smaller blue contrast */}
-        <circle cx="500" cy="360" r="32" fill="#2e7ec4" opacity="0.7" />
-        <circle cx="500" cy="360" r="32" fill="none" stroke="#6aa8de" strokeOpacity="0.5" strokeWidth="1" />
+        <g className="footer-float-d">
+          <circle cx="500" cy="360" r="32" fill="#2e7ec4" opacity="0.95" />
+          <circle cx="500" cy="360" r="32" fill="none" stroke="#6aa8de" strokeOpacity="0.7" strokeWidth="1.5" />
+        </g>
 
         {/* Scattered decorative dots */}
-        <circle cx="220" cy="80" r="4" fill="#f5c400" opacity="0.7" />
-        <circle cx="320" cy="140" r="3" fill="#1d535e" opacity="0.5" />
-        <circle cx="440" cy="40" r="5" fill="#e05c4b" opacity="0.6" />
-        <circle cx="560" cy="200" r="3" fill="#2e7ec4" opacity="0.6" />
-        <circle cx="180" cy="220" r="4" fill="#1d535e" opacity="0.4" />
-        <circle cx="380" cy="320" r="3" fill="#f5c400" opacity="0.6" />
-        <circle cx="600" cy="340" r="4" fill="#1d535e" opacity="0.4" />
-        <circle cx="700" cy="180" r="3" fill="#e05c4b" opacity="0.5" />
-        <circle cx="260" cy="360" r="3" fill="#2e7ec4" opacity="0.5" />
+        <circle className="footer-dot" style={{ animationDelay: "0s" }} cx="220" cy="80" r="4" fill="#f5c400" opacity="0.95" />
+        <circle className="footer-dot" style={{ animationDelay: "0.6s" }} cx="320" cy="140" r="3" fill="#1d535e" opacity="0.8" />
+        <circle className="footer-dot" style={{ animationDelay: "1.2s" }} cx="440" cy="40" r="5" fill="#e05c4b" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "1.8s" }} cx="560" cy="200" r="3" fill="#2e7ec4" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "2.4s" }} cx="180" cy="220" r="4" fill="#1d535e" opacity="0.7" />
+        <circle className="footer-dot" style={{ animationDelay: "0.9s" }} cx="380" cy="320" r="3" fill="#f5c400" opacity="0.9" />
+        <circle className="footer-dot" style={{ animationDelay: "1.5s" }} cx="600" cy="340" r="4" fill="#1d535e" opacity="0.7" />
+        <circle className="footer-dot" style={{ animationDelay: "2.1s" }} cx="700" cy="180" r="3" fill="#e05c4b" opacity="0.85" />
+        <circle className="footer-dot" style={{ animationDelay: "0.3s" }} cx="260" cy="360" r="3" fill="#2e7ec4" opacity="0.85" />
       </svg>
 
       <div className="container py-8 relative z-10">
