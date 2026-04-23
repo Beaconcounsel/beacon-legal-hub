@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 import practiceHeroImg from "@/assets/practice-areas-hero.jpg";
 
 const PracticeAreasPage = () => {
@@ -19,9 +19,8 @@ const PracticeAreasPage = () => {
     "techDataProtection", "migration", "insolvency", "insurance",
   ] as const;
 
-  const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc"] as const;
+  const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc", "estatePlanning"] as const;
   const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList, BookOpen];
-  const fullServiceKeys = [...serviceKeys, "estatePlanning"] as const;
 
   const industries = [
     { icon: Zap, label: t("practiceAreas.industries.energy") },
@@ -55,9 +54,6 @@ const PracticeAreasPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
               {t("practiceAreas.heroTagline1")}
-            </p>
-            <p className="text-md font-medium leading-relaxed text-foreground/80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              {t("practiceAreas.heroTagline2")}
             </p>
           </div>
         </div>
@@ -127,6 +123,9 @@ const PracticeAreasPage = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
           <div className="line-gold mb-12" />
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-12">
+            {t("practiceAreas.heroTagline2")}
+          </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
           <div className="text-center mt-10">
             <LocalizedLink to="/contact">
