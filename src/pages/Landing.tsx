@@ -35,7 +35,7 @@ const Landing = () => {
         - Inner Auto Layout (Vertical): gap 16/24px, items hug content, left aligned
         - Tagline max-w 720px (640px on smaller wrap), 2–3 lines, sits in top-40% safe zone
       */}
-      <section className="relative h-[460px] md:h-[520px] lg:h-[600px] overflow-hidden">
+      <section className="relative h-[420px] md:h-[480px] lg:h-[540px] overflow-hidden">
         {/* Hero / Image */}
         <img
           src={heroImg}
@@ -53,11 +53,11 @@ const Landing = () => {
           }}
         />
         {/* Hero / Content — centered, top-aligned, max-w 1200 */}
-        <div className="absolute inset-x-0 top-[40px] md:top-[56px] lg:top-[72px] z-10">
-          <div className="mx-auto w-full max-w-[1200px] px-6 md:px-8">
-            {/* Auto Layout (Vertical), gap-4 (16px) → md gap-6 (24px), items-start */}
-            <div className="flex flex-col items-start gap-4 md:gap-6">
-              <p className="max-w-[720px] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+        <div className="absolute inset-x-0 top-[32px] md:top-[48px] lg:top-[64px] z-10">
+          <div className="mx-auto w-full max-w-[1100px] px-6 md:px-8">
+            {/* Auto Layout (Vertical), gap-3 (12px) → md gap-4 (16px), items-start */}
+            <div className="flex flex-col items-start gap-3 md:gap-4">
+              <p className="max-w-[680px] text-lg md:text-xl lg:text-2xl font-medium leading-snug text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                 {t("landing.heroTagline")}
               </p>
             </div>

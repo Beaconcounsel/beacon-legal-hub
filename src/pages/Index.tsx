@@ -91,15 +91,15 @@ const HomePage = () => {
     <Layout>
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero */}
-      <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[420px] md:min-h-[500px] lg:min-h-[540px] flex items-start overflow-hidden">
         <div className="absolute inset-0">
           <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>
-        <div className="container relative z-10 py-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
+        <div className="container relative z-10 pt-[64px] md:pt-[72px] lg:pt-[80px] pb-10">
+          <div className="max-w-2xl mx-auto text-center flex flex-col gap-3 md:gap-4">
+            <p className="text-lg md:text-xl font-medium text-white/95 leading-snug animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
