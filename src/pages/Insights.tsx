@@ -24,7 +24,7 @@ const InsightsPage = () => {
           <div className="space-y-5">
             {articleKeys.map((key, i) => (
               <article key={i} className="bg-card border border-border rounded-lg p-5 md:p-6 hover:border-primary/30 transition-colors group cursor-pointer">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {t(`insights.articles.${key}.category`)}
                   </span>
@@ -32,8 +32,8 @@ const InsightsPage = () => {
                     <Calendar className="w-3 h-3" /> {t(`insights.articles.${key}.date`)}
                   </span>
                 </div>
-                <h2 className="text-xl md:text-2xl font-bold mb-3 font-serif group-hover:text-primary transition-colors">{t(`insights.articles.${key}.title`)}</h2>
-                <p className="text-muted-foreground leading-relaxed">{t(`insights.articles.${key}.excerpt`)}</p>
+                <h2 className="text-xl md:text-2xl font-bold mb-2 font-serif group-hover:text-primary transition-colors">{t(`insights.articles.${key}.title`)}</h2>
+                <p className="text-muted-foreground leading-snug">{t(`insights.articles.${key}.excerpt`)}</p>
               </article>
             ))}
           </div>

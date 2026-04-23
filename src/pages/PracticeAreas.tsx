@@ -70,10 +70,10 @@ const PracticeAreasPage = () => {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-3 font-serif">{t(`practiceAreas.areas.${key}.title`)}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">{t(`practiceAreas.areas.${key}.description`)}</p>
+                    <h3 className="text-2xl font-bold mb-2 font-serif">{t(`practiceAreas.areas.${key}.title`)}</h3>
+                    <p className="text-muted-foreground leading-snug mb-3">{t(`practiceAreas.areas.${key}.description`)}</p>
                     {t(`practiceAreas.areas.${key}.subsection`, { defaultValue: "" }) && (
-                      <div className="bg-secondary/50 border border-border rounded-md p-4 mb-4">
+                      <div className="bg-secondary/50 border border-border rounded-md p-4 mb-3">
                         <p className="text-sm text-foreground/80">{t(`practiceAreas.areas.${key}.subsection`)}</p>
                       </div>
                     )}
@@ -195,11 +195,11 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
                     key={key}
                     className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors"
                   >
-                    <Icon className="w-10 h-10 text-primary mb-5 mx-auto" />
-                    <h3 className="text-xl md:text-2xl font-medium mb-3 font-serif">
+                    <Icon className="w-10 h-10 text-primary mb-4 mx-auto" />
+                    <h3 className="text-xl md:text-2xl font-medium mb-2 font-serif">
                       {t(`practiceAreas.services.${key}.title`)}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-light">
+                    <p className="text-sm text-muted-foreground leading-snug font-light">
                       {t(`practiceAreas.services.${key}.desc`)}
                     </p>
                   </div>
