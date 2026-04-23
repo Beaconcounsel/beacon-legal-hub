@@ -83,7 +83,7 @@ const HomePage = () => {
       const id = location.hash.slice(1);
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
+      }, 200);
     }
   }, [location.hash]);
 
@@ -510,6 +510,18 @@ const HomePage = () => {
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Kinyarwanda</span>
                           </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                          <LocalizedLink to="/contact">
+                            <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
+                              {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
+                            </Button>
+                          </LocalizedLink>
+                          <a href="mailto:info@beaconattorneys.rw">
+                            <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
+                              <Mail className="w-4 h-4" /> {t("home.workWithUs")}
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </AccordionContent>
