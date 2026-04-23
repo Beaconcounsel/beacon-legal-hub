@@ -157,6 +157,55 @@ const ContactPage = () => {
   // "Speak with a Partner" — opens WhatsApp/mailto with whatever has been filled in.
   // Does NOT enforce strict validation; uses placeholders so the partner has context.
   const handleSpeakWithPartner = () => {
+    // Lightweight completeness check — warn (don't block) if key fields are missing.
+    const KEY_FIELDS: Array<{ key: keyof InquiryForm; label: string; valid: (v: string) => boolean }> = [
+      { key: "name", label: "Full Name", valid: (v) => v.trim().length > 0 },
+      { key: "email", label: "Email", valid: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { key: "matterType", label: "Matter Type", valid: (v) => v.length > 0 },
+      { key: "jurisdiction", label: "Jurisdiction", valid: (v) => v.length > 0 },
+      { key: "message", label: "Message", valid: (v) => v.trim().length >= 10 },
+    ];
+    const missing = KEY_FIELDS.filter((f) => !f.valid(form[f.key] as string));
+
+    if (missing.length > 0) {
+      // Highlight the missing fields inline.
+      const fieldErrors: Partial<Record<keyof InquiryForm, string>> = {};
+      missing.forEach((f) => {
+        fieldErrors[f.key] =
+          f.key === "email"
+            ? "Add a valid email so the partner can reply"
+            : f.key === "message"
+            ? "Add at least a brief description (10+ characters)"
+            : `${f.label} is recommended`;
+      });
+      setErrors((prev) => ({ ...prev, ...fieldErrors }));
+
+      const list = missing.map((f) => f.label).join(", ");
+      toast.warning("Some key details are missing", {
+        description: `Missing: ${list}. Send anyway, or complete the form first?`,
+        duration: 10000,
+        action: {
+          label: "Send anyway",
+          onClick: () => sendPartnerMessage(),
+        },
+        cancel: {
+          label: "Go back",
+          onClick: () => {
+            // Scroll to the first missing field if we can find it.
+            const first = document.querySelector<HTMLElement>(
+              `[name="${missing[0].key}"], #${missing[0].key}`
+            );
+            first?.scrollIntoView({ behavior: "smooth", block: "center" });
+          },
+        },
+      });
+      return;
+    }
+
+    sendPartnerMessage();
+  };
+
+  const sendPartnerMessage = () => {
     const data: InquiryForm = {
       ...form,
       name: form.name.trim() || "(name not provided)",
