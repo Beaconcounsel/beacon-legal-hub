@@ -25,21 +25,42 @@ const Landing = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.landingTitle" descKey="seo.landingDesc" />
-      {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
-        </div>
-        <div className="container relative z-10 py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif leading-tight mb-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              {t("landing.positioningStatement")}
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              {t("landing.heroTagline")}
-            </p>
+      {/*
+        Hero — Figma spec:
+        - Frame heights: Mobile 520, Tablet 600, Desktop 720
+        - Hero / Image: full-bleed (Left+Right+Top+Bottom)
+        - Hero / Overlay: top 40%, dark→transparent linear gradient (sits ABOVE image, BELOW content)
+        - Hero / Content: max-w 1200px, centered horizontally, top-aligned
+          Top offset: Mobile 56px, Tablet 72px, Desktop 96px
+        - Inner Auto Layout (Vertical): gap 16/24px, items hug content, left aligned
+        - Tagline max-w 720px (640px on smaller wrap), 2–3 lines, sits in top-40% safe zone
+      */}
+      <section className="relative h-[520px] md:h-[600px] lg:h-[720px] overflow-hidden">
+        {/* Hero / Image */}
+        <img
+          src={heroImg}
+          alt="Kigali skyline"
+          className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+        />
+        {/* Hero / Overlay — top 40%, fixed height, Left+Right+Top */}
+        <div
+          className="absolute inset-x-0 top-0 h-[40%] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, hsl(var(--navy) / 0.55), hsl(var(--navy) / 0))",
+          }}
+        />
+        {/* Hero / Content — centered, top-aligned, max-w 1200 */}
+        <div className="absolute inset-x-0 top-[56px] md:top-[72px] lg:top-[96px] z-10">
+          <div className="mx-auto w-full max-w-[1200px] px-6 md:px-8">
+            {/* Auto Layout (Vertical), gap-4 (16px) → md gap-6 (24px), items-start */}
+            <div className="flex flex-col items-start gap-4 md:gap-6">
+              <p className="max-w-[720px] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+                {t("landing.heroTagline")}
+              </p>
+            </div>
           </div>
         </div>
       </section>
