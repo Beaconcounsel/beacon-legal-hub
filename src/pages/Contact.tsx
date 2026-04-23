@@ -15,10 +15,9 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { openWhatsApp, FIRM_COUNTRY_CODE, FIRM_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ENTITY_TYPES = [
   "Individual",
@@ -77,8 +76,7 @@ type InquiryForm = {
 };
 
 const FIRM_EMAIL = "info@beaconattorneys.rw";
-// Stored as country code + national number; the helper normalizes for wa.me / api.whatsapp.com
-const FIRM_WHATSAPP = `${FIRM_COUNTRY_CODE}${FIRM_WHATSAPP_NUMBER}`;
+const FIRM_WHATSAPP = "250788559603";
 
 const initialForm: InquiryForm = {
   name: "",
@@ -140,7 +138,11 @@ const ContactPage = () => {
 
     if (data.channel === "WhatsApp") {
       const text = `${subject}\n\n${body}`;
-      openWhatsApp(FIRM_WHATSAPP, text);
+      window.open(
+        `https://wa.me/${FIRM_WHATSAPP}?text=${encodeURIComponent(text)}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
     } else {
       window.location.href = `mailto:${FIRM_EMAIL}?subject=${encodeURIComponent(
         subject
@@ -150,85 +152,6 @@ const ContactPage = () => {
     toast.success(t("contact.successMessage"));
     setForm(initialForm);
     setErrors({});
-  };
-
-  // "Speak with a Partner" — opens WhatsApp/mailto with whatever has been filled in.
-  // Does NOT enforce strict validation; uses placeholders so the partner has context.
-  const handleSpeakWithPartner = () => {
-    // Lightweight completeness check — warn (don't block) if key fields are missing.
-    const KEY_FIELDS: Array<{ key: keyof InquiryForm; label: string; valid: (v: string) => boolean }> = [
-      { key: "name", label: "Full Name", valid: (v) => v.trim().length > 0 },
-      { key: "email", label: "Email", valid: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
-      { key: "matterType", label: "Matter Type", valid: (v) => v.length > 0 },
-      { key: "jurisdiction", label: "Jurisdiction", valid: (v) => v.length > 0 },
-      { key: "message", label: "Message", valid: (v) => v.trim().length >= 10 },
-    ];
-    const missing = KEY_FIELDS.filter((f) => !f.valid(form[f.key] as string));
-
-    if (missing.length > 0) {
-      // Highlight the missing fields inline.
-      const fieldErrors: Partial<Record<keyof InquiryForm, string>> = {};
-      missing.forEach((f) => {
-        fieldErrors[f.key] =
-          f.key === "email"
-            ? "Add a valid email so the partner can reply"
-            : f.key === "message"
-            ? "Add at least a brief description (10+ characters)"
-            : `${f.label} is recommended`;
-      });
-      setErrors((prev) => ({ ...prev, ...fieldErrors }));
-
-      const list = missing.map((f) => f.label).join(", ");
-      toast.warning("Some key details are missing", {
-        description: `Missing: ${list}. Send anyway, or complete the form first?`,
-        duration: 10000,
-        action: {
-          label: "Send anyway",
-          onClick: () => sendPartnerMessage(),
-        },
-        cancel: {
-          label: "Go back",
-          onClick: () => {
-            // Scroll to the first missing field if we can find it.
-            const first = document.querySelector<HTMLElement>(
-              `[name="${missing[0].key}"], #${missing[0].key}`
-            );
-            first?.scrollIntoView({ behavior: "smooth", block: "center" });
-          },
-        },
-      });
-      return;
-    }
-
-    sendPartnerMessage();
-  };
-
-  const sendPartnerMessage = () => {
-    const data: InquiryForm = {
-      ...form,
-      name: form.name.trim() || "(name not provided)",
-      email: form.email.trim() || "(email not provided)",
-      entityType: form.entityType || "(entity type not specified)",
-      jurisdiction: form.jurisdiction || "(jurisdiction not specified)",
-      matterType: form.matterType || "(matter type not specified)",
-      message: form.message.trim() || "(no message yet — would like to speak with a partner)",
-    };
-
-    const subject = `Partner Consultation Request — ${data.matterType}`;
-    const intro = "Hello Beacon Attorneys, I would like to speak with a partner about the following matter:";
-    const body = `${intro}\n\n${buildBody(data)}`;
-
-    // Honor the user's selected channel; default to WhatsApp for the "Speak" action.
-    if (data.channel === "Email") {
-      window.location.href = `mailto:${FIRM_EMAIL}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
-    } else {
-      const text = `${subject}\n\n${body}`;
-      openWhatsApp(FIRM_WHATSAPP, text);
-    }
-
-    toast.success("Opening your conversation with a partner…");
   };
 
   return (
@@ -383,24 +306,7 @@ const ContactPage = () => {
                     Submitting opens your {form.channel === "WhatsApp" ? "WhatsApp" : "email client"} with your inquiry pre-filled. No data is stored on this site.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                    <Button type="submit" variant="gold" size="lg" className="sm:flex-1">
-                      {t("contact.submit")}
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="justice"
-                      size="lg"
-                      onClick={handleSpeakWithPartner}
-                      className="sm:flex-1 gap-2"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Speak with a Partner
-                    </Button>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground -mt-2">
-                    The "Speak with a Partner" button opens {form.channel === "Email" ? "your email" : "WhatsApp"} pre-filled with whatever you've entered above — fields can be left blank.
-                  </p>
+                  <Button type="submit" variant="gold" size="lg">{t("contact.submit")}</Button>
                 </form>
               </div>
 

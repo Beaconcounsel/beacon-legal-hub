@@ -17,8 +17,8 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding pb-0">
+      {/* Hero — light ivory background, generous breathing room */}
+      <section className="section-padding pb-0 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -39,8 +39,8 @@ const AboutPage = () => {
       </section>
 
       <div ref={revealRef}>
-        {/* Values */}
-        <section className="section-padding">
+        {/* Values — alternating: white surface */}
+        <section className="section-padding bg-card">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-16 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
@@ -60,8 +60,8 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Our Team Section */}
-        <section className="section-padding">
+        {/* Our Team Section — back to ivory background */}
+        <section className="section-padding bg-background">
           <div className="container">
             <div className="max-w-3xl mb-16">
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
