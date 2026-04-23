@@ -53,7 +53,7 @@ const TeamPage = () => {
             </div>
           </div>
 
-          <div className="p-8 md:p-12 space-y-12">
+          <div className="p-6 md:p-10 space-y-8">
             {/* Overview */}
             <div className="max-w-3xl">
               <p className="text-foreground/80 leading-relaxed">
@@ -114,7 +114,7 @@ const TeamPage = () => {
             </div>
 
             {/* International Perspective */}
-            <div className="bg-muted/20 rounded-xl p-8 border border-border">
+            <div className="bg-muted/20 rounded-xl p-6 border border-border">
               <div className="flex items-center gap-3 mb-3">
                 <Globe className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">International Perspective, Local Execution</h3>
@@ -139,7 +139,7 @@ const TeamPage = () => {
             </div>
 
             {/* Core Practice Areas & Sector Focus */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Shield className="w-5 h-5 text-primary" />
