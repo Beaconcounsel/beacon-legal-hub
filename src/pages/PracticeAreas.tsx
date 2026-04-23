@@ -143,45 +143,83 @@ const PracticeAreasPage = () => {
 const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: readonly string[]; serviceIcons: any[]; t: any }) => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const total = serviceKeys.length;
+  // Group 6 services into 2 slides of 3 each
+  const slides: { key: string; Icon: any }[][] = [];
+  for (let i = 0; i < serviceKeys.length; i += 3) {
+    slides.push(
+      serviceKeys.slice(i, i + 3).map((key, idx) => ({ key, Icon: serviceIcons[i + idx] }))
+    );
+  }
+  const total = slides.length;
 
   const next = () => setCurrent((c) => (c + 1) % total);
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
 
+  // Auto-advance every 5s on desktop only (>=768px); pause on hover
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(next, 12000);
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) return;
+    const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, [paused]);
 
   return (
     <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="overflow-hidden">
-        <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
-          {serviceKeys.map((key, i) => {
-            const Icon = serviceIcons[i];
-            return (
-              <div key={key} className="w-full flex-shrink-0 px-2">
-                <div className="bg-card border border-border rounded-xl p-10 md:p-14 text-center max-w-2xl mx-auto">
-                  <Icon className="w-12 h-12 text-primary mb-6 mx-auto" />
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4 font-serif">{t(`practiceAreas.services.${key}.title`)}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{t(`practiceAreas.services.${key}.desc`)}</p>
-                </div>
+        <div
+          className="flex ease-in-out"
+          style={{
+            transform: `translateX(-${current * 100}%)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+        >
+          {slides.map((group, slideIdx) => (
+            <div key={slideIdx} className="w-full flex-shrink-0">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-1">
+                {group.map(({ key, Icon }) => (
+                  <div
+                    key={key}
+                    className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/40 transition-colors"
+                  >
+                    <Icon className="w-10 h-10 text-primary mb-5 mx-auto" />
+                    <h3 className="text-xl md:text-2xl font-medium mb-3 font-serif">
+                      {t(`practiceAreas.services.${key}.title`)}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed font-light">
+                      {t(`practiceAreas.services.${key}.desc`)}
+                    </p>
+                  </div>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
       <div className="flex items-center justify-center gap-6 mt-8">
-        <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
+        <button
+          onClick={prev}
+          aria-label="Previous slide"
+          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors"
+        >
           <ChevronLeft className="w-5 h-5 text-foreground" />
         </button>
         <div className="flex gap-2">
-          {serviceKeys.map((_, i) => (
-            <button key={i} onClick={() => setCurrent(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-primary" : "bg-border hover:bg-primary/40"}`} />
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                i === current ? "bg-primary" : "bg-border hover:bg-primary/40"
+              }`}
+            />
           ))}
         </div>
-        <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
+        <button
+          onClick={next}
+          aria-label="Next slide"
+          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors"
+        >
           <ChevronRight className="w-5 h-5 text-foreground" />
         </button>
       </div>
