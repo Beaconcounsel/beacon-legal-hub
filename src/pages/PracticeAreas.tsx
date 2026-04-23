@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "@/components/Layout";
@@ -141,49 +141,113 @@ const PracticeAreasPage = () => {
 };
 
 const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: readonly string[]; serviceIcons: any[]; t: any }) => {
+  // Group services into 2 slides of 3 cards each
+  const slides = [serviceKeys.slice(0, 3), serviceKeys.slice(3, 6)];
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const total = serviceKeys.length;
+  const [isMobile, setIsMobile] = useState(false);
+  const totalSlides = slides.length;
 
-  const next = () => setCurrent((c) => (c + 1) % total);
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % totalSlides);
+  const prev = () => setCurrent((c) => (c - 1 + totalSlides) % totalSlides);
 
   useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(next, 12000);
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    // Do not auto-play on mobile
+    if (paused || isMobile) return;
+    const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [paused, isMobile]);
+
+  // Touch swipe for mobile
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+    touchStartX.current = null;
+  };
 
   return (
-    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <div className="overflow-hidden">
-        <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
-          {serviceKeys.map((key, i) => {
-            const Icon = serviceIcons[i];
-            return (
-              <div key={key} className="w-full flex-shrink-0 px-2">
-                <div className="bg-card border border-border rounded-xl p-10 md:p-14 text-center max-w-2xl mx-auto">
-                  <Icon className="w-12 h-12 text-primary mb-6 mx-auto" />
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4 font-serif">{t(`practiceAreas.services.${key}.title`)}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{t(`practiceAreas.services.${key}.desc`)}</p>
-                </div>
+    <div
+      className="relative md:px-12"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div
+        className="overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        <div
+          className="flex transition-transform duration-[400ms] ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slideKeys, slideIdx) => (
+            <div key={slideIdx} className="w-full flex-shrink-0">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {slideKeys.map((key) => {
+                  const globalIdx = serviceKeys.indexOf(key);
+                  const Icon = serviceIcons[globalIdx];
+                  return (
+                    <div
+                      key={key}
+                      className="group relative bg-ivory border border-[hsl(var(--border))] rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-l-4 hover:border-l-gold hover:shadow-lg"
+                    >
+                      <Icon className="w-9 h-9 text-justice mb-5" />
+                      <h3 className="font-serif text-xl mb-3 text-navy" style={{ fontWeight: 500 }}>
+                        {t(`practiceAreas.services.${key}.title`)}
+                      </h3>
+                      <p className="text-sm text-foreground/80 leading-relaxed font-light">
+                        {t(`practiceAreas.services.${key}.desc`)}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="flex items-center justify-center gap-6 mt-8">
-        <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
-          <ChevronLeft className="w-5 h-5 text-foreground" />
-        </button>
-        <div className="flex gap-2">
-          {serviceKeys.map((_, i) => (
-            <button key={i} onClick={() => setCurrent(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-primary" : "bg-border hover:bg-primary/40"}`} />
+            </div>
           ))}
         </div>
-        <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-colors">
-          <ChevronRight className="w-5 h-5 text-foreground" />
-        </button>
+      </div>
+
+      {/* Arrows — vertically centered, off-card */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center text-primary hover:text-gold transition-colors"
+      >
+        <ChevronLeft className="w-7 h-7" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center text-primary hover:text-gold transition-colors"
+      >
+        <ChevronRight className="w-7 h-7" />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="flex items-center justify-center gap-3 mt-8">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`w-2.5 h-2.5 rounded-full transition-all ${
+              i === current
+                ? "bg-gold border border-gold"
+                : "bg-transparent border border-[hsl(var(--border))] hover:border-gold/60"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
