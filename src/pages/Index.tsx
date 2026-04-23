@@ -488,7 +488,7 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-8 md:p-12 space-y-8 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-6 border-t border-border">
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <GraduationCap className="w-5 h-5 text-primary" />
