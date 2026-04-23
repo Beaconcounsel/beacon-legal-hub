@@ -32,7 +32,8 @@
       "bar": "Rwanda Bar Association",
       "rdb": "Rwanda Development Board",
       "rgb": "Rwanda Governance Board",
-      "rra": "Rwanda Revenue Authority"
+      "rra": "Rwanda Revenue Authority",
+      "kifc": "Kigali International Finance Centre"
     },
     "disclaimer": "The information on this website is for general informational purposes only and does not constitute legal advice.",
     "privacyPolicy": "Privacy Policy",
@@ -164,8 +165,8 @@
       "bankingFinancial": { "title": "Banking & Financial Services", "description": "We structure and advise on project finance, banking regulations, securities, fund formation, and cross-border investment transactions with precision and speed.", "clients": "Banks, investment funds, private equity, institutional investors" },
       "disputeResolution": { "title": "Dispute Resolution & Arbitration", "description": "We represent clients in complex commercial disputes through litigation, arbitration, and mediation—both domestically and in international fora—with a focus on strategic, outcome-driven resolution.", "clients": "Corporations, investors, government entities, international organizations" },
       "taxCorporate": { "title": "Tax & Corporate Structuring", "description": "We advise on tax-efficient structures, transfer pricing, VAT compliance, and cross-border tax planning to minimize exposure and optimize corporate architecture.", "clients": "Multinational companies, holding structures, HNWIs, family offices" },
-      "realEstate": { "title": "Real Estate & Property Law", "description": "We handle land acquisition, due diligence, development agreements, leasing, and property disputes—supporting clients from site selection through project completion.", "clients": "Real estate developers, investors, hospitality groups, institutions" },
-      "privateWealth": { "title": "Private Wealth & Succession Planning", "description": "We advise high-net-worth individuals and family business owners on asset protection, estate planning, succession strategies, and cross-border wealth considerations with the utmost discretion.", "clients": "HNWIs, family business owners, trusts, estates" },
+      "realEstate": { "title": "Real Estate, Construction & Property Law", "description": "We handle land acquisition, due diligence, construction contracts, development agreements, leasing, and property disputes—supporting clients from site selection through project completion.", "clients": "Real estate developers, construction firms, investors, hospitality groups, institutions" },
+      "privateWealth": { "title": "Asset Management", "description": "We advise on asset management structures, investment funds (formation, licensing, and ongoing compliance), portfolio holding vehicles, and wealth preservation strategies—serving institutional and high-net-worth clients with precision and discretion.", "clients": "Asset managers, investment funds, HNWIs, family offices, institutional investors", "subsection": "Investment Funds: Fund formation, regulatory licensing, fund governance, investor onboarding, and cross-border fund structuring." },
       "ngoGovernance": { "title": "NGO, Institutional & Governance Advisory", "description": "We advise NGOs, international organizations, and public institutions on governance structures, regulatory compliance, donor agreements, and institutional best practices.", "clients": "International NGOs, development agencies, foundations, public institutions" },
       "intellectualProperty": { "title": "Intellectual Property Law", "description": "We protect brands, inventions, and creative works through trademark registration, patent advisory, licensing agreements, and IP enforcement strategies.", "clients": "Technology companies, creatives, manufacturers, pharmaceutical firms" },
       "techDataProtection": { "title": "Technology & Data Protection Law", "description": "We advise on data privacy compliance, cybersecurity frameworks, technology licensing, and digital commerce regulations in Rwanda's rapidly evolving tech landscape.", "clients": "Tech startups, fintechs, e-commerce platforms, data processors" },
@@ -174,18 +175,20 @@
       "insurance": { "title": "Insurance Law", "description": "We advise insurers and policyholders on regulatory compliance, policy disputes, claims management, and reinsurance arrangements across all lines of coverage.", "clients": "Insurance companies, brokers, corporate policyholders" }
     },
     "services": {
-      "businessOperational": { "title": "Business & Operational Advisory", "desc": "Strategic counsel on business operations, corporate governance, and commercial decision-making to help organizations achieve their objectives within a sound legal framework." },
+      "businessOperational": { "title": "Innovative Business Solutions", "desc": "Whether you're a startup entrepreneur, an emerging growth company seeking maximum efficiency through business restructuring, or a well-established corporation aiming to raise capital, mitigate uncertainty through carefully drafted contracts and agreements, or navigate complex employment issues, we can help. As a multi-practice firm, our business lawyers and tax consultants provide a comprehensive suite of services to address the full range of challenges companies face." },
       "representation": { "title": "Representation Before Regulatory Bodies & Courts", "desc": "We represent clients before regulatory authorities, tribunals, and courts of law—advocating for their interests with precision and authority across all levels of jurisdiction." },
       "whitePaper": { "title": "White Paper & Policy Consultancy", "desc": "We draft and advise on white papers, policy documents, and position papers that shape industry standards and inform regulatory development." },
       "procedureCompliance": { "title": "Procedure & Compliance Development", "desc": "We design internal procedures, compliance frameworks, and operational manuals that ensure organizations meet regulatory requirements and industry best practices." },
-      "transactionDoc": { "title": "Legal Transaction Documentation", "desc": "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation." }
+      "transactionDoc": { "title": "Legal Transaction Documentation", "desc": "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation." },
+      "estatePlanning": { "title": "Estate Planning and Administration", "desc": "An Estate Plan is more than deciding how to divide your assets; it is your opportunity to make decisions that impact the people, charities, and causes you care most about. While what is most important to your Estate Plan may differ at each stage of your life, the necessity of having the right Estate Plan in place will remain constant." }
     },
     "industries": {
       "energy": "Energy & Infrastructure",
       "financial": "Financial Services",
       "realEstate": "Real Estate & Development",
       "technology": "Technology & Innovation",
-      "agriculture": "Agriculture & Agribusiness"
+      "agriculture": "Agriculture & Agribusiness",
+      "infrastructure": "Infrastructure and Project Financing"
     }
   },
   "approach": {
@@ -224,16 +227,13 @@
     "scheduleIntlConsultation": "Schedule an International Consultation",
     "proBono": "Pro Bono Services",
     "proBonoP1": "Beacon Attorneys is committed to ensuring that access to justice is not limited by financial circumstances. We dedicate a meaningful portion of our practice to pro bono work, serving individuals and communities who face difficult conditions and cannot afford legal representation.",
-    "proBonoP2": "In partnership with the Rwanda Bar Association, Legal Aid Forum, and other national and international organizations that support the needy, we provide free legal counsel to vulnerable populations—including victims of gender-based violence, refugees, indigent defendants, and marginalized communities.",
+    "proBonoP2": "In partnership with the Rwanda Bar Association, Legal Aid Forum, and other organizations that support the needy, we provide free legal counsel to vulnerable populations—including victims of gender-based violence, refugees, and indigent defendants.",
     "proBonoP3": "Our pro bono practice reflects our belief that every person deserves competent legal representation, regardless of their economic standing. We work alongside civil society organizations to advance systemic justice and strengthen the rule of law across Rwanda.",
     "proBonoPartners": "Our Pro Bono Partners",
     "proBonoPartnersList": [
       "Rwanda Bar Association – Legal Aid Programme",
       "Legal Aid Forum (LAF)",
-      "UNHCR – Refugee Legal Assistance",
-      "Haguruka – Women & Children's Rights",
-      "International Justice Mission (IJM)",
-      "Other national and international access-to-justice organizations"
+      "Haguruka – Women & Children's Rights"
     ],
     "partnerProBono": "Partner With Us on Pro Bono"
   },
