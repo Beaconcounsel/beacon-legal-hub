@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
-import logo from "@/assets/beacon-logo.png";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
 
