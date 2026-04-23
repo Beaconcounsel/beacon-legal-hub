@@ -194,8 +194,8 @@ const HomePage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {clientCategories.map((cat) => (
                   <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                      <cat.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-5 group-hover:bg-justice/15 transition-colors">
+                      <cat.icon className="w-6 h-6 text-justice group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="text-lg font-semibold mb-3 font-serif">{cat.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
@@ -259,7 +259,7 @@ const HomePage = () => {
                           <div className="grid md:grid-cols-2 gap-4">
                             {["Combines legal, executive, and public sector experience", "Strong track record across regulated and high-growth sectors", "Deep understanding of Rwanda's legal, regulatory, and business environment", "Aligns legal frameworks with commercial strategy and growth", "Advises on and represents clients in transactions and regulatory engagements", "Strong cross-cultural capability across international and local stakeholder environments"].map((item) => (
                               <div key={item} className="flex items-start gap-3 bg-muted/30 rounded-lg p-4">
-                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                 <p className="text-sm text-foreground/80">{item}</p>
                               </div>
                             ))}
@@ -291,7 +291,7 @@ const HomePage = () => {
                           <div className="grid sm:grid-cols-2 gap-3">
                             {["Structuring compliant and scalable investments", "Managing legal and regulatory risk", "Representing clients in negotiations and regulatory processes", "Bridging international and local stakeholders", "Translating complexity into clear business decisions"].map((item) => (
                               <div key={item} className="flex items-start gap-2">
-                                <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <div className="w-1 h-1 rounded-full bg-justice mt-2 flex-shrink-0" />
                                 <p className="text-sm text-foreground/70">{item}</p>
                               </div>
                             ))}
@@ -307,7 +307,7 @@ const HomePage = () => {
                             <ul className="space-y-3">
                               {["Cross-Border Transactions & Market Entry", "Mergers & Acquisitions (M&A)", "Corporate Structuring & Restructuring", "Regulatory Compliance & Government Relations", "Corporate Governance & Board Advisory", "Investment & Institutional Advisory", "Commercial Contracts, Negotiation & Representation"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
                               ))}
@@ -337,7 +337,7 @@ const HomePage = () => {
                           <div className="grid md:grid-cols-2 gap-3">
                             {["Advised on and represented clients in cross-border investment transactions in regulated sectors", "Led corporate restructuring and shareholder transitions", "Supported market entry, licensing, and regulatory approvals for international investors", "Negotiated and represented clients in commercial agreements with international partners", "Strengthened governance frameworks, reducing legal and regulatory exposure", "Advised and represented boards and executive teams on risk, compliance, and strategic decision-making"].map((item) => (
                               <div key={item} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg">
-                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                 <p className="text-sm text-foreground/70">{item}</p>
                               </div>
                             ))}
@@ -353,7 +353,7 @@ const HomePage = () => {
                             <ul className="space-y-3">
                               {["International investors and private equity firms", "Development finance institutions and global organizations", "Multinational corporations", "Financial institutions and regulated entities", "Local enterprises and high-growth businesses"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
                               ))}
@@ -381,7 +381,7 @@ const HomePage = () => {
                             <ul className="space-y-3">
                               {["Advises and represents boards and executive teams on governance, compliance, and risk", "Experience engaging regulators and navigating licensing frameworks", "Company secretarial and board-level advisory experience"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
                               ))}
@@ -392,7 +392,7 @@ const HomePage = () => {
                             <ul className="space-y-3">
                               {["Led organizational growth from under 1,000 to over 3,500 employees", "Managed large operational teams and budgets", "Strengthened governance, compliance, and internal systems", "Worked closely with international leadership and investors", "Advised and represented executive teams on risk, strategy, and growth"].map((item) => (
                                 <li key={item} className="flex items-start gap-3">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
                               ))}

@@ -112,7 +112,7 @@ const OurApproachPage = () => {
                 <ul className="space-y-4">
                   {whyRwandaItems.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -156,7 +156,7 @@ const OurApproachPage = () => {
               <ul className="space-y-3">
                 {proBonoPartnersList.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                     {item}
                   </li>
                 ))}

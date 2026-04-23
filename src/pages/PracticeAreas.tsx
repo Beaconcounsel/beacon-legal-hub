@@ -66,7 +66,7 @@ const PracticeAreasPage = () => {
             {areaKeys.map((key, i) => (
               <div key={i} className="bg-card border border-border rounded-lg p-8 md:p-10 hover:border-primary/30 transition-colors">
                 <div className="flex items-start gap-4">
-                  <span className="text-primary font-serif text-lg font-bold mt-1">
+                  <span className="text-justice font-serif text-lg font-bold mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1">
