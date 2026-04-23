@@ -64,7 +64,7 @@ const PracticeAreasPage = () => {
         <div className="container">
           <div className="space-y-5">
             {areaKeys.map((key, i) => (
-              <div key={i} className="bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/30 transition-colors">
+              <div key={i} className="bg-card border border-border rounded-lg p-5 md:p-6 hover:border-primary/30 transition-colors">
                 <div className="flex items-start gap-4">
                   <span className="text-justice font-serif text-lg font-bold mt-1">
                     {String(i + 1).padStart(2, "0")}
@@ -193,7 +193,7 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
                 {group.map(({ key, Icon }) => (
                   <div
                     key={key}
-                    className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/40 transition-colors"
+                    className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors"
                   >
                     <Icon className="w-10 h-10 text-primary mb-5 mx-auto" />
                     <h3 className="text-xl md:text-2xl font-medium mb-3 font-serif">

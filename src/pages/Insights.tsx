@@ -23,7 +23,7 @@ const InsightsPage = () => {
 
           <div className="space-y-5">
             {articleKeys.map((key, i) => (
-              <article key={i} className="bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/30 transition-colors group cursor-pointer">
+              <article key={i} className="bg-card border border-border rounded-lg p-5 md:p-6 hover:border-primary/30 transition-colors group cursor-pointer">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {t(`insights.articles.${key}.category`)}

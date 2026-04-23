@@ -215,13 +215,13 @@ const HomePage = () => {
                 <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
               </div>
 
-              <Accordion type="multiple" className="space-y-8">
+              <Accordion type="multiple" className="space-y-6">
                 {/* Daniel Mutiganda */}
                 <AccordionItem value="daniel" className="border-0 group/daniel">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
-                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 md:p-12 w-full text-left">
-                        <div className="flex flex-col md:flex-row items-start gap-8">
+                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
+                        <div className="flex flex-col md:flex-row items-start gap-6">
                           <div className="w-24 h-24 md:w-36 md:h-36 rounded-full flex-shrink-0 border-4 border-primary/30 overflow-hidden shadow-lg shadow-primary/10">
                             <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover scale-[1.8] object-top" />
                           </div>
@@ -245,7 +245,7 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-8 md:p-12 space-y-12 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-8 border-t border-border">
                         <div className="max-w-3xl">
                           <p className="text-foreground/80 leading-relaxed">{t("home.danielBio1")}</p>
                           <p className="text-foreground/80 leading-relaxed mt-4">{t("home.danielBio2")}</p>
@@ -298,7 +298,7 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 gap-6">
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <Shield className="w-5 h-5 text-primary" />
@@ -344,7 +344,7 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 gap-6">
                           <div>
                             <div className="flex items-center gap-3 mb-6">
                               <Users className="w-5 h-5 text-primary" />
@@ -375,7 +375,7 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 gap-6">
                           <div>
                             <h4 className="text-xl font-bold font-serif mb-6">{t("home.boardRegulatory")}</h4>
                             <ul className="space-y-3">
@@ -436,7 +436,7 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-8 border border-primary/20">
+                        <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-6 border border-primary/20">
                           <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
                             {t("home.danielQuote")}
                           </blockquote>
@@ -464,8 +464,8 @@ const HomePage = () => {
                 <AccordionItem value="moses" className="border-0 group/moses">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
-                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 md:p-12 w-full text-left">
-                        <div className="flex flex-col md:flex-row items-start gap-8">
+                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
+                        <div className="flex flex-col md:flex-row items-start gap-6">
                           <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
                             <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
                           </div>
@@ -488,7 +488,7 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-8 md:p-12 space-y-8 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-6 border-t border-border">
                         <div>
                           <div className="flex items-center gap-3 mb-6">
                             <GraduationCap className="w-5 h-5 text-primary" />
