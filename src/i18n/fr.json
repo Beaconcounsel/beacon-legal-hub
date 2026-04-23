@@ -32,7 +32,8 @@
       "bar": "Barreau du Rwanda",
       "rdb": "Office Rwandais de Développement",
       "rgb": "Office Rwandais de Gouvernance",
-      "rra": "Office Rwandais des Recettes"
+      "rra": "Office Rwandais des Recettes",
+      "kifc": "Centre Financier International de Kigali"
     },
     "disclaimer": "Les informations contenues sur ce site sont fournies à titre informatif uniquement et ne constituent pas un avis juridique.",
     "privacyPolicy": "Politique de Confidentialité",
@@ -49,7 +50,8 @@
     "returnHome": "Retour à l'accueil"
   },
   "landing": {
-    "heroTagline": "Forts d'une expérience internationale et d'une compréhension approfondie du paysage juridique et commercial rwandais, nous offrons des solutions juridiques sur mesure — au niveau local et au-delà.",
+    "heroTagline": "Nous combinons une expérience commerciale internationale à une expertise juridique locale pour offrir des solutions juridiques innovantes à chaque étape de la croissance de votre entreprise, en sécurisant et en améliorant votre rentabilité.",
+    "positioningStatement": "Un cabinet d'avocats pour les particuliers, les entreprises, les institutions et les investisseurs internationaux",
     "stats": {
       "experience": "Années d'Expérience Combinée",
       "practiceAreas": "Domaines de Pratique",
@@ -73,7 +75,7 @@
     "exploreFirm": "Découvrir Notre Cabinet"
   },
   "home": {
-    "heroTagline": "Beacon Attorneyes & Consultants offre un conseil juridique stratégique sur des questions complexes, avec la précision et la discrétion qu'exigent les mandats à forts enjeux.",
+    "heroTagline": "Beacon Attorneyes and Consultants est un cabinet d'avocats multi-pratiques établi à Kigali, parfaitement équipé pour servir les entreprises, les particuliers et les institutions au Rwanda et en Afrique de l'Est.",
     "trust": {
       "experience": "Plus de 30 Ans d'Expérience Combinée",
       "international": "Approuvé par des Clients Internationaux",
@@ -94,7 +96,7 @@
     },
     "ourPurpose": "Notre Mission",
     "ourPurposeDesc": "Poursuivre la justice par un conseil juridique stratégique qui renforce les entreprises, protège les intérêts et favorise une croissance durable au Rwanda et dans la région.",
-    "workWithUs": "Travaillez avec Nous",
+    "workWithUs": "Connectez-vous avec nous",
     "ourClients": "Nos Clients",
     "ourClientsDesc": "Nous accompagnons notre clientèle à travers les secteurs et les frontières, en offrant un conseil piloté par nos associés à chaque étape.",
     "clients": {
@@ -197,14 +199,15 @@
         "clients": "Entreprises multinationales, structures de holding, HNWI, family offices"
       },
       "realEstate": {
-        "title": "Droit Immobilier et Foncier",
-        "description": "Nous traitons l'acquisition de terrains, la due diligence, les accords de développement, la location et les litiges de propriété – en soutenant les clients de la sélection du site à l'achèvement du projet.",
-        "clients": "Développeurs immobiliers, investisseurs, groupes hôteliers, institutions"
+        "title": "Droit Immobilier, de la Construction et Foncier",
+        "description": "Nous traitons l'acquisition de terrains, la due diligence, les contrats de construction, les accords de développement, la location et les litiges de propriété – en soutenant les clients de la sélection du site à l'achèvement du projet.",
+        "clients": "Développeurs immobiliers, entreprises de construction, investisseurs, groupes hôteliers, institutions"
       },
       "privateWealth": {
-        "title": "Gestion de Fortune Privée et Planification Successorale",
-        "description": "Nous conseillons les particuliers fortunés et les propriétaires d'entreprises familiales sur la protection des actifs, la planification successorale, les stratégies de succession et les considérations de richesse transfrontalières avec la plus grande discrétion.",
-        "clients": "HNWI, propriétaires d'entreprises familiales, fiducies, successions"
+        "title": "Gestion d'Actifs",
+        "description": "Nous conseillons sur les structures de gestion d'actifs, les fonds d'investissement (formation, agrément et conformité continue), les véhicules de portefeuille et les stratégies de préservation du patrimoine — au service des clients institutionnels et fortunés avec précision et discrétion.",
+        "clients": "Gestionnaires d'actifs, fonds d'investissement, HNWI, family offices, investisseurs institutionnels",
+        "subsection": "Fonds d'investissement : Constitution de fonds, agrément réglementaire, gouvernance des fonds, intégration des investisseurs et structuration transfrontalière de fonds."
       },
       "ngoGovernance": {
         "title": "ONG, Conseil Institutionnel et de Gouvernance",
@@ -239,8 +242,8 @@
     },
     "services": {
       "businessOperational": {
-        "title": "Conseil Commercial et Opérationnel",
-        "desc": "Conseil stratégique sur les opérations commerciales, la gouvernance d'entreprise et la prise de décisions commerciales pour aider les organisations à atteindre leurs objectifs dans un cadre juridique solide."
+        "title": "Solutions Commerciales Innovantes",
+        "desc": "Que vous soyez un entrepreneur en démarrage, une entreprise en croissance recherchant une efficacité maximale par la restructuration, ou une société bien établie souhaitant lever des capitaux, atténuer l'incertitude par des contrats soigneusement rédigés ou naviguer dans des questions d'emploi complexes, nous pouvons vous aider. En tant que cabinet multi-pratiques, nos avocats d'affaires et consultants fiscaux offrent une suite complète de services pour répondre à l'ensemble des défis auxquels les entreprises sont confrontées."
       },
       "representation": {
         "title": "Représentation Devant les Organismes de Réglementation et les Tribunaux",
@@ -257,6 +260,10 @@
       "transactionDoc": {
         "title": "Documentation Juridique des Transactions",
         "desc": "Nous préparons, examinons et négocions toutes les formes de documents juridiques de transaction – y compris les accords, les mémorandums d'entente, les term sheets et les documents de clôture."
+      },
+      "estatePlanning": {
+        "title": "Planification et Administration Successorale",
+        "desc": "Un plan successoral, c'est bien plus que décider de la répartition de vos biens ; c'est l'occasion de prendre des décisions qui touchent les personnes, les organisations caritatives et les causes qui vous tiennent le plus à cœur. Bien que les priorités de votre plan successoral puissent évoluer à chaque étape de votre vie, la nécessité d'un plan adapté demeure constante."
       }
     },
     "industries": {
@@ -264,7 +271,8 @@
       "financial": "Services Financiers",
       "realEstate": "Immobilier et Développement",
       "technology": "Technologie et Innovation",
-      "agriculture": "Agriculture et Agribusiness"
+      "agriculture": "Agriculture et Agribusiness",
+      "infrastructure": "Infrastructure et Financement de Projets"
     }
   },
   "approach": {
@@ -333,16 +341,13 @@
     "scheduleIntlConsultation": "Planifier une Consultation Internationale",
     "proBono": "Services Pro Bono",
     "proBonoP1": "Beacon Attorneyes s'engage à garantir que l'accès à la justice ne soit pas limité par des considérations financières. Nous consacrons une part significative de notre pratique au travail pro bono, au service des personnes et des communautés en situation de vulnérabilité qui ne peuvent accéder à une représentation juridique.",
-    "proBonoP2": "En partenariat avec l'Ordre des avocats du Rwanda, le Legal Aid Forum et d'autres organisations nationales et internationales, nous fournissons des conseils juridiques gratuits aux populations vulnérables — notamment les victimes de violences basées sur le genre, les réfugiés, les prévenus indigents et les communautés marginalisées.",
+    "proBonoP2": "En partenariat avec l'Ordre des avocats du Rwanda, le Legal Aid Forum et d'autres organisations qui soutiennent les personnes dans le besoin, nous fournissons des conseils juridiques gratuits aux populations vulnérables — notamment les victimes de violences basées sur le genre, les réfugiés et les prévenus indigents.",
     "proBonoP3": "Notre pratique pro bono reflète notre conviction que chaque personne mérite une représentation juridique compétente, quelle que soit sa situation économique. Nous travaillons aux côtés des organisations de la société civile pour faire progresser la justice systémique et renforcer l'État de droit à travers le Rwanda.",
     "proBonoPartners": "Nos Partenaires Pro Bono",
     "proBonoPartnersList": [
       "Ordre des avocats du Rwanda – Programme d'aide juridique",
       "Legal Aid Forum (LAF)",
-      "HCR – Assistance juridique aux réfugiés",
-      "Haguruka – Droits des femmes et des enfants",
-      "International Justice Mission (IJM)",
-      "Autres organisations nationales et internationales d'accès à la justice"
+      "Haguruka – Droits des femmes et des enfants"
     ],
     "partnerProBono": "Collaborez avec Nous en Pro Bono"
   },
@@ -409,7 +414,7 @@
     "requestConsultancy": "Demander un Engagement de Consultation"
   },
   "contact": {
-    "tagline": "Nos associés sont prêts à discuter de vos besoins en toute confidentialité.",
+    "tagline": "Nous sommes là pour répondre à toutes vos questions juridiques. Veuillez nous contacter et l'un des membres de notre équipe vous répondra prochainement.",
     "fullName": "Nom Complet",
     "email": "E-mail",
     "phone": "Téléphone",
