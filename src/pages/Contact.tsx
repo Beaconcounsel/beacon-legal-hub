@@ -23,16 +23,16 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.contactTitle" descKey="seo.contactDesc" />
-      <section className="section-padding pb-0">
+      <section className="pt-12 md:pt-16 pb-0">
         <div className="container">
-          <div className="max-w-3xl mb-8">
+          <div className="max-w-3xl mb-6">
             <p className="text-muted-foreground text-lg leading-relaxed">{t("contact.tagline")}</p>
           </div>
         </div>
       </section>
 
       <div ref={revealRef}>
-        <section className="section-padding pt-0">
+        <section className="pt-6 pb-20 md:pb-28">
           <div className="container">
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 reveal">

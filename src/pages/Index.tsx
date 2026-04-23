@@ -83,7 +83,7 @@ const HomePage = () => {
       const id = location.hash.slice(1);
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
+      }, 200);
     }
   }, [location.hash]);
 
@@ -94,12 +94,12 @@ const HomePage = () => {
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">{t("home.heroTagline")}</p>
+            <p className="text-lg md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
@@ -510,6 +510,18 @@ const HomePage = () => {
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
                             <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Kinyarwanda</span>
                           </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                          <LocalizedLink to="/contact">
+                            <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
+                              {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
+                            </Button>
+                          </LocalizedLink>
+                          <a href="mailto:info@beaconattorneys.rw">
+                            <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
+                              <Mail className="w-4 h-4" /> {t("home.workWithUs")}
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </AccordionContent>

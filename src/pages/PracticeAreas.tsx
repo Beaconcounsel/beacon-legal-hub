@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 import practiceHeroImg from "@/assets/practice-areas-hero.jpg";
 
 const PracticeAreasPage = () => {
@@ -19,8 +19,8 @@ const PracticeAreasPage = () => {
     "techDataProtection", "migration", "insolvency", "insurance",
   ] as const;
 
-  const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc"] as const;
-  const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList];
+  const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc", "estatePlanning"] as const;
+  const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList, BookOpen];
 
   const industries = [
     { icon: Zap, label: t("practiceAreas.industries.energy") },
@@ -28,6 +28,7 @@ const PracticeAreasPage = () => {
     { icon: Building2, label: t("practiceAreas.industries.realEstate") },
     { icon: Laptop, label: t("practiceAreas.industries.technology") },
     { icon: Wheat, label: t("practiceAreas.industries.agriculture") },
+    { icon: Building2, label: t("practiceAreas.industries.infrastructure") },
   ];
 
   useEffect(() => {
@@ -46,16 +47,13 @@ const PracticeAreasPage = () => {
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={practiceHeroImg} alt="Kigali business district" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
+            <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
               {t("practiceAreas.heroTagline1")}
-            </p>
-            <p className="text-md font-medium leading-relaxed text-foreground/80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              {t("practiceAreas.heroTagline2")}
             </p>
           </div>
         </div>
@@ -125,6 +123,9 @@ const PracticeAreasPage = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
           <div className="line-gold mb-12" />
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-12">
+            {t("practiceAreas.heroTagline2")}
+          </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
           <div className="text-center mt-10">
             <LocalizedLink to="/contact">
