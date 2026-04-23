@@ -89,7 +89,7 @@ const Landing = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {highlights.map((h) => (
-              <div key={h.title} className="bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
+              <div key={h.title} className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
                   <h.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
@@ -106,7 +106,7 @@ const Landing = () => {
         <div className="container">
           <div className="relative max-w-2xl mx-auto text-center">
             <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
-            <div className="relative bg-background border border-border rounded-xl p-12">
+            <div className="relative bg-background border border-border rounded-xl p-8 md:p-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">{t("landing.ctaTitle")}</h2>
               <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
               <p className="text-muted-foreground leading-relaxed mb-8">{t("landing.ctaDesc")}</p>
