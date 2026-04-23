@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { openWhatsApp, FIRM_COUNTRY_CODE, FIRM_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ENTITY_TYPES = [
   "Individual",
@@ -76,7 +77,8 @@ type InquiryForm = {
 };
 
 const FIRM_EMAIL = "info@beaconattorneys.rw";
-const FIRM_WHATSAPP = "250788559603";
+// Stored as country code + national number; the helper normalizes for wa.me / api.whatsapp.com
+const FIRM_WHATSAPP = `${FIRM_COUNTRY_CODE}${FIRM_WHATSAPP_NUMBER}`;
 
 const initialForm: InquiryForm = {
   name: "",
@@ -138,11 +140,7 @@ const ContactPage = () => {
 
     if (data.channel === "WhatsApp") {
       const text = `${subject}\n\n${body}`;
-      window.open(
-        `https://wa.me/${FIRM_WHATSAPP}?text=${encodeURIComponent(text)}`,
-        "_blank",
-        "noopener,noreferrer"
-      );
+      openWhatsApp(FIRM_WHATSAPP, text);
     } else {
       window.location.href = `mailto:${FIRM_EMAIL}?subject=${encodeURIComponent(
         subject
@@ -227,11 +225,7 @@ const ContactPage = () => {
       )}&body=${encodeURIComponent(body)}`;
     } else {
       const text = `${subject}\n\n${body}`;
-      window.open(
-        `https://wa.me/${FIRM_WHATSAPP}?text=${encodeURIComponent(text)}`,
-        "_blank",
-        "noopener,noreferrer"
-      );
+      openWhatsApp(FIRM_WHATSAPP, text);
     }
 
     toast.success("Opening your conversation with a partner…");
