@@ -74,9 +74,34 @@ const Footer = () => {
       </svg>
 
       <div className="container py-8 relative z-10">
-        <p className="text-xs text-ivory/75 leading-relaxed mb-6">
-          {t("footer.tagline")}
-        </p>
+        {/* Centered editorial tagline — top of footer */}
+        <div className="mb-8 mt-2 flex flex-col items-center text-center">
+          <span
+            aria-hidden="true"
+            className="block h-px w-[60px]"
+            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
+          />
+          <p
+            className="font-serif italic my-3"
+            style={{
+              color: "#c9a84c",
+              fontWeight: 500,
+              letterSpacing: "0.02em",
+              lineHeight: 1.6,
+              fontSize: "1.1rem",
+            }}
+          >
+            <span className="md:hidden">A Law Firm for Individuals, Businesses, Institutions, and International Investors</span>
+            <span className="hidden md:inline" style={{ fontSize: "1.4rem" }}>
+              A Law Firm for Individuals, Businesses, Institutions, and International Investors
+            </span>
+          </p>
+          <span
+            aria-hidden="true"
+            className="block h-px w-[60px]"
+            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
+          />
+        </div>
 
         <div className="grid md:grid-cols-4 gap-6">
           <div>
@@ -133,35 +158,6 @@ const Footer = () => {
               <li><Link to={localePath("/contact")} className="hover:text-gold transition-colors">{t("footer.internship")}</Link></li>
             </ul>
           </div>
-        </div>
-
-        {/* Centered editorial tagline */}
-        <div className="my-6 flex flex-col items-center text-center">
-          <span
-            aria-hidden="true"
-            className="block h-px w-[60px]"
-            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
-          />
-          <p
-            className="font-serif italic my-3"
-            style={{
-              color: "#c9a84c",
-              fontWeight: 500,
-              letterSpacing: "0.02em",
-              lineHeight: 1.6,
-              fontSize: "1.1rem",
-            }}
-          >
-            <span className="md:hidden">A Law Firm for Individuals, Businesses, Institutions, and International Investors</span>
-            <span className="hidden md:inline" style={{ fontSize: "1.4rem" }}>
-              A Law Firm for Individuals, Businesses, Institutions, and International Investors
-            </span>
-          </p>
-          <span
-            aria-hidden="true"
-            className="block h-px w-[60px]"
-            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
-          />
         </div>
 
         <div className="border-t border-ivory/10 mt-6 pt-4">
