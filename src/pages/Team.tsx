@@ -187,7 +187,7 @@ const TeamPage = () => {
 
             {/* Representative Experience */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Representative Experience</h3>
               </div>
@@ -202,7 +202,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/70">{item}</p>
+                    <p className="text-sm text-foreground/70 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
@@ -211,11 +211,11 @@ const TeamPage = () => {
             {/* Clients & Geographic Focus */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Users className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Clients & Engagements</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {[
                     "International investors and private equity firms",
                     "Development finance institutions and global organizations",
@@ -225,28 +225,28 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <MapPin className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Geographic Focus</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">Rwanda</p>
-                    <p className="text-xs text-muted-foreground">Core market</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Core market</p>
                   </div>
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">East Africa</p>
-                    <p className="text-xs text-muted-foreground">Regional advisory and transactions</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Regional advisory and transactions</p>
                   </div>
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">Cross-Border</p>
-                    <p className="text-xs text-muted-foreground">Investment structuring</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Investment structuring</p>
                   </div>
                 </div>
               </div>
@@ -255,8 +255,8 @@ const TeamPage = () => {
             {/* Leadership & Board Advisory */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-xl font-bold font-serif mb-6">Board & Regulatory Advisory</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-bold font-serif mb-4">Board & Regulatory Advisory</h3>
+                <ul className="space-y-2">
                   {[
                     "Advises and represents boards and executive teams on governance, compliance, and risk",
                     "Experience engaging regulators and navigating licensing frameworks",
@@ -264,14 +264,14 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-bold font-serif mb-6">Leadership & Institutional Experience</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-bold font-serif mb-4">Leadership & Institutional Experience</h3>
+                <ul className="space-y-2">
                   {[
                     "Led organizational growth from under 1,000 to over 3,500 employees",
                     "Managed large operational teams and budgets",
@@ -281,7 +281,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -290,12 +290,12 @@ const TeamPage = () => {
 
             {/* Education */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Education & Professional Foundation</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     { degree: "Master of Business Administration (MBA)", school: "Oklahoma Christian University, USA" },
                     { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" },
@@ -303,7 +303,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <div key={item.degree} className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">{item.degree}</p>
-                      <p className="text-xs text-muted-foreground">{item.school}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{item.school}</p>
                     </div>
                   ))}
                 </div>
