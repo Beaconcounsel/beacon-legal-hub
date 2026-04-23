@@ -17,8 +17,47 @@ const Footer = () => {
   const { openPreferences } = useCookieConsent();
 
   return (
-    <footer className="bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
-      <div className="container py-8">
+    <footer className="relative overflow-hidden bg-[#F8F9FB] text-[#1a5c6b] border-t border-[#1a5c6b]/10">
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 w-full h-full z-0"
+        viewBox="0 0 800 400"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Faint oversized atmospheric circles */}
+        <circle cx="120" cy="350" r="280" fill="#1d535e" opacity="0.08" />
+        <circle cx="720" cy="80" r="220" fill="#2e7ec4" opacity="0.08" />
+
+        {/* Dominant deep teal */}
+        <circle cx="80" cy="320" r="110" fill="#1d535e" opacity="0.18" />
+        <circle cx="80" cy="320" r="110" fill="none" stroke="#3a7886" strokeOpacity="0.5" strokeWidth="1" />
+
+        {/* Vibrant gold floating top */}
+        <circle cx="640" cy="60" r="42" fill="#f5c400" opacity="0.85" />
+        <circle cx="640" cy="60" r="42" fill="none" stroke="#fde27a" strokeOpacity="0.5" strokeWidth="1" />
+
+        {/* Coral/red-orange accent */}
+        <circle cx="730" cy="300" r="56" fill="#e05c4b" opacity="0.75" />
+        <circle cx="730" cy="300" r="56" fill="none" stroke="#f08a7c" strokeOpacity="0.5" strokeWidth="1" />
+
+        {/* Smaller blue contrast */}
+        <circle cx="500" cy="360" r="32" fill="#2e7ec4" opacity="0.7" />
+        <circle cx="500" cy="360" r="32" fill="none" stroke="#6aa8de" strokeOpacity="0.5" strokeWidth="1" />
+
+        {/* Scattered decorative dots */}
+        <circle cx="220" cy="80" r="4" fill="#f5c400" opacity="0.7" />
+        <circle cx="320" cy="140" r="3" fill="#1d535e" opacity="0.5" />
+        <circle cx="440" cy="40" r="5" fill="#e05c4b" opacity="0.6" />
+        <circle cx="560" cy="200" r="3" fill="#2e7ec4" opacity="0.6" />
+        <circle cx="180" cy="220" r="4" fill="#1d535e" opacity="0.4" />
+        <circle cx="380" cy="320" r="3" fill="#f5c400" opacity="0.6" />
+        <circle cx="600" cy="340" r="4" fill="#1d535e" opacity="0.4" />
+        <circle cx="700" cy="180" r="3" fill="#e05c4b" opacity="0.5" />
+        <circle cx="260" cy="360" r="3" fill="#2e7ec4" opacity="0.5" />
+      </svg>
+
+      <div className="container py-8 relative z-10">
         <p className="text-xs text-[#1a5c6b]/60 leading-relaxed mb-6">
           {t("footer.tagline")}
         </p>
