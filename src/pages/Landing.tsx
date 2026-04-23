@@ -80,9 +80,9 @@ const Landing = () => {
       </section>
 
       {/* Highlights */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("landing.whyBeacon")}</h2>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
             <p className="text-muted-foreground leading-relaxed">{t("landing.whyBeaconDesc")}</p>
@@ -102,7 +102,7 @@ const Landing = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-card">
+      <section className="py-14 md:py-20 bg-card">
         <div className="container">
           <div className="relative max-w-2xl mx-auto text-center">
             <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />

@@ -80,19 +80,19 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-24 md:h-28">
+      <div className="container flex items-center justify-between h-[76px] md:h-[90px]">
         <Link to={localePath("/")} className="flex items-center">
-          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-24 md:h-28 w-auto" />
+          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-[72px] md:h-[84px] w-auto" />
         </Link>
 
-        <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1">
+        <nav ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => (
             <div key={link.label} className="relative">
               {link.dropdown ? (
                 <>
                   <button
                     onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
-                    className={`flex items-center gap-1 px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors ${
+                    className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors whitespace-nowrap ${
                       openDropdown === link.label
                         ? "text-[#0d3d4a]"
                         : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
@@ -129,14 +129,14 @@ const Header = () => {
               ) : (
                 <Link
                   to={localePath(link.path)}
-                  className={`px-3 py-2 text-sm font-bold uppercase tracking-[0.12em] transition-colors text-[#0d3d4a]/80 hover:text-[#0d3d4a]`}
+                  className={`px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors text-[#0d3d4a]/80 hover:text-[#0d3d4a] whitespace-nowrap`}
                 >
                   {link.label}
                 </Link>
               )}
             </div>
           ))}
-          <div className="ml-3">
+          <div className="ml-2">
             <LanguageSwitch />
           </div>
         </nav>

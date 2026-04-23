@@ -42,7 +42,7 @@ const AboutPage = () => {
         {/* Values — alternating: white surface */}
         <section className="section-padding bg-card">
           <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-16 reveal">
+            <div className="text-center max-w-2xl mx-auto mb-12 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
@@ -63,7 +63,7 @@ const AboutPage = () => {
         {/* Our Team Section — back to ivory background */}
         <section className="section-padding bg-background">
           <div className="container">
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-12">
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">Our Team</h2>
               <div className="line-gold mt-4 mb-6" />
