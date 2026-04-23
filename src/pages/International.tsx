@@ -24,7 +24,7 @@ const InternationalPage = () => (
         <div className="max-w-3xl mx-auto text-center">
           <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6">International Clients</h1>
-          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             We bridge international expectations with local legal execution. For global investors and multinational organizations, Beacon Attorneys provides the strategic counsel and on-the-ground expertise required to operate confidently in Rwanda and the East African region.
           </p>
         </div>

@@ -52,7 +52,7 @@ const PracticeAreasPage = () => {
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
+            <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
               {t("practiceAreas.heroTagline1")}
             </p>
           </div>
