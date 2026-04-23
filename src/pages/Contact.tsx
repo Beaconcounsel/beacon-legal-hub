@@ -166,9 +166,9 @@ const ContactPage = () => {
       </section>
 
       <div ref={revealRef}>
-        <section className="pt-6 pb-20 md:pb-28">
+        <section className="pt-6 pb-12 md:pb-16 lg:pb-[72px]">
           <div className="container">
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 reveal">
                 <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 md:p-10 space-y-6" noValidate>
                   <div>

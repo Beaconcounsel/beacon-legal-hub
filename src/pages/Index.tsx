@@ -535,7 +535,7 @@ const HomePage = () => {
         {show("industries") && (
           <section id="industries" className="section-padding bg-card scroll-mt-20">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-16 reveal">
+              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.industriesWeServe")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
