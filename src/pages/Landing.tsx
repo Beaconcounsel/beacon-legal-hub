@@ -34,6 +34,9 @@ const Landing = () => {
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif leading-tight mb-6 text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+              {t("landing.positioningStatement")}
+            </h1>
             <p className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-foreground/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               {t("landing.heroTagline")}
             </p>
