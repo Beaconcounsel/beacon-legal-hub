@@ -10,6 +10,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -78,8 +79,31 @@ const Header = () => {
     setMobileDropdown(null);
   }, [location.pathname, location.hash]);
 
+  // Scroll elevation — add subtle shadow once user scrolls past hero edge
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Active route detection (matches base path of nav link)
+  const isActiveRoute = (linkPath: string) => {
+    const localized = localePath(linkPath);
+    if (linkPath === "/") {
+      // "About Us" maps to home — active on / or /home (and locale-prefixed)
+      const p = location.pathname.replace(/^\/(en|fr)/, "") || "/";
+      return p === "/" || p === "/home";
+    }
+    return location.pathname === localized || location.pathname.startsWith(localized + "/");
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#F8F9FB] backdrop-blur-md border-b border-border/50 transition-shadow duration-300 ${
+        scrolled ? "header-scrolled" : ""
+      }`}
+    >
       <div className="container flex items-center justify-between h-[76px] md:h-[90px]">
         <Link to={localePath("/")} className="flex items-center">
           <img src={logo} alt="Beacon Attorneys & Consultants" className="h-[72px] md:h-[84px] w-auto" />
@@ -92,9 +116,9 @@ const Header = () => {
                 <>
                   <button
                     onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
-                    className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors whitespace-nowrap ${
-                      openDropdown === link.label
-                        ? "text-[#0d3d4a]"
+                    className={`relative flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors whitespace-nowrap ${
+                      openDropdown === link.label || isActiveRoute(link.path)
+                        ? "text-[#0d3d4a] after:content-[''] after:absolute after:left-2.5 after:right-2.5 after:-bottom-0.5 after:h-[2px] after:bg-gold"
                         : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
                     }`}
                   >
@@ -129,7 +153,11 @@ const Header = () => {
               ) : (
                 <Link
                   to={localePath(link.path)}
-                  className={`px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors text-[#0d3d4a]/80 hover:text-[#0d3d4a] whitespace-nowrap`}
+                  className={`relative px-2.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors whitespace-nowrap ${
+                    isActiveRoute(link.path)
+                      ? "text-[#0d3d4a] after:content-[''] after:absolute after:left-2.5 after:right-2.5 after:-bottom-0.5 after:h-[2px] after:bg-gold"
+                      : "text-[#0d3d4a]/80 hover:text-[#0d3d4a]"
+                  }`}
                 >
                   {link.label}
                 </Link>

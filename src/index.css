@@ -165,7 +165,8 @@
   }
 
   .section-padding {
-    @apply py-14 md:py-20 lg:py-24;
+    /* Compact rhythm: 48-56px mobile, 64-72px desktop */
+    @apply py-12 md:py-16 lg:py-[72px];
   }
 
   .animate-fade-up {
@@ -218,6 +219,23 @@
 .hero-parallax {
   will-change: transform;
   transition: transform 0.1s linear;
+}
+
+/* Compact container override — tighter premium feel (1100px max) */
+.container {
+  max-width: 1100px !important;
+}
+
+/* Anchor scroll offset — accounts for sticky header */
+[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Header scroll-elevation */
+.header-scrolled {
+  box-shadow: 0 4px 16px hsl(var(--navy) / 0.08);
+  background-color: hsl(0 0% 100% / 0.92) !important;
+  backdrop-filter: saturate(180%) blur(12px);
 }
 
 @keyframes fadeUp {

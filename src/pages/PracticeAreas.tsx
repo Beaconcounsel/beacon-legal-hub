@@ -44,13 +44,13 @@ const PracticeAreasPage = () => {
     <Layout>
       <SEOHead titleKey="seo.practiceAreasTitle" descKey="seo.practiceAreasDesc" />
       {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={practiceHeroImg} alt="Kigali business district" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 py-12">
+        <div className="container relative z-10 py-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">
               {t("practiceAreas.heroTagline1")}
@@ -62,9 +62,9 @@ const PracticeAreasPage = () => {
       {/* Areas of Expertise */}
       <section id="expertise" className="section-padding scroll-mt-28">
         <div className="container">
-          <div className="space-y-8">
+          <div className="space-y-5">
             {areaKeys.map((key, i) => (
-              <div key={i} className="bg-card border border-border rounded-lg p-8 md:p-10 hover:border-primary/30 transition-colors">
+              <div key={i} className="bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/30 transition-colors">
                 <div className="flex items-start gap-4">
                   <span className="text-justice font-serif text-lg font-bold mt-1">
                     {String(i + 1).padStart(2, "0")}
@@ -85,7 +85,7 @@ const PracticeAreasPage = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-10">
             <LocalizedLink to="/contact">
               <Button variant="gold" size="lg" className="gap-2">
                 {t("practiceAreas.requestConsultation")} <ArrowRight className="w-4 h-4" />
@@ -99,8 +99,8 @@ const PracticeAreasPage = () => {
       <section id="industries" className="section-padding bg-card scroll-mt-28">
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.industriesWeServe")}</h2>
-          <div className="line-gold mb-12" />
-          <div className="flex flex-wrap justify-center gap-5 mb-10">
+          <div className="line-gold mb-8" />
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {industries.map((ind) => (
               <div key={ind.label} className="flex items-center gap-3 bg-background border border-border px-7 py-5 rounded-xl hover:border-primary/30 hover:bg-secondary/60 transition-all duration-300 group">
                 <ind.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
@@ -122,8 +122,8 @@ const PracticeAreasPage = () => {
       <section id="services" className="section-padding scroll-mt-28">
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
-          <div className="line-gold mb-12" />
-          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-12">
+          <div className="line-gold mb-8" />
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-8">
             {t("practiceAreas.heroTagline2")}
           </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />

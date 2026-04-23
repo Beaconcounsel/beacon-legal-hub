@@ -45,13 +45,13 @@ const OurApproachPage = () => {
     <Layout>
       <SEOHead titleKey="seo.approachTitle" descKey="seo.approachDesc" />
       {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={approachHeroImg} alt="Kigali cityscape" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 py-12">
+        <div className="container relative z-10 py-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               {t("approach.heroTagline")}
@@ -65,8 +65,8 @@ const OurApproachPage = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("approach.howWeServe")}</h2>
           <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">{t("approach.howWeServeDesc")}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("approach.howWeServeDesc")}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {servePillars.map((p) => (
               <div key={p.title} className="bg-card border border-border rounded-xl p-8 hover:border-primary/30 transition-colors">
                 <p.icon className="w-8 h-8 text-primary mb-4" />
@@ -99,7 +99,7 @@ const OurApproachPage = () => {
 
         <div className="section-padding">
           <div className="container">
-            <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+            <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
               <div>
                 <h3 className="text-2xl font-bold mb-6 font-serif">{t("approach.rwandaInvestment")}</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -120,7 +120,7 @@ const OurApproachPage = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
               {internationalServices.map((s) => (
                 <div key={s.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
                   <s.icon className="w-8 h-8 text-primary mb-4" />
@@ -144,7 +144,7 @@ const OurApproachPage = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("approach.proBono")}</h2>
           <div className="line-gold mb-6" />
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-start mb-8">
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>{t("approach.proBonoP1")}</p>
               <p>{t("approach.proBonoP2")}</p>

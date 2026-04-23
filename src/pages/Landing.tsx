@@ -35,7 +35,7 @@ const Landing = () => {
         - Inner Auto Layout (Vertical): gap 16/24px, items hug content, left aligned
         - Tagline max-w 720px (640px on smaller wrap), 2–3 lines, sits in top-40% safe zone
       */}
-      <section className="relative h-[520px] md:h-[600px] lg:h-[720px] overflow-hidden">
+      <section className="relative h-[460px] md:h-[520px] lg:h-[600px] overflow-hidden">
         {/* Hero / Image */}
         <img
           src={heroImg}
@@ -53,7 +53,7 @@ const Landing = () => {
           }}
         />
         {/* Hero / Content — centered, top-aligned, max-w 1200 */}
-        <div className="absolute inset-x-0 top-[56px] md:top-[72px] lg:top-[96px] z-10">
+        <div className="absolute inset-x-0 top-[40px] md:top-[56px] lg:top-[72px] z-10">
           <div className="mx-auto w-full max-w-[1200px] px-6 md:px-8">
             {/* Auto Layout (Vertical), gap-4 (16px) → md gap-6 (24px), items-start */}
             <div className="flex flex-col items-start gap-4 md:gap-6">
