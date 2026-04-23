@@ -312,11 +312,11 @@ const TeamPage = () => {
                   <div className="space-y-3">
                     <div className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">Certified Arbitrator (Associate)</p>
-                      <p className="text-xs text-muted-foreground">Chartered Institute of Arbitrators</p>
+                      <p className="text-xs text-muted-foreground leading-snug">Chartered Institute of Arbitrators</p>
                     </div>
                     <div className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">Certified Human Resources Manager</p>
-                      <p className="text-xs text-muted-foreground">IABFM</p>
+                      <p className="text-xs text-muted-foreground leading-snug">IABFM</p>
                     </div>
                   </div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 mt-6">Languages</p>
@@ -331,10 +331,10 @@ const TeamPage = () => {
 
             {/* Positioning Statement */}
             <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-6 border border-primary/20">
-              <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
+              <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-snug">
                 "I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity."
               </blockquote>
-              <p className="text-primary text-sm font-semibold mt-4">— Daniel Mutiganda</p>
+              <p className="text-primary text-sm font-semibold mt-3">— Daniel Mutiganda</p>
             </div>
 
             {/* CTA */}
@@ -377,7 +377,7 @@ const TeamPage = () => {
 
           <div className="p-6 md:p-10 space-y-6">
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Education & Certifications</h3>
               </div>
@@ -390,7 +390,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item.degree} className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">{item.degree}</p>
-                    <p className="text-xs text-muted-foreground">{item.school}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.school}</p>
                   </div>
                 ))}
               </div>
@@ -409,11 +409,11 @@ const TeamPage = () => {
 
         <div className="mt-8 reveal relative max-w-2xl mx-auto">
           <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
-          <div className="relative bg-card border border-border rounded-xl p-12 text-center">
+          <div className="relative bg-card border border-border rounded-xl p-10 text-center">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-            <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
-            <div className="line-gold mx-auto mt-4 mb-6" />
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <h3 className="text-2xl font-bold font-serif mb-3">Join Beacon Attorneys</h3>
+            <div className="line-gold mx-auto mt-4 mb-5" />
+            <p className="text-muted-foreground leading-snug mb-6">
               We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
             </p>
             <Link to="/contact">

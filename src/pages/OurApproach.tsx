@@ -68,10 +68,10 @@ const OurApproachPage = () => {
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("approach.howWeServeDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {servePillars.map((p) => (
-              <div key={p.title} className="bg-card border border-border rounded-xl p-8 hover:border-primary/30 transition-colors">
-                <p.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              <div key={p.title} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <p.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2 font-serif">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -99,19 +99,19 @@ const OurApproachPage = () => {
 
         <div className="section-padding">
           <div className="container">
-            <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
               <div>
-                <h3 className="text-2xl font-bold mb-6 font-serif">{t("approach.rwandaInvestment")}</h3>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl font-bold mb-5 font-serif">{t("approach.rwandaInvestment")}</h3>
+                <div className="space-y-3 text-muted-foreground leading-snug">
                   <p>{t("approach.rwandaP1")}</p>
                   <p>{t("approach.rwandaP2")}</p>
                 </div>
               </div>
-              <div className="bg-card border border-border rounded-lg p-8">
-                <h3 className="text-xl font-bold mb-6 font-serif text-primary">{t("approach.whyRwanda")}</h3>
-                <ul className="space-y-4">
+              <div className="bg-card border border-border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-5 font-serif text-primary">{t("approach.whyRwanda")}</h3>
+                <ul className="space-y-3">
                   {whyRwandaItems.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
+                    <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
                       <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                       {item}
                     </li>
@@ -122,10 +122,10 @@ const OurApproachPage = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
               {internationalServices.map((s) => (
-                <div key={s.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-                  <s.icon className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="text-lg font-semibold mb-3 font-serif">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div key={s.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
+                  <s.icon className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2 font-serif">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-snug">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -145,17 +145,17 @@ const OurApproachPage = () => {
           <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("approach.proBono")}</h2>
           <div className="line-gold mb-6" />
           <div className="grid lg:grid-cols-2 gap-10 items-start mb-8">
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-3 text-muted-foreground leading-snug">
               <p>{t("approach.proBonoP1")}</p>
               <p>{t("approach.proBonoP2")}</p>
               <p>{t("approach.proBonoP3")}</p>
             </div>
-            <div className="bg-background border border-border rounded-lg p-8">
-              <Heart className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-4 font-serif">{t("approach.proBonoPartners")}</h3>
-              <ul className="space-y-3">
+            <div className="bg-background border border-border rounded-lg p-6">
+              <Heart className="w-10 h-10 text-primary mb-3" />
+              <h3 className="text-xl font-bold mb-3 font-serif">{t("approach.proBonoPartners")}</h3>
+              <ul className="space-y-2">
                 {proBonoPartnersList.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
                     <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                     {item}
                   </li>
