@@ -47,7 +47,7 @@ const InternationalPage = () => (
             <ul className="space-y-4">
               {["Ranked 1st in Africa for ease of doing business in 2025", "Stable Political, Security, Public governance environments", "Strategic access to East and Central African markets", "A premier destination for MICE (Meetings, Incentives, Conferences, and Exhibitions), ranked 2nd in Africa by ICCA", "Growing tech and financial services hub", "Investor protection and incentive frameworks"].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2" />
                   {item}
                 </li>
               ))}
