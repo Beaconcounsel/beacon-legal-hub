@@ -68,10 +68,10 @@ const ResearchPage = () => {
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.researchDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {researchItems.map((item) => (
-              <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-                <item.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -91,10 +91,10 @@ const ResearchPage = () => {
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.trainingDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {trainingItems.map((item) => (
-              <div key={item.title} className="bg-background border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-                <item.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="bg-background border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -114,10 +114,10 @@ const ResearchPage = () => {
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.consultancyDesc")}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {consultancyItems.map((item) => (
-              <div key={item.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-                <item.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
+                <item.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2 font-serif">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
