@@ -91,13 +91,13 @@ const HomePage = () => {
     <Layout>
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>
-        <div className="container relative z-10 py-12">
+        <div className="container relative z-10 py-10">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
           </div>
@@ -123,9 +123,9 @@ const HomePage = () => {
       <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
           {/* About Section */}
-          <section id="about" className="section-padding scroll-mt-20">
+          <section id="about" className="section-padding scroll-mt-24">
             <div className="container">
-              <div className="grid lg:grid-cols-2 gap-16 items-center reveal">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center reveal">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
                   <div className="line-gold mb-6" />
@@ -146,11 +146,11 @@ const HomePage = () => {
           {/* Values */}
           <section className="section-padding bg-card">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-16 reveal">
+              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-6">
                 {values.map((v) => (
                   <div key={v.title} className="reveal text-center bg-card border border-border rounded-xl p-10 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors">
@@ -186,12 +186,12 @@ const HomePage = () => {
           {/* Who We Serve */}
           <section className="section-padding">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-16 reveal">
+              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.ourClients")}</h2>
                 <div className="line-gold mx-auto mb-6" />
                 <p className="text-muted-foreground leading-relaxed">{t("home.ourClientsDesc")}</p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {clientCategories.map((cat) => (
                   <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
                     <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-5 group-hover:bg-justice/15 transition-colors">
@@ -207,9 +207,9 @@ const HomePage = () => {
         </>)}
 
         {show("team") && (
-          <section id="team" className="section-padding scroll-mt-20">
+          <section id="team" className="section-padding scroll-mt-24">
             <div className="container">
-              <div className="max-w-3xl mb-16 reveal">
+              <div className="max-w-3xl mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
                 <div className="line-gold mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>

@@ -15,15 +15,15 @@ const InsightsPage = () => {
       <SEOHead titleKey="seo.insightsTitle" descKey="seo.insightsDesc" />
       <section className="section-padding">
         <div className="container">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-8">
             <div className="line-gold mb-4" />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("insights.title")}</h1>
             <p className="text-muted-foreground text-lg leading-relaxed">{t("insights.tagline")}</p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             {articleKeys.map((key, i) => (
-              <article key={i} className="bg-card border border-border rounded-lg p-8 md:p-10 hover:border-primary/30 transition-colors group cursor-pointer">
+              <article key={i} className="bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/30 transition-colors group cursor-pointer">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {t(`insights.articles.${key}.category`)}
@@ -38,7 +38,7 @@ const InsightsPage = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-10 text-center">
             <LocalizedLink to="/contact">
               <Button variant="gold" size="lg" className="gap-2">
                 {t("insights.subscribe")} <ArrowRight className="w-4 h-4" />

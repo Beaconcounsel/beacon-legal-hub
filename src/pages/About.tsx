@@ -17,10 +17,10 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      {/* Hero — light ivory background, generous breathing room */}
+      {/* Hero — compact, light ivory background */}
       <section className="section-padding pb-0 bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2 text-primary">About Beacon Attorneys</h1>
               <div className="line-gold mt-4 mb-6" />
@@ -42,11 +42,11 @@ const AboutPage = () => {
         {/* Values — alternating: white surface */}
         <section className="section-padding bg-card">
           <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12 reveal">
+            <div className="text-center max-w-2xl mx-auto mb-8 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">What Drives Us</h2>
               <div className="line-gold mx-auto mt-4" />
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6">
               {values.map((v) => (
                 <div key={v.title} className="reveal text-center bg-card border border-border rounded-xl p-10 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors">
