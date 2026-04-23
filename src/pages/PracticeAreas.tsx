@@ -20,7 +20,8 @@ const PracticeAreasPage = () => {
   ] as const;
 
   const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc"] as const;
-  const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList];
+  const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList, BookOpen];
+  const fullServiceKeys = [...serviceKeys, "estatePlanning"] as const;
 
   const industries = [
     { icon: Zap, label: t("practiceAreas.industries.energy") },
@@ -28,6 +29,7 @@ const PracticeAreasPage = () => {
     { icon: Building2, label: t("practiceAreas.industries.realEstate") },
     { icon: Laptop, label: t("practiceAreas.industries.technology") },
     { icon: Wheat, label: t("practiceAreas.industries.agriculture") },
+    { icon: Building2, label: t("practiceAreas.industries.infrastructure") },
   ];
 
   useEffect(() => {
