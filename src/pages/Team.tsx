@@ -32,8 +32,8 @@ const TeamPage = () => {
         {/* Daniel Mutiganda */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-start gap-8">
+          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-6 md:p-10">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full flex-shrink-0 border-4 border-primary/30 overflow-hidden shadow-lg shadow-primary/10">
                 <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover" />
               </div>
