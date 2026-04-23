@@ -209,7 +209,7 @@ const TeamPage = () => {
             </div>
 
             {/* Clients & Geographic Focus */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Users className="w-5 h-5 text-primary" />
@@ -253,7 +253,7 @@ const TeamPage = () => {
             </div>
 
             {/* Leadership & Board Advisory */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-xl font-bold font-serif mb-6">Board & Regulatory Advisory</h3>
                 <ul className="space-y-3">
@@ -330,7 +330,7 @@ const TeamPage = () => {
             </div>
 
             {/* Positioning Statement */}
-            <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-8 border border-primary/20">
+            <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-6 border border-primary/20">
               <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
                 "I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity."
               </blockquote>
@@ -355,8 +355,8 @@ const TeamPage = () => {
 
         {/* Moses Katusime Mbombo */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-start gap-8">
+          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-6 md:p-10">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
                 <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
               </div>
@@ -375,7 +375,7 @@ const TeamPage = () => {
             </div>
           </div>
 
-          <div className="p-8 md:p-12 space-y-8">
+          <div className="p-6 md:p-10 space-y-6">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <GraduationCap className="w-5 h-5 text-primary" />
