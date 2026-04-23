@@ -25,18 +25,16 @@ const Landing = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.landingTitle" descKey="seo.landingDesc" />
-      {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Hero — text anchored in the open sky area above the skyline */}
+      <section className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
-        <div className="container relative z-10 py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif leading-tight mb-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              {t("landing.positioningStatement")}
-            </h1>
+        {/* Top padding = navbar height (~72px) + 80px clearance on desktop; tighter on mobile (navbar ~62px + 80px) */}
+        <div className="container relative z-10 pt-[142px] md:pt-[152px] pb-12">
+          <div className="max-w-3xl text-left">
             <p className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               {t("landing.heroTagline")}
             </p>
