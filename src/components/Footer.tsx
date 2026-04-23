@@ -135,6 +135,35 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Centered editorial tagline */}
+        <div className="my-6 flex flex-col items-center text-center">
+          <span
+            aria-hidden="true"
+            className="block h-px w-[60px]"
+            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
+          />
+          <p
+            className="font-serif italic my-3"
+            style={{
+              color: "#c9a84c",
+              fontWeight: 500,
+              letterSpacing: "0.02em",
+              lineHeight: 1.6,
+              fontSize: "1.1rem",
+            }}
+          >
+            <span className="md:hidden">A Law Firm for Individuals, Businesses, Institutions, and International Investors</span>
+            <span className="hidden md:inline" style={{ fontSize: "1.4rem" }}>
+              A Law Firm for Individuals, Businesses, Institutions, and International Investors
+            </span>
+          </p>
+          <span
+            aria-hidden="true"
+            className="block h-px w-[60px]"
+            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
+          />
+        </div>
+
         <div className="border-t border-ivory/10 mt-6 pt-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-[11px] text-ivory/50">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
