@@ -27,7 +27,7 @@ const TeamPage = () => {
     <div ref={revealRef}>
     {/* Partners */}
     <section className="section-padding pt-0">
-      <div className="container space-y-8">
+      <div className="container space-y-6">
 
         {/* Daniel Mutiganda */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -53,20 +53,20 @@ const TeamPage = () => {
             </div>
           </div>
 
-          <div className="p-6 md:p-10 space-y-8">
+          <div className="p-6 md:p-10 space-y-6">
             {/* Overview */}
             <div className="max-w-3xl">
-              <p className="text-foreground/80 leading-relaxed">
+              <p className="text-foreground/80 leading-snug">
                 Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising and representing international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.
               </p>
-              <p className="text-foreground/80 leading-relaxed mt-4">
+              <p className="text-foreground/80 leading-snug mt-3">
                 He works with clients to align legal risk, business strategy, and growth objectives, with a strong focus on structuring compliant investments, negotiating transactions, and representing client interests in regulatory and commercial engagements.
               </p>
             </div>
 
             {/* What Sets Him Apart */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <Award className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">What Sets Him Apart</h3>
               </div>
@@ -81,7 +81,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 bg-muted/30 rounded-lg p-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/80">{item}</p>
+                    <p className="text-sm text-foreground/80 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
@@ -93,7 +93,7 @@ const TeamPage = () => {
                 <Briefcase className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Multi-Disciplinary Experience</h3>
               </div>
-              <p className="text-muted-foreground text-sm mb-6 ml-8">
+              <p className="text-muted-foreground text-sm mb-4 ml-8 leading-snug">
                 Daniel brings experience across key sectors, enabling practical, business-oriented advice and effective representation.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -105,9 +105,9 @@ const TeamPage = () => {
                   { sector: "Corporate & Private Sector", desc: "Structuring, transactions, and business growth" },
                   { sector: "Consultancy & Legal Advisory", desc: "Cross-sector strategic advisory and representation" },
                 ].map((item) => (
-                  <div key={item.sector} className="border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                  <div key={item.sector} className="border border-border rounded-lg p-4 hover:border-primary/30 transition-colors">
                     <p className="font-semibold text-sm mb-1">{item.sector}</p>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -119,7 +119,7 @@ const TeamPage = () => {
                 <Globe className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">International Perspective, Local Execution</h3>
               </div>
-              <p className="text-foreground/80 text-sm leading-relaxed mb-6">
+              <p className="text-foreground/80 text-sm leading-snug mb-4">
                 Daniel advises and represents international clients entering Rwanda while supporting local businesses to structure, scale, and transact effectively.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -132,7 +132,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/70">{item}</p>
+                    <p className="text-sm text-foreground/70 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
