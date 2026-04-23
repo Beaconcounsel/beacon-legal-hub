@@ -29,8 +29,8 @@ const Landing = () => {
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">

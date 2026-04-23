@@ -48,8 +48,8 @@ const OurApproachPage = () => {
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={approachHeroImg} alt="Kigali cityscape" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-3xl mx-auto text-center">
@@ -88,7 +88,7 @@ const OurApproachPage = () => {
         <div className="relative min-h-[40vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
             <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" loading="lazy" width={1920} height={1080} />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-transparent" />
           </div>
           <div className="container relative z-10 py-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("approach.internationalClients")}</h2>

@@ -17,8 +17,8 @@ const InternationalPage = () => (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" loading="lazy" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
       </div>
       <div className="container relative z-10 pt-20 md:pt-24 py-20">
         <div className="max-w-3xl mx-auto text-center">

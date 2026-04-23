@@ -94,8 +94,8 @@ const HomePage = () => {
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-2xl mx-auto text-center">
