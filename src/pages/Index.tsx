@@ -194,8 +194,8 @@ const HomePage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {clientCategories.map((cat) => (
                   <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                      <cat.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-5 group-hover:bg-justice/15 transition-colors">
+                      <cat.icon className="w-6 h-6 text-justice group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="text-lg font-semibold mb-3 font-serif">{cat.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
