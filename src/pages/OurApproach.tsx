@@ -91,9 +91,9 @@ const OurApproachPage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-transparent" />
           </div>
           <div className="container relative z-10 py-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("approach.internationalClients")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalClients")}</h2>
             <div className="line-gold mb-6" />
-            <p className="text-lg text-foreground/90 max-w-2xl leading-relaxed">{t("approach.internationalDesc")}</p>
+            <p className="text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalDesc")}</p>
           </div>
         </div>
 

@@ -99,7 +99,7 @@ const HomePage = () => {
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-up">{t("home.heroTagline")}</p>
+            <p className="text-lg md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
