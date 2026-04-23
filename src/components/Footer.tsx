@@ -73,9 +73,9 @@ const Footer = () => {
         <circle className="footer-dot" style={{ animationDelay: "2.1s" }} cx="700" cy="370" r="3" fill="#8b1a1a" opacity="0.8" />
       </svg>
 
-      <div className="container py-8 relative z-10">
+      <div className="container py-6 md:py-8 relative z-10">
         {/* Centered editorial tagline — top of footer */}
-        <div className="mb-8 mt-2 flex flex-col items-center text-center">
+        <div className="mb-5 mt-1 flex flex-col items-center text-center">
           <span
             aria-hidden="true"
             className="block h-px w-[60px]"
@@ -103,7 +103,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-4 gap-5">
           <div>
             <div className="flex items-center gap-3 mt-1">
               <a href="https://www.linkedin.com/company/beaconattorneys" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-gold transition-colors">
@@ -160,7 +160,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-ivory/10 mt-6 pt-4">
+        <div className="border-t border-ivory/10 mt-4 pt-3">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-[11px] text-ivory/50">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
             <div className="flex items-center gap-2 text-[11px] text-ivory/50">
