@@ -170,7 +170,7 @@ const ContactPage = () => {
           <div className="container">
             <div className="grid lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 reveal">
-                <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 md:p-10 space-y-6" noValidate>
+                <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-6 md:p-8 space-y-5" noValidate>
                   <div>
                     <span className="label-uppercase">Legal Inquiry</span>
                     <h2 className="text-2xl font-serif text-navy mt-2">Tell us about your matter</h2>
@@ -310,11 +310,11 @@ const ContactPage = () => {
                 </form>
               </div>
 
-              <div className="space-y-8 reveal">
-                <div className="bg-card border border-border rounded-xl p-8">
-                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">{t("contact.reachUs")}</span>
-                  <h3 className="text-lg font-semibold font-serif mb-6">{t("contact.contactInfo")}</h3>
-                  <ul className="space-y-5">
+              <div className="space-y-6 reveal">
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">{t("contact.reachUs")}</span>
+                  <h3 className="text-lg font-semibold font-serif mb-4">{t("contact.contactInfo")}</h3>
+                  <ul className="space-y-4">
                     {[
                       { icon: MapPin, text: "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda", href: "https://www.google.com/maps/search/KG+190+St,+RIM+House,+Kigali,+Rwanda" },
                       { icon: Phone, text: "+250 788 55 96 03", href: "tel:+250788559603" },

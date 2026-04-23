@@ -129,7 +129,7 @@ const HomePage = () => {
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
                   <div className="line-gold mb-6" />
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <div className="space-y-3 text-muted-foreground leading-snug">
                     <p>{t("home.whoWeAreP1")}</p>
                     <p>{t("home.whoWeAreP2")}</p>
                     <p>{t("home.whoWeAreP3")}</p>
@@ -146,18 +146,18 @@ const HomePage = () => {
           {/* Values */}
           <section className="section-padding bg-card">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
+              <div className="text-center max-w-2xl mx-auto mb-8 reveal">
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {values.map((v) => (
-                  <div key={v.title} className="reveal text-center bg-card border border-border rounded-xl p-10 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors">
+                  <div key={v.title} className="reveal text-center bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 transition-colors">
                       <v.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 font-serif">{v.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                    <h3 className="text-xl font-semibold mb-2 font-serif">{v.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{v.desc}</p>
                   </div>
                 ))}
               </div>
@@ -169,10 +169,10 @@ const HomePage = () => {
             <div className="container">
               <div className="reveal relative max-w-2xl mx-auto text-center">
                 <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
-                <div className="relative bg-card border border-border rounded-xl p-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">{t("home.ourPurpose")}</h2>
-                  <div className="line-gold mx-auto mb-6" />
-                  <p className="text-muted-foreground leading-relaxed mb-8">{t("home.ourPurposeDesc")}</p>
+                <div className="relative bg-card border border-border rounded-xl p-10">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("home.ourPurpose")}</h2>
+                  <div className="line-gold mx-auto mb-5" />
+                  <p className="text-muted-foreground leading-snug mb-6">{t("home.ourPurposeDesc")}</p>
                   <LocalizedLink to="/contact">
                     <Button variant="gold" className="gap-2">
                       {t("home.workWithUs")} <ArrowRight className="w-4 h-4" />
@@ -189,16 +189,16 @@ const HomePage = () => {
               <div className="text-center max-w-2xl mx-auto mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.ourClients")}</h2>
                 <div className="line-gold mx-auto mb-6" />
-                <p className="text-muted-foreground leading-relaxed">{t("home.ourClientsDesc")}</p>
+                <p className="text-muted-foreground leading-snug">{t("home.ourClientsDesc")}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {clientCategories.map((cat) => (
-                  <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-5 group-hover:bg-justice/15 transition-colors">
+                  <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-4 group-hover:bg-justice/15 transition-colors">
                       <cat.icon className="w-6 h-6 text-justice group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-3 font-serif">{cat.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
+                    <h3 className="text-lg font-semibold mb-2 font-serif">{cat.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{cat.description}</p>
                   </div>
                 ))}
               </div>

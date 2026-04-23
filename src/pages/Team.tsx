@@ -27,7 +27,7 @@ const TeamPage = () => {
     <div ref={revealRef}>
     {/* Partners */}
     <section className="section-padding pt-0">
-      <div className="container space-y-8">
+      <div className="container space-y-6">
 
         {/* Daniel Mutiganda */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -53,20 +53,20 @@ const TeamPage = () => {
             </div>
           </div>
 
-          <div className="p-6 md:p-10 space-y-8">
+          <div className="p-6 md:p-10 space-y-6">
             {/* Overview */}
             <div className="max-w-3xl">
-              <p className="text-foreground/80 leading-relaxed">
+              <p className="text-foreground/80 leading-snug">
                 Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising and representing international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.
               </p>
-              <p className="text-foreground/80 leading-relaxed mt-4">
+              <p className="text-foreground/80 leading-snug mt-3">
                 He works with clients to align legal risk, business strategy, and growth objectives, with a strong focus on structuring compliant investments, negotiating transactions, and representing client interests in regulatory and commercial engagements.
               </p>
             </div>
 
             {/* What Sets Him Apart */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <Award className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">What Sets Him Apart</h3>
               </div>
@@ -81,7 +81,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 bg-muted/30 rounded-lg p-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/80">{item}</p>
+                    <p className="text-sm text-foreground/80 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
@@ -93,7 +93,7 @@ const TeamPage = () => {
                 <Briefcase className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Multi-Disciplinary Experience</h3>
               </div>
-              <p className="text-muted-foreground text-sm mb-6 ml-8">
+              <p className="text-muted-foreground text-sm mb-4 ml-8 leading-snug">
                 Daniel brings experience across key sectors, enabling practical, business-oriented advice and effective representation.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -105,9 +105,9 @@ const TeamPage = () => {
                   { sector: "Corporate & Private Sector", desc: "Structuring, transactions, and business growth" },
                   { sector: "Consultancy & Legal Advisory", desc: "Cross-sector strategic advisory and representation" },
                 ].map((item) => (
-                  <div key={item.sector} className="border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                  <div key={item.sector} className="border border-border rounded-lg p-4 hover:border-primary/30 transition-colors">
                     <p className="font-semibold text-sm mb-1">{item.sector}</p>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -119,7 +119,7 @@ const TeamPage = () => {
                 <Globe className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">International Perspective, Local Execution</h3>
               </div>
-              <p className="text-foreground/80 text-sm leading-relaxed mb-6">
+              <p className="text-foreground/80 text-sm leading-snug mb-4">
                 Daniel advises and represents international clients entering Rwanda while supporting local businesses to structure, scale, and transact effectively.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -132,7 +132,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/70">{item}</p>
+                    <p className="text-sm text-foreground/70 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
@@ -141,11 +141,11 @@ const TeamPage = () => {
             {/* Core Practice Areas & Sector Focus */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Shield className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Core Practice Areas</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {[
                     "Cross-Border Transactions & Market Entry",
                     "Mergers & Acquisitions (M&A)",
@@ -157,17 +157,17 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Briefcase className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Sector Focus</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     { sector: "Financial Services & Fintech", desc: "Banking, digital finance, compliance, and licensing" },
                     { sector: "Energy & Infrastructure", desc: "Project structuring, PPPs, and regulatory approvals" },
@@ -178,7 +178,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <div key={item.sector}>
                       <p className="text-sm font-semibold">{item.sector}</p>
-                      <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -187,7 +187,7 @@ const TeamPage = () => {
 
             {/* Representative Experience */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Representative Experience</h3>
               </div>
@@ -202,7 +202,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-sm text-foreground/70">{item}</p>
+                    <p className="text-sm text-foreground/70 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
@@ -211,11 +211,11 @@ const TeamPage = () => {
             {/* Clients & Geographic Focus */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Users className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Clients & Engagements</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {[
                     "International investors and private equity firms",
                     "Development finance institutions and global organizations",
@@ -225,28 +225,28 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <MapPin className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Geographic Focus</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">Rwanda</p>
-                    <p className="text-xs text-muted-foreground">Core market</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Core market</p>
                   </div>
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">East Africa</p>
-                    <p className="text-xs text-muted-foreground">Regional advisory and transactions</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Regional advisory and transactions</p>
                   </div>
                   <div className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">Cross-Border</p>
-                    <p className="text-xs text-muted-foreground">Investment structuring</p>
+                    <p className="text-xs text-muted-foreground leading-snug">Investment structuring</p>
                   </div>
                 </div>
               </div>
@@ -255,8 +255,8 @@ const TeamPage = () => {
             {/* Leadership & Board Advisory */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-xl font-bold font-serif mb-6">Board & Regulatory Advisory</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-bold font-serif mb-4">Board & Regulatory Advisory</h3>
+                <ul className="space-y-2">
                   {[
                     "Advises and represents boards and executive teams on governance, compliance, and risk",
                     "Experience engaging regulators and navigating licensing frameworks",
@@ -264,14 +264,14 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-bold font-serif mb-6">Leadership & Institutional Experience</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-bold font-serif mb-4">Leadership & Institutional Experience</h3>
+                <ul className="space-y-2">
                   {[
                     "Led organizational growth from under 1,000 to over 3,500 employees",
                     "Managed large operational teams and budgets",
@@ -281,7 +281,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -290,12 +290,12 @@ const TeamPage = () => {
 
             {/* Education */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Education & Professional Foundation</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     { degree: "Master of Business Administration (MBA)", school: "Oklahoma Christian University, USA" },
                     { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" },
@@ -303,7 +303,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <div key={item.degree} className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">{item.degree}</p>
-                      <p className="text-xs text-muted-foreground">{item.school}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{item.school}</p>
                     </div>
                   ))}
                 </div>
@@ -312,11 +312,11 @@ const TeamPage = () => {
                   <div className="space-y-3">
                     <div className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">Certified Arbitrator (Associate)</p>
-                      <p className="text-xs text-muted-foreground">Chartered Institute of Arbitrators</p>
+                      <p className="text-xs text-muted-foreground leading-snug">Chartered Institute of Arbitrators</p>
                     </div>
                     <div className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">Certified Human Resources Manager</p>
-                      <p className="text-xs text-muted-foreground">IABFM</p>
+                      <p className="text-xs text-muted-foreground leading-snug">IABFM</p>
                     </div>
                   </div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 mt-6">Languages</p>
@@ -331,10 +331,10 @@ const TeamPage = () => {
 
             {/* Positioning Statement */}
             <div className="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-6 border border-primary/20">
-              <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-relaxed">
+              <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 leading-snug">
                 "I advise and represent clients on legally sound business operations in Rwanda, structuring compliant investment transactions while combining international perspective with deep local insight to manage risk, drive growth, and deliver results with integrity."
               </blockquote>
-              <p className="text-primary text-sm font-semibold mt-4">— Daniel Mutiganda</p>
+              <p className="text-primary text-sm font-semibold mt-3">— Daniel Mutiganda</p>
             </div>
 
             {/* CTA */}
@@ -377,7 +377,7 @@ const TeamPage = () => {
 
           <div className="p-6 md:p-10 space-y-6">
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-bold font-serif">Education & Certifications</h3>
               </div>
@@ -390,7 +390,7 @@ const TeamPage = () => {
                 ].map((item) => (
                   <div key={item.degree} className="border border-border rounded-lg p-4">
                     <p className="font-semibold text-sm">{item.degree}</p>
-                    <p className="text-xs text-muted-foreground">{item.school}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.school}</p>
                   </div>
                 ))}
               </div>
@@ -409,11 +409,11 @@ const TeamPage = () => {
 
         <div className="mt-8 reveal relative max-w-2xl mx-auto">
           <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
-          <div className="relative bg-card border border-border rounded-xl p-12 text-center">
+          <div className="relative bg-card border border-border rounded-xl p-10 text-center">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Careers</span>
-            <h3 className="text-2xl font-bold font-serif mb-4">Join Beacon Attorneys</h3>
-            <div className="line-gold mx-auto mt-4 mb-6" />
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <h3 className="text-2xl font-bold font-serif mb-3">Join Beacon Attorneys</h3>
+            <div className="line-gold mx-auto mt-4 mb-5" />
+            <p className="text-muted-foreground leading-snug mb-6">
               We are always looking for exceptional legal talent who share our commitment to strategic excellence, integrity, and client service.
             </p>
             <Link to="/contact">

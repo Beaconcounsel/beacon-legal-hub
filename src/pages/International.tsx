@@ -35,18 +35,18 @@ const InternationalPage = () => (
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
           <div>
-            <h2 className="text-3xl font-bold mb-6 font-serif">Rwanda as an Investment Destination</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-bold mb-5 font-serif">Rwanda as an Investment Destination</h2>
+            <div className="space-y-3 text-muted-foreground leading-snug">
               <p>Rwanda has emerged as one of Africa's most attractive investment destinations, recognized globally for political stability, regulatory transparency, and a business-friendly environment.</p>
               <p>Ranked the top easiest places to do business in Africa, Rwanda offers streamlined company registration, investor-friendly tax incentives, and a commitment to innovation that has positioned Kigali as a regional hub for finance, sports, technology, and infrastructure development.</p>
               <p>Our firm provides the local expertise and strategic perspective to help international clients capitalize on these opportunities while navigating the nuances of the Rwandan legal system.</p>
             </div>
           </div>
-          <div className="bg-card border border-border rounded-lg p-8">
-            <h3 className="text-xl font-bold mb-6 font-serif text-primary">Why Rwanda?</h3>
-            <ul className="space-y-4">
+          <div className="bg-card border border-border rounded-lg p-6">
+            <h3 className="text-xl font-bold mb-5 font-serif text-primary">Why Rwanda?</h3>
+            <ul className="space-y-3">
               {["Ranked 1st in Africa for ease of doing business in 2025", "Stable Political, Security, Public governance environments", "Strategic access to East and Central African markets", "A premier destination for MICE (Meetings, Incentives, Conferences, and Exhibitions), ranked 2nd in Africa by ICCA", "Growing tech and financial services hub", "Investor protection and incentive frameworks"].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
+                <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2" />
                   {item}
                 </li>
@@ -57,13 +57,13 @@ const InternationalPage = () => (
 
         <div className="mb-16">
           <div className="line-gold mb-4" />
-          <h2 className="text-3xl font-bold mb-12 font-serif">How We Support International Clients</h2>
+          <h2 className="text-3xl font-bold mb-10 font-serif">How We Support International Clients</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <div key={s.title} className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors">
-                <s.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 font-serif">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <div key={s.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
+                <s.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2 font-serif">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{s.desc}</p>
               </div>
             ))}
           </div>

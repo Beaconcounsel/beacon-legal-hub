@@ -83,18 +83,18 @@ const Landing = () => {
       <section className="section-padding">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("landing.whyBeacon")}</h2>
-            <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
-            <p className="text-muted-foreground leading-relaxed">{t("landing.whyBeaconDesc")}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("landing.whyBeacon")}</h2>
+            <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
+            <p className="text-muted-foreground leading-snug">{t("landing.whyBeaconDesc")}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {highlights.map((h) => (
               <div key={h.title} className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                   <h.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-serif">{h.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{h.desc}</p>
+                <h3 className="text-xl font-semibold mb-2 font-serif">{h.title}</h3>
+                <p className="text-sm text-muted-foreground leading-snug">{h.desc}</p>
               </div>
             ))}
           </div>
@@ -107,9 +107,9 @@ const Landing = () => {
           <div className="relative max-w-2xl mx-auto text-center">
             <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
             <div className="relative bg-background border border-border rounded-xl p-8 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif text-foreground">{t("landing.ctaTitle")}</h2>
-              <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
-              <p className="text-muted-foreground leading-relaxed mb-8">{t("landing.ctaDesc")}</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("landing.ctaTitle")}</h2>
+              <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
+              <p className="text-muted-foreground leading-snug mb-6">{t("landing.ctaDesc")}</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <LocalizedLink to="/contact">
                   <Button variant="gold" size="lg" className="gap-2">
