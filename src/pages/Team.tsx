@@ -141,11 +141,11 @@ const TeamPage = () => {
             {/* Core Practice Areas & Sector Focus */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Shield className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Core Practice Areas</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {[
                     "Cross-Border Transactions & Market Entry",
                     "Mergers & Acquisitions (M&A)",
@@ -157,17 +157,17 @@ const TeamPage = () => {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className="text-sm text-foreground/80 leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <Briefcase className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-bold font-serif">Sector Focus</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     { sector: "Financial Services & Fintech", desc: "Banking, digital finance, compliance, and licensing" },
                     { sector: "Energy & Infrastructure", desc: "Project structuring, PPPs, and regulatory approvals" },
@@ -178,7 +178,7 @@ const TeamPage = () => {
                   ].map((item) => (
                     <div key={item.sector}>
                       <p className="text-sm font-semibold">{item.sector}</p>
-                      <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{item.desc}</p>
                     </div>
                   ))}
                 </div>
