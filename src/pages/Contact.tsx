@@ -1,23 +1,157 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { z } from "zod";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
+const ENTITY_TYPES = [
+  "Individual",
+  "Sole Proprietorship",
+  "SME / Local Business",
+  "Corporation",
+  "Multinational",
+  "Investor / Private Equity",
+  "NGO / Non-Profit",
+  "Government / Public Sector",
+] as const;
+
+const JURISDICTIONS = [
+  "Rwanda",
+  "East Africa (EAC)",
+  "Pan-African",
+  "International / Cross-Border",
+  "Other",
+] as const;
+
+const MATTER_TYPES = [
+  "Corporate & Commercial",
+  "Mergers & Acquisitions",
+  "Cross-Border Transactions & Market Entry",
+  "Regulatory Compliance",
+  "Corporate Governance",
+  "Investment Advisory",
+  "Dispute Resolution & Arbitration",
+  "Other",
+] as const;
+
+const CHANNELS = ["Email", "Phone", "WhatsApp"] as const;
+
+const inquirySchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().max(30).optional().or(z.literal("")),
+  organization: z.string().trim().max(150).optional().or(z.literal("")),
+  entityType: z.enum(ENTITY_TYPES, { errorMap: () => ({ message: "Select entity type" }) }),
+  jurisdiction: z.enum(JURISDICTIONS, { errorMap: () => ({ message: "Select jurisdiction" }) }),
+  matterType: z.enum(MATTER_TYPES, { errorMap: () => ({ message: "Select matter type" }) }),
+  channel: z.enum(CHANNELS, { errorMap: () => ({ message: "Select preferred channel" }) }),
+  message: z.string().trim().min(10, "Please provide at least 10 characters").max(2000),
+});
+
+type InquiryForm = {
+  name: string;
+  email: string;
+  phone: string;
+  organization: string;
+  entityType: string;
+  jurisdiction: string;
+  matterType: string;
+  channel: string;
+  message: string;
+};
+
+const FIRM_EMAIL = "info@beaconattorneys.rw";
+const FIRM_WHATSAPP = "250788559603";
+
+const initialForm: InquiryForm = {
+  name: "",
+  email: "",
+  phone: "",
+  organization: "",
+  entityType: "",
+  jurisdiction: "",
+  matterType: "",
+  channel: "Email",
+  message: "",
+};
+
 const ContactPage = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
+  const [form, setForm] = useState<InquiryForm>(initialForm);
+  const [errors, setErrors] = useState<Partial<Record<keyof InquiryForm, string>>>({});
   const revealRef = useScrollReveal();
   const { t } = useTranslation();
 
+  const update = <K extends keyof InquiryForm>(key: K, value: InquiryForm[K]) => {
+    setForm((prev) => ({ ...prev, [key]: value }));
+    if (errors[key]) setErrors((prev) => ({ ...prev, [key]: undefined }));
+  };
+
+  const buildBody = (data: InquiryForm) =>
+    [
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      data.phone ? `Phone: ${data.phone}` : null,
+      data.organization ? `Organization: ${data.organization}` : null,
+      `Entity Type: ${data.entityType}`,
+      `Jurisdiction: ${data.jurisdiction}`,
+      `Matter Type: ${data.matterType}`,
+      `Preferred Channel: ${data.channel}`,
+      "",
+      "Message:",
+      data.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const result = inquirySchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof InquiryForm, string>> = {};
+      result.error.issues.forEach((issue) => {
+        const key = issue.path[0] as keyof InquiryForm;
+        if (key && !fieldErrors[key]) fieldErrors[key] = issue.message;
+      });
+      setErrors(fieldErrors);
+      toast.error("Please complete the required fields.");
+      return;
+    }
+
+    const data = result.data as InquiryForm;
+    const subject = `Legal Inquiry — ${data.matterType} (${data.jurisdiction})`;
+    const body = buildBody(data);
+
+    if (data.channel === "WhatsApp") {
+      const text = `${subject}\n\n${body}`;
+      window.open(
+        `https://wa.me/${FIRM_WHATSAPP}?text=${encodeURIComponent(text)}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    } else {
+      window.location.href = `mailto:${FIRM_EMAIL}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+    }
+
     toast.success(t("contact.successMessage"));
-    setForm({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
+    setForm(initialForm);
+    setErrors({});
   };
 
   return (
@@ -36,35 +170,142 @@ const ContactPage = () => {
           <div className="container">
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 reveal">
-                <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 md:p-10 space-y-6">
+                <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 md:p-10 space-y-6" noValidate>
+                  <div>
+                    <span className="label-uppercase">Legal Inquiry</span>
+                    <h2 className="text-2xl font-serif text-navy mt-2">Tell us about your matter</h2>
+                  </div>
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">{t("contact.fullName")} *</label>
-                      <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
+                      <Label className="text-sm font-medium mb-2 block">{t("contact.fullName")} *</Label>
+                      <Input
+                        value={form.name}
+                        onChange={(e) => update("name", e.target.value)}
+                        maxLength={100}
+                        className="bg-background border-border focus:border-primary/50 transition-colors"
+                      />
+                      {errors.name && <p className="text-xs text-justice mt-1">{errors.name}</p>}
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">{t("contact.email")} *</label>
-                      <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
+                      <Label className="text-sm font-medium mb-2 block">{t("contact.email")} *</Label>
+                      <Input
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => update("email", e.target.value)}
+                        maxLength={255}
+                        className="bg-background border-border focus:border-primary/50 transition-colors"
+                      />
+                      {errors.email && <p className="text-xs text-justice mt-1">{errors.email}</p>}
                     </div>
                   </div>
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">{t("contact.phone")}</label>
-                      <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="bg-background border-border focus:border-primary/50 transition-colors" />
+                      <Label className="text-sm font-medium mb-2 block">{t("contact.phone")}</Label>
+                      <Input
+                        value={form.phone}
+                        onChange={(e) => update("phone", e.target.value)}
+                        maxLength={30}
+                        className="bg-background border-border focus:border-primary/50 transition-colors"
+                      />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">{t("contact.company")}</label>
-                      <Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="bg-background border-border focus:border-primary/50 transition-colors" />
+                      <Label className="text-sm font-medium mb-2 block">Organization</Label>
+                      <Input
+                        value={form.organization}
+                        onChange={(e) => update("organization", e.target.value)}
+                        maxLength={150}
+                        className="bg-background border-border focus:border-primary/50 transition-colors"
+                      />
                     </div>
                   </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">{t("contact.subject")} *</label>
-                    <Input value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} required className="bg-background border-border focus:border-primary/50 transition-colors" />
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <Label className="text-sm font-medium mb-2 block">Entity Type *</Label>
+                      <Select value={form.entityType} onValueChange={(v) => update("entityType", v)}>
+                        <SelectTrigger className="bg-background border-border">
+                          <SelectValue placeholder="Select entity type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {ENTITY_TYPES.map((opt) => (
+                            <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {errors.entityType && <p className="text-xs text-justice mt-1">{errors.entityType}</p>}
+                    </div>
+                    <div>
+                      <Label className="text-sm font-medium mb-2 block">Jurisdiction *</Label>
+                      <Select value={form.jurisdiction} onValueChange={(v) => update("jurisdiction", v)}>
+                        <SelectTrigger className="bg-background border-border">
+                          <SelectValue placeholder="Select jurisdiction" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {JURISDICTIONS.map((opt) => (
+                            <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {errors.jurisdiction && <p className="text-xs text-justice mt-1">{errors.jurisdiction}</p>}
+                    </div>
                   </div>
+
                   <div>
-                    <label className="text-sm font-medium mb-2 block">{t("contact.message")} *</label>
-                    <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} className="bg-background border-border focus:border-primary/50 transition-colors" />
+                    <Label className="text-sm font-medium mb-2 block">Matter Type *</Label>
+                    <Select value={form.matterType} onValueChange={(v) => update("matterType", v)}>
+                      <SelectTrigger className="bg-background border-border">
+                        <SelectValue placeholder="Select matter type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {MATTER_TYPES.map((opt) => (
+                          <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {errors.matterType && <p className="text-xs text-justice mt-1">{errors.matterType}</p>}
                   </div>
+
+                  <div>
+                    <Label className="text-sm font-medium mb-3 block">Preferred Communication Channel *</Label>
+                    <RadioGroup
+                      value={form.channel}
+                      onValueChange={(v) => update("channel", v)}
+                      className="flex flex-wrap gap-4"
+                    >
+                      {CHANNELS.map((opt) => (
+                        <div key={opt} className="flex items-center gap-2 border border-border rounded-md px-4 py-2 bg-background">
+                          <RadioGroupItem value={opt} id={`channel-${opt}`} />
+                          <Label htmlFor={`channel-${opt}`} className="text-sm cursor-pointer">{opt}</Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                    {errors.channel && <p className="text-xs text-justice mt-1">{errors.channel}</p>}
+                  </div>
+
+                  <div>
+                    <Label className="text-sm font-medium mb-2 block">{t("contact.message")} *</Label>
+                    <Textarea
+                      value={form.message}
+                      onChange={(e) => update("message", e.target.value)}
+                      rows={5}
+                      maxLength={2000}
+                      placeholder="Briefly describe your matter, timeline, and any specific questions."
+                      className="bg-background border-border focus:border-primary/50 transition-colors"
+                    />
+                    <div className="flex justify-between mt-1">
+                      {errors.message ? (
+                        <p className="text-xs text-justice">{errors.message}</p>
+                      ) : <span />}
+                      <p className="text-xs text-muted-foreground">{form.message.length}/2000</p>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-muted-foreground">
+                    Submitting opens your {form.channel === "WhatsApp" ? "WhatsApp" : "email client"} with your inquiry pre-filled. No data is stored on this site.
+                  </p>
+
                   <Button type="submit" variant="gold" size="lg">{t("contact.submit")}</Button>
                 </form>
               </div>
