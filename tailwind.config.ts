@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Cormorant Garamond", "Georgia", "serif"],
+        sans: ["Jost", "system-ui", "sans-serif"],
+        display: ["Cormorant Garamond", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,6 +61,11 @@ export default {
           DEFAULT: "hsl(var(--navy))",
           light: "hsl(var(--navy-light))",
           lighter: "hsl(var(--navy-lighter))",
+        },
+        ivory: "hsl(var(--ivory))",
+        justice: {
+          DEFAULT: "hsl(var(--justice))",
+          foreground: "hsl(var(--justice-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
