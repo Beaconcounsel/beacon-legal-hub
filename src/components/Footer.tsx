@@ -74,7 +74,16 @@ const Footer = () => {
       </svg>
 
       <div className="container py-8 relative z-10">
-        <p className="text-xs text-ivory/75 leading-relaxed mb-6">
+        <p
+          className="text-center font-serif italic my-6"
+          style={{
+            fontWeight: 500,
+            color: "#c9a84c",
+            fontSize: "clamp(1.1rem, 2.2vw, 1.4rem)",
+            marginTop: "24px",
+            marginBottom: "24px",
+          }}
+        >
           {t("footer.tagline")}
         </p>
 
