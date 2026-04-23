@@ -164,7 +164,21 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
   }, [paused]);
 
   return (
-    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div
+      className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-xl"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Our services"
+      tabIndex={0}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") { e.preventDefault(); next(); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+      }}
+    >
       <div className="overflow-hidden">
         <div
           className="flex ease-in-out"
