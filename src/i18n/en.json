@@ -49,7 +49,8 @@
     "returnHome": "Return to Home"
   },
   "landing": {
-    "heroTagline": "With global experience and a sharp understanding of Rwanda's legal and business landscape, we deliver legal solutions that work—locally and beyond.",
+    "heroTagline": "We combine global business experience with local legal expertise to deliver innovative legal solutions at every stage of business growth, securing and enhancing your bottom line.",
+    "positioningStatement": "A Law Firm for Individuals, Businesses, Institutions, and International Investors",
     "stats": {
       "experience": "Years Combined Experience",
       "practiceAreas": "Practice Areas",
@@ -73,7 +74,7 @@
     "exploreFirm": "Explore Our Firm"
   },
   "home": {
-    "heroTagline": "Beacon Attorneys & Consultants delivers strategic legal counsel on complex matters with the precision and discretion that high-stakes engagements demand.",
+    "heroTagline": "Beacon Attorneys and Consultants is an established Kigali-based, multi-practice law firm optimally equipped to serve businesses, individuals, and institutions in Rwanda and East Africa.",
     "trust": {
       "experience": "30+ Years Combined Experience",
       "international": "Trusted by International Clients",
@@ -94,7 +95,7 @@
     },
     "ourPurpose": "Our Purpose",
     "ourPurposeDesc": "To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.",
-    "workWithUs": "Work With Us",
+    "workWithUs": "Connect with us",
     "ourClients": "Our Clients",
     "ourClientsDesc": "We act for our clientele across industries and borders, delivering partner-led advisory at every stage.",
     "clients": {
@@ -266,7 +267,7 @@
     "requestConsultancy": "Request a Consultancy Engagement"
   },
   "contact": {
-    "tagline": "Our partners are ready to discuss your needs in confidence.",
+    "tagline": "We're here to help you with any legal questions you might have. Please contact us and one of our team members will connect with you soon.",
     "fullName": "Full Name",
     "email": "Email",
     "phone": "Phone",
