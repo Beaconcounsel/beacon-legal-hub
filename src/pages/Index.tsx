@@ -3,7 +3,7 @@ import { useEffect, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown } from "lucide-react";
+import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
@@ -464,21 +464,23 @@ const HomePage = () => {
                 <AccordionItem value="moses" className="border-0 group/moses">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
-                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
+                      <div className="p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
-                            <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-primary-foreground font-serif text-2xl md:text-3xl font-bold">MK</span>
                           </div>
                           <div className="flex-1">
-                            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.partner")}</p>
-                            <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Katusime Mbombo Moses</h3>
-                            <p className="text-foreground/80 text-lg mb-4">{t("home.mosesRole")}</p>
-                            <p className="text-muted-foreground leading-relaxed max-w-2xl">{t("home.mosesSummary")}</p>
-                            <div className="flex flex-wrap gap-3 mt-6">
-                              <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Advocate, High Court of Rwanda</span>
-                              <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
+                            <span className="inline-block text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold uppercase tracking-wider mb-3">Senior Partner</span>
+                            <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Moses Katusime</h3>
+                            <p className="text-muted-foreground leading-snug max-w-2xl mb-4">
+                              Strategic legal counsel for corporations, investors, and public institutions across Rwanda and the region.
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              <span className="text-xs border border-border text-foreground/80 px-3 py-1.5 rounded-full">FCIArb — Fellow Chartered Arbitrator</span>
+                              <span className="text-xs border border-border text-foreground/80 px-3 py-1.5 rounded-full">LSB — FICP Designation</span>
+                              <span className="text-xs border border-border text-foreground/80 px-3 py-1.5 rounded-full">18+ Years Experience</span>
                             </div>
-                            <div className="flex items-center gap-2 mt-6 text-primary text-sm font-medium">
+                            <div className="flex items-center gap-2 mt-5 text-primary text-sm font-medium">
                               <span className="group-data-[state=open]/moses:hidden">{t("home.viewFullProfile")}</span>
                               <span className="hidden group-data-[state=open]/moses:inline">{t("home.hideProfile")}</span>
                               <ChevronDown className="w-4 h-4 transition-transform duration-300 group-data-[state=open]/moses:rotate-180" />
@@ -488,30 +490,92 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-6 md:p-10 space-y-6 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-8 border-t border-border">
+                        {/* Stat tiles */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {[
+                            { stat: "18+", label: "Years of legal practice" },
+                            { stat: "FCIArb", label: "Chartered Arbitrator Fellow" },
+                            { stat: "LLM", label: "Master of Laws" },
+                          ].map((item) => (
+                            <div key={item.label} className="bg-muted/40 rounded-lg p-6 text-center">
+                              <p className="font-serif text-3xl md:text-4xl font-bold mb-1">{item.stat}</p>
+                              <p className="text-xs text-muted-foreground">{item.label}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <p className="text-foreground/80 leading-snug">
+                          Moses Katusime is a highly experienced legal practitioner advising corporations, investors, and public institutions on complex legal, commercial, and regulatory matters. He provides strategic, business-oriented counsel that supports investment, safeguards assets, and enables sustainable growth. Particularly recognised for structuring legally robust frameworks for large-scale projects — aligning legal strategy with financial and operational objectives.
+                        </p>
+
+                        {/* Practice Areas */}
                         <div>
-                          <div className="flex items-center gap-3 mb-6">
-                            <GraduationCap className="w-5 h-5 text-primary" />
-                            <h4 className="text-xl font-bold font-serif">{t("home.educationCerts")}</h4>
-                          </div>
-                          <div className="grid md:grid-cols-2 gap-4">
-                            {[{ degree: "Master of Laws (LL.M)", school: "University of Groningen" }, { degree: "Bachelor of Laws (LL.B)", school: "National University of Rwanda" }, { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" }, { degree: "Financial Industry Management (FICP)", school: "Luxembourg School of Business" }].map((item) => (
-                              <div key={item.degree} className="border border-border rounded-lg p-4">
-                                <p className="font-semibold text-sm">{item.degree}</p>
-                                <p className="text-xs text-muted-foreground">{item.school}</p>
+                          <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">Practice Areas</p>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            {[
+                              "Corporate & Commercial Law",
+                              "Construction & Infrastructure",
+                              "Asset Management",
+                              "Project Financing",
+                              "Dispute Resolution",
+                              "International Arbitration",
+                              "Real Estate Transactions",
+                              "Corporate Governance",
+                            ].map((area) => (
+                              <div key={area} className="border border-border rounded-lg px-4 py-3 text-sm leading-snug">
+                                {area}
                               </div>
                             ))}
                           </div>
                         </div>
+
+                        {/* Key Transactions & Experience */}
                         <div>
-                          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">{t("home.languages")}</p>
-                          <div className="flex gap-2">
-                            <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">English</span>
-                            <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">French</span>
-                            <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Kinyarwanda</span>
+                          <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">Key Transactions & Experience</p>
+                          <div className="space-y-3">
+                            {[
+                              { icon: Building2, title: "Project Finance & Infrastructure Development", desc: "Advised on structuring and legal documentation for infrastructure and real estate projects, including EPC and FIDIC-based contracts, financing agreements, and risk allocation mechanisms." },
+                              { icon: Clock, title: "Construction Arbitration & Claims Management", desc: "Acts for employers and contractors in high-value construction disputes, including arbitration proceedings and mediation, with a focus on claims strategy and dispute avoidance." },
+                              { icon: DollarSign, title: "Asset & Investment Structuring", desc: "Advised on establishment and management of real estate and infrastructure investment portfolios, including legal structuring of investment vehicles and regulatory compliance." },
+                              { icon: FileText, title: "Facilities Management & Operational Contracts", desc: "Structured and negotiated facilities management agreements, outsourcing contracts, SLAs, and performance-based frameworks for commercial and institutional assets." },
+                              { icon: Navigation, title: "Real Estate Transactions & Land Development", desc: "Led legal advisory on complex land acquisitions, title due diligence, property transfers, and large-scale development projects." },
+                              { icon: UserPlus, title: "Corporate Structuring & Market Entry", desc: "Advised regional and international investors on corporate structuring, joint ventures, and regulatory compliance for entry into the Rwandan market." },
+                              { icon: Monitor, title: "Corporate Governance Advisory", desc: "Supported boards and executive management in establishing governance frameworks, compliance systems, and risk management strategies aligned with international best practices." },
+                            ].map((item) => (
+                              <div key={item.title} className="border border-border rounded-lg p-4 flex items-start gap-4 text-left">
+                                <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                  <item.icon className="w-4 h-4 text-primary" />
+                                </div>
+                                <div>
+                                  <p className="font-semibold text-sm mb-1">{item.title}</p>
+                                  <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+
+                        {/* Education & Qualifications */}
+                        <div>
+                          <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">Education & Qualifications</p>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            {[
+                              { title: "Master of Laws (LLM)", sub: "University of Groningen" },
+                              { title: "Bachelor of Laws (LLB)", sub: "National University of Rwanda" },
+                              { title: "Advanced Diploma in Legal Practice", sub: "Institute of Legal Practice and Development" },
+                              { title: "FICP Designation", sub: "Luxembourg School of Business" },
+                              { title: "Fellow Chartered Arbitrator", sub: "FCIArb — Chartered Institute of Arbitrators" },
+                            ].map((item) => (
+                              <div key={item.title} className="border border-border rounded-lg p-4">
+                                <p className="font-semibold text-sm mb-1 leading-snug">{item.title}</p>
+                                <p className="text-xs text-muted-foreground leading-snug">{item.sub}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-3 pt-2">
                           <LocalizedLink to="/contact">
                             <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
                               {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
