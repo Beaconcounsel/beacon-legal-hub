@@ -620,9 +620,9 @@ const TeamPage = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   {[
-                    { degree: "Master of Laws (LL.M)", school: "" },
+                    { degree: "Master of Laws (LL.M)", school: "University of Groningen" },
                     { degree: "Bachelor of Laws (LL.B)", school: "National University of Rwanda" },
-                    { degree: "Advanced Diploma in Legal Practice", school: "" },
+                    { degree: "Advanced Diploma in Legal Practice", school: "Institute of Legal Practice and Development" },
                   ].map((item) => (
                     <div key={item.degree} className="border border-border rounded-lg p-4">
                       <p className="font-semibold text-sm">{item.degree}</p>
