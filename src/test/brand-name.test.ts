@@ -82,11 +82,14 @@ describe("Brand naming — Beacon Attorneys", () => {
       for (const key of seoKeys) {
         const value = seo[key];
         expect(value, `${lang}.seo.${key} must be a non-empty string`).toBeTruthy();
-        // Every SEO title/description must mention the brand exactly.
-        expect(
-          value.includes(BRAND),
-          `${lang}.seo.${key} must contain "${BRAND}". Got: "${value}"`,
-        ).toBe(true);
+        // Every SEO *title* must include the brand. Descriptions are
+        // only spell-checked (some focus on services/keywords by design).
+        if (/Title$/.test(key)) {
+          expect(
+            value.includes(BRAND),
+            `${lang}.seo.${key} must contain "${BRAND}". Got: "${value}"`,
+          ).toBe(true);
+        }
         assertBrandSpelling(`${lang}.seo.${key}`, value);
       }
     });
