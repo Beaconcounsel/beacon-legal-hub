@@ -88,20 +88,28 @@ const Landing = () => {
             <p className="text-muted-foreground leading-snug">{t("landing.whyBeaconDesc")}</p>
             <p className="text-muted-foreground leading-snug mt-4">{t("landing.whyBeaconDesc2")}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <ul className="grid md:grid-cols-2 gap-6 list-none p-0 m-0">
             {highlights.map((h) => (
-              <div key={h.title} className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
+              <li
+                key={h.title}
+                className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group"
+              >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                   <h.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-serif flex items-baseline gap-2">
-                  <span aria-hidden="true" className="text-primary leading-none">•</span>
-                  <span>{h.title}</span>
+                <h3 className="text-xl font-semibold mb-2 font-serif grid grid-cols-[1em_1fr] gap-x-2 items-start">
+                  <span
+                    aria-hidden="true"
+                    className="text-primary text-center leading-[1.35]"
+                  >
+                    •
+                  </span>
+                  <span className="leading-[1.35]">{h.title}</span>
                 </h3>
-                <p className="text-sm text-muted-foreground leading-snug">{h.desc}</p>
-              </div>
+                <p className="text-sm text-muted-foreground leading-snug pl-[calc(1em+0.5rem)]">{h.desc}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
