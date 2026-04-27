@@ -86,6 +86,7 @@ const Landing = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("landing.whyBeacon")}</h2>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
             <p className="text-muted-foreground leading-snug">{t("landing.whyBeaconDesc")}</p>
+            <p className="text-muted-foreground leading-snug mt-4">{t("landing.whyBeaconDesc2")}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {highlights.map((h) => (
