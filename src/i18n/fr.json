@@ -23,7 +23,7 @@
     "careers": "Carrières",
     "joinTeam": "Rejoignez Notre Équipe",
     "internship": "Programme de Stage",
-    "copyright": "© {{year}} Beacon Attorneyes & Consultants. Tous droits réservés.",
+    "copyright": "© {{year}} Beacon Attorneys & Consultants. Tous droits réservés.",
     "address": "KG 190 St, RIM House, 1er étage, Kigali, Rwanda",
     "legalResources": "Ressources Juridiques",
     "resources": {
@@ -57,7 +57,7 @@
       "practiceAreas": "Domaines de Pratique",
       "clientsServed": "Clients Accompagnés"
     },
-    "whyBeacon": "Pourquoi choisir Beacon Attorneyes",
+    "whyBeacon": "Pourquoi choisir Beacon Attorneys",
     "whyBeaconDesc": "Nous sommes un cabinet de droit des affaires reconnu, conseillant et représentant nos clients sur l'ensemble du spectre du droit commercial — apportant une valeur stratégique grâce à des solutions pragmatiques et centrées sur le client.",
     "highlights": {
       "complexLegal": "Questions Juridiques Complexes",
@@ -75,14 +75,14 @@
     "exploreFirm": "Découvrir Notre Cabinet"
   },
   "home": {
-    "heroTagline": "Beacon Attorneyes and Consultants est un cabinet d'avocats multi-pratiques établi à Kigali, parfaitement équipé pour servir les entreprises, les particuliers et les institutions au Rwanda et en Afrique de l'Est.",
+    "heroTagline": "Beacon Attorneys and Consultants est un cabinet d'avocats multi-pratiques établi à Kigali, parfaitement équipé pour servir les entreprises, les particuliers et les institutions au Rwanda et en Afrique de l'Est.",
     "trust": {
       "experience": "Plus de 30 Ans d'Expérience Combinée",
       "international": "Approuvé par des Clients Internationaux",
       "basedKigali": "Basé à Kigali, Rwanda"
     },
     "whoWeAre": "Qui Nous Sommes",
-    "whoWeAreP1": "Beacon Attorneyes & Consultants est un cabinet d'avocats de premier plan basé à Kigali, au Rwanda, au service des entreprises, des institutions et des clients internationaux sur un large éventail de questions juridiques et commerciales.",
+    "whoWeAreP1": "Beacon Attorneys & Consultants est un cabinet d'avocats de premier plan basé à Kigali, au Rwanda, au service des entreprises, des institutions et des clients internationaux sur un large éventail de questions juridiques et commerciales.",
     "whoWeAreP2": "Notre partenariat repose sur une expertise sectorielle approfondie et une approche de conseil rigoureuse, forgée par des décennies de pratique dans diverses industries et juridictions.",
     "whoWeAreP3": "Chaque mandat est dirigé par un associé, garantissant un accès direct à des avocats seniors qui maîtrisent aussi bien les subtilités juridiques que les réalités commerciales de votre entreprise.",
     "whatDrivesUs": "Ce qui Nous Anime",
@@ -276,7 +276,7 @@
     }
   },
   "approach": {
-    "heroTagline": "Chez Beacon Attorneyes, nous apportons bien plus qu'une expertise juridique : nous apportons une vision exécutive. Nos associés fondateurs ont occupé des postes de direction juridique et commerciale dans diverses industries et juridictions.",
+    "heroTagline": "Chez Beacon Attorneys, nous apportons bien plus qu'une expertise juridique : nous apportons une vision exécutive. Nos associés fondateurs ont occupé des postes de direction juridique et commerciale dans diverses industries et juridictions.",
     "howWeServe": "Comment Nous Vous Accompagnons",
     "howWeServeDesc": "Nous combinons une analyse juridique rigoureuse avec une réflexion commerciale stratégique pour produire des résultats concrets, et non de simples recommandations.",
     "scheduleConsultation": "Planifier une Consultation",
@@ -340,7 +340,7 @@
     },
     "scheduleIntlConsultation": "Planifier une Consultation Internationale",
     "proBono": "Services Pro Bono",
-    "proBonoP1": "Beacon Attorneyes s'engage à garantir que l'accès à la justice ne soit pas limité par des considérations financières. Nous consacrons une part significative de notre pratique au travail pro bono, au service des personnes et des communautés en situation de vulnérabilité qui ne peuvent accéder à une représentation juridique.",
+    "proBonoP1": "Beacon Attorneys s'engage à garantir que l'accès à la justice ne soit pas limité par des considérations financières. Nous consacrons une part significative de notre pratique au travail pro bono, au service des personnes et des communautés en situation de vulnérabilité qui ne peuvent accéder à une représentation juridique.",
     "proBonoP2": "En partenariat avec l'Ordre des avocats du Rwanda, le Legal Aid Forum et d'autres organisations qui soutiennent les personnes dans le besoin, nous fournissons des conseils juridiques gratuits aux populations vulnérables — notamment les victimes de violences basées sur le genre, les réfugiés et les prévenus indigents.",
     "proBonoP3": "Notre pratique pro bono reflète notre conviction que chaque personne mérite une représentation juridique compétente, quelle que soit sa situation économique. Nous travaillons aux côtés des organisations de la société civile pour faire progresser la justice systémique et renforcer l'État de droit à travers le Rwanda.",
     "proBonoPartners": "Nos Partenaires Pro Bono",
@@ -352,7 +352,7 @@
     "partnerProBono": "Collaborez avec Nous en Pro Bono"
   },
   "research": {
-    "heroTagline": "Beacon Attorneyes promeut la justice et le développement des affaires par des recherches ciblées, des formations professionnelles et des conseils stratégiques qui renforcent les capacités juridiques au Rwanda.",
+    "heroTagline": "Beacon Attorneys promeut la justice et le développement des affaires par des recherches ciblées, des formations professionnelles et des conseils stratégiques qui renforcent les capacités juridiques au Rwanda.",
     "research": "Recherche",
     "researchDesc": "Notre pratique de recherche génère des informations exploitables qui façonnent les politiques, éclairent la stratégie commerciale et font progresser l'État de droit. Nous contribuons à la base de connaissances juridiques et commerciales par une analyse rigoureuse des problèmes émergents.",
     "items": {
@@ -465,20 +465,20 @@
     }
   },
   "seo": {
-    "landingTitle": "Beacon Attorneyes & Consultants | Conseil Juridique Stratégique, Kigali Rwanda",
-    "landingDesc": "Beacon Attorneyes & Consultants — Conseil juridique stratégique pour les entreprises, les institutions et les investisseurs mondiaux à Kigali, Rwanda.",
-    "homeTitle": "À Propos de Nous | Beacon Attorneyes & Consultants",
-    "homeDesc": "Découvrez Beacon Attorneyes & Consultants, un cabinet d'avocats de premier plan à Kigali, Rwanda.",
-    "practiceAreasTitle": "Domaines de Pratique | Beacon Attorneyes & Consultants",
+    "landingTitle": "Beacon Attorneys & Consultants | Conseil Juridique Stratégique, Kigali Rwanda",
+    "landingDesc": "Beacon Attorneys & Consultants — Conseil juridique stratégique pour les entreprises, les institutions et les investisseurs mondiaux à Kigali, Rwanda.",
+    "homeTitle": "À Propos de Nous | Beacon Attorneys & Consultants",
+    "homeDesc": "Découvrez Beacon Attorneys & Consultants, un cabinet d'avocats de premier plan à Kigali, Rwanda.",
+    "practiceAreasTitle": "Domaines de Pratique | Beacon Attorneys & Consultants",
     "practiceAreasDesc": "Explorez nos domaines de pratique : droit des sociétés, services bancaires, résolution des litiges et bien plus encore.",
-    "approachTitle": "Notre Approche | Beacon Attorneyes & Consultants",
-    "approachDesc": "Comment Beacon Attorneyes offre un conseil juridique stratégique allié à une vision exécutive.",
-    "researchTitle": "Recherche et Développement | Beacon Attorneyes & Consultants",
-    "researchDesc": "Services de recherche, de formation et de conseil par Beacon Attorneyes.",
-    "contactTitle": "Nous Contacter | Beacon Attorneyes & Consultants",
-    "contactDesc": "Prenez contact avec Beacon Attorneyes & Consultants à Kigali, Rwanda.",
-    "insightsTitle": "Analyses | Beacon Attorneyes & Consultants",
-    "insightsDesc": "Analyses juridiques et publications de Beacon Attorneyes & Consultants."
+    "approachTitle": "Notre Approche | Beacon Attorneys & Consultants",
+    "approachDesc": "Comment Beacon Attorneys offre un conseil juridique stratégique allié à une vision exécutive.",
+    "researchTitle": "Recherche et Développement | Beacon Attorneys & Consultants",
+    "researchDesc": "Services de recherche, de formation et de conseil par Beacon Attorneys.",
+    "contactTitle": "Nous Contacter | Beacon Attorneys & Consultants",
+    "contactDesc": "Prenez contact avec Beacon Attorneys & Consultants à Kigali, Rwanda.",
+    "insightsTitle": "Analyses | Beacon Attorneys & Consultants",
+    "insightsDesc": "Analyses juridiques et publications de Beacon Attorneys & Consultants."
   },
   "cookies": {
     "bannerTitle": "Nous Respectons Votre Vie Privée",
@@ -511,7 +511,7 @@
     "lastUpdated": "Dernière mise à jour : {{date}}",
     "whatAreCookies": {
       "title": "Qu'est-ce qu'un Cookie ?",
-      "text": "Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez un site web. Ils sont largement utilisés pour assurer le bon fonctionnement des sites et fournir des informations aux propriétaires. Beacon Attorneyes & Consultants utilise des cookies pour améliorer votre expérience sur notre site."
+      "text": "Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez un site web. Ils sont largement utilisés pour assurer le bon fonctionnement des sites et fournir des informations aux propriétaires. Beacon Attorneys & Consultants utilise des cookies pour améliorer votre expérience sur notre site."
     },
     "howWeUse": {
       "title": "Comment Nous Utilisons les Cookies",
@@ -567,7 +567,7 @@
     },
     "contact": {
       "title": "Nous Contacter",
-      "text": "Pour toute question concernant cette Politique de Confidentialité ou pour exercer vos droits, veuillez nous contacter :\n\nBeacon Attorneyes & Consultants\nKG 190 St, RIM House, 1er étage\nKigali, Rwanda\nE-mail : info@beaconattorneys.rw\nTéléphone : +250 788 55 96 03"
+      "text": "Pour toute question concernant cette Politique de Confidentialité ou pour exercer vos droits, veuillez nous contacter :\n\nBeacon Attorneys & Consultants\nKG 190 St, RIM House, 1er étage\nKigali, Rwanda\nE-mail : info@beaconattorneys.rw\nTéléphone : +250 788 55 96 03"
     }
   },
   "termsOfUse": {
@@ -579,11 +579,11 @@
     },
     "useOfSite": {
       "title": "Utilisation du Site",
-      "text": "Ce site est fourni à des fins d'information générale sur Beacon Attorneyes & Consultants et nos services juridiques. Vous vous engagez à utiliser le site uniquement à des fins licites et de manière à ne pas porter atteinte aux droits d'autrui."
+      "text": "Ce site est fourni à des fins d'information générale sur Beacon Attorneys & Consultants et nos services juridiques. Vous vous engagez à utiliser le site uniquement à des fins licites et de manière à ne pas porter atteinte aux droits d'autrui."
     },
     "intellectualProperty": {
       "title": "Propriété Intellectuelle",
-      "text": "Tout le contenu de ce site, y compris les textes, graphiques, logos, images et logiciels, est la propriété de Beacon Attorneyes & Consultants et est protégé par les lois applicables en matière de propriété intellectuelle. Toute reproduction, distribution ou modification non autorisée est interdite."
+      "text": "Tout le contenu de ce site, y compris les textes, graphiques, logos, images et logiciels, est la propriété de Beacon Attorneys & Consultants et est protégé par les lois applicables en matière de propriété intellectuelle. Toute reproduction, distribution ou modification non autorisée est interdite."
     },
     "noLegalAdvice": {
       "title": "Absence de Conseil Juridique",
@@ -591,7 +591,7 @@
     },
     "liability": {
       "title": "Limitation de Responsabilité",
-      "text": "Beacon Attorneyes & Consultants ne saurait être tenu responsable de tout dommage direct, indirect, accessoire ou consécutif découlant de l'utilisation de ce site ou de la confiance accordée aux informations fournies."
+      "text": "Beacon Attorneys & Consultants ne saurait être tenu responsable de tout dommage direct, indirect, accessoire ou consécutif découlant de l'utilisation de ce site ou de la confiance accordée aux informations fournies."
     },
     "governingLaw": {
       "title": "Droit Applicable",
