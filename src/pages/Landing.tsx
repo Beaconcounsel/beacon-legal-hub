@@ -94,7 +94,10 @@ const Landing = () => {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                   <h.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-serif">{h.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 font-serif flex items-baseline gap-2">
+                  <span aria-hidden="true" className="text-primary leading-none">•</span>
+                  <span>{h.title}</span>
+                </h3>
                 <p className="text-sm text-muted-foreground leading-snug">{h.desc}</p>
               </div>
             ))}
