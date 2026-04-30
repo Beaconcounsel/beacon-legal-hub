@@ -77,8 +77,12 @@ const AboutPage = () => {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
                   <div className="flex flex-col md:flex-row items-start gap-8">
-                    <div className="w-32 h-32 md:w-44 md:h-44 rounded-full flex-shrink-0 border-4 border-primary/30 overflow-hidden shadow-lg shadow-primary/10">
-                      <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover" />
+                    <div className="w-32 h-32 md:w-44 md:h-44 flex-shrink-0 overflow-hidden">
+                      <img
+                        src={danielPhoto}
+                        alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
+                        className="w-full h-full object-cover object-[center_top]"
+                      />
                     </div>
                     <div className="flex-1">
                       <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Lead Partner</p>
