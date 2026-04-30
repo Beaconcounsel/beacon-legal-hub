@@ -222,8 +222,12 @@ const HomePage = () => {
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-24 h-24 md:w-36 md:h-36 rounded-full flex-shrink-0 border-4 border-primary/30 overflow-hidden shadow-lg shadow-primary/10">
-                            <img src={danielPhoto} alt="Daniel Mutiganda" className="w-full h-full object-cover scale-[1.8] object-top" />
+                          <div className="w-24 h-24 md:w-36 md:h-36 flex-shrink-0 overflow-hidden">
+                            <img
+                              src={danielPhoto}
+                              alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
+                              className="w-full h-full object-cover object-[center_top]"
+                            />
                           </div>
                           <div className="flex-1">
                             <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.leadPartner")}</p>
