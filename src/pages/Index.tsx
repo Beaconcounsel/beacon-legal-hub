@@ -137,9 +137,15 @@ const HomePage = () => {
                     <p>{t("home.whoWeAreP3")}</p>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl" />
-                  <img src={teamImg} alt="Beacon Attorneys team" className="relative rounded-xl shadow-2xl" loading="lazy" width={1024} height={1024} />
+                <div className="flex md:justify-end">
+                  <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                    <img
+                      src={teamHeroPhoto}
+                      alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+                      className="w-full h-full object-cover object-[center_top]"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
