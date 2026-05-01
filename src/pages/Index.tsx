@@ -97,15 +97,15 @@ const HomePage = () => {
             source={partnersHeroImage}
             sizes="100vw"
             alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-            className="w-full h-full object-cover object-[center_top] hero-parallax scale-105"
+            className="w-full h-full object-cover object-[center_top] hero-parallax"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/60 via-transparent to-navy/30" />
+          {/* Face-safe overlay: only darken the bottom band where the tagline sits, leaving partners' faces fully clear */}
+          <div className="absolute inset-x-0 bottom-0 h-[28%] sm:h-[24%] md:h-[22%] bg-gradient-to-t from-navy/85 via-navy/55 to-transparent pointer-events-none" />
         </div>
-        <div className="container relative z-10 pb-4 sm:pb-6 md:pb-8">
+        <div className="container relative z-10 pb-3 sm:pb-5 md:pb-7">
           <div className="max-w-xl md:max-w-2xl mx-auto text-center">
-            <p className="text-sm sm:text-base md:text-xl font-medium text-white/95 leading-snug animate-fade-up drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">{t("home.heroTagline")}</p>
+            <p className="text-[13px] sm:text-base md:text-xl font-medium text-white leading-snug animate-fade-up drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
@@ -128,7 +128,7 @@ const HomePage = () => {
 
       <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
-          {/* Partners hero banner */}
+          {/* Partners hero banner — crisp, no overlay so faces stay sharp like the Daniel profile shot */}
           <section className="relative w-full min-h-[300px] md:min-h-[480px] overflow-hidden">
             <ResponsiveImage
               source={partnersHeroImage}
@@ -137,33 +137,19 @@ const HomePage = () => {
               className="absolute inset-0 w-full h-full object-cover object-[center_top]"
               priority
             />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/15 to-transparent pointer-events-none" />
             <div className="relative min-h-[300px] md:min-h-[480px]" />
           </section>
 
-          {/* About Section */}
+          {/* About Section — text only, no duplicate partner photo */}
           <section id="about" className="section-padding scroll-mt-24">
             <div className="container">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center reveal">
-                <div className="flex lg:justify-start order-1">
-                  <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                    <ResponsiveImage
-                      source={teamHeroImage}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 480px, 600px"
-                      alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-                      className="w-full h-full object-cover object-[center_top]"
-                      priority
-                    />
-                  </div>
-                </div>
-                <div className="order-2">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
-                  <div className="line-gold mb-6" />
-                  <div className="space-y-3 text-muted-foreground leading-snug">
-                    <p>{t("home.whoWeAreP1")}</p>
-                    <p>{t("home.whoWeAreP2")}</p>
-                    <p>{t("home.whoWeAreP3")}</p>
-                  </div>
+              <div className="max-w-3xl mx-auto reveal">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
+                <div className="line-gold mb-6" />
+                <div className="space-y-3 text-muted-foreground leading-snug">
+                  <p>{t("home.whoWeAreP1")}</p>
+                  <p>{t("home.whoWeAreP2")}</p>
+                  <p>{t("home.whoWeAreP3")}</p>
                 </div>
               </div>
             </div>
