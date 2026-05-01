@@ -104,6 +104,7 @@ export const practiceAreasHeroImage  = heroBuilder("practice-areas-hero", [640, 
 export const ourApproachHeroImage    = heroBuilder("our-approach-hero",   [640, 960, 1280, 1600, 1620], 1620, 1080, 1600);
 export const researchHeroImage       = heroBuilder("research-hero",       [640, 960, 1280],             1280, 720,  1280);
 export const kigaliSkylineImage      = heroBuilder("kigali-skyline",      [640, 960, 1200],             1200, 600,  1200);
+export const partnersHeroImage       = heroBuilder("partners-hero",       [640, 960, 1280, 1600, 1920], 1920, 1080, 1600);
 
 // === Logo (PNG with transparency) ===
 const logoWidths = [180, 280, 380, 560];

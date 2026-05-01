@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
-import { danielImage, mosesImage, teamHeroImage, heroKigaliImage } from "@/assets/optimized";
+import { danielImage, mosesImage, teamHeroImage, heroKigaliImage, partnersHeroImage } from "@/assets/optimized";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
@@ -128,6 +128,19 @@ const HomePage = () => {
 
       <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
+          {/* Partners hero banner */}
+          <section className="relative w-full min-h-[300px] md:min-h-[480px] overflow-hidden">
+            <ResponsiveImage
+              source={partnersHeroImage}
+              sizes="100vw"
+              alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+              className="absolute inset-0 w-full h-full object-cover object-[center_top]"
+              priority
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/15 to-transparent pointer-events-none" />
+            <div className="relative min-h-[300px] md:min-h-[480px]" />
+          </section>
+
           {/* About Section */}
           <section id="about" className="section-padding scroll-mt-24">
             <div className="container">
