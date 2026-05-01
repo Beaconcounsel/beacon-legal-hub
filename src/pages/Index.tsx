@@ -173,8 +173,65 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Partners gallery */}
+              <div className="mt-12 md:mt-16 reveal">
+                <div className="text-center max-w-2xl mx-auto mb-8">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">Meet Our Partners</h3>
+                  <div className="line-gold mx-auto" />
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto">
+                  {partners.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setActivePartner(p)}
+                      className="group flex flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+                      aria-label={`View details for ${p.name}`}
+                    >
+                      <div className="w-full aspect-square overflow-hidden rounded-full ring-1 ring-border shadow-[0_4px_18px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:scale-[1.03] group-hover:ring-primary/50">
+                        <img
+                          src={p.photo}
+                          alt={p.name}
+                          className="w-full h-full object-cover object-[center_top]"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-3 text-sm font-semibold font-serif text-foreground">{p.name}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{p.role.split("—")[0].trim()}</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
+
+          <Dialog open={!!activePartner} onOpenChange={(open) => !open && setActivePartner(null)}>
+            <DialogContent className="max-w-2xl">
+              {activePartner && (
+                <div className="grid sm:grid-cols-[160px_1fr] gap-5 items-start">
+                  <div className="w-full aspect-square overflow-hidden rounded-lg shadow-md">
+                    <img
+                      src={activePartner.photo}
+                      alt={activePartner.name}
+                      className="w-full h-full object-cover object-[center_top]"
+                    />
+                  </div>
+                  <div>
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-serif">{activePartner.name}</DialogTitle>
+                      <DialogDescription className="text-primary font-medium">
+                        {activePartner.role}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-4">
+                      {activePartner.bio}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
 
           {/* Values */}
           <section className="section-padding bg-card">
