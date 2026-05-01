@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Eye, Shield, Mail, Globe, Award, Briefcase, GraduationCap, MapPin, Users, BookOpen } from "lucide-react";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import mosesPhoto from "@/assets/moses-katusime.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const values = [
