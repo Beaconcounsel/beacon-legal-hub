@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -52,7 +52,6 @@ const HomePage = () => {
   }, [location.hash]);
 
   const revealRef = useScrollReveal([activeSection]);
-  const heroImgRef = useRef<HTMLImageElement>(null);
   const show = (section: string) => !activeSection || activeSection === section;
 
   useEffect(() => {
@@ -67,17 +66,6 @@ const HomePage = () => {
   }, [activeSection, revealRef]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (heroImgRef.current) {
-        const scrollY = window.scrollY;
-        heroImgRef.current.style.transform = `translateY(${scrollY * 0.15}px) scale(1.05)`;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);
       setTimeout(() => {
@@ -89,23 +77,18 @@ const HomePage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
-      {/* Hero */}
-      <section className="relative min-h-[420px] md:min-h-[560px] lg:min-h-[640px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <ResponsiveImage
-            ref={heroImgRef}
-            source={partnersHeroImage}
-            sizes="100vw"
-            alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-            className="w-full h-full object-cover object-[center_top] hero-parallax"
-            priority
-          />
-          {/* Face-safe overlay: only darken the bottom band where the tagline sits, leaving partners' faces fully clear */}
-          <div className="absolute inset-x-0 bottom-0 h-[28%] sm:h-[24%] md:h-[22%] bg-gradient-to-t from-navy/85 via-navy/55 to-transparent pointer-events-none" />
-        </div>
-        <div className="container relative z-10 pb-3 sm:pb-5 md:pb-7">
+      {/* Hero — crisp partners photo, no overlay, no parallax (matches Daniel profile clarity) */}
+      <section className="relative w-full overflow-hidden bg-navy">
+        <ResponsiveImage
+          source={partnersHeroImage}
+          sizes="100vw"
+          alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+          className="w-full h-auto object-cover object-[center_top] block"
+          priority
+        />
+        <div className="container py-5 md:py-7">
           <div className="max-w-xl md:max-w-2xl mx-auto text-center">
-            <p className="text-[13px] sm:text-base md:text-xl font-medium text-white leading-snug animate-fade-up drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">{t("home.heroTagline")}</p>
+            <p className="text-[13px] sm:text-base md:text-xl font-medium text-foreground leading-snug animate-fade-up">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
@@ -128,44 +111,6 @@ const HomePage = () => {
 
       <div ref={revealRef} className={activeSection ? "force-reveal" : ""}>
         {show("about") && (<>
-          {/* Partners hero banner — crisp, no overlay so faces stay sharp like the Daniel profile shot */}
-          <section className="relative w-full min-h-[300px] md:min-h-[480px] overflow-hidden">
-            <ResponsiveImage
-              source={partnersHeroImage}
-              sizes="100vw"
-              alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-              className="absolute inset-0 w-full h-full object-cover object-[center_top]"
-              priority
-            />
-            <div className="relative min-h-[300px] md:min-h-[480px]" />
-          </section>
-
-          {/* Sticky in-page nav for the About route */}
-          <nav
-            aria-label={t("home.aboutNav.aria")}
-            className="sticky top-16 md:top-20 z-30 bg-card/90 backdrop-blur-md border-y border-border/60 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
-          >
-            <div className="container">
-              <ul className="flex items-center gap-1 sm:gap-2 overflow-x-auto whitespace-nowrap py-2 sm:py-3 scrollbar-none -mx-1 px-1">
-                {[
-                  { href: "#about", label: t("home.aboutNav.who") },
-                  { href: "#values", label: t("home.aboutNav.values") },
-                  { href: "#purpose", label: t("home.aboutNav.purpose") },
-                  { href: "#clients", label: t("home.aboutNav.clients") },
-                ].map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
-
           {/* About Section — text only, no duplicate partner photo */}
           <section id="about" className="section-padding scroll-mt-32">
             <div className="container">
