@@ -79,13 +79,15 @@ const HomePage = () => {
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero — crisp partners photo, no overlay, no parallax (matches Daniel profile clarity) */}
       <section className="relative w-full overflow-hidden bg-navy">
-        <ResponsiveImage
-          source={partnersHeroImage}
-          sizes="100vw"
-          alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-          className="w-full h-auto object-cover object-[center_top] block"
-          priority
-        />
+        <div className="mx-auto w-1/2">
+          <ResponsiveImage
+            source={partnersHeroImage}
+            sizes="50vw"
+            alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+            className="w-full h-auto object-cover object-[center_top] block"
+            priority
+          />
+        </div>
         <div className="container py-6 md:py-8">
           <div className="max-w-xl md:max-w-3xl mx-auto text-center">
             <p className="text-sm sm:text-base md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up">
