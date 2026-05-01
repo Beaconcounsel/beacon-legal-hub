@@ -6,8 +6,8 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, TrendingUp, Lightbulb, Handshake, Globe, Shield, MapPin, Scale, Heart } from "lucide-react";
-import approachHeroImg from "@/assets/our-approach-hero.jpg";
-import kigaliImg from "@/assets/kigali-skyline.jpg";
+import { ourApproachHeroImage, kigaliSkylineImage } from "@/assets/optimized";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 const OurApproachPage = () => {
   const location = useLocation();
@@ -47,7 +47,13 @@ const OurApproachPage = () => {
       {/* Hero */}
       <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={approachHeroImg} alt="Kigali cityscape" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
+          <ResponsiveImage
+            source={ourApproachHeroImage}
+            sizes="100vw"
+            alt="Kigali cityscape"
+            className="w-full h-full object-cover scale-105"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
@@ -87,7 +93,12 @@ const OurApproachPage = () => {
       <section id="international" className="scroll-mt-28">
         <div className="relative min-h-[40vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" loading="lazy" width={1920} height={1080} />
+            <ResponsiveImage
+              source={kigaliSkylineImage}
+              sizes="100vw"
+              alt="Kigali skyline"
+              className="w-full h-full object-cover scale-105"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-transparent" />
           </div>
           <div className="container relative z-10 py-12">

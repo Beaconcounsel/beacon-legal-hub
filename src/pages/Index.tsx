@@ -4,9 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
-import heroImg from "@/assets/hero-kigali.jpg";
-import teamImg from "@/assets/team-meeting.jpg";
-import { danielImage, mosesImage, teamHeroImage } from "@/assets/optimized";
+import { danielImage, mosesImage, teamHeroImage, heroKigaliImage } from "@/assets/optimized";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
@@ -94,7 +92,14 @@ const HomePage = () => {
       {/* Hero */}
       <section className="relative min-h-[420px] md:min-h-[500px] lg:min-h-[540px] flex items-start overflow-hidden">
         <div className="absolute inset-0">
-          <img ref={heroImgRef} src={heroImg} alt="Kigali skyline" className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]" width={1920} height={1080} />
+          <ResponsiveImage
+            ref={heroImgRef}
+            source={heroKigaliImage}
+            sizes="100vw"
+            alt="Kigali skyline"
+            className="w-full h-full object-cover hero-parallax scale-105 blur-[2px]"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/40" />
         </div>

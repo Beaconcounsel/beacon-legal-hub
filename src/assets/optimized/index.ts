@@ -82,4 +82,54 @@ export const teamHeroImage = {
   height: 1080,
 };
 
-export type ResponsiveImageSource = typeof danielImage;
+// === Hero / background JPEG images ===
+
+const heroBuilder = (
+  name: string,
+  widths: number[],
+  width: number,
+  height: number,
+  fallbackWidth: number,
+) => {
+  const avif = widths.map(w => `${new URL(`./${name}-${w}.avif`, import.meta.url).href} ${w}w`).join(", ");
+  const webp = widths.map(w => `${new URL(`./${name}-${w}.webp`, import.meta.url).href} ${w}w`).join(", ");
+  const jpg  = widths.map(w => `${new URL(`./${name}-${w}.jpg`, import.meta.url).href} ${w}w`).join(", ");
+  const src  = new URL(`./${name}-${fallbackWidth}.jpg`, import.meta.url).href;
+  return { avif, webp, jpg, src, width, height };
+};
+
+export const heroKigaliImage         = heroBuilder("hero-kigali",         [640, 960, 1280, 1600, 1920], 1920, 1080, 1600);
+export const kigaliCityImage         = heroBuilder("kigali-city",         [640, 960, 1280, 1600, 1620], 1620, 1080, 1600);
+export const practiceAreasHeroImage  = heroBuilder("practice-areas-hero", [640, 960, 1280, 1594],       1594, 1080, 1280);
+export const ourApproachHeroImage    = heroBuilder("our-approach-hero",   [640, 960, 1280, 1600, 1620], 1620, 1080, 1600);
+export const researchHeroImage       = heroBuilder("research-hero",       [640, 960, 1280],             1280, 720,  1280);
+export const kigaliSkylineImage      = heroBuilder("kigali-skyline",      [640, 960, 1200],             1200, 600,  1200);
+
+// === Logo (PNG with transparency) ===
+const logoWidths = [180, 280, 380, 560];
+const logoAvif = logoWidths.map(w => `${new URL(`./beacon-logo-${w}.avif`, import.meta.url).href} ${w}w`).join(", ");
+const logoWebp = logoWidths.map(w => `${new URL(`./beacon-logo-${w}.webp`, import.meta.url).href} ${w}w`).join(", ");
+const logoPng  = logoWidths.map(w => `${new URL(`./beacon-logo-${w}.png`, import.meta.url).href} ${w}w`).join(", ");
+
+export const beaconLogoImage = {
+  avif: logoAvif,
+  webp: logoWebp,
+  // `jpg` kept for type-compatibility but not used (PNG fallback below)
+  jpg: logoPng,
+  fallback: logoPng,
+  fallbackType: "image/png" as const,
+  src: new URL("./beacon-logo-380.png", import.meta.url).href,
+  width: 1264,
+  height: 848,
+};
+
+export type ResponsiveImageSource = {
+  avif: string;
+  webp: string;
+  jpg: string;
+  src: string;
+  width: number;
+  height: number;
+  fallback?: string;
+  fallbackType?: string;
+};

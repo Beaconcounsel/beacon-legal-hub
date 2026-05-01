@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
-import heroImg from "@/assets/kigali-city.jpg";
+import { kigaliCityImage } from "@/assets/optimized";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 const Landing = () => {
   const { t } = useTranslation();
@@ -37,12 +38,12 @@ const Landing = () => {
       */}
       <section className="relative h-[420px] md:h-[480px] lg:h-[540px] overflow-hidden">
         {/* Hero / Image */}
-        <img
-          src={heroImg}
+        <ResponsiveImage
+          source={kigaliCityImage}
+          sizes="100vw"
           alt="Kigali skyline"
           className="absolute inset-0 w-full h-full object-cover"
-          width={1920}
-          height={1080}
+          priority
         />
         {/* Hero / Overlay — top 40%, fixed height, Left+Right+Top */}
         <div
