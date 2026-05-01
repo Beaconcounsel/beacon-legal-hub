@@ -8,6 +8,7 @@ import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
 import mosesPhoto from "@/assets/moses-katusime.jpg";
+import teamHeroPhoto from "@/assets/team-hero.jpg";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
@@ -210,10 +211,21 @@ const HomePage = () => {
         {show("team") && (
           <section id="team" className="section-padding scroll-mt-24">
             <div className="container">
-              <div className="max-w-3xl mb-10 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
-                <div className="line-gold mb-6" />
-                <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
+              <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
+                <div className="reveal">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
+                  <div className="line-gold mb-6" />
+                  <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
+                </div>
+                <div className="flex md:justify-end reveal">
+                  <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                    <img
+                      src={teamHeroPhoto}
+                      alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+                      className="w-full h-full object-cover object-[center_top]"
+                    />
+                  </div>
+                </div>
               </div>
 
               <Accordion type="multiple" className="space-y-6">
