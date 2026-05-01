@@ -1,8 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
@@ -19,6 +26,24 @@ const HomePage = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const { localePath } = useLocalizedPath();
+
+  const partners = [
+    {
+      id: "daniel",
+      name: "Daniel Mutiganda",
+      role: "Lead Partner — Corporate, Transactions & Cross-Border Advisory",
+      photo: danielPhoto,
+      bio: "Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.",
+    },
+    {
+      id: "moses",
+      name: "Katusime Mbombo Moses",
+      role: "Partner — Legal & Corporate Governance, Compliance",
+      photo: mosesPhoto,
+      bio: "Moses Katusime is a highly experienced legal practitioner advising corporations, investors, and public institutions on complex legal, commercial, and regulatory matters. He provides strategic, business-oriented counsel that supports investment, safeguards assets, and enables sustainable growth.",
+    },
+  ];
+  const [activePartner, setActivePartner] = useState<typeof partners[number] | null>(null);
 
   const trustItems = [
     { icon: Shield, label: t("home.trust.experience") },
@@ -148,8 +173,65 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Partners gallery */}
+              <div className="mt-12 md:mt-16 reveal">
+                <div className="text-center max-w-2xl mx-auto mb-8">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">Meet Our Partners</h3>
+                  <div className="line-gold mx-auto" />
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto">
+                  {partners.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setActivePartner(p)}
+                      className="group flex flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+                      aria-label={`View details for ${p.name}`}
+                    >
+                      <div className="w-full aspect-square overflow-hidden rounded-full ring-1 ring-border shadow-[0_4px_18px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:scale-[1.03] group-hover:ring-primary/50">
+                        <img
+                          src={p.photo}
+                          alt={p.name}
+                          className="w-full h-full object-cover object-[center_top]"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-3 text-sm font-semibold font-serif text-foreground">{p.name}</p>
+                      <p className="text-xs text-muted-foreground leading-snug">{p.role.split("—")[0].trim()}</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
+
+          <Dialog open={!!activePartner} onOpenChange={(open) => !open && setActivePartner(null)}>
+            <DialogContent className="max-w-2xl">
+              {activePartner && (
+                <div className="grid sm:grid-cols-[160px_1fr] gap-5 items-start">
+                  <div className="w-full aspect-square overflow-hidden rounded-lg shadow-md">
+                    <img
+                      src={activePartner.photo}
+                      alt={activePartner.name}
+                      className="w-full h-full object-cover object-[center_top]"
+                    />
+                  </div>
+                  <div>
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-serif">{activePartner.name}</DialogTitle>
+                      <DialogDescription className="text-primary font-medium">
+                        {activePartner.role}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-4">
+                      {activePartner.bio}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
 
           {/* Values */}
           <section className="section-padding bg-card">
