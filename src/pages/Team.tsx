@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Globe, Award, Briefcase, GraduationCap, MapPin, Users, Shield, BookOpen, Building2, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import mosesPhoto from "@/assets/moses-katusime.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TeamPage = () => {
