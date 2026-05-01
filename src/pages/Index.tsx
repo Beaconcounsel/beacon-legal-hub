@@ -103,9 +103,9 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/10" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/60 via-transparent to-navy/30" />
         </div>
-        <div className="container relative z-10 pt-[80px] md:pt-[100px] pb-10 md:pb-14">
-          <div className="max-w-2xl mx-auto text-center flex flex-col gap-3 md:gap-4">
-            <p className="text-lg md:text-2xl font-medium text-white/95 leading-snug animate-fade-up drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">{t("home.heroTagline")}</p>
+        <div className="container relative z-10 pb-4 sm:pb-6 md:pb-8">
+          <div className="max-w-xl md:max-w-2xl mx-auto text-center">
+            <p className="text-sm sm:text-base md:text-xl font-medium text-white/95 leading-snug animate-fade-up drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">{t("home.heroTagline")}</p>
           </div>
         </div>
       </section>
