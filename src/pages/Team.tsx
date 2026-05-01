@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Globe, Award, Briefcase, GraduationCap, MapPin, Users, Shield, BookOpen, Building2, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
 import mosesPhoto from "@/assets/moses-katusime.jpg";
+import teamHeroPhoto from "@/assets/team-hero.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TeamPage = () => {
@@ -14,13 +15,24 @@ const TeamPage = () => {
       {/* Hero */}
       <section className="section-padding pb-0">
         <div className="container">
-          <div className="max-w-3xl mb-12">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">Our Team</h1>
-            <div className="line-gold mt-4 mb-6" />
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
-            </p>
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
+            <div>
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Our Team</h1>
+              <div className="line-gold mt-4 mb-6" />
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
+              </p>
+            </div>
+            <div className="flex md:justify-end">
+              <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                <img
+                  src={teamHeroPhoto}
+                  alt="Beacon Attorneys partners – Daniel Mutiganda and Moses Katusime"
+                  className="w-full h-full object-cover object-[center_top]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
