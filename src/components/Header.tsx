@@ -107,7 +107,13 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between h-[76px] md:h-[90px]">
         <Link to={localePath("/")} className="flex items-center">
-          <img src={logo} alt="Beacon Attorneys & Consultants" className="h-[72px] md:h-[84px] w-auto" />
+          <ResponsiveImage
+            source={beaconLogoImage}
+            sizes="(max-width: 768px) 144px, 168px"
+            alt="Beacon Attorneyes & Consultants"
+            className="h-[72px] md:h-[84px] w-auto"
+            priority
+          />
         </Link>
 
         <nav ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">
