@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "@/assets/beacon-logo.png";
+import { beaconLogoImage } from "@/assets/optimized";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { Menu, X, ChevronDown } from "lucide-react";
 import LanguageSwitch from "./LanguageSwitch";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
