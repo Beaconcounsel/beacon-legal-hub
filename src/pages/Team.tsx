@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Globe, Award, Briefcase, GraduationCap, MapPin, Users, Shield, BookOpen, Building2, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import mosesPhoto from "@/assets/moses-katusime.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TeamPage = () => {
@@ -360,10 +361,14 @@ const TeamPage = () => {
         {/* Moses Katusime */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
           {/* Header */}
-          <div className="p-6 md:p-10">
+          <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-6 md:p-10">
             <div className="flex flex-col md:flex-row items-start gap-6">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-primary-foreground font-serif text-2xl md:text-3xl font-bold">MK</span>
+              <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                <img
+                  src={mosesPhoto}
+                  alt="Moses Katusime – Senior Partner, Legal & Corporate Governance"
+                  className="w-full h-full object-cover object-[center_top]"
+                />
               </div>
               <div className="flex-1">
                 <span className="inline-block text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold uppercase tracking-wider mb-3">Senior Partner</span>

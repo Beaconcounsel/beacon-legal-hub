@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Eye, Shield, Mail, Globe, Award, Briefcase, GraduationCap, MapPin, Users, BookOpen } from "lucide-react";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import mosesPhoto from "@/assets/moses-katusime.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const values = [
@@ -393,8 +394,12 @@ const AboutPage = () => {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
               <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-6 md:p-10">
                 <div className="flex flex-col md:flex-row items-start gap-8">
-                  <div className="w-32 h-32 md:w-44 md:h-44 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-primary/30 shadow-lg shadow-primary/10">
-                    <span className="text-primary font-serif text-4xl md:text-5xl font-bold">KM</span>
+                  <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                    <img
+                      src={mosesPhoto}
+                      alt="Katusime Mbombo Moses – Partner, Legal & Corporate Governance, Compliance"
+                      className="w-full h-full object-cover object-[center_top]"
+                    />
                   </div>
                   <div className="flex-1">
                     <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Partner</p>
