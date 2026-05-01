@@ -6,9 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
-import danielPhoto from "@/assets/daniel-mutiganda.jpg";
-import mosesPhoto from "@/assets/moses-katusime.jpg";
-import teamHeroPhoto from "@/assets/team-hero.jpg";
+import { danielImage, mosesImage, teamHeroImage } from "@/assets/optimized";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
@@ -130,14 +129,12 @@ const HomePage = () => {
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center reveal">
                 <div className="flex lg:justify-start order-1">
                   <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                    <img
-                      src={teamHeroPhoto}
+                    <ResponsiveImage
+                      source={teamHeroImage}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 480px, 600px"
                       alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
                       className="w-full h-full object-cover object-[center_top]"
-                      fetchPriority="high"
-                      decoding="async"
-                      width={2400}
-                      height={2477}
+                      priority
                     />
                   </div>
                 </div>
@@ -228,8 +225,9 @@ const HomePage = () => {
                 </div>
                 <div className="flex md:justify-end reveal">
                   <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                    <img
-                      src={teamHeroPhoto}
+                    <ResponsiveImage
+                      source={teamHeroImage}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 480px, 600px"
                       alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
                       className="w-full h-full object-cover object-[center_top]"
                     />
@@ -245,8 +243,9 @@ const HomePage = () => {
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
                           <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                            <img
-                              src={danielPhoto}
+                            <ResponsiveImage
+                              source={danielImage}
+                              sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
                               alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
                               className="w-full h-full object-cover object-[center_top]"
                             />
@@ -493,8 +492,9 @@ const HomePage = () => {
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
                           <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                            <img
-                              src={mosesPhoto}
+                            <ResponsiveImage
+                              source={mosesImage}
+                              sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
                               alt="Moses Katusime – Senior Partner, Legal & Corporate Governance"
                               className="w-full h-full object-cover object-[center_top]"
                             />
