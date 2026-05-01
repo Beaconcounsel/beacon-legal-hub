@@ -34,7 +34,7 @@ const TeamPage = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-6 md:p-10">
             <div className="flex flex-col md:flex-row items-start gap-6">
-              <div className="w-32 h-32 md:w-44 md:h-44 flex-shrink-0 overflow-hidden">
+              <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[2400/2477] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                 <img
                   src={danielPhoto}
                   alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
