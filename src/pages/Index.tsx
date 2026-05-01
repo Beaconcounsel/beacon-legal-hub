@@ -7,6 +7,7 @@ import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, 
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
 import danielPhoto from "@/assets/daniel-mutiganda.jpg";
+import mosesPhoto from "@/assets/moses-katusime.jpg";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
