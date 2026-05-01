@@ -167,7 +167,7 @@ const HomePage = () => {
           </nav>
 
           {/* About Section — text only, no duplicate partner photo */}
-          <section id="about" className="section-padding scroll-mt-24">
+          <section id="about" className="section-padding scroll-mt-32">
             <div className="container">
               <div className="max-w-3xl mx-auto reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
