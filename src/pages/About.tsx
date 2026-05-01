@@ -78,7 +78,7 @@ const AboutPage = () => {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="bg-gradient-to-r from-primary/20 to-primary/5 border-b border-border p-8 md:p-12">
                   <div className="flex flex-col md:flex-row items-start gap-8">
-                    <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[2400/2477] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                    <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                       <img
                         src={danielPhoto}
                         alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"

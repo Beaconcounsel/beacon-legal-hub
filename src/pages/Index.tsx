@@ -223,7 +223,7 @@ const HomePage = () => {
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[2400/2477] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <img
                               src={danielPhoto}
                               alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
