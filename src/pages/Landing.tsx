@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import heroImg from "@/assets/kigali-city.jpg";
+import teamHeroPhoto from "@/assets/team-hero.jpg";
 
 const Landing = () => {
   const { t } = useTranslation();
@@ -110,6 +111,32 @@ const Landing = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Meet the Partners */}
+      <section className="section-padding">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">{t("nav.aboutUs")}</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">Meet Our Partners</h2>
+              <div className="line-gold mb-6" />
+              <p className="text-muted-foreground leading-snug">
+                Beacon Attorneyes & Consultants is led by partners who combine international training with deep local knowledge — personally invested in every engagement.
+              </p>
+            </div>
+            <div className="flex md:justify-end">
+              <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                <img
+                  src={teamHeroPhoto}
+                  alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+                  className="w-full h-full object-cover object-[center_top]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
