@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import heroImg from "@/assets/kigali-city.jpg";
+import teamHeroPhoto from "@/assets/team-hero.jpg";
 
 const Landing = () => {
   const { t } = useTranslation();
