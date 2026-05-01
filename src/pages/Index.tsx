@@ -86,9 +86,11 @@ const HomePage = () => {
           className="w-full h-auto object-cover object-[center_top] block"
           priority
         />
-        <div className="container py-5 md:py-7">
-          <div className="max-w-xl md:max-w-2xl mx-auto text-center">
-            <p className="text-[13px] sm:text-base md:text-xl font-medium text-foreground leading-snug animate-fade-up">{t("home.heroTagline")}</p>
+        <div className="container py-6 md:py-8">
+          <div className="max-w-xl md:max-w-3xl mx-auto text-center">
+            <p className="text-sm sm:text-base md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up">
+              {t("home.heroTagline")}
+            </p>
           </div>
         </div>
       </section>
