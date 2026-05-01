@@ -9,14 +9,15 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TeamPage = () => {
   const revealRef = useScrollReveal();
+  const heroRevealRef = useScrollReveal();
 
   return (
     <Layout>
       {/* Hero */}
       <section className="section-padding pb-0">
-        <div className="container">
+        <div className="container" ref={heroRevealRef}>
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
-            <div>
+            <div className="reveal">
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">Our People</span>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">Our Team</h1>
               <div className="line-gold mt-4 mb-6" />
@@ -24,7 +25,7 @@ const TeamPage = () => {
                 Every engagement at Beacon Attorneys is led by a partner with deep expertise and a personal commitment to client success. Our team combines international training with unmatched local knowledge.
               </p>
             </div>
-            <div className="flex md:justify-end">
+            <div className="flex md:justify-end reveal">
               <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                 <img
                   src={teamHeroPhoto}
