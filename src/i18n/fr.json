@@ -98,6 +98,13 @@
     "ourPurpose": "Notre Mission",
     "ourPurposeDesc": "Poursuivre la justice par un conseil juridique stratégique qui renforce les entreprises, protège les intérêts et favorise une croissance durable au Rwanda et dans la région.",
     "workWithUs": "Connectez-vous avec nous",
+    "aboutNav": {
+      "aria": "Sections de la page À Propos",
+      "who": "Qui Nous Sommes",
+      "values": "Ce qui Nous Anime",
+      "purpose": "Notre Mission",
+      "clients": "Notre Clientèle"
+    },
     "ourClients": "Nos Clients",
     "ourClientsDesc": "Nous accompagnons notre clientèle à travers les secteurs et les frontières, en offrant un conseil piloté par nos associés à chaque étape.",
     "clients": {
