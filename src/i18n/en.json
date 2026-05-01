@@ -98,6 +98,13 @@
     "ourPurpose": "Our Purpose",
     "ourPurposeDesc": "To pursue justice through strategic legal counsel that empowers businesses, protects interests, and drives sustainable growth across Rwanda and the region.",
     "workWithUs": "Connect with us",
+    "aboutNav": {
+      "aria": "About page sections",
+      "who": "Who We Are",
+      "values": "What Drives Us",
+      "purpose": "Our Purpose",
+      "clients": "Who We Serve"
+    },
     "ourClients": "Our Clients",
     "ourClientsDesc": "We act for our clientele across industries and borders, delivering partner-led advisory at every stage.",
     "clients": {

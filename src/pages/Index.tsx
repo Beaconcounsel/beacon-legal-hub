@@ -140,8 +140,34 @@ const HomePage = () => {
             <div className="relative min-h-[300px] md:min-h-[480px]" />
           </section>
 
+          {/* Sticky in-page nav for the About route */}
+          <nav
+            aria-label={t("home.aboutNav.aria")}
+            className="sticky top-16 md:top-20 z-30 bg-card/90 backdrop-blur-md border-y border-border/60 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
+          >
+            <div className="container">
+              <ul className="flex items-center gap-1 sm:gap-2 overflow-x-auto whitespace-nowrap py-2 sm:py-3 scrollbar-none -mx-1 px-1">
+                {[
+                  { href: "#about", label: t("home.aboutNav.who") },
+                  { href: "#values", label: t("home.aboutNav.values") },
+                  { href: "#purpose", label: t("home.aboutNav.purpose") },
+                  { href: "#clients", label: t("home.aboutNav.clients") },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+
           {/* About Section — text only, no duplicate partner photo */}
-          <section id="about" className="section-padding scroll-mt-24">
+          <section id="about" className="section-padding scroll-mt-32">
             <div className="container">
               <div className="max-w-3xl mx-auto reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
@@ -156,7 +182,7 @@ const HomePage = () => {
           </section>
 
           {/* Values */}
-          <section className="section-padding bg-card">
+          <section id="values" className="section-padding bg-card scroll-mt-32">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-8 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
@@ -177,7 +203,7 @@ const HomePage = () => {
           </section>
 
           {/* Mission */}
-          <section className="section-padding">
+          <section id="purpose" className="section-padding scroll-mt-32">
             <div className="container">
               <div className="reveal relative max-w-2xl mx-auto text-center">
                 <div className="absolute -inset-6 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 rounded-2xl" />
@@ -196,7 +222,7 @@ const HomePage = () => {
           </section>
 
           {/* Who We Serve */}
-          <section className="section-padding">
+          <section id="clients" className="section-padding scroll-mt-32">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-10 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.ourClients")}</h2>
