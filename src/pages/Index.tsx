@@ -1,8 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import teamImg from "@/assets/team-meeting.jpg";
@@ -19,6 +26,24 @@ const HomePage = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const { localePath } = useLocalizedPath();
+
+  const partners = [
+    {
+      id: "daniel",
+      name: "Daniel Mutiganda",
+      role: "Lead Partner — Corporate, Transactions & Cross-Border Advisory",
+      photo: danielPhoto,
+      bio: "Daniel Mutiganda is a seasoned corporate lawyer and executive with over 18 years of experience advising international investors, corporations, financial institutions, and local business leaders. He delivers commercially sound legal and strategic solutions across complex and regulated environments.",
+    },
+    {
+      id: "moses",
+      name: "Katusime Mbombo Moses",
+      role: "Partner — Legal & Corporate Governance, Compliance",
+      photo: mosesPhoto,
+      bio: "Moses Katusime is a highly experienced legal practitioner advising corporations, investors, and public institutions on complex legal, commercial, and regulatory matters. He provides strategic, business-oriented counsel that supports investment, safeguards assets, and enables sustainable growth.",
+    },
+  ];
+  const [activePartner, setActivePartner] = useState<typeof partners[number] | null>(null);
 
   const trustItems = [
     { icon: Shield, label: t("home.trust.experience") },
