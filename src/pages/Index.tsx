@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -52,7 +52,6 @@ const HomePage = () => {
   }, [location.hash]);
 
   const revealRef = useScrollReveal([activeSection]);
-  const heroImgRef = useRef<HTMLImageElement>(null);
   const show = (section: string) => !activeSection || activeSection === section;
 
   useEffect(() => {
@@ -65,17 +64,6 @@ const HomePage = () => {
       return () => clearTimeout(timer);
     }
   }, [activeSection, revealRef]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroImgRef.current) {
-        const scrollY = window.scrollY;
-        heroImgRef.current.style.transform = `translateY(${scrollY * 0.15}px) scale(1.05)`;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (location.hash) {
