@@ -469,10 +469,14 @@ const HomePage = () => {
                 <AccordionItem value="moses" className="border-0 group/moses">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
-                      <div className="p-6 md:p-10 w-full text-left">
+                      <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary-foreground font-serif text-2xl md:text-3xl font-bold">MK</span>
+                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                            <img
+                              src={mosesPhoto}
+                              alt="Moses Katusime – Senior Partner, Legal & Corporate Governance"
+                              className="w-full h-full object-cover object-[center_top]"
+                            />
                           </div>
                           <div className="flex-1">
                             <span className="inline-block text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold uppercase tracking-wider mb-3">Senior Partner</span>
