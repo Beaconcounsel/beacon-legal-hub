@@ -6,7 +6,8 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Search, GraduationCap, Briefcase, Users, Globe, Building2, Sprout, Scale } from "lucide-react";
-import researchHeroImg from "@/assets/research-hero.jpg";
+import { researchHeroImage } from "@/assets/optimized";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 const ResearchPage = () => {
   const location = useLocation();
@@ -47,7 +48,13 @@ const ResearchPage = () => {
       {/* Hero */}
       <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={researchHeroImg} alt="Legal professionals group photo" className="w-full h-full object-cover scale-105" loading="eager" width={1920} height={1080} />
+          <ResponsiveImage
+            source={researchHeroImage}
+            sizes="100vw"
+            alt="Legal professionals group photo"
+            className="w-full h-full object-cover scale-105"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
         </div>
