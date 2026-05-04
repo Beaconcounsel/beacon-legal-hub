@@ -14,16 +14,208 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          cancellation_reason: string | null
+          cancellation_token: string
+          cancelled_at: string | null
+          client_email: string
+          client_name: string
+          client_phone: string | null
+          created_at: string
+          entity_type: string | null
+          google_event_id: string | null
+          id: string
+          jurisdiction: string | null
+          matter_type: string | null
+          message: string | null
+          organization: string | null
+          slot_end: string
+          slot_start: string
+          status: string
+        }
+        Insert: {
+          cancellation_reason?: string | null
+          cancellation_token?: string
+          cancelled_at?: string | null
+          client_email: string
+          client_name: string
+          client_phone?: string | null
+          created_at?: string
+          entity_type?: string | null
+          google_event_id?: string | null
+          id?: string
+          jurisdiction?: string | null
+          matter_type?: string | null
+          message?: string | null
+          organization?: string | null
+          slot_end: string
+          slot_start: string
+          status?: string
+        }
+        Update: {
+          cancellation_reason?: string | null
+          cancellation_token?: string
+          cancelled_at?: string | null
+          client_email?: string
+          client_name?: string
+          client_phone?: string | null
+          created_at?: string
+          entity_type?: string | null
+          google_event_id?: string | null
+          id?: string
+          jurisdiction?: string | null
+          matter_type?: string | null
+          message?: string | null
+          organization?: string | null
+          slot_end?: string
+          slot_start?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      cancellation_requests: {
+        Row: {
+          appointment_at: string
+          booking_id: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          reason: string | null
+          within_24h: boolean
+        }
+        Insert: {
+          appointment_at: string
+          booking_id?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          reason?: string | null
+          within_24h?: boolean
+        }
+        Update: {
+          appointment_at?: string
+          booking_id?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          reason?: string | null
+          within_24h?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cancellation_requests_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "bookings"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      google_oauth_tokens: {
+        Row: {
+          access_token: string | null
+          expires_at: string | null
+          google_email: string
+          id: string
+          refresh_token: string
+          scope: string | null
+          updated_at: string
+        }
+        Insert: {
+          access_token?: string | null
+          expires_at?: string | null
+          google_email: string
+          id?: string
+          refresh_token: string
+          scope?: string | null
+          updated_at?: string
+        }
+        Update: {
+          access_token?: string | null
+          expires_at?: string | null
+          google_email?: string
+          id?: string
+          refresh_token?: string
+          scope?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      booked_slots: {
+        Row: {
+          slot_end: string | null
+          slot_start: string | null
+        }
+        Insert: {
+          slot_end?: string | null
+          slot_start?: string | null
+        }
+        Update: {
+          slot_end?: string | null
+          slot_start?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +342,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
