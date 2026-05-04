@@ -189,23 +189,16 @@ export type Database = {
       }
     }
     Views: {
-      booked_slots: {
-        Row: {
-          slot_end: string | null
-          slot_start: string | null
-        }
-        Insert: {
-          slot_end?: string | null
-          slot_start?: string | null
-        }
-        Update: {
-          slot_end?: string | null
-          slot_start?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
+      get_booked_slots: {
+        Args: { _from: string; _to: string }
+        Returns: {
+          slot_end: string
+          slot_start: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
