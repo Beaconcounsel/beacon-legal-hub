@@ -40,6 +40,10 @@ Deno.serve(async (req) => {
     const projectId = Deno.env.get("SUPABASE_URL")!.split("//")[1].split(".")[0];
     const redirectUri = `https://${projectId}.supabase.co/functions/v1/google-oauth-callback`;
 
+    // state = userId|origin so callback can redirect back to the calling app
+    const reqBody = await req.json().catch(() => ({} as any));
+    const origin = reqBody?.origin || req.headers.get("origin") || "";
+    const state = `${userId}|${encodeURIComponent(origin)}`;
     const params = new URLSearchParams({
       client_id: clientId,
       redirect_uri: redirectUri,
@@ -48,7 +52,7 @@ Deno.serve(async (req) => {
       access_type: "offline",
       prompt: "consent",
       include_granted_scopes: "true",
-      state: userId,
+      state,
     });
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
     return json({ authUrl });
