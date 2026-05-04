@@ -16,10 +16,7 @@ const BookingPage = () => {
 
   return (
     <Layout>
-      <SEOHead
-        title="Book a Consultation | Beacon Attorneyes & Consultants"
-        description="Schedule a private consultation with Daniel Mutiganda. Choose an available time slot Monday to Friday."
-      />
+      <SEOHead titleKey="seo.bookingTitle" descKey="seo.bookingDesc" />
       <section className="pt-12 md:pt-16 pb-0">
         <div className="container">
           <div className="max-w-3xl mb-6">
