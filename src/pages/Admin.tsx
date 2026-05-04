@@ -96,7 +96,9 @@ const AdminPage = () => {
 
   const handleConnectGoogle = async () => {
     try {
-      const { data, error } = await supabase.functions.invoke("google-oauth-start");
+      const { data, error } = await supabase.functions.invoke("google-oauth-start", {
+        body: { origin: window.location.origin },
+      });
       if (error || !(data as { authUrl?: string })?.authUrl) {
         toast.error("Could not start Google sign-in. Make sure GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are configured.");
         return;
