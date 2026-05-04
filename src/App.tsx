@@ -16,6 +16,10 @@ import Insights from "./pages/Insights";
 import Research from "./pages/Research";
 import OurApproach from "./pages/OurApproach";
 import Contact from "./pages/Contact";
+import Booking from "./pages/Booking";
+import CancelBooking from "./pages/CancelBooking";
+import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 import CookiePolicy from "./pages/CookiePolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
@@ -34,6 +38,10 @@ const AppRoutes = () => (
       <Route path="/research" element={<Research />} />
       <Route path="/our-approach" element={<OurApproach />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/booking" element={<Booking />} />
+      <Route path="/booking/cancel" element={<CancelBooking />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/cookie-policy" element={<CookiePolicy />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />
@@ -46,6 +54,8 @@ const AppRoutes = () => (
       <Route path="/fr/research" element={<Research />} />
       <Route path="/fr/our-approach" element={<OurApproach />} />
       <Route path="/fr/contact" element={<Contact />} />
+      <Route path="/fr/booking" element={<Booking />} />
+      <Route path="/fr/booking/cancel" element={<CancelBooking />} />
       <Route path="/fr/cookie-policy" element={<CookiePolicy />} />
       <Route path="/fr/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/fr/terms-of-use" element={<TermsOfUse />} />

@@ -15,7 +15,8 @@
     "proBonoServices": "Pro Bono Services",
     "research": "Research",
     "training": "Training",
-    "consultancy": "Consultancy"
+    "consultancy": "Consultancy",
+    "bookConsultation": "Book a Consultation"
   },
   "footer": {
     "tagline": "A Law Firm for Individuals, Businesses, Institutions, and International Investors.",
@@ -314,7 +315,9 @@
     "contactTitle": "Contact Us | Beacon Attorneys & Consultants",
     "contactDesc": "Get in touch with Beacon Attorneys & Consultants in Kigali, Rwanda.",
     "insightsTitle": "Insights | Beacon Attorneys & Consultants",
-    "insightsDesc": "Legal insights and publications from Beacon Attorneys & Consultants."
+    "insightsDesc": "Legal insights and publications from Beacon Attorneys & Consultants.",
+    "bookingTitle": "Book a Consultation | Beacon Attorneys & Consultants",
+    "bookingDesc": "Schedule a private 1-hour consultation with Daniel Mutiganda. Available Monday to Friday in Kigali, Rwanda."
   },
   "cookies": {
     "bannerTitle": "We Value Your Privacy",
