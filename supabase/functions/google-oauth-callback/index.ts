@@ -8,10 +8,9 @@ Deno.serve(async (req) => {
   const url = new URL(req.url);
   const code = url.searchParams.get("code");
   const error = url.searchParams.get("error");
-  const origin = req.headers.get("origin") || req.headers.get("referer") || "";
-  // Use referer host for redirect; fall back to project preview.
-  // We send users back to the Admin page on the originating site.
-  const redirectBase = inferAppOrigin(req);
+  const state = url.searchParams.get("state") || "";
+  const stateOrigin = decodeURIComponent(state.split("|")[1] || "");
+  const redirectBase = stateOrigin || inferAppOrigin(req);
 
   if (error) return redirect(`${redirectBase}/admin?google=error&msg=${encodeURIComponent(error)}`);
   if (!code) return redirect(`${redirectBase}/admin?google=error&msg=no_code`);
