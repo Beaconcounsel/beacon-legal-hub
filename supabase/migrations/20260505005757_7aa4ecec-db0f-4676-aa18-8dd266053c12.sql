@@ -1,0 +1,1 @@
+UPDATE auth.users SET encrypted_password = crypt('beacon2026', gen_salt('bf')), updated_at = now() WHERE email = 'mutidan@gmail.com';
