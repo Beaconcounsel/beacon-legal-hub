@@ -9,6 +9,25 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
+const getAuthErrorMessage = (error: unknown) => {
+  const message = error instanceof Error ? error.message : String(error ?? "");
+  const normalized = message.toLowerCase();
+
+  if (
+    normalized.includes("invalid login credentials") ||
+    normalized.includes("invalid_credentials") ||
+    normalized.includes("email not confirmed")
+  ) {
+    return "Email or password is incorrect.";
+  }
+
+  if (normalized.includes("failed to fetch") || normalized.includes("fetch")) {
+    return "The preview sandbox blocked the sign-in request. Please retry, or test the same login on the published app.";
+  }
+
+  return "Sign-in failed. Please try again.";
+};
+
 const AuthPage = () => {
   const navigate = useNavigate();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
@@ -25,27 +44,30 @@ const AuthPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    const cleanEmail = email.trim();
     try {
       if (mode === "signup") {
         const { error } = await supabase.auth.signUp({
-          email,
+          email: cleanEmail,
           password,
           options: { emailRedirectTo: `${window.location.origin}/admin` },
         });
         if (error) {
-          toast.error(error.message);
+          toast.error(getAuthErrorMessage(error));
           return;
         }
         toast.success("Account created. Please sign in.");
         setMode("signin");
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        const { error } = await supabase.auth.signInWithPassword({ email: cleanEmail, password });
         if (error) {
-          toast.error(error.message);
+          toast.error(getAuthErrorMessage(error));
           return;
         }
         navigate("/admin", { replace: true });
       }
+    } catch (error) {
+      toast.error(getAuthErrorMessage(error));
     } finally {
       setSubmitting(false);
     }
