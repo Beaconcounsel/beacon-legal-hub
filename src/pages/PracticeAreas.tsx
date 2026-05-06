@@ -93,11 +93,7 @@ const PracticeAreasPage = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <LocalizedLink to="/contact">
-              <Button variant="gold" size="lg" className="gap-2">
-                {t("practiceAreas.requestConsultation")} <ArrowRight className="w-4 h-4" />
-              </Button>
-            </LocalizedLink>
+            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -116,11 +112,7 @@ const PracticeAreasPage = () => {
             ))}
           </div>
           <div className="text-center">
-            <LocalizedLink to="/contact">
-              <Button variant="gold" size="lg" className="gap-2">
-                {t("practiceAreas.discussIndustry")} <ArrowRight className="w-4 h-4" />
-              </Button>
-            </LocalizedLink>
+            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -135,11 +127,7 @@ const PracticeAreasPage = () => {
           </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
           <div className="text-center mt-10">
-            <LocalizedLink to="/contact">
-              <Button variant="gold" size="lg" className="gap-2">
-                {t("practiceAreas.discussNeeds")} <ArrowRight className="w-4 h-4" />
-              </Button>
-            </LocalizedLink>
+            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>

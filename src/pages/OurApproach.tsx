@@ -81,11 +81,7 @@ const OurApproachPage = () => {
               </div>
             ))}
           </div>
-          <LocalizedLink to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              {t("approach.scheduleConsultation")} <ArrowRight className="w-4 h-4" />
-            </Button>
-          </LocalizedLink>
+          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
 
@@ -141,11 +137,7 @@ const OurApproachPage = () => {
               ))}
             </div>
 
-            <LocalizedLink to="/contact">
-              <Button variant="gold" size="lg" className="gap-2">
-                {t("approach.scheduleIntlConsultation")} <ArrowRight className="w-4 h-4" />
-              </Button>
-            </LocalizedLink>
+            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -174,11 +166,7 @@ const OurApproachPage = () => {
               </ul>
             </div>
           </div>
-          <LocalizedLink to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              {t("approach.partnerProBono")} <ArrowRight className="w-4 h-4" />
-            </Button>
-          </LocalizedLink>
+          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
     </Layout>

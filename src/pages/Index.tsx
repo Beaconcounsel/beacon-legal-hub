@@ -160,11 +160,7 @@ const HomePage = () => {
                   <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("home.ourPurpose")}</h2>
                   <div className="line-gold mx-auto mb-5" />
                   <p className="text-muted-foreground leading-snug mb-6">{t("home.ourPurposeDesc")}</p>
-                  <LocalizedLink to="/contact">
-                    <Button variant="gold" className="gap-2">
-                      {t("home.workWithUs")} <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </LocalizedLink>
+                  <BookConsultationButton variant="gold" className="gap-2" />
                 </div>
               </div>
             </div>
@@ -448,11 +444,7 @@ const HomePage = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                          <LocalizedLink to="/contact">
-                            <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
-                              {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
-                            </Button>
-                          </LocalizedLink>
+                          <BookConsultationButton variant="gold" size="lg" className="gap-2 w-full sm:w-auto" />
                           <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
                               <Mail className="w-4 h-4" /> {t("home.emailDaniel")}
@@ -585,11 +577,7 @@ const HomePage = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                          <LocalizedLink to="/contact">
-                            <Button variant="gold" size="lg" className="gap-2 w-full sm:w-auto">
-                              {t("home.bookConsultation")} <ArrowRight className="w-4 h-4" />
-                            </Button>
-                          </LocalizedLink>
+                          <BookConsultationButton variant="gold" size="lg" className="gap-2 w-full sm:w-auto" />
                           <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
                               <Mail className="w-4 h-4" /> {t("home.workWithUs")}
@@ -633,11 +621,7 @@ const HomePage = () => {
               <div className="line-gold mx-auto mt-4 mb-6" />
               <p className="text-muted-foreground mb-10 leading-relaxed">{t("home.connectDesc")}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <LocalizedLink to="/contact">
-                  <Button variant="gold" size="lg" className="gap-2">
-                    {t("home.requestConsultation")} <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </LocalizedLink>
+                <BookConsultationButton variant="gold" size="lg" className="gap-2" />
                 <a href="tel:+250788559603">
                   <Button variant="gold-outline" size="lg" className="gap-2">
                     <Phone className="w-4 h-4" /> {t("home.callNow")}
