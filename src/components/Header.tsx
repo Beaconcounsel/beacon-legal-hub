@@ -47,7 +47,6 @@ const Header = () => {
     { label: t("nav.ourPracticeAreas"), path: "/practice-areas", dropdown: practiceDropdownItems },
     { label: t("nav.ourApproach"), path: "/our-approach", dropdown: approachDropdownItems },
     { label: t("nav.researchDev"), path: "/research", dropdown: researchDropdownItems },
-    { label: t("nav.bookConsultation"), path: "/booking", dropdown: undefined },
   ];
 
   const handleSectionClick = useCallback((path: string) => {
