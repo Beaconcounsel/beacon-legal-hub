@@ -39,11 +39,7 @@ const InsightsPage = () => {
           </div>
 
           <div className="mt-10 text-center">
-            <LocalizedLink to="/contact">
-              <Button variant="gold" size="lg" className="gap-2">
-                {t("insights.subscribe")} <ArrowRight className="w-4 h-4" />
-              </Button>
-            </LocalizedLink>
+            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>

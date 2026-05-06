@@ -82,11 +82,7 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <LocalizedLink to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              {t("research.commissionResearch")} <ArrowRight className="w-4 h-4" />
-            </Button>
-          </LocalizedLink>
+          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
 
@@ -105,11 +101,7 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <LocalizedLink to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              {t("research.inquireTraining")} <ArrowRight className="w-4 h-4" />
-            </Button>
-          </LocalizedLink>
+          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
 
@@ -128,11 +120,7 @@ const ResearchPage = () => {
               </div>
             ))}
           </div>
-          <LocalizedLink to="/contact">
-            <Button variant="gold" size="lg" className="gap-2">
-              {t("research.requestConsultancy")} <ArrowRight className="w-4 h-4" />
-            </Button>
-          </LocalizedLink>
+          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
     </Layout>
