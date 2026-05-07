@@ -1,3 +1,4 @@
+import BookConsultationButton from "@/components/BookConsultationButton";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Scale, Briefcase, Globe, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
