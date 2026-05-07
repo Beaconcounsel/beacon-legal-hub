@@ -268,7 +268,7 @@ const BookConsultation = () => {
               variant="gold"
               size="lg"
               onClick={() => setOpened(true)}
-              className="px-8"
+              className="px-10 py-6 text-base shadow-2xl shadow-primary/40 hover:shadow-primary/60 hover:-translate-y-0.5 transition-all ring-1 ring-primary/30"
             >
               <CalendarDays className="w-5 h-5 mr-2" />
               Book a Consultation
@@ -276,6 +276,11 @@ const BookConsultation = () => {
           </div>
         ) : (
           <div className="max-w-3xl mx-auto space-y-4">
+            <div className="flex justify-end">
+              <Button type="button" variant="ghost" size="sm" onClick={reset}>
+                Close
+              </Button>
+            </div>
             {/* STEP 1 */}
             <StepCard
               index={1}
