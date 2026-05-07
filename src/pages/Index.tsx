@@ -1,3 +1,4 @@
+import BookConsultationButton from "@/components/BookConsultationButton";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
