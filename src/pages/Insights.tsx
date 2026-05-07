@@ -4,6 +4,7 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
+import BookConsultationButton from "@/components/BookConsultationButton";
 
 const InsightsPage = () => {
   const { t } = useTranslation();
