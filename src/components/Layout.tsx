@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import StickyConsultation from "./StickyConsultation";
 import PageTransition from "./PageTransition";
 import BookConsultation from "./BookConsultation";
 import { useLocation } from "react-router-dom";
@@ -18,7 +17,6 @@ const Layout = ({ children, hideBooking = false }: { children: ReactNode; hideBo
         {!shouldHide && <BookConsultation />}
       </main>
       <Footer />
-      <StickyConsultation />
     </div>
   );
 };

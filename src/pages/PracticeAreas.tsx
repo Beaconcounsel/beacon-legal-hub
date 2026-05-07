@@ -1,4 +1,3 @@
-import BookConsultationButton from "@/components/BookConsultationButton";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -94,7 +93,6 @@ const PracticeAreasPage = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -113,7 +111,6 @@ const PracticeAreasPage = () => {
             ))}
           </div>
           <div className="text-center">
-            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -128,7 +125,6 @@ const PracticeAreasPage = () => {
           </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
           <div className="text-center mt-10">
-            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>

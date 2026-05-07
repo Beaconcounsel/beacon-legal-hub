@@ -4,7 +4,6 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-import BookConsultationButton from "@/components/BookConsultationButton";
 
 const InsightsPage = () => {
   const { t } = useTranslation();
@@ -40,7 +39,6 @@ const InsightsPage = () => {
           </div>
 
           <div className="mt-10 text-center">
-            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>

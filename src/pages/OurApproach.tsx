@@ -1,4 +1,3 @@
-import BookConsultationButton from "@/components/BookConsultationButton";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -82,7 +81,6 @@ const OurApproachPage = () => {
               </div>
             ))}
           </div>
-          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
 
@@ -138,7 +136,6 @@ const OurApproachPage = () => {
               ))}
             </div>
 
-            <BookConsultationButton variant="gold" size="lg" className="gap-2" />
           </div>
         </div>
       </section>
@@ -167,7 +164,6 @@ const OurApproachPage = () => {
               </ul>
             </div>
           </div>
-          <BookConsultationButton variant="gold" size="lg" className="gap-2" />
         </div>
       </section>
     </Layout>
