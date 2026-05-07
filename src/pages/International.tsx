@@ -1,4 +1,3 @@
-import BookConsultationButton from "@/components/BookConsultationButton";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -71,7 +70,6 @@ const InternationalPage = () => (
         </div>
 
         <div className="text-center">
-          <BookConsultationButton variant="gold" size="lg" className="gap-2 whitespace-normal" />
         </div>
       </div>
     </section>
