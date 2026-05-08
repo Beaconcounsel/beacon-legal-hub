@@ -74,35 +74,6 @@ const Footer = () => {
       </svg>
 
       <div className="container py-6 md:py-8 relative z-10">
-        {/* Centered editorial tagline — top of footer */}
-        <div className="mb-5 mt-1 flex flex-col items-center text-center">
-          <span
-            aria-hidden="true"
-            className="block h-px w-[60px]"
-            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
-          />
-          <p
-            className="font-serif italic my-3"
-            style={{
-              color: "#c9a84c",
-              fontWeight: 500,
-              letterSpacing: "0.02em",
-              lineHeight: 1.6,
-              fontSize: "1.1rem",
-            }}
-          >
-            <span className="md:hidden">A Law Firm for Individuals, Businesses, Institutions, and International Investors</span>
-            <span className="hidden md:inline" style={{ fontSize: "1.4rem" }}>
-              A Law Firm for Individuals, Businesses, Institutions, and International Investors
-            </span>
-          </p>
-          <span
-            aria-hidden="true"
-            className="block h-px w-[60px]"
-            style={{ backgroundColor: "#c9a84c", opacity: 0.4 }}
-          />
-        </div>
-
         <div className="grid md:grid-cols-4 gap-5">
           <div>
             <div className="flex items-center gap-3 mt-1">
