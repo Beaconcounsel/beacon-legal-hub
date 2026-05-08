@@ -258,7 +258,7 @@ const BookConsultation = () => {
               variant="gold"
               size="lg"
               onClick={() => setOpened(true)}
-              className="px-10 py-6 text-base shadow-2xl shadow-primary/40 hover:shadow-primary/60 hover:-translate-y-0.5 transition-all ring-1 ring-primary/30"
+              className="px-10 py-6 text-base shadow-[0_8px_40px_-6px_hsl(var(--primary)/0.55)] hover:shadow-[0_12px_50px_-6px_hsl(var(--primary)/0.75)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-primary/40"
             >
               <CalendarDays className="w-5 h-5 mr-2" />
               Book a Consultation
