@@ -238,18 +238,8 @@ const BookConsultation = () => {
     <section
       id="book-consultation"
       className="section-padding bg-card scroll-mt-24"
-      aria-labelledby="book-consultation-title"
     >
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2
-            id="book-consultation-title"
-            className="text-3xl md:text-4xl font-bold font-serif text-foreground mb-3"
-          >
-            Book a Consultation
-          </h2>
-          <div className="h-1 w-16 bg-primary rounded-full mx-auto" />
-        </div>
 
         {confirmed ? (
           <div className="max-w-2xl mx-auto bg-background border border-border rounded-xl p-8 text-center">
