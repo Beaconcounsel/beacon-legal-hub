@@ -189,26 +189,26 @@ const HomePage = () => {
         </>)}
 
         {show("team") && (
-          <section id="team" className="section-padding scroll-mt-24">
-            <div className="container">
-              <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
-                <div className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
-                  <div className="line-gold mb-6" />
-                  <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
-                </div>
-                <div className="flex md:justify-end reveal">
-                  <div className="w-full md:w-[480px] lg:w-[600px] max-w-full aspect-[2400/2477] overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                    <ResponsiveImage
-                      source={teamHeroImage}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 480px, 600px"
-                      alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-                      className="w-full h-full object-cover object-[center_top]"
-                    />
-                  </div>
-                </div>
+          <section id="team" className="scroll-mt-24">
+            {/* Full-bleed Our People hero image — 100vw x 100vh */}
+            <div className="relative w-screen left-1/2 -translate-x-1/2 h-screen overflow-hidden">
+              <ResponsiveImage
+                source={teamHeroImage}
+                sizes="100vw"
+                alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Tagline immediately below the image */}
+            <div className="container py-12 md:py-16">
+              <div className="max-w-3xl mx-auto reveal text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
+                <div className="line-gold mx-auto mb-6" />
+                <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
               </div>
+            </div>
 
+            <div className="container">
               <Accordion type="multiple" className="space-y-6">
                 {/* Daniel Mutiganda */}
                 <AccordionItem value="daniel" className="border-0 group/daniel">
