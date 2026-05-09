@@ -106,7 +106,7 @@ const Header = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-[76px] md:h-[90px]">
-        <Link to={localePath("/")} className="flex items-center">
+        <Link to={localePath("/")} className="flex flex-col items-start leading-none">
           <ResponsiveImage
             source={beaconLogoImage}
             sizes="(max-width: 768px) 144px, 168px"
@@ -114,6 +114,9 @@ const Header = () => {
             className="h-[72px] md:h-[84px] w-auto"
             priority
           />
+          <span className="hidden md:block mt-1 italic text-gold tracking-[0.18em] text-[10px] md:text-[11px]">
+            {t("nav.tagline")}
+          </span>
         </Link>
 
         <nav ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">
