@@ -77,20 +77,20 @@ const HomePage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
-      {/* Hero — crisp partners photo, no overlay, no parallax (matches Daniel profile clarity) */}
-      <section className="relative w-full overflow-hidden bg-navy">
-        <div className="mx-auto w-1/2">
+      {/* Hero — fits in one viewport */}
+      <section className="relative w-full h-screen overflow-hidden bg-navy flex flex-col pt-[76px] md:pt-[90px]">
+        <div className="flex-1 min-h-0 mx-auto w-1/2 max-w-full">
           <ResponsiveImage
             source={partnersHeroImage}
             sizes="50vw"
             alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-            className="w-full h-auto object-cover object-[center_top] block"
+            className="w-full h-full object-contain object-top block"
             priority
           />
         </div>
-        <div className="container py-6 md:py-8">
+        <div className="container py-4 md:py-6 shrink-0">
           <div className="max-w-xl md:max-w-3xl mx-auto text-center">
-            <p className="text-sm sm:text-base md:text-xl font-medium text-white/95 leading-relaxed animate-fade-up">
+            <p className="text-sm sm:text-base md:text-lg font-medium text-white/95 leading-snug animate-fade-up">
               {t("home.heroTagline")}
             </p>
           </div>
