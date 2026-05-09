@@ -45,7 +45,7 @@ const OurApproachPage = () => {
     <Layout>
       <SEOHead titleKey="seo.approachTitle" descKey="seo.approachDesc" />
       {/* Hero */}
-      <section className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <ResponsiveImage
             source={ourApproachHeroImage}

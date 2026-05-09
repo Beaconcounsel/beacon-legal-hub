@@ -36,7 +36,7 @@ const Landing = () => {
         - Inner Auto Layout (Vertical): gap 16/24px, items hug content, left aligned
         - Tagline max-w 720px (640px on smaller wrap), 2–3 lines, sits in top-40% safe zone
       */}
-      <section className="relative h-[420px] md:h-[480px] lg:h-[540px] overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         {/* Hero / Image */}
         <ResponsiveImage
           source={kigaliCityImage}

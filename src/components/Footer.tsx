@@ -74,6 +74,9 @@ const Footer = () => {
       </svg>
 
       <div className="container py-6 md:py-8 relative z-10">
+        <p className="text-center italic text-gold text-[14px] md:text-[15px] tracking-wide pb-4 mb-5 border-b border-ivory/10">
+          {t("footer.taglineFull")}
+        </p>
         <div className="grid md:grid-cols-4 gap-5">
           <div>
             <div className="flex items-center gap-3 mt-1">

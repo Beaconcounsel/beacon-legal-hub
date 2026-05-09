@@ -16,10 +16,12 @@
     "research": "Recherche",
     "training": "Formation",
     "consultancy": "Consultance",
-    "bookConsultation": "Réserver une Consultation"
+    "bookConsultation": "Réserver une Consultation",
+    "tagline": "Le foyer juridique des entreprises au Rwanda"
   },
   "footer": {
     "tagline": "Un cabinet d'avocats pour les particuliers, les entreprises, les institutions et les investisseurs internationaux.",
+    "taglineFull": "Le foyer juridique des entreprises locales et étrangères qui s'implantent et opèrent au Rwanda",
     "contact": "Contact",
     "careers": "Carrières",
     "joinTeam": "Rejoignez Notre Équipe",

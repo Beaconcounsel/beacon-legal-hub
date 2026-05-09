@@ -16,10 +16,12 @@
     "research": "Research",
     "training": "Training",
     "consultancy": "Consultancy",
-    "bookConsultation": "Book a Consultation"
+    "bookConsultation": "Book a Consultation",
+    "tagline": "The legal home for businesses in Rwanda"
   },
   "footer": {
     "tagline": "A Law Firm for Individuals, Businesses, Institutions, and International Investors.",
+    "taglineFull": "The legal home for local & foreign businesses entering and operating in Rwanda",
     "contact": "Contact",
     "careers": "Careers",
     "joinTeam": "Join Our Team",
