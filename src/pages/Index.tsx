@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
-import { danielImage, mosesImage, teamHeroImage, heroKigaliImage, partnersHeroImage } from "@/assets/optimized";
+import { danielImage, mosesImage, heroKigaliImage, partnersHeroImage } from "@/assets/optimized";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
