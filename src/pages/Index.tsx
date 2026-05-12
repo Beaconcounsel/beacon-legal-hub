@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Shield, Globe, Users, Building2, Briefcase, Zap, Landmark, Wheat, Laptop, Phone, Target, Eye, Award, Mail, GraduationCap, MapPin, BookOpen, ChevronDown, Clock, DollarSign, FileText, Navigation, UserPlus, Monitor } from "lucide-react";
-import { danielImage, mosesImage, teamHeroImage, heroKigaliImage, partnersHeroImage } from "@/assets/optimized";
+import { danielImage, mosesImage, heroKigaliImage, partnersHeroImage } from "@/assets/optimized";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
@@ -78,19 +78,19 @@ const HomePage = () => {
     <Layout>
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero — fits in one viewport */}
-      <section className="relative w-full h-screen overflow-hidden bg-navy flex flex-col pt-[76px] md:pt-[90px]">
-        <div className="flex-1 min-h-0 mx-auto w-1/2 max-w-full">
+      <section className="relative w-full h-[70vh] overflow-hidden bg-navy flex flex-col pt-[54px] md:pt-[64px]">
+        <div className="flex-1 min-h-0 mx-auto w-[35%] max-w-full">
           <ResponsiveImage
             source={partnersHeroImage}
-            sizes="50vw"
+            sizes="35vw"
             alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
             className="w-full h-full object-contain object-top block"
             priority
           />
         </div>
-        <div className="container py-4 md:py-6 shrink-0">
+        <div className="container py-3 md:py-4 shrink-0">
           <div className="max-w-xl md:max-w-3xl mx-auto text-center">
-            <p className="text-sm sm:text-base md:text-lg font-medium text-white/95 leading-snug animate-fade-up">
+            <p className="text-xs sm:text-sm md:text-base font-medium text-white/95 leading-snug animate-fade-up">
               {t("home.heroTagline")}
             </p>
           </div>
@@ -190,25 +190,7 @@ const HomePage = () => {
 
         {show("team") && (
           <section id="team" className="scroll-mt-24">
-            {/* Full-bleed Our People hero image — 100vw x 100vh */}
-            <div className="relative w-screen left-1/2 -translate-x-1/2 h-screen overflow-hidden">
-              <ResponsiveImage
-                source={teamHeroImage}
-                sizes="100vw"
-                alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Tagline immediately below the image */}
-            <div className="container py-12 md:py-16">
-              <div className="max-w-3xl mx-auto reveal text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.ourPeople")}</h2>
-                <div className="line-gold mx-auto mb-6" />
-                <p className="text-muted-foreground text-lg leading-relaxed">{t("home.ourPeopleDesc")}</p>
-              </div>
-            </div>
-
-            <div className="container">
+            <div className="container pt-24">
               <Accordion type="multiple" className="space-y-6">
                 {/* Daniel Mutiganda */}
                 <AccordionItem value="daniel" className="border-0 group/daniel">
@@ -216,10 +198,10 @@ const HomePage = () => {
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                          <div className="w-[224px] md:w-[294px] lg:w-[364px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <ResponsiveImage
                               source={danielImage}
-                              sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
+                              sizes="(max-width: 768px) 224px, (max-width: 1024px) 294px, 364px"
                               alt="Daniel Mutiganda – Lead Partner, Corporate, Transactions & Cross-Border Advisory"
                               className="w-full h-full object-cover object-[center_top]"
                             />
@@ -460,10 +442,10 @@ const HomePage = () => {
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                          <div className="w-[224px] md:w-[294px] lg:w-[364px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <ResponsiveImage
                               source={mosesImage}
-                              sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
+                              sizes="(max-width: 768px) 224px, (max-width: 1024px) 294px, 364px"
                               alt="Moses Katusime – Senior Partner, Legal & Corporate Governance"
                               className="w-full h-full object-cover object-[center_top]"
                             />

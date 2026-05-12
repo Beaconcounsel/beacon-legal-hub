@@ -14,17 +14,17 @@ const services = [
 
 const InternationalPage = () => (
   <Layout>
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={kigaliImg} alt="Kigali skyline" className="w-full h-full object-cover scale-105" loading="lazy" width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
       </div>
-      <div className="container relative z-10 pt-16 md:pt-20 py-14">
+      <div className="container relative z-10 pt-11 md:pt-14 py-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-6" />
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6">International Clients</h1>
-          <p className="text-lg md:text-xl font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+          <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-4" />
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">International Clients</h1>
+          <p className="text-base md:text-lg font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             We bridge international expectations with local legal execution. For global investors and multinational organizations, Beacon Attorneys provides the strategic counsel and on-the-ground expertise required to operate confidently in Rwanda and the East African region.
           </p>
         </div>
