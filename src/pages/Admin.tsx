@@ -160,7 +160,7 @@ const AdminPage = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="container py-20 flex justify-center">
+        <div className="container py-16 flex justify-center">
           <Loader2 className="w-6 h-6 animate-spin text-primary" />
         </div>
       </Layout>
@@ -170,9 +170,9 @@ const AdminPage = () => {
   if (isAdmin === false) {
     return (
       <Layout>
-        <div className="container py-20 max-w-xl">
+        <div className="container py-16 max-w-xl">
           <h1 className="text-2xl font-serif text-navy mb-2">Not authorized</h1>
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-sm text-muted-foreground mb-3">
             Your account does not have admin access. Sign in with the admin email
             (mutidan@gmail.com).
           </p>
@@ -185,9 +185,9 @@ const AdminPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.bookingTitle" descKey="seo.bookingDesc" />
-      <section className="pt-12 md:pt-16 pb-12 md:pb-16">
+      <section className="pt-10 md:pt-12 pb-10 md:pb-12">
         <div className="container">
-          <div className="flex justify-between items-start mb-8">
+          <div className="flex justify-between items-start mb-6">
             <div>
               <h1 className="text-3xl md:text-4xl font-serif text-navy">Admin Dashboard</h1>
               <p className="text-sm text-muted-foreground mt-1">{user?.email}</p>
@@ -197,11 +197,11 @@ const AdminPage = () => {
             </Button>
           </div>
 
-          <div className="bg-card border border-border rounded-xl p-6 mb-8">
-            <h2 className="text-xl font-serif text-navy mb-4 flex items-center gap-2">
+          <div className="bg-card border border-border rounded-xl p-6 mb-6">
+            <h2 className="text-xl font-serif text-navy mb-3 flex items-center gap-2">
               <ShieldCheck className="w-5 h-5" /> Google OAuth Credentials
             </h2>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-muted-foreground mb-3">
               Your Client ID and Client Secret are stored securely as backend secrets
               (<code className="text-xs">BookingappClientID</code> and{" "}
               <code className="text-xs">ClientSecret</code>). Run a test to confirm
@@ -241,8 +241,8 @@ const AdminPage = () => {
             )}
           </div>
 
-          <div className="bg-card border border-border rounded-xl p-6 mb-8">
-            <h2 className="text-xl font-serif text-navy mb-4 flex items-center gap-2">
+          <div className="bg-card border border-border rounded-xl p-6 mb-6">
+            <h2 className="text-xl font-serif text-navy mb-3 flex items-center gap-2">
               <Calendar className="w-5 h-5" /> Google Calendar Integration
             </h2>
             {tokenStatus?.connected ? (
@@ -251,7 +251,7 @@ const AdminPage = () => {
                   <CheckCircle2 className="w-4 h-4" />
                   Connected as <strong>{tokenStatus.email}</strong>
                 </div>
-                <p className="text-xs text-muted-foreground mb-4">
+                <p className="text-xs text-muted-foreground mb-3">
                   Bookings will block time on this Google Calendar and a confirmation
                   email will be sent from this Gmail account.
                 </p>
@@ -264,7 +264,7 @@ const AdminPage = () => {
                 <div className="flex items-center gap-2 text-sm text-justice mb-3">
                   <XCircle className="w-4 h-4" /> Not connected
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-3">
                   Connect your Google account (mutidan@gmail.com) to enable calendar sync
                   and send booking emails from your Gmail.
                 </p>
@@ -276,7 +276,7 @@ const AdminPage = () => {
           </div>
 
           <div className="bg-card border border-border rounded-xl p-6">
-            <h2 className="text-xl font-serif text-navy mb-4">Recent Bookings</h2>
+            <h2 className="text-xl font-serif text-navy mb-3">Recent Bookings</h2>
             {bookings.length === 0 ? (
               <p className="text-sm text-muted-foreground">No bookings yet.</p>
             ) : (

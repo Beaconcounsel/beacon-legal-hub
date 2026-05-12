@@ -22,8 +22,8 @@ const InternationalPage = () => (
       </div>
       <div className="container relative z-10 pt-11 md:pt-14 py-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-4" />
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4">International Clients</h1>
+          <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-3" />
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3">International Clients</h1>
           <p className="text-base md:text-lg font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             We bridge international expectations with local legal execution. For global investors and multinational organizations, Beacon Attorneys provides the strategic counsel and on-the-ground expertise required to operate confidently in Rwanda and the East African region.
           </p>
@@ -46,7 +46,7 @@ const InternationalPage = () => (
             <h3 className="text-xl font-bold mb-5 font-serif text-primary">Why Rwanda?</h3>
             <ul className="space-y-3">
               {["Ranked 1st in Africa for ease of doing business in 2025", "Stable Political, Security, Public governance environments", "Strategic access to East and Central African markets", "A premier destination for MICE (Meetings, Incentives, Conferences, and Exhibitions), ranked 2nd in Africa by ICCA", "Growing tech and financial services hub", "Investor protection and incentive frameworks"].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
+                <li key={item} className="flex items-start gap-2 text-sm text-foreground/80 leading-snug">
                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2" />
                   {item}
                 </li>
@@ -55,10 +55,10 @@ const InternationalPage = () => (
           </div>
         </div>
 
-        <div className="mb-16">
-          <div className="line-gold mb-4" />
-          <h2 className="text-3xl font-bold mb-10 font-serif">How We Support International Clients</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mb-12">
+          <div className="line-gold mb-3" />
+          <h2 className="text-3xl font-bold mb-8 font-serif">How We Support International Clients</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
               <div key={s.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
                 <s.icon className="w-8 h-8 text-primary mb-3" />

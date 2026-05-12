@@ -69,10 +69,10 @@ const OurApproachPage = () => {
       {/* How We Serve You */}
       <section id="how-we-serve" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("approach.howWeServe")}</h2>
-          <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("approach.howWeServeDesc")}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("approach.howWeServe")}</h2>
+          <div className="line-gold mb-5" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">{t("approach.howWeServeDesc")}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
             {servePillars.map((p) => (
               <div key={p.title} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
                 <p.icon className="w-8 h-8 text-primary mb-3" />
@@ -96,16 +96,16 @@ const OurApproachPage = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-transparent" />
           </div>
-          <div className="container relative z-10 py-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalClients")}</h2>
-            <div className="line-gold mb-6" />
+          <div className="container relative z-10 py-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalClients")}</h2>
+            <div className="line-gold mb-5" />
             <p className="text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{t("approach.internationalDesc")}</p>
           </div>
         </div>
 
         <div className="section-padding">
           <div className="container">
-          <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-start mb-8">
               <div>
                 <h3 className="text-2xl font-bold mb-5 font-serif">{t("approach.rwandaInvestment")}</h3>
                 <div className="space-y-3 text-muted-foreground leading-snug">
@@ -117,7 +117,7 @@ const OurApproachPage = () => {
                 <h3 className="text-xl font-bold mb-5 font-serif text-primary">{t("approach.whyRwanda")}</h3>
                 <ul className="space-y-3">
                   {whyRwandaItems.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
+                    <li key={item} className="flex items-start gap-2 text-sm text-foreground/80 leading-snug">
                       <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                       {item}
                     </li>
@@ -126,7 +126,7 @@ const OurApproachPage = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
               {internationalServices.map((s) => (
                 <div key={s.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
                   <s.icon className="w-8 h-8 text-primary mb-3" />
@@ -143,9 +143,9 @@ const OurApproachPage = () => {
       {/* Pro Bono Services */}
       <section id="pro-bono" className="section-padding bg-card scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("approach.proBono")}</h2>
-          <div className="line-gold mb-6" />
-          <div className="grid lg:grid-cols-2 gap-10 items-start mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("approach.proBono")}</h2>
+          <div className="line-gold mb-5" />
+          <div className="grid lg:grid-cols-2 gap-10 items-start mb-6">
             <div className="space-y-3 text-muted-foreground leading-snug">
               <p>{t("approach.proBonoP1")}</p>
               <p>{t("approach.proBonoP2")}</p>
@@ -156,7 +156,7 @@ const OurApproachPage = () => {
               <h3 className="text-xl font-bold mb-3 font-serif">{t("approach.proBonoPartners")}</h3>
               <ul className="space-y-2">
                 {proBonoPartnersList.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
+                  <li key={item} className="flex items-start gap-2 text-sm text-foreground/80 leading-snug">
                     <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 shrink-0" />
                     {item}
                   </li>

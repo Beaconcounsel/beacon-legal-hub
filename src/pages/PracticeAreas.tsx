@@ -72,7 +72,7 @@ const PracticeAreasPage = () => {
           <div className="space-y-5">
             {areaKeys.map((key, i) => (
               <div key={i} className="bg-card border border-border rounded-lg p-5 md:p-6 hover:border-primary/30 transition-colors">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <span className="text-justice font-serif text-lg font-bold mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -92,7 +92,7 @@ const PracticeAreasPage = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
           </div>
         </div>
       </section>
@@ -100,11 +100,11 @@ const PracticeAreasPage = () => {
       {/* Industries We Serve */}
       <section id="industries" className="section-padding bg-card scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.industriesWeServe")}</h2>
-          <div className="line-gold mb-8" />
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("practiceAreas.industriesWeServe")}</h2>
+          <div className="line-gold mb-6" />
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             {industries.map((ind) => (
-              <div key={ind.label} className="flex items-center gap-3 bg-background border border-border px-7 py-5 rounded-xl hover:border-primary/30 hover:bg-secondary/60 transition-all duration-300 group">
+              <div key={ind.label} className="flex items-center gap-2 bg-background border border-border px-7 py-5 rounded-xl hover:border-primary/30 hover:bg-secondary/60 transition-all duration-300 group">
                 <ind.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium text-foreground">{ind.label}</span>
               </div>
@@ -118,13 +118,13 @@ const PracticeAreasPage = () => {
       {/* Our Services - Carousel */}
       <section id="services" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
-          <div className="line-gold mb-8" />
-          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
+          <div className="line-gold mb-6" />
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-6">
             {t("practiceAreas.heroTagline2")}
           </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
           </div>
         </div>
       </section>
@@ -181,13 +181,13 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
         >
           {slides.map((group, slideIdx) => (
             <div key={slideIdx} className="w-full flex-shrink-0">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-1">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-1">
                 {group.map(({ key, Icon }) => (
                   <div
                     key={key}
                     className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors"
                   >
-                    <Icon className="w-10 h-10 text-primary mb-4 mx-auto" />
+                    <Icon className="w-10 h-10 text-primary mb-3 mx-auto" />
                     <h3 className="text-xl md:text-2xl font-medium mb-2 font-serif">
                       {t(`practiceAreas.services.${key}.title`)}
                     </h3>
@@ -201,7 +201,7 @@ const ServicesCarousel = ({ serviceKeys, serviceIcons, t }: { serviceKeys: reado
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center gap-6 mt-8">
+      <div className="flex items-center justify-center gap-5 mt-6">
         <button
           onClick={prev}
           aria-label="Previous slide"

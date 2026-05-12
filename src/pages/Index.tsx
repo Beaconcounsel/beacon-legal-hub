@@ -102,7 +102,7 @@ const HomePage = () => {
         <div className="container py-10 md:py-14">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20">
             {trustItems.map((item) => (
-              <div key={item.label} className="flex items-center gap-4 group">
+              <div key={item.label} className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-5 h-5 text-primary" />
                 </div>
@@ -119,8 +119,8 @@ const HomePage = () => {
           <section id="about" className="section-padding scroll-mt-32">
             <div className="container">
               <div className="max-w-3xl mx-auto reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-foreground">{t("home.whoWeAre")}</h2>
-                <div className="line-gold mb-6" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("home.whoWeAre")}</h2>
+                <div className="line-gold mb-5" />
                 <div className="space-y-3 text-muted-foreground leading-snug">
                   <p>{t("home.whoWeAreP1")}</p>
                   <p>{t("home.whoWeAreP2")}</p>
@@ -133,11 +133,11 @@ const HomePage = () => {
           {/* Values */}
           <section id="values" className="section-padding bg-card scroll-mt-32">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-8 reveal">
+              <div className="text-center max-w-2xl mx-auto mb-6 reveal">
                 <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("home.whatDrivesUs")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-5">
                 {values.map((v) => (
                   <div key={v.title} className="reveal text-center bg-card border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 transition-colors">
@@ -159,7 +159,7 @@ const HomePage = () => {
                 <div className="relative bg-card border border-border rounded-xl p-10">
                   <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("home.ourPurpose")}</h2>
                   <div className="line-gold mx-auto mb-5" />
-                  <p className="text-muted-foreground leading-snug mb-6">{t("home.ourPurposeDesc")}</p>
+                  <p className="text-muted-foreground leading-snug mb-5">{t("home.ourPurposeDesc")}</p>
                 </div>
               </div>
             </div>
@@ -168,15 +168,15 @@ const HomePage = () => {
           {/* Who We Serve */}
           <section id="clients" className="section-padding scroll-mt-32">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.ourClients")}</h2>
-                <div className="line-gold mx-auto mb-6" />
+              <div className="text-center max-w-2xl mx-auto mb-8 reveal">
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">{t("home.ourClients")}</h2>
+                <div className="line-gold mx-auto mb-5" />
                 <p className="text-muted-foreground leading-snug">{t("home.ourClientsDesc")}</p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {clientCategories.map((cat) => (
                   <div key={cat.title} className="reveal bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-4 group-hover:bg-justice/15 transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-justice/10 flex items-center justify-center mb-3 group-hover:bg-justice/15 transition-colors">
                       <cat.icon className="w-6 h-6 text-justice group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2 font-serif">{cat.title}</h3>
@@ -190,14 +190,14 @@ const HomePage = () => {
 
         {show("team") && (
           <section id="team" className="scroll-mt-24">
-            <div className="container pt-24">
-              <Accordion type="multiple" className="space-y-6">
+            <div className="container pt-20">
+              <Accordion type="multiple" className="space-y-5">
                 {/* Daniel Mutiganda */}
                 <AccordionItem value="daniel" className="border-0 group/daniel">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
-                        <div className="flex flex-col md:flex-row items-start gap-6">
+                        <div className="flex flex-col md:flex-row items-start gap-5">
                           <div className="w-[224px] md:w-[294px] lg:w-[364px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <ResponsiveImage
                               source={danielImage}
@@ -209,9 +209,9 @@ const HomePage = () => {
                           <div className="flex-1">
                             <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">{t("home.leadPartner")}</p>
                             <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Daniel Mutiganda</h3>
-                            <p className="text-foreground/80 text-lg mb-4">{t("home.danielRole")}</p>
+                            <p className="text-foreground/80 text-lg mb-3">{t("home.danielRole")}</p>
                             <p className="text-muted-foreground leading-relaxed max-w-2xl">{t("home.danielSummary")}</p>
-                            <div className="flex flex-wrap gap-3 mt-6">
+                            <div className="flex flex-wrap gap-2 mt-6">
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">Rwanda Bar Association</span>
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">East African Law Society</span>
                               <span className="text-xs bg-primary/10 text-primary px-3 py-1.5 rounded-full">CIArb, UK</span>
@@ -226,20 +226,20 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-6 md:p-10 space-y-8 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-6 border-t border-border">
                         <div className="max-w-3xl">
                           <p className="text-foreground/80 leading-relaxed">{t("home.danielBio1")}</p>
                           <p className="text-foreground/80 leading-relaxed mt-4">{t("home.danielBio2")}</p>
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-2 mb-5">
                             <Award className="w-5 h-5 text-primary" />
                             <h4 className="text-xl font-bold font-serif">{t("home.whatSetsHimApart")}</h4>
                           </div>
-                          <div className="grid md:grid-cols-2 gap-4">
+                          <div className="grid md:grid-cols-2 gap-3">
                             {["Combines legal, executive, and public sector experience", "Strong track record across regulated and high-growth sectors", "Deep understanding of Rwanda's legal, regulatory, and business environment", "Aligns legal frameworks with commercial strategy and growth", "Advises on and represents clients in transactions and regulatory engagements", "Strong cross-cultural capability across international and local stakeholder environments"].map((item) => (
-                              <div key={item} className="flex items-start gap-3 bg-muted/30 rounded-lg p-4">
+                              <div key={item} className="flex items-start gap-2 bg-muted/30 rounded-lg p-4">
                                 <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                 <p className="text-sm text-foreground/80">{item}</p>
                               </div>
@@ -248,12 +248,12 @@ const HomePage = () => {
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-3 mb-3">
+                          <div className="flex items-center gap-2 mb-3">
                             <Briefcase className="w-5 h-5 text-primary" />
                             <h4 className="text-xl font-bold font-serif">{t("home.multiDisciplinary")}</h4>
                           </div>
-                          <p className="text-muted-foreground text-sm mb-6 ml-8">{t("home.internationalPerspectiveDesc").split(".")[0]}.</p>
-                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          <p className="text-muted-foreground text-sm mb-5 ml-8">{t("home.internationalPerspectiveDesc").split(".")[0]}.</p>
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                             {[{ sector: "Government & Public Sector", desc: "Legislative advisory, policy, and regulatory frameworks" }, { sector: "Financial Services", desc: "Banking, compliance, risk, and governance" }, { sector: "International Development", desc: "Advisory to NGOs, donors, and global institutions" }, { sector: "Health & Social Impact", desc: "Support to large-scale, mission-driven programs" }, { sector: "Corporate & Private Sector", desc: "Structuring, transactions, and business growth" }, { sector: "Consultancy & Legal Advisory", desc: "Cross-sector strategic advisory and representation" }].map((item) => (
                               <div key={item.sector} className="border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
                                 <p className="font-semibold text-sm mb-1">{item.sector}</p>
@@ -264,12 +264,12 @@ const HomePage = () => {
                         </div>
 
                         <div className="bg-muted/20 rounded-xl p-8 border border-border">
-                          <div className="flex items-center gap-3 mb-3">
+                          <div className="flex items-center gap-2 mb-3">
                             <Globe className="w-5 h-5 text-primary" />
                             <h4 className="text-xl font-bold font-serif">{t("home.internationalPerspective")}</h4>
                           </div>
-                          <p className="text-foreground/80 text-sm leading-relaxed mb-6">{t("home.internationalPerspectiveDesc")}</p>
-                          <div className="grid sm:grid-cols-2 gap-3">
+                          <p className="text-foreground/80 text-sm leading-relaxed mb-5">{t("home.internationalPerspectiveDesc")}</p>
+                          <div className="grid sm:grid-cols-2 gap-2">
                             {["Structuring compliant and scalable investments", "Managing legal and regulatory risk", "Representing clients in negotiations and regulatory processes", "Bridging international and local stakeholders", "Translating complexity into clear business decisions"].map((item) => (
                               <div key={item} className="flex items-start gap-2">
                                 <div className="w-1 h-1 rounded-full bg-justice mt-2 flex-shrink-0" />
@@ -279,15 +279,15 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-5">
                           <div>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-2 mb-5">
                               <Shield className="w-5 h-5 text-primary" />
                               <h4 className="text-xl font-bold font-serif">{t("home.corePracticeAreas")}</h4>
                             </div>
                             <ul className="space-y-3">
                               {["Cross-Border Transactions & Market Entry", "Mergers & Acquisitions (M&A)", "Corporate Structuring & Restructuring", "Regulatory Compliance & Government Relations", "Corporate Governance & Board Advisory", "Investment & Institutional Advisory", "Commercial Contracts, Negotiation & Representation"].map((item) => (
-                                <li key={item} className="flex items-start gap-3">
+                                <li key={item} className="flex items-start gap-2">
                                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
@@ -295,11 +295,11 @@ const HomePage = () => {
                             </ul>
                           </div>
                           <div>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-2 mb-5">
                               <Briefcase className="w-5 h-5 text-primary" />
                               <h4 className="text-xl font-bold font-serif">{t("home.sectorFocus")}</h4>
                             </div>
-                            <div className="space-y-4">
+                            <div className="space-y-3">
                               {[{ sector: "Financial Services & Fintech", desc: "Banking, digital finance, compliance, and licensing" }, { sector: "Energy & Infrastructure", desc: "Project structuring, PPPs, and regulatory approvals" }, { sector: "Investment & Private Equity", desc: "Deal structuring, due diligence, and execution" }, { sector: "International Development & ESG", desc: "Governance, compliance, and sustainable investment" }, { sector: "Government & Public Sector", desc: "Regulatory frameworks and institutional advisory" }, { sector: "Corporate & Commercial", desc: "M&A, structuring, and business expansion" }].map((item) => (
                                 <div key={item.sector}>
                                   <p className="text-sm font-semibold">{item.sector}</p>
@@ -311,13 +311,13 @@ const HomePage = () => {
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-2 mb-5">
                             <BookOpen className="w-5 h-5 text-primary" />
                             <h4 className="text-xl font-bold font-serif">{t("home.representativeExperience")}</h4>
                           </div>
-                          <div className="grid md:grid-cols-2 gap-3">
+                          <div className="grid md:grid-cols-2 gap-2">
                             {["Advised on and represented clients in cross-border investment transactions in regulated sectors", "Led corporate restructuring and shareholder transitions", "Supported market entry, licensing, and regulatory approvals for international investors", "Negotiated and represented clients in commercial agreements with international partners", "Strengthened governance frameworks, reducing legal and regulatory exposure", "Advised and represented boards and executive teams on risk, compliance, and strategic decision-making"].map((item) => (
-                              <div key={item} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg">
+                              <div key={item} className="flex items-start gap-2 p-4 bg-muted/20 rounded-lg">
                                 <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                 <p className="text-sm text-foreground/70">{item}</p>
                               </div>
@@ -325,15 +325,15 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-5">
                           <div>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-2 mb-5">
                               <Users className="w-5 h-5 text-primary" />
                               <h4 className="text-xl font-bold font-serif">{t("home.clientsEngagements")}</h4>
                             </div>
                             <ul className="space-y-3">
                               {["International investors and private equity firms", "Development finance institutions and global organizations", "Multinational corporations", "Financial institutions and regulated entities", "Local enterprises and high-growth businesses"].map((item) => (
-                                <li key={item} className="flex items-start gap-3">
+                                <li key={item} className="flex items-start gap-2">
                                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
@@ -341,11 +341,11 @@ const HomePage = () => {
                             </ul>
                           </div>
                           <div>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-2 mb-5">
                               <MapPin className="w-5 h-5 text-primary" />
                               <h4 className="text-xl font-bold font-serif">{t("home.geographicFocus")}</h4>
                             </div>
-                            <div className="space-y-4">
+                            <div className="space-y-3">
                               {[{ name: "Rwanda", desc: "Core market" }, { name: "East Africa", desc: "Regional advisory and transactions" }, { name: "Cross-Border", desc: "Investment structuring" }].map((item) => (
                                 <div key={item.name} className="border border-border rounded-lg p-4">
                                   <p className="font-semibold text-sm">{item.name}</p>
@@ -356,12 +356,12 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-5">
                           <div>
-                            <h4 className="text-xl font-bold font-serif mb-6">{t("home.boardRegulatory")}</h4>
+                            <h4 className="text-xl font-bold font-serif mb-5">{t("home.boardRegulatory")}</h4>
                             <ul className="space-y-3">
                               {["Advises and represents boards and executive teams on governance, compliance, and risk", "Experience engaging regulators and navigating licensing frameworks", "Company secretarial and board-level advisory experience"].map((item) => (
-                                <li key={item} className="flex items-start gap-3">
+                                <li key={item} className="flex items-start gap-2">
                                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
@@ -369,10 +369,10 @@ const HomePage = () => {
                             </ul>
                           </div>
                           <div>
-                            <h4 className="text-xl font-bold font-serif mb-6">{t("home.leadershipInstitutional")}</h4>
+                            <h4 className="text-xl font-bold font-serif mb-5">{t("home.leadershipInstitutional")}</h4>
                             <ul className="space-y-3">
                               {["Led organizational growth from under 1,000 to over 3,500 employees", "Managed large operational teams and budgets", "Strengthened governance, compliance, and internal systems", "Worked closely with international leadership and investors", "Advised and represented executive teams on risk, strategy, and growth"].map((item) => (
-                                <li key={item} className="flex items-start gap-3">
+                                <li key={item} className="flex items-start gap-2">
                                   <div className="w-1.5 h-1.5 rounded-full bg-justice mt-2 flex-shrink-0" />
                                   <span className="text-sm text-foreground/80">{item}</span>
                                 </li>
@@ -382,12 +382,12 @@ const HomePage = () => {
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-2 mb-5">
                             <GraduationCap className="w-5 h-5 text-primary" />
                             <h4 className="text-xl font-bold font-serif">{t("home.educationFoundation")}</h4>
                           </div>
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div className="space-y-4">
+                          <div className="grid md:grid-cols-2 gap-3">
+                            <div className="space-y-3">
                               {[{ degree: "Master of Business Administration (MBA)", school: "Oklahoma Christian University, USA" }, { degree: "Postgraduate Diploma in Legal Practice", school: "Institute of Legal Practice and Development" }, { degree: "Bachelor of Laws (LL.B)", school: "University of Rwanda" }].map((item) => (
                                 <div key={item.degree} className="border border-border rounded-lg p-4">
                                   <p className="font-semibold text-sm">{item.degree}</p>
@@ -424,7 +424,7 @@ const HomePage = () => {
                           <p className="text-primary text-sm font-semibold mt-4">— Daniel Mutiganda</p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                        <div className="flex flex-col sm:flex-row gap-3 pt-4">
                           <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
                               <Mail className="w-4 h-4" /> {t("home.emailDaniel")}
@@ -441,7 +441,7 @@ const HomePage = () => {
                   <div className="bg-card border border-border rounded-2xl overflow-hidden">
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
-                        <div className="flex flex-col md:flex-row items-start gap-6">
+                        <div className="flex flex-col md:flex-row items-start gap-5">
                           <div className="w-[224px] md:w-[294px] lg:w-[364px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <ResponsiveImage
                               source={mosesImage}
@@ -453,7 +453,7 @@ const HomePage = () => {
                           <div className="flex-1">
                             <span className="inline-block text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold uppercase tracking-wider mb-3">Senior Partner</span>
                             <h3 className="text-3xl md:text-4xl font-bold font-serif mb-2">Moses Katusime</h3>
-                            <p className="text-muted-foreground leading-snug max-w-2xl mb-4">
+                            <p className="text-muted-foreground leading-snug max-w-2xl mb-3">
                               Strategic legal counsel for corporations, investors, and public institutions across Rwanda and the region.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -471,9 +471,9 @@ const HomePage = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-0">
-                      <div className="p-6 md:p-10 space-y-8 border-t border-border">
+                      <div className="p-6 md:p-10 space-y-6 border-t border-border">
                         {/* Stat tiles */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                           {[
                             { stat: "18+", label: "Years of legal practice" },
                             { stat: "FCIArb", label: "Chartered Arbitrator Fellow" },
@@ -493,7 +493,7 @@ const HomePage = () => {
                         {/* Practice Areas */}
                         <div>
                           <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">Practice Areas</p>
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                             {[
                               "Corporate & Commercial Law",
                               "Construction & Infrastructure",
@@ -524,7 +524,7 @@ const HomePage = () => {
                               { icon: UserPlus, title: "Corporate Structuring & Market Entry", desc: "Advised regional and international investors on corporate structuring, joint ventures, and regulatory compliance for entry into the Rwandan market." },
                               { icon: Monitor, title: "Corporate Governance Advisory", desc: "Supported boards and executive management in establishing governance frameworks, compliance systems, and risk management strategies aligned with international best practices." },
                             ].map((item) => (
-                              <div key={item.title} className="border border-border rounded-lg p-4 flex items-start gap-4 text-left">
+                              <div key={item.title} className="border border-border rounded-lg p-4 flex items-start gap-3 text-left">
                                 <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
                                   <item.icon className="w-4 h-4 text-primary" />
                                 </div>
@@ -540,7 +540,7 @@ const HomePage = () => {
                         {/* Education & Qualifications */}
                         <div>
                           <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">Education & Qualifications</p>
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                             {[
                               { title: "Master of Laws (LLM)", sub: "University of Groningen" },
                               { title: "Bachelor of Laws (LLB)", sub: "National University of Rwanda" },
@@ -556,7 +556,7 @@ const HomePage = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                        <div className="flex flex-col sm:flex-row gap-2 pt-2">
                           <a href="mailto:info@beaconattorneys.rw">
                             <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
                               <Mail className="w-4 h-4" /> {t("home.workWithUs")}
@@ -575,13 +575,13 @@ const HomePage = () => {
         {show("industries") && (
           <section id="industries" className="section-padding bg-card scroll-mt-20">
             <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-10 reveal">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.industriesWeServe")}</h2>
+              <div className="text-center max-w-2xl mx-auto mb-8 reveal">
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">{t("home.industriesWeServe")}</h2>
                 <div className="line-gold mx-auto" />
               </div>
               <div className="flex flex-wrap justify-center gap-5">
                 {industries.map((ind) => (
-                  <div key={ind.label} className="reveal flex items-center gap-3 bg-secondary/40 border border-border px-7 py-5 rounded-xl hover:border-primary/30 hover:bg-secondary/60 transition-all duration-300 group">
+                  <div key={ind.label} className="reveal flex items-center gap-2 bg-secondary/40 border border-border px-7 py-5 rounded-xl hover:border-primary/30 hover:bg-secondary/60 transition-all duration-300 group">
                     <ind.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                     <span className="text-sm font-medium">{ind.label}</span>
                   </div>
@@ -596,10 +596,10 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
           <div className="container relative">
             <div className="text-center max-w-2xl mx-auto reveal">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t("home.connectWithUs")}</h2>
-              <div className="line-gold mx-auto mt-4 mb-6" />
-              <p className="text-muted-foreground mb-10 leading-relaxed">{t("home.connectDesc")}</p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">{t("home.connectWithUs")}</h2>
+              <div className="line-gold mx-auto mt-4 mb-5" />
+              <p className="text-muted-foreground mb-8 leading-relaxed">{t("home.connectDesc")}</p>
+              <div className="flex flex-wrap justify-center gap-3">
                 <a href="tel:+250788559603">
                   <Button variant="gold-outline" size="lg" className="gap-2">
                     <Phone className="w-4 h-4" /> {t("home.callNow")}

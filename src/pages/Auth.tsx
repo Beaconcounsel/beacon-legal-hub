@@ -76,15 +76,15 @@ const AuthPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.bookingTitle" descKey="seo.bookingDesc" />
-      <section className="pt-12 md:pt-16 pb-12">
+      <section className="pt-10 md:pt-12 pb-10">
         <div className="container max-w-md">
           <h1 className="text-2xl md:text-3xl font-serif text-navy mb-1">Admin Sign In</h1>
-          <p className="text-sm text-muted-foreground mb-6">
+          <p className="text-sm text-muted-foreground mb-5">
             Daniel signs in here to manage Google Calendar integration and view bookings.
           </p>
           <form
             onSubmit={handleSubmit}
-            className="bg-card border border-border rounded-xl p-6 space-y-4"
+            className="bg-card border border-border rounded-xl p-6 space-y-3"
           >
             <div>
               <Label className="text-sm font-medium mb-2 block">Email</Label>
