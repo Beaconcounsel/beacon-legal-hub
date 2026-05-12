@@ -105,18 +105,15 @@ const Header = () => {
         scrolled ? "header-scrolled" : ""
       }`}
     >
-      <div className="container flex items-center justify-between h-[76px] md:h-[90px]">
-        <Link to={localePath("/")} className="flex flex-col items-start leading-none">
+      <div className="container flex items-center justify-between h-[100px] md:h-[120px]">
+        <Link to={localePath("/")} className="flex items-center leading-none flex-shrink-0 min-w-[94px] md:min-w-[110px]">
           <ResponsiveImage
             source={beaconLogoImage}
-            sizes="(max-width: 768px) 144px, 168px"
+            sizes="(max-width: 768px) 188px, 218px"
             alt="Beacon Attorneyes & Consultants"
-            className="h-[72px] md:h-[84px] w-auto"
+            className="h-[94px] md:h-[110px] w-auto flex-shrink-0"
             priority
           />
-          <span className="hidden md:block mt-1 italic text-gold tracking-[0.18em] text-[10px] md:text-[11px]">
-            {t("nav.tagline")}
-          </span>
         </Link>
 
         <nav ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">

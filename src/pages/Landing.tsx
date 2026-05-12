@@ -122,14 +122,7 @@ const Landing = () => {
             <div className="relative bg-background border border-border rounded-xl p-8 md:p-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("landing.ctaTitle")}</h2>
               <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
-              <p className="text-muted-foreground leading-snug mb-6">{t("landing.ctaDesc")}</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <LocalizedLink to="/">
-                  <Button variant="outline" size="lg" className="gap-2">
-                    {t("landing.exploreFirm")}
-                  </Button>
-                </LocalizedLink>
-              </div>
+              <p className="text-muted-foreground leading-snug">{t("landing.ctaDesc")}</p>
             </div>
           </div>
         </div>
