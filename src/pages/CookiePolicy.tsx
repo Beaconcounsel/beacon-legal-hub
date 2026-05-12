@@ -18,13 +18,13 @@ const CookiePolicy = () => {
     <Layout>
       <SEOHead titleKey="cookiePolicy.title" descKey="cookiePolicy.whatAreCookies.text" />
       <div className="bg-[#F8F9FB] min-h-screen">
-        <div className="container max-w-3xl py-16 md:py-24">
-          <h1 className="text-2xl md:text-3xl font-bold text-[#0d3d4a] mb-8 font-playfair">
+        <div className="container max-w-3xl py-12 md:py-20">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#0d3d4a] mb-6 font-playfair">
             {t("cookiePolicy.title")}
           </h1>
-          <p className="text-xs text-[#1a5c6b]/50 mb-8">{t("cookiePolicy.lastUpdated", { date: "April 2026" })}</p>
+          <p className="text-xs text-[#1a5c6b]/50 mb-6">{t("cookiePolicy.lastUpdated", { date: "April 2026" })}</p>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {sections.map((section, i) => (
               <div key={i}>
                 <h2 className="text-lg font-semibold text-[#0d3d4a] mb-2">{section.title}</h2>

@@ -14,7 +14,7 @@ const BookingPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.bookingTitle" descKey="seo.bookingDesc" />
-      <div className="container py-12 text-center text-muted-foreground">
+      <div className="container py-10 text-center text-muted-foreground">
         Loading consultation booking…
       </div>
     </Layout>

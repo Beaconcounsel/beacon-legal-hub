@@ -114,10 +114,10 @@ const CancelBookingPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.bookingTitle" descKey="seo.bookingDesc" />
-      <section className="pt-12 md:pt-16 pb-12 md:pb-16">
+      <section className="pt-10 md:pt-12 pb-10 md:pb-12">
         <div className="container max-w-2xl">
           <span className="label-uppercase">Cancel Booking</span>
-          <h1 className="text-3xl md:text-4xl font-serif text-navy mt-2 mb-6">
+          <h1 className="text-3xl md:text-4xl font-serif text-navy mt-2 mb-5">
             Cancellation Request
           </h1>
 
@@ -153,7 +153,7 @@ const CancelBookingPage = () => {
               </div>
 
               {within24h && (
-                <div className="flex gap-3 p-4 bg-justice/5 border border-justice/30 rounded-md">
+                <div className="flex gap-2 p-4 bg-justice/5 border border-justice/30 rounded-md">
                   <AlertTriangle className="w-5 h-5 text-justice flex-shrink-0 mt-0.5" />
                   <div className="text-sm">
                     <p className="font-semibold text-justice mb-1">Late cancellation notice</p>

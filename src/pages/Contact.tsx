@@ -18,9 +18,9 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEOHead titleKey="seo.contactTitle" descKey="seo.contactDesc" />
-      <section className="pt-12 md:pt-16 pb-0">
+      <section className="pt-10 md:pt-12 pb-0">
         <div className="container">
-          <div className="max-w-3xl mb-6">
+          <div className="max-w-3xl mb-5">
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
               {t("contact.reachUs")}
             </h1>
@@ -33,16 +33,16 @@ const ContactPage = () => {
       </section>
 
       <div ref={revealRef}>
-        <section className="pt-6 pb-12 md:pb-16">
+        <section className="pt-6 pb-10 md:pb-12">
           <div className="container">
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl reveal">
+            <div className="grid md:grid-cols-2 gap-5 max-w-4xl reveal">
               {items.map(({ icon: Icon, text, href }) => (
                 <a
                   key={text}
                   href={href || "#"}
                   target={href?.startsWith("http") ? "_blank" : undefined}
                   rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-start gap-4 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors"
+                  className="flex items-start gap-3 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors"
                   onClick={(e) => { if (!href) e.preventDefault(); }}
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">

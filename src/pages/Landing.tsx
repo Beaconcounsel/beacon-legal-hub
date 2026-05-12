@@ -56,8 +56,8 @@ const Landing = () => {
         {/* Hero / Content — centered, top-aligned, max-w 1200 */}
         <div className="absolute inset-x-0 top-[32px] md:top-[48px] lg:top-[64px] z-10">
           <div className="mx-auto w-full max-w-[1100px] px-6 md:px-8">
-            {/* Auto Layout (Vertical), gap-3 (12px) → md gap-4 (16px), items-start */}
-            <div className="flex flex-col items-start gap-3 md:gap-4">
+            {/* Auto Layout (Vertical), gap-2 (12px) → md gap-3 (16px), items-start */}
+            <div className="flex flex-col items-start gap-2 md:gap-3">
               <p className="max-w-[680px] text-base md:text-lg lg:text-xl font-medium leading-snug text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                 {t("landing.heroTagline")}
               </p>
@@ -68,7 +68,7 @@ const Landing = () => {
 
       {/* Stats */}
       <section className="relative bg-card/80 backdrop-blur-sm border-y border-border/50">
-        <div className="container py-12">
+        <div className="container py-10">
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
@@ -83,19 +83,19 @@ const Landing = () => {
       {/* Highlights */}
       <section className="section-padding">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-center max-w-2xl mx-auto mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-foreground">{t("landing.whyBeacon")}</h2>
             <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
             <p className="text-muted-foreground leading-snug">{t("landing.whyBeaconDesc")}</p>
             <p className="text-muted-foreground leading-snug mt-4">{t("landing.whyBeaconDesc2")}</p>
           </div>
-          <ul className="grid md:grid-cols-2 gap-6 list-none p-0 m-0">
+          <ul className="grid md:grid-cols-2 gap-5 list-none p-0 m-0">
             {highlights.map((h) => (
               <li
                 key={h.title}
                 className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(43_76%_55%/0.06)] transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/15 transition-colors">
                   <h.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 font-serif grid grid-cols-[1em_1fr] gap-x-2 items-start">
@@ -122,14 +122,7 @@ const Landing = () => {
             <div className="relative bg-background border border-border rounded-xl p-8 md:p-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-foreground">{t("landing.ctaTitle")}</h2>
               <div className="h-1 w-16 bg-primary rounded-full mx-auto mb-5" />
-              <p className="text-muted-foreground leading-snug mb-6">{t("landing.ctaDesc")}</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <LocalizedLink to="/">
-                  <Button variant="outline" size="lg" className="gap-2">
-                    {t("landing.exploreFirm")}
-                  </Button>
-                </LocalizedLink>
-              </div>
+              <p className="text-muted-foreground leading-snug">{t("landing.ctaDesc")}</p>
             </div>
           </div>
         </div>

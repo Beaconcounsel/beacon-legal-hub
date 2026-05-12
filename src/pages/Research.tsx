@@ -70,10 +70,10 @@ const ResearchPage = () => {
       {/* Research */}
       <section id="research" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.research")}</h2>
-          <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.researchDesc")}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("research.research")}</h2>
+          <div className="line-gold mb-5" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">{t("research.researchDesc")}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
             {researchItems.map((item) => (
               <div key={item.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-3" />
@@ -88,10 +88,10 @@ const ResearchPage = () => {
       {/* Training */}
       <section id="training" className="section-padding bg-card scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.training")}</h2>
-          <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.trainingDesc")}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("research.training")}</h2>
+          <div className="line-gold mb-5" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">{t("research.trainingDesc")}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
             {trainingItems.map((item) => (
               <div key={item.title} className="bg-background border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-3" />
@@ -106,10 +106,10 @@ const ResearchPage = () => {
       {/* Consultancy */}
       <section id="consultancy" className="section-padding scroll-mt-28">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4 font-serif text-foreground">{t("research.consultancy")}</h2>
-          <div className="line-gold mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">{t("research.consultancyDesc")}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("research.consultancy")}</h2>
+          <div className="line-gold mb-5" />
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">{t("research.consultancyDesc")}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
             {consultancyItems.map((item) => (
               <div key={item.title} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-3" />
