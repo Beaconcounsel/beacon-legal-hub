@@ -442,10 +442,10 @@ const HomePage = () => {
                     <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
                       <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-6 md:p-10 w-full text-left">
                         <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="w-[320px] md:w-[420px] lg:w-[520px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                          <div className="w-[224px] md:w-[294px] lg:w-[364px] max-w-full aspect-[1578/1973] flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
                             <ResponsiveImage
                               source={mosesImage}
-                              sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
+                              sizes="(max-width: 768px) 224px, (max-width: 1024px) 294px, 364px"
                               alt="Moses Katusime – Senior Partner, Legal & Corporate Governance"
                               className="w-full h-full object-cover object-[center_top]"
                             />
