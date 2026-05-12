@@ -36,7 +36,7 @@ const Landing = () => {
         - Inner Auto Layout (Vertical): gap 16/24px, items hug content, left aligned
         - Tagline max-w 720px (640px on smaller wrap), 2–3 lines, sits in top-40% safe zone
       */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden">
         {/* Hero / Image */}
         <ResponsiveImage
           source={kigaliCityImage}
@@ -58,7 +58,7 @@ const Landing = () => {
           <div className="mx-auto w-full max-w-[1100px] px-6 md:px-8">
             {/* Auto Layout (Vertical), gap-3 (12px) → md gap-4 (16px), items-start */}
             <div className="flex flex-col items-start gap-3 md:gap-4">
-              <p className="max-w-[680px] text-lg md:text-xl lg:text-2xl font-medium leading-snug text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+              <p className="max-w-[680px] text-base md:text-lg lg:text-xl font-medium leading-snug text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                 {t("landing.heroTagline")}
               </p>
             </div>
