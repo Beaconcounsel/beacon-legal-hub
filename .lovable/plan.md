@@ -1,8 +1,33 @@
-## Plan: Double the favicon shape size
+## Plan: Add sitemap.xml and update robots.txt
 
-The current favicon has ~6% transparent padding around the two circles. Doubling the shape size means removing that padding entirely so the artwork fills the canvas edge-to-edge (the large dark circle touches the bottom/sides; the gold dot sits at the top with the gap between them preserved).
+### Files to create/modify
 
-1. Re-crop `public/favicon.png` tightly to the alpha bounding box (no padding) and re-export at 512×512.
-2. Regenerate `public/favicon.ico` from the new PNG with sizes 16/32/48 so the bigger artwork carries through to small browser tab sizes.
-3. Cache-bust in `index.html` by appending `?v=2` to the `<link rel="icon">` hrefs so browsers pick up the new files immediately.
-4. Verify by zooming into the new 16/32 px renders.
+1. **Create `public/sitemap.xml`** — static XML sitemap listing all public routes (English + French), using `https://beaconattorneys.rw` as the base URL.
+
+2. **Update `public/robots.txt`** — keep existing `User-agent` blocks, append a `Sitemap:` directive pointing to `https://beaconattorneys.rw/sitemap.xml`.
+
+### Routes to include
+
+Public, indexable routes from `src/App.tsx` (omit `/auth`, `/admin`, `/booking/cancel`, and `*`):
+
+English:
+- `/`
+- `/home`
+- `/practice-areas`
+- `/insights`
+- `/research`
+- `/our-approach`
+- `/contact`
+- `/booking`
+- `/cookie-policy`
+- `/privacy-policy`
+- `/terms-of-use`
+
+French equivalents:
+- `/fr`, `/fr/home`, `/fr/practice-areas`, `/fr/insights`, `/fr/research`, `/fr/our-approach`, `/fr/contact`, `/fr/booking`, `/fr/cookie-policy`, `/fr/privacy-policy`, `/fr/terms-of-use`
+
+### Notes
+
+- Static file (no generator script) since routes are fully static.
+- `/` gets priority 1.0 / weekly; legal pages get lower priority (0.3 / yearly); main content pages 0.8 / monthly.
+- No code changes outside `public/`.
