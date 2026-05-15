@@ -1,7 +1,8 @@
-The current `public/favicon.png` has the two circles small inside a large transparent canvas, so it renders tiny in the browser tab compared to Lovable's favicon, which fills its canvas edge-to-edge.
+## Plan: Double the favicon shape size
 
-## Plan
+The current favicon has ~6% transparent padding around the two circles. Doubling the shape size means removing that padding entirely so the artwork fills the canvas edge-to-edge (the large dark circle touches the bottom/sides; the gold dot sits at the top with the gap between them preserved).
 
-1. Regenerate `public/favicon.png` via `imagegen--edit_image` from the existing favicon, instructing it to scale the two-circle composition up so the shapes fill the square canvas with only a small uniform margin (matching how the Lovable favicon fills its canvas). Keep transparent background, no text, clear gap between the dot and the large circle.
-2. Verify visually that the circles now occupy the full canvas.
-3. No other changes — `index.html` already points at `/favicon.png`.
+1. Re-crop `public/favicon.png` tightly to the alpha bounding box (no padding) and re-export at 512×512.
+2. Regenerate `public/favicon.ico` from the new PNG with sizes 16/32/48 so the bigger artwork carries through to small browser tab sizes.
+3. Cache-bust in `index.html` by appending `?v=2` to the `<link rel="icon">` hrefs so browsers pick up the new files immediately.
+4. Verify by zooming into the new 16/32 px renders.
