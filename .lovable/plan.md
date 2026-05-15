@@ -1,8 +1,7 @@
-## Plan: Replace favicon with Beacon logo circles
+The current `public/favicon.png` has the two circles small inside a large transparent canvas, so it renders tiny in the browser tab compared to Lovable's favicon, which fills its canvas edge-to-edge.
 
-1. **Generate favicon image** using `imagegen--edit_image` on `src/assets/optimized/beacon-logo-380.png` with prompt to extract only the large dark teal circle (bottom) and small yellow dot (top), keeping clear space between them, no text/letters, on a transparent background. Save as `public/favicon.png` (square, optimized for 32×32 / 16×16 readability — bold simple shapes).
-2. **Delete** the existing `public/favicon.ico` so it doesn't override the new one.
-3. **Update `index.html`** `<link rel="icon">` to point to `/favicon.png` with `type="image/png"`.
-4. **Verify** by viewing the generated PNG to confirm it shows just the two circles with proper spacing and renders clearly at small sizes.
+## Plan
 
-No other site changes.
+1. Regenerate `public/favicon.png` via `imagegen--edit_image` from the existing favicon, instructing it to scale the two-circle composition up so the shapes fill the square canvas with only a small uniform margin (matching how the Lovable favicon fills its canvas). Keep transparent background, no text, clear gap between the dot and the large circle.
+2. Verify visually that the circles now occupy the full canvas.
+3. No other changes — `index.html` already points at `/favicon.png`.
