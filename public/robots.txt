@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://beaconattorneys.rw/sitemap.xml
+Sitemap: https://beacon-legal-hub.lovable.app/sitemap.xml
