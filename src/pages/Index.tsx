@@ -79,12 +79,12 @@ const HomePage = () => {
       <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
       {/* Hero — fits in one viewport */}
       <section className="relative w-full h-[70vh] overflow-hidden bg-navy flex flex-col pt-[54px] md:pt-[64px]">
-        <div className="flex-1 min-h-0 mx-auto w-[35%] max-w-full">
+        <div className="flex-1 min-h-0 w-full">
           <ResponsiveImage
             source={partnersHeroImage}
-            sizes="35vw"
+            sizes="100vw"
             alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-            className="w-full h-full object-contain object-top block"
+            className="w-full h-full object-cover object-center block"
             priority
           />
         </div>
