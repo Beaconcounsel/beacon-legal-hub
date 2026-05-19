@@ -84,7 +84,7 @@ const HomePage = () => {
             source={partnersHeroImage}
             sizes="100vw"
             alt="Beacon Attorneyes partners – Daniel Mutiganda and Moses Katusime"
-            className="w-full h-full object-cover object-center block"
+            className="w-full h-full object-cover object-[30%_30%] block"
             priority
           />
         </div>
