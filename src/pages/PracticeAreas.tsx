@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
+import { ArrowRight, Briefcase, FileText, Building2, ScrollText, ClipboardList, Zap, Landmark, Laptop, Wheat, ChevronLeft, ChevronRight, BookOpen, FileSignature, ShieldCheck, Users, Scale, Calculator, Home, TrendingUp, Globe, Lightbulb, Lock, Plane, RefreshCw, Umbrella } from "lucide-react";
 import { practiceAreasHeroImage } from "@/assets/optimized";
 import ResponsiveImage from "@/components/ResponsiveImage";
 
@@ -19,6 +19,25 @@ const PracticeAreasPage = () => {
     "realEstate", "privateWealth", "ngoGovernance", "intellectualProperty",
     "techDataProtection", "migration", "insolvency", "insurance",
   ] as const;
+
+  const areaIcons: Record<string, any> = {
+    corporateCommercial: Building2,
+    contractAdvisory: FileSignature,
+    regulatoryCompliance: ShieldCheck,
+    employmentLabour: Users,
+    oilGasEnergy: Zap,
+    bankingFinancial: Landmark,
+    disputeResolution: Scale,
+    taxCorporate: Calculator,
+    realEstate: Home,
+    privateWealth: TrendingUp,
+    ngoGovernance: Globe,
+    intellectualProperty: Lightbulb,
+    techDataProtection: Lock,
+    migration: Plane,
+    insolvency: RefreshCw,
+    insurance: Umbrella,
+  };
 
   const serviceKeys = ["businessOperational", "representation", "whitePaper", "procedureCompliance", "transactionDoc", "estatePlanning"] as const;
   const serviceIcons = [Briefcase, Building2, FileText, ScrollText, ClipboardList, BookOpen];
@@ -69,28 +88,36 @@ const PracticeAreasPage = () => {
       {/* Areas of Expertise */}
       <section id="expertise" className="section-padding scroll-mt-28">
         <div className="container">
-          <div className="space-y-5">
-            {areaKeys.map((key, i) => (
-              <div key={i} className="bg-card border border-border rounded-lg p-5 md:p-6 hover:border-primary/30 transition-colors">
-                <div className="flex items-start gap-3">
-                  <span className="text-justice font-serif text-lg font-bold mt-1">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2 font-serif">{t(`practiceAreas.areas.${key}.title`)}</h3>
-                    <p className="text-muted-foreground leading-snug mb-3">{t(`practiceAreas.areas.${key}.description`)}</p>
-                    {t(`practiceAreas.areas.${key}.subsection`, { defaultValue: "" }) && (
-                      <div className="bg-secondary/50 border border-border rounded-md p-4 mb-3">
-                        <p className="text-sm text-foreground/80">{t(`practiceAreas.areas.${key}.subsection`)}</p>
-                      </div>
-                    )}
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">
-                      <span className="text-primary">{t("practiceAreas.clientsLabel")}</span> {t(`practiceAreas.areas.${key}.clients`)}
-                    </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center mb-10 md:mb-12">
+            {t("practiceAreas.heroTagline2")}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {areaKeys.map((key, i) => {
+              const Icon = areaIcons[key];
+              return (
+                <div
+                  key={i}
+                  className="bg-card border border-border rounded-lg p-5 md:p-6 flex flex-col transition-all hover:border-primary/40 hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  {Icon && <Icon className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />}
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-justice font-serif text-lg font-bold">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-xl font-bold font-serif">{t(`practiceAreas.areas.${key}.title`)}</h3>
                   </div>
+                  <p className="text-muted-foreground leading-snug mb-3 text-sm">{t(`practiceAreas.areas.${key}.description`)}</p>
+                  {t(`practiceAreas.areas.${key}.subsection`, { defaultValue: "" }) && (
+                    <div className="bg-secondary/50 border border-border rounded-md p-3 mb-3">
+                      <p className="text-xs text-foreground/80">{t(`practiceAreas.areas.${key}.subsection`)}</p>
+                    </div>
+                  )}
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mt-auto pt-3">
+                    <span className="text-primary">{t("practiceAreas.clientsLabel")}</span> {t(`practiceAreas.areas.${key}.clients`)}
+                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="text-center mt-8">
           </div>
@@ -120,9 +147,6 @@ const PracticeAreasPage = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-3 font-serif text-foreground">{t("practiceAreas.ourServices")}</h2>
           <div className="line-gold mb-6" />
-          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 max-w-3xl mb-6">
-            {t("practiceAreas.heroTagline2")}
-          </p>
           <ServicesCarousel serviceKeys={serviceKeys} serviceIcons={serviceIcons} t={t} />
           <div className="text-center mt-8">
           </div>
