@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -56,6 +57,8 @@ const StepCard = ({
   summary,
   onEdit,
   children,
+  stepLabel,
+  editLabel,
 }: {
   index: number;
   title: string;
@@ -63,6 +66,8 @@ const StepCard = ({
   summary?: string;
   onEdit?: () => void;
   children?: React.ReactNode;
+  stepLabel: string;
+  editLabel: string;
 }) => {
   const collapsed = state === "done";
   return (
@@ -90,7 +95,7 @@ const StepCard = ({
           </div>
           <div className="min-w-0">
             <p className={cn("text-sm font-semibold", state === "locked" ? "text-muted-foreground" : "text-foreground")}>
-              Step {index} — {title}
+              {stepLabel} {index} — {title}
             </p>
             {collapsed && summary && (
               <p className="text-xs text-muted-foreground truncate">{summary}</p>
@@ -99,7 +104,7 @@ const StepCard = ({
         </div>
         {collapsed && onEdit && (
           <Button type="button" variant="ghost" size="sm" onClick={onEdit}>
-            <Pencil className="w-3.5 h-3.5 mr-1" /> Edit
+            <Pencil className="w-3.5 h-3.5 mr-1" /> {editLabel}
           </Button>
         )}
       </div>
@@ -109,6 +114,7 @@ const StepCard = ({
 };
 
 const BookConsultation = () => {
+  const { t } = useTranslation();
   const [opened, setOpened] = useState(false);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
   const [step1Done, setStep1Done] = useState(false);
