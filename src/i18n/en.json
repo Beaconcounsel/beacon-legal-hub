@@ -167,30 +167,114 @@
     "discussIndustry": "Discuss Your Industry Needs",
     "discussNeeds": "Discuss Your Needs",
     "areas": {
-      "corporateCommercial": { "title": "Corporate & Commercial Law", "description": "We advise businesses on formation, governance, mergers, acquisitions, and day-to-day commercial operations. Our team structures transactions that protect interests and drive growth.", "clients": "Corporations, SMEs, multinationals, joint ventures" },
-      "contractAdvisory": { "title": "Contract Advisory & Negotiation", "description": "We draft, review, and negotiate complex commercial contracts—from supply agreements to multi-party frameworks—ensuring enforceability and risk mitigation at every stage.", "clients": "All business entities, procurement teams, government agencies" },
-      "regulatoryCompliance": { "title": "Regulatory Compliance & Advisory", "description": "We navigate Rwanda's evolving regulatory landscape, advising on licensing, permits, sector-specific compliance, and government relations to ensure seamless operations.", "clients": "Financial institutions, energy companies, healthcare providers, fintechs" },
-      "employmentLabour": { "title": "Employment & Labour Law", "description": "We advise on employment contracts, workplace policies, dispute resolution, and compliance with Rwanda's labour code. Our Leadership Recruitment practice supports executive hiring, compensation structuring, and governance alignment for boards and C-suite positions.", "clients": "Employers, HR departments, boards of directors", "subsection": "Leadership Recruitment: We advise on executive search strategy, compensation structures, non-compete frameworks, and governance alignment for senior appointments." },
-      "oilGasEnergy": { "title": "Oil, Gas & Energy Law", "description": "We act for energy companies, governments, and investors on exploration agreements, production-sharing contracts, regulatory approvals, and environmental compliance across the energy value chain.", "clients": "Energy companies, infrastructure developers, government agencies, investors" },
-      "bankingFinancial": { "title": "Banking & Financial Services", "description": "We structure and advise on project finance, banking regulations, securities, fund formation, and cross-border investment transactions with precision and speed.", "clients": "Banks, investment funds, private equity, institutional investors" },
-      "disputeResolution": { "title": "Dispute Resolution & Arbitration", "description": "We represent clients in complex commercial disputes through litigation, arbitration, and mediation—both domestically and in international fora—with a focus on strategic, outcome-driven resolution.", "clients": "Corporations, investors, government entities, international organizations" },
-      "taxCorporate": { "title": "Tax & Corporate Structuring", "description": "We advise on tax-efficient structures, transfer pricing, VAT compliance, and cross-border tax planning to minimize exposure and optimize corporate architecture.", "clients": "Multinational companies, holding structures, HNWIs, family offices" },
-      "realEstate": { "title": "Real Estate, Construction & Property Law", "description": "We handle land acquisition, due diligence, construction contracts, development agreements, leasing, and property disputes—supporting clients from site selection through project completion.", "clients": "Real estate developers, construction firms, investors, hospitality groups, institutions" },
-      "privateWealth": { "title": "Asset Management", "description": "We advise on asset management structures, investment funds (formation, licensing, and ongoing compliance), portfolio holding vehicles, and wealth preservation strategies—serving institutional and high-net-worth clients with precision and discretion.", "clients": "Asset managers, investment funds, HNWIs, family offices, institutional investors", "subsection": "Investment Funds: Fund formation, regulatory licensing, fund governance, investor onboarding, and cross-border fund structuring." },
-      "ngoGovernance": { "title": "NGO, Institutional & Governance Advisory", "description": "We advise NGOs, international organizations, and public institutions on governance structures, regulatory compliance, donor agreements, and institutional best practices.", "clients": "International NGOs, development agencies, foundations, public institutions" },
-      "intellectualProperty": { "title": "Intellectual Property Law", "description": "We protect brands, inventions, and creative works through trademark registration, patent advisory, licensing agreements, and IP enforcement strategies.", "clients": "Technology companies, creatives, manufacturers, pharmaceutical firms" },
-      "techDataProtection": { "title": "Technology & Data Protection Law", "description": "We advise on data privacy compliance, cybersecurity frameworks, technology licensing, and digital commerce regulations in Rwanda's rapidly evolving tech landscape.", "clients": "Tech startups, fintechs, e-commerce platforms, data processors" },
-      "migration": { "title": "Migration Law", "description": "We advise individuals and organizations on work permits, residence visas, investor permits, and immigration compliance for expatriate employees and international personnel.", "clients": "Expatriates, multinational employers, international organizations" },
-      "insolvency": { "title": "Insolvency & Restructuring Law", "description": "We represent creditors and debtors in insolvency proceedings, corporate restructuring, and turnaround strategies—protecting value and managing complex stakeholder dynamics.", "clients": "Distressed companies, creditors, banks, investors" },
-      "insurance": { "title": "Insurance Law", "description": "We advise insurers and policyholders on regulatory compliance, policy disputes, claims management, and reinsurance arrangements across all lines of coverage.", "clients": "Insurance companies, brokers, corporate policyholders" }
+      "corporateCommercial": {
+        "title": "Corporate & Commercial Law",
+        "description": "We advise businesses on formation, governance, mergers, acquisitions, and day-to-day commercial operations. Our team structures transactions that protect interests and drive growth.",
+        "clients": "Corporations, SMEs, multinationals, joint ventures"
+      },
+      "contractAdvisory": {
+        "title": "Contract Advisory & Negotiation",
+        "description": "We draft, review, and negotiate complex commercial contracts—from supply agreements to multi-party frameworks—ensuring enforceability and risk mitigation at every stage.",
+        "clients": "All business entities, procurement teams, government agencies"
+      },
+      "regulatoryCompliance": {
+        "title": "Regulatory Compliance & Advisory",
+        "description": "We navigate Rwanda's evolving regulatory landscape, advising on licensing, permits, sector-specific compliance, and government relations to ensure seamless operations.",
+        "clients": "Financial institutions, energy companies, healthcare providers, fintechs"
+      },
+      "employmentLabour": {
+        "title": "Employment & Labour Law",
+        "description": "We advise on employment contracts, workplace policies, dispute resolution, and compliance with Rwanda's labour code. Our Leadership Recruitment practice supports executive hiring, compensation structuring, and governance alignment for boards and C-suite positions.",
+        "clients": "Employers, HR departments, boards of directors",
+        "subsection": "Leadership Recruitment: We advise on executive search strategy, compensation structures, non-compete frameworks, and governance alignment for senior appointments."
+      },
+      "oilGasEnergy": {
+        "title": "Oil, Gas & Energy Law",
+        "description": "We act for energy companies, governments, and investors on exploration agreements, production-sharing contracts, regulatory approvals, and environmental compliance across the energy value chain.",
+        "clients": "Energy companies, infrastructure developers, government agencies, investors"
+      },
+      "bankingFinancial": {
+        "title": "Banking & Financial Services",
+        "description": "We structure and advise on project finance, banking regulations, securities, fund formation, and cross-border investment transactions with precision and speed.",
+        "clients": "Banks, investment funds, private equity, institutional investors"
+      },
+      "disputeResolution": {
+        "title": "Dispute Resolution & Arbitration",
+        "description": "We represent clients in complex commercial disputes through litigation, arbitration, and mediation—both domestically and in international fora—with a focus on strategic, outcome-driven resolution.",
+        "clients": "Corporations, investors, government entities, international organizations"
+      },
+      "taxCorporate": {
+        "title": "Tax & Corporate Structuring",
+        "description": "We advise on tax-efficient structures, transfer pricing, VAT compliance, and cross-border tax planning to minimize exposure and optimize corporate architecture.",
+        "clients": "Multinational companies, holding structures, HNWIs, family offices"
+      },
+      "realEstate": {
+        "title": "Real Estate, Construction & Property Law",
+        "description": "We handle land acquisition, due diligence, construction contracts, development agreements, leasing, and property disputes—supporting clients from site selection through project completion.",
+        "clients": "Real estate developers, construction firms, investors, hospitality groups, institutions"
+      },
+      "privateWealth": {
+        "title": "Asset Management",
+        "description": "We advise on asset management structures, investment funds (formation, licensing, and ongoing compliance), portfolio holding vehicles, and wealth preservation strategies—serving institutional and high-net-worth clients with precision and discretion.",
+        "clients": "Asset managers, investment funds, HNWIs, family offices, institutional investors",
+        "subsection": "Investment Funds: Fund formation, regulatory licensing, fund governance, investor onboarding, and cross-border fund structuring."
+      },
+      "ngoGovernance": {
+        "title": "NGO, Institutional & Governance Advisory",
+        "description": "We advise NGOs, international organizations, and public institutions on governance structures, regulatory compliance, donor agreements, and institutional best practices.",
+        "clients": "International NGOs, development agencies, foundations, public institutions"
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property Law",
+        "description": "We protect brands, inventions, and creative works through trademark registration, patent advisory, licensing agreements, and IP enforcement strategies.",
+        "clients": "Technology companies, creatives, manufacturers, pharmaceutical firms"
+      },
+      "techDataProtection": {
+        "title": "Technology & Data Protection Law",
+        "description": "We advise on data privacy compliance, cybersecurity frameworks, technology licensing, and digital commerce regulations in Rwanda's rapidly evolving tech landscape.",
+        "clients": "Tech startups, fintechs, e-commerce platforms, data processors"
+      },
+      "migration": {
+        "title": "Migration Law",
+        "description": "We advise individuals and organizations on work permits, residence visas, investor permits, and immigration compliance for expatriate employees and international personnel.",
+        "clients": "Expatriates, multinational employers, international organizations"
+      },
+      "insolvency": {
+        "title": "Insolvency & Restructuring Law",
+        "description": "We represent creditors and debtors in insolvency proceedings, corporate restructuring, and turnaround strategies—protecting value and managing complex stakeholder dynamics.",
+        "clients": "Distressed companies, creditors, banks, investors"
+      },
+      "insurance": {
+        "title": "Insurance Law",
+        "description": "We advise insurers and policyholders on regulatory compliance, policy disputes, claims management, and reinsurance arrangements across all lines of coverage.",
+        "clients": "Insurance companies, brokers, corporate policyholders"
+      }
     },
     "services": {
-      "businessOperational": { "title": "Innovative Business Solutions", "desc": "Whether you're a startup entrepreneur, an emerging growth company seeking maximum efficiency through business restructuring, or a well-established corporation aiming to raise capital, mitigate uncertainty through carefully drafted contracts and agreements, or navigate complex employment issues, we can help. As a multi-practice firm, our business lawyers and tax consultants provide a comprehensive suite of services to address the full range of challenges companies face." },
-      "representation": { "title": "Representation Before Regulatory Bodies & Courts", "desc": "We represent clients before regulatory authorities, tribunals, and courts of law—advocating for their interests with precision and authority across all levels of jurisdiction." },
-      "whitePaper": { "title": "White Paper & Policy Consultancy", "desc": "We draft and advise on white papers, policy documents, and position papers that shape industry standards and inform regulatory development." },
-      "procedureCompliance": { "title": "Procedure & Compliance Development", "desc": "We design internal procedures, compliance frameworks, and operational manuals that ensure organizations meet regulatory requirements and industry best practices." },
-      "transactionDoc": { "title": "Legal Transaction Documentation", "desc": "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation." },
-      "estatePlanning": { "title": "Estate Planning and Administration", "desc": "An Estate Plan is more than deciding how to divide your assets; it is your opportunity to make decisions that impact the people, charities, and causes you care most about. While what is most important to your Estate Plan may differ at each stage of your life, the necessity of having the right Estate Plan in place will remain constant." }
+      "businessOperational": {
+        "title": "Innovative Business Solutions",
+        "desc": "Whether you're a startup entrepreneur, an emerging growth company seeking maximum efficiency through business restructuring, or a well-established corporation aiming to raise capital, mitigate uncertainty through carefully drafted contracts and agreements, or navigate complex employment issues, we can help. As a multi-practice firm, our business lawyers and tax consultants provide a comprehensive suite of services to address the full range of challenges companies face."
+      },
+      "representation": {
+        "title": "Representation Before Regulatory Bodies & Courts",
+        "desc": "We represent clients before regulatory authorities, tribunals, and courts of law—advocating for their interests with precision and authority across all levels of jurisdiction."
+      },
+      "whitePaper": {
+        "title": "White Paper & Policy Consultancy",
+        "desc": "We draft and advise on white papers, policy documents, and position papers that shape industry standards and inform regulatory development."
+      },
+      "procedureCompliance": {
+        "title": "Procedure & Compliance Development",
+        "desc": "We design internal procedures, compliance frameworks, and operational manuals that ensure organizations meet regulatory requirements and industry best practices."
+      },
+      "transactionDoc": {
+        "title": "Legal Transaction Documentation",
+        "desc": "We prepare, review, and negotiate all forms of legal transaction documents—including agreements, memoranda of understanding, term sheets, and closing documentation."
+      },
+      "estatePlanning": {
+        "title": "Estate Planning and Administration",
+        "desc": "An Estate Plan is more than deciding how to divide your assets; it is your opportunity to make decisions that impact the people, charities, and causes you care most about. While what is most important to your Estate Plan may differ at each stage of your life, the necessity of having the right Estate Plan in place will remain constant."
+      }
     },
     "industries": {
       "energy": "Energy & Infrastructure",
@@ -207,11 +291,26 @@
     "howWeServeDesc": "We combine rigorous legal analysis with strategic business thinking to deliver outcomes, not just recommendations.",
     "scheduleConsultation": "Schedule a Consultation",
     "pillars": {
-      "resultsDriven": { "title": "Results-Driven Counsel", "desc": "We don't stop at recommendations. Our team drives toward actionable outcomes that create tangible value for your business." },
-      "executiveLevel": { "title": "Executive-Level Understanding", "desc": "Having held executive business and legal leadership roles, our partners understand the pressures, priorities, and pace of decision-making at the highest levels." },
-      "businessFirst": { "title": "Business-First Mindset", "desc": "We translate complex legal frameworks into clear business strategies. Every piece of advice is shaped by commercial reality, not just legal theory." },
-      "strategicProblem": { "title": "Strategic Problem Solving", "desc": "We anticipate challenges before they arise and design solutions that protect your interests while advancing your objectives." },
-      "partnership": { "title": "Partnership, Not Just Representation", "desc": "We embed ourselves in your operations, becoming an extension of your leadership team to deliver sustained, measurable impact." }
+      "resultsDriven": {
+        "title": "Results-Driven Counsel",
+        "desc": "We don't stop at recommendations. Our team drives toward actionable outcomes that create tangible value for your business."
+      },
+      "executiveLevel": {
+        "title": "Executive-Level Understanding",
+        "desc": "Having held executive business and legal leadership roles, our partners understand the pressures, priorities, and pace of decision-making at the highest levels."
+      },
+      "businessFirst": {
+        "title": "Business-First Mindset",
+        "desc": "We translate complex legal frameworks into clear business strategies. Every piece of advice is shaped by commercial reality, not just legal theory."
+      },
+      "strategicProblem": {
+        "title": "Strategic Problem Solving",
+        "desc": "We anticipate challenges before they arise and design solutions that protect your interests while advancing your objectives."
+      },
+      "partnership": {
+        "title": "Partnership, Not Just Representation",
+        "desc": "We embed ourselves in your operations, becoming an extension of your leadership team to deliver sustained, measurable impact."
+      }
     },
     "internationalClients": "International Clients",
     "internationalDesc": "We bridge international expectations with local legal execution for global investors and multinational organizations operating in Rwanda and East Africa.",
@@ -228,11 +327,26 @@
       "Investor protection and incentive frameworks"
     ],
     "intlServices": {
-      "marketEntry": { "title": "Market Entry Advisory", "desc": "We guide international investors through Rwanda's regulatory requirements, company registration, licensing, and sector-specific compliance for seamless market entry." },
-      "crossBorder": { "title": "Cross-Border Legal Coordination", "desc": "We coordinate with international law firms to ensure alignment across jurisdictions, managing multi-party transactions with precision." },
-      "localRegulatory": { "title": "Local Regulatory Expertise", "desc": "Our deep understanding of Rwanda's legal framework ensures compliance with investment codes, tax incentives, and sector regulations." },
-      "riskMitigation": { "title": "Risk Mitigation", "desc": "We identify and address legal, regulatory, and business risks to protect your investment and ensure long-term sustainability." },
-      "jointVentures": { "title": "Joint Ventures & Partnerships", "desc": "We structure partnerships with local entities, negotiate JV agreements, and ensure governance frameworks that protect all stakeholders." }
+      "marketEntry": {
+        "title": "Market Entry Advisory",
+        "desc": "We guide international investors through Rwanda's regulatory requirements, company registration, licensing, and sector-specific compliance for seamless market entry."
+      },
+      "crossBorder": {
+        "title": "Cross-Border Legal Coordination",
+        "desc": "We coordinate with international law firms to ensure alignment across jurisdictions, managing multi-party transactions with precision."
+      },
+      "localRegulatory": {
+        "title": "Local Regulatory Expertise",
+        "desc": "Our deep understanding of Rwanda's legal framework ensures compliance with investment codes, tax incentives, and sector regulations."
+      },
+      "riskMitigation": {
+        "title": "Risk Mitigation",
+        "desc": "We identify and address legal, regulatory, and business risks to protect your investment and ensure long-term sustainability."
+      },
+      "jointVentures": {
+        "title": "Joint Ventures & Partnerships",
+        "desc": "We structure partnerships with local entities, negotiate JV agreements, and ensure governance frameworks that protect all stakeholders."
+      }
     },
     "scheduleIntlConsultation": "Schedule an International Consultation",
     "proBono": "Pro Bono Services",
@@ -252,27 +366,60 @@
     "research": "Research",
     "researchDesc": "Our research practice generates actionable insights that shape policy, inform business strategy, and advance the rule of law. We contribute to the legal and commercial knowledge base through rigorous analysis of emerging issues.",
     "items": {
-      "legalFramework": { "title": "Legal Framework Analysis", "desc": "In-depth studies of Rwanda's evolving regulatory environment, identifying opportunities and compliance requirements for businesses and investors." },
-      "crossBorder": { "title": "Cross-Border Investment Research", "desc": "Comparative analysis of investment frameworks across East Africa, helping businesses understand market entry requirements and regulatory harmonization." },
-      "policyReview": { "title": "Policy & Legislative Review", "desc": "Critical assessment of proposed legislation and policy changes, providing stakeholders with evidence-based perspectives on potential business impact." }
+      "legalFramework": {
+        "title": "Legal Framework Analysis",
+        "desc": "In-depth studies of Rwanda's evolving regulatory environment, identifying opportunities and compliance requirements for businesses and investors."
+      },
+      "crossBorder": {
+        "title": "Cross-Border Investment Research",
+        "desc": "Comparative analysis of investment frameworks across East Africa, helping businesses understand market entry requirements and regulatory harmonization."
+      },
+      "policyReview": {
+        "title": "Policy & Legislative Review",
+        "desc": "Critical assessment of proposed legislation and policy changes, providing stakeholders with evidence-based perspectives on potential business impact."
+      }
     },
     "commissionResearch": "Commission Research",
     "training": "Training",
     "trainingDesc": "We design and deliver practical training programmes that equip professionals, communities, and organizations with the legal knowledge needed to operate confidently and compliantly.",
     "trainingItems": {
-      "youthLegal": { "title": "Youth Legal Literacy & Entrepreneurship", "desc": "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses." },
-      "womenBusiness": { "title": "Women in Business Law", "desc": "Targeted programmes covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs." },
-      "smeLegal": { "title": "SME Legal Structuring", "desc": "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises." },
-      "farmerCoops": { "title": "Farmer Cooperatives", "desc": "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities." },
-      "ngoGovernance": { "title": "NGO Governance & Compliance", "desc": "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices." }
+      "youthLegal": {
+        "title": "Youth Legal Literacy & Entrepreneurship",
+        "desc": "Empowering young Rwandans with foundational legal knowledge and entrepreneurial skills to build compliant, sustainable businesses."
+      },
+      "womenBusiness": {
+        "title": "Women in Business Law",
+        "desc": "Targeted programmes covering business registration, contract negotiation, property rights, and financial literacy for women entrepreneurs."
+      },
+      "smeLegal": {
+        "title": "SME Legal Structuring",
+        "desc": "Practical workshops on business structuring, tax compliance, employment law, and regulatory requirements for growing enterprises."
+      },
+      "farmerCoops": {
+        "title": "Farmer Cooperatives",
+        "desc": "Training on land rights, agricultural contracts, cooperative governance, and compliance for farming communities."
+      },
+      "ngoGovernance": {
+        "title": "NGO Governance & Compliance",
+        "desc": "Capacity building for NGOs on governance frameworks, donor compliance, regulatory filings, and organizational best practices."
+      }
     },
     "inquireTraining": "Inquire About Training Programmes",
     "consultancy": "Consultancy",
     "consultancyDesc": "Our consultancy practice provides strategic advisory services to organizations seeking to navigate complex legal, regulatory, and business environments with confidence.",
     "consultancyItems": {
-      "businessEnv": { "title": "Business Environment Advisory", "desc": "Guiding investors and enterprises through Rwanda's business landscape, from market entry strategy to operational compliance and growth planning." },
-      "regulatoryImpact": { "title": "Regulatory Impact Assessment", "desc": "Evaluating how regulatory changes affect business operations, and developing compliance strategies that minimize disruption." },
-      "justiceSector": { "title": "Justice Sector Strengthening", "desc": "Partnering with institutions to improve access to justice, strengthen dispute resolution mechanisms, and promote the rule of law for all." }
+      "businessEnv": {
+        "title": "Business Environment Advisory",
+        "desc": "Guiding investors and enterprises through Rwanda's business landscape, from market entry strategy to operational compliance and growth planning."
+      },
+      "regulatoryImpact": {
+        "title": "Regulatory Impact Assessment",
+        "desc": "Evaluating how regulatory changes affect business operations, and developing compliance strategies that minimize disruption."
+      },
+      "justiceSector": {
+        "title": "Justice Sector Strengthening",
+        "desc": "Partnering with institutions to improve access to justice, strengthen dispute resolution mechanisms, and promote the rule of law for all."
+      }
     },
     "requestConsultancy": "Request a Consultancy Engagement"
   },
@@ -295,11 +442,36 @@
     "tagline": "Our thought leadership reflects the depth of our expertise and our commitment to keeping clients informed on critical legal and regulatory developments.",
     "subscribe": "Subscribe to Our Updates",
     "articles": {
-      "foreignInvestors": { "title": "Legal Considerations for Foreign Investors in Rwanda", "excerpt": "An overview of Rwanda's investment code, regulatory requirements, and strategic considerations for international investors seeking to establish or expand operations in the country.", "date": "March 2026", "category": "Investment" },
-      "structuringInvestments": { "title": "Structuring Investments in Emerging Markets", "excerpt": "Key legal and tax structuring considerations for cross-border investments into East African markets, including holding structures, treaty planning, and risk allocation.", "date": "February 2026", "category": "Corporate" },
-      "corporateGovernance": { "title": "Corporate Governance Best Practices for Rwandan Entities", "excerpt": "A practical guide to board composition, shareholder agreements, conflict of interest policies, and governance frameworks aligned with international standards.", "date": "January 2026", "category": "Governance" },
-      "dataProtection": { "title": "Data Protection Compliance in Rwanda's Digital Economy", "excerpt": "An analysis of Rwanda's data protection framework, cross-border data transfer requirements, and compliance strategies for technology companies.", "date": "December 2025", "category": "Technology" },
-      "employmentLaw": { "title": "Navigating Employment Law in Rwanda: A Guide for Employers", "excerpt": "Essential considerations for employment contracts, workplace policies, termination procedures, and compliance with Rwanda's labour code.", "date": "November 2025", "category": "Employment" }
+      "foreignInvestors": {
+        "title": "Legal Considerations for Foreign Investors in Rwanda",
+        "excerpt": "An overview of Rwanda's investment code, regulatory requirements, and strategic considerations for international investors seeking to establish or expand operations in the country.",
+        "date": "March 2026",
+        "category": "Investment"
+      },
+      "structuringInvestments": {
+        "title": "Structuring Investments in Emerging Markets",
+        "excerpt": "Key legal and tax structuring considerations for cross-border investments into East African markets, including holding structures, treaty planning, and risk allocation.",
+        "date": "February 2026",
+        "category": "Corporate"
+      },
+      "corporateGovernance": {
+        "title": "Corporate Governance Best Practices for Rwandan Entities",
+        "excerpt": "A practical guide to board composition, shareholder agreements, conflict of interest policies, and governance frameworks aligned with international standards.",
+        "date": "January 2026",
+        "category": "Governance"
+      },
+      "dataProtection": {
+        "title": "Data Protection Compliance in Rwanda's Digital Economy",
+        "excerpt": "An analysis of Rwanda's data protection framework, cross-border data transfer requirements, and compliance strategies for technology companies.",
+        "date": "December 2025",
+        "category": "Technology"
+      },
+      "employmentLaw": {
+        "title": "Navigating Employment Law in Rwanda: A Guide for Employers",
+        "excerpt": "Essential considerations for employment contracts, workplace policies, termination procedures, and compliance with Rwanda's labour code.",
+        "date": "November 2025",
+        "category": "Employment"
+      }
     }
   },
   "seo": {
@@ -441,5 +613,56 @@
       "title": "Contact",
       "text": "For questions regarding these Terms of Use, please contact us at info@beaconattorneys.rw."
     }
+  },
+  "bookConsult": {
+    "ctaButton": "Book a Consultation",
+    "close": "Close",
+    "step": "Step",
+    "edit": "Edit",
+    "legalInquiry": "Legal Inquiry",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "areaOfLaw": "Area of Law",
+    "selectArea": "Select area of law",
+    "message": "Message",
+    "describeLabel": "Describe your matter",
+    "describePlaceholder": "Briefly describe your matter, timeline, and any specific questions.",
+    "continue": "Continue",
+    "sendMessage": "Send Message",
+    "submit": "Submit",
+    "preferredChannel": "Preferred Channel",
+    "channelHint": "Choose one or both — we’ll only reach out through the channels you select.",
+    "pickSlot": "Pick a Time Slot",
+    "slotHint": "Available 1-hour slots, Mon–Fri, Africa/Kigali (CAT, UTC+2).",
+    "selectedSlot": "Selected slot",
+    "changeSlot": "Change slot",
+    "cancellationPolicy": "Cancellation Policy",
+    "policyLine1Pre": "Cancellations made",
+    "policyLine1Bold": "at least 24 hours",
+    "policyLine1Post": "in advance are free of charge.",
+    "policyLine2Pre": "Cancellations made",
+    "policyLine2Bold": "less than 24 hours",
+    "policyLine2Post": "beforehand require the full consultation fee.",
+    "policyLine3Pre": "",
+    "policyLine3Bold": "No-shows",
+    "policyLine3Post": "are also subject to the consultation fee.",
+    "acceptTerms": "I have read and accept the Terms & Conditions and cancellation policy. *",
+    "termsError": "You must accept the Terms & Conditions",
+    "confirming": "Confirming…",
+    "confirmBooking": "Confirm Booking",
+    "bookedTitle": "Consultation booked",
+    "bookedDesc": "We’ve sent a confirmation to {{email}}. We’ll reach out via {{channels}} ahead of your session.",
+    "bookAnother": "Book another",
+    "respondWithin24h": "Our team will get back to you within 24 hours",
+    "toastFields": "Please complete the required fields.",
+    "toastChannel": "Select at least one preferred channel.",
+    "toastSuccess": "Booking confirmed! Check your email for details.",
+    "toastFail": "Booking failed",
+    "toastError": "Something went wrong. Please try again.",
+    "matterType": "Matter Type",
+    "selectMatter": "Select matter type",
+    "required": "required",
+    "emailLabel": "Email Address"
   }
 }
