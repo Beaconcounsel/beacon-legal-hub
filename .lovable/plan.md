@@ -1,33 +1,17 @@
-## Plan: Add sitemap.xml and update robots.txt
+## Goal
+Update the home/About hero tagline text only.
 
-### Files to create/modify
+## Change
+In `src/i18n/en.json` (key `home.heroTagline`), replace:
 
-1. **Create `public/sitemap.xml`** — static XML sitemap listing all public routes (English + French), using `https://beaconattorneys.rw` as the base URL.
+> "Beacon Attorneys and Consultants is an established Kigali-based, multi-practice law firm optimally equipped to serve businesses, individuals, and institutions in Rwanda and East Africa."
 
-2. **Update `public/robots.txt`** — keep existing `User-agent` blocks, append a `Sitemap:` directive pointing to `https://beaconattorneys.rw/sitemap.xml`.
+with:
 
-### Routes to include
+> "Beacon Attorneys and Consultants is a Business law firm optimally equipped to serve businesses and institutions in Rwanda and East Africa."
 
-Public, indexable routes from `src/App.tsx` (omit `/auth`, `/admin`, `/booking/cancel`, and `*`):
+Mirror the same change in `src/i18n/fr.json` (`home.heroTagline`) with the French equivalent:
 
-English:
-- `/`
-- `/home`
-- `/practice-areas`
-- `/insights`
-- `/research`
-- `/our-approach`
-- `/contact`
-- `/booking`
-- `/cookie-policy`
-- `/privacy-policy`
-- `/terms-of-use`
+> "Beacon Attorneys and Consultants est un cabinet d'avocats d'affaires parfaitement équipé pour servir les entreprises et les institutions au Rwanda et en Afrique de l'Est."
 
-French equivalents:
-- `/fr`, `/fr/home`, `/fr/practice-areas`, `/fr/insights`, `/fr/research`, `/fr/our-approach`, `/fr/contact`, `/fr/booking`, `/fr/cookie-policy`, `/fr/privacy-policy`, `/fr/terms-of-use`
-
-### Notes
-
-- Static file (no generator script) since routes are fully static.
-- `/` gets priority 1.0 / weekly; legal pages get lower priority (0.3 / yearly); main content pages 0.8 / monthly.
-- No code changes outside `public/`.
+No styling, layout, component, or other copy changes. The tagline renders in `src/pages/Index.tsx` via `t("home.heroTagline")` — no code edits needed.
