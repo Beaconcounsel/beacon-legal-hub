@@ -160,7 +160,7 @@ const BookConsultation = () => {
         if (key && !fieldErrors[key]) fieldErrors[key] = issue.message;
       });
       setErrors(fieldErrors);
-      toast.error("Please complete the required fields.");
+      toast.error(t("bookConsult.toastFields"));
       return;
     }
     setErrors({});
@@ -170,7 +170,7 @@ const BookConsultation = () => {
 
   const submitStep2 = () => {
     if (channels.length === 0) {
-      toast.error("Select at least one preferred channel.");
+      toast.error(t("bookConsult.toastChannel"));
       return;
     }
     setStep2Done(true);
@@ -184,7 +184,7 @@ const BookConsultation = () => {
   const handleConfirmBooking = async () => {
     if (!slot) return;
     if (!acceptedTerms) {
-      setTermsError("You must accept the Terms & Conditions");
+      setTermsError(t("bookConsult.termsError"));
       return;
     }
     setTermsError(null);
@@ -204,19 +204,19 @@ const BookConsultation = () => {
         },
       });
       if (error) {
-        toast.error((error as { message?: string }).message || "Booking failed");
+        toast.error((error as { message?: string }).message || t("bookConsult.toastFail"));
         return;
       }
       const result = res as { ok?: boolean; error?: string };
       if (!result?.ok) {
-        toast.error(result?.error || "Booking failed");
+        toast.error(result?.error || t("bookConsult.toastFail"));
         return;
       }
-      toast.success("Booking confirmed! Check your email for details.");
+      toast.success(t("bookConsult.toastSuccess"));
       setConfirmed(true);
     } catch (err) {
       console.error(err);
-      toast.error("Something went wrong. Please try again.");
+      toast.error(t("bookConsult.toastError"));
     } finally {
       setSubmitting(false);
     }
