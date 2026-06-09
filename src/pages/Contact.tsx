@@ -11,7 +11,7 @@ const ContactPage = () => {
   const items = [
     { icon: MapPin, text: "KG 190 St, RIM House, 1st Floor, Kigali, Rwanda", href: "https://www.google.com/maps/search/KG+190+St,+RIM+House,+Kigali,+Rwanda" },
     { icon: Phone, text: "+250 788 55 96 03", href: "tel:+250788559603" },
-    { icon: Mail, text: "info@beaconattorneys.rw", href: "mailto:info@beaconattorneys.rw" },
+    { icon: Mail, text: "info@beaconattorneys.rw", href: "mailto:info@beaconattorneys.rw?subject=Inquiry%20from%20website" },
     { icon: Clock, text: t("contact.hours"), href: undefined as string | undefined },
   ];
 
