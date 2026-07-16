@@ -20,6 +20,7 @@ import Booking from "./pages/Booking";
 import CancelBooking from "./pages/CancelBooking";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
+import OAuthConsent from "./pages/OAuthConsent";
 import CookiePolicy from "./pages/CookiePolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
@@ -42,6 +43,7 @@ const AppRoutes = () => (
       <Route path="/booking/cancel" element={<CancelBooking />} />
       <Route path="/auth" element={<Auth />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
       <Route path="/cookie-policy" element={<CookiePolicy />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />
