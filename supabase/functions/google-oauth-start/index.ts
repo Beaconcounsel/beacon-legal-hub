@@ -40,10 +40,42 @@ Deno.serve(async (req) => {
     const projectId = Deno.env.get("SUPABASE_URL")!.split("//")[1].split(".")[0];
     const redirectUri = `https://${projectId}.supabase.co/functions/v1/google-oauth-callback`;
 
-    // state = userId|origin so callback can redirect back to the calling app
+    // Validate origin against an allow-list so the callback cannot be tricked
+    // into redirecting to an attacker-controlled host.
+    const ALLOWED_ORIGINS = new Set<string>([
+      "https://id-preview--77ebf12f-1901-496b-826b-4c99fb6e3670.lovable.app",
+      "https://https-beaconattorneys-rw.lovable.app",
+      "https://www.beaconattorneys.rw",
+      "https://beaconattorneys.rw",
+    ]);
     const reqBody = await req.json().catch(() => ({} as any));
-    const origin = reqBody?.origin || req.headers.get("origin") || "";
-    const state = `${userId}|${encodeURIComponent(origin)}`;
+    const requestedOrigin = (reqBody?.origin || req.headers.get("origin") || "").replace(/\/$/, "");
+    const origin = ALLOWED_ORIGINS.has(requestedOrigin)
+      ? requestedOrigin
+      : "https://id-preview--77ebf12f-1901-496b-826b-4c99fb6e3670.lovable.app";
+
+    // Generate a cryptographically random state and persist it server-side
+    // so the callback can verify this OAuth flow was actually started by an
+    // admin from this app (CSRF protection).
+    const stateBytes = new Uint8Array(32);
+    crypto.getRandomValues(stateBytes);
+    const state = Array.from(stateBytes, (b) => b.toString(16).padStart(2, "0")).join("");
+
+    const admin = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+    );
+    const expiresAt = new Date(Date.now() + 10 * 60_000).toISOString();
+    const { error: stateErr } = await admin.from("google_oauth_states").insert({
+      state,
+      user_id: userId,
+      origin,
+      expires_at: expiresAt,
+    });
+    if (stateErr) {
+      console.error("failed to persist oauth state", stateErr);
+      return json({ error: "Could not start OAuth flow" }, 500);
+    }
     const params = new URLSearchParams({
       client_id: clientId,
       redirect_uri: redirectUri,
