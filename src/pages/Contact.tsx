@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import LeadForm from "@/components/LeadForm";
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -51,6 +52,16 @@ const ContactPage = () => {
                   <p className="text-sm text-foreground leading-relaxed">{text}</p>
                 </a>
               ))}
+            </div>
+
+            <div className="mt-10 max-w-2xl reveal">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+                Send us a message
+              </h2>
+              <p className="text-sm text-muted-foreground mb-5">
+                Prefer to write? Fill in the form below and we'll get back to you within one business day.
+              </p>
+              <LeadForm sourcePage="contact-page" />
             </div>
           </div>
         </section>

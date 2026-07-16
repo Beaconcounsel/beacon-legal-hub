@@ -11,6 +11,7 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
+import LeadFormDialog from "@/components/LeadFormDialog";
 
 const HomePage = () => {
   const location = useLocation();
@@ -425,11 +426,15 @@ const HomePage = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                          <a href="mailto:info@beaconattorneys.rw?subject=Inquiry%20from%20website">
-                            <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
-                              <Mail className="w-4 h-4" /> {t("home.emailDaniel")}
-                            </Button>
-                          </a>
+                          <LeadFormDialog
+                            sourcePage="home-daniel-profile"
+                            title="Email Daniel Mutiganda"
+                            trigger={
+                              <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
+                                <Mail className="w-4 h-4" /> {t("home.emailDaniel")}
+                              </Button>
+                            }
+                          />
                         </div>
                       </div>
                     </AccordionContent>
@@ -557,11 +562,15 @@ const HomePage = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-2 pt-2">
-                          <a href="mailto:info@beaconattorneys.rw?subject=Inquiry%20from%20website">
-                            <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
-                              <Mail className="w-4 h-4" /> {t("home.workWithUs")}
-                            </Button>
-                          </a>
+                          <LeadFormDialog
+                            sourcePage="home-moses-profile"
+                            title="Work with Moses Katusime"
+                            trigger={
+                              <Button variant="gold-outline" size="lg" className="gap-2 w-full sm:w-auto">
+                                <Mail className="w-4 h-4" /> {t("home.workWithUs")}
+                              </Button>
+                            }
+                          />
                         </div>
                       </div>
                     </AccordionContent>

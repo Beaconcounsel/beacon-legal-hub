@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
+import LeadFormDialog from "@/components/LeadFormDialog";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -107,7 +108,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-gold" />
-                <a href="mailto:info@beaconattorneys.rw?subject=Inquiry%20from%20website" className="hover:text-gold transition-colors">info@beaconattorneys.rw</a>
+                <LeadFormDialog
+                  sourcePage="footer"
+                  trigger={
+                    <button className="hover:text-gold transition-colors text-left underline-offset-2 hover:underline">
+                      info@beaconattorneys.rw
+                    </button>
+                  }
+                />
               </li>
             </ul>
           </div>
