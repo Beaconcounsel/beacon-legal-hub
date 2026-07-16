@@ -1,23 +1,36 @@
-# Finish Resend wiring
+## Goal
+Diagnose the current `RESEND_API_KEY` value and Resend failure without exposing the full secret, changing email logic, or asking for the key again.
 
-Domain is verified on your side. Two things left:
+## Plan
+1. **Add temporary safe debug logging**
+   - In `supabase/functions/send-lead-email/index.ts`, add a short log immediately after:
+     ```ts
+     Deno.env.get("RESEND_API_KEY")
+     ```
+   - The log will include only:
+     - whether the value is missing/nullish
+     - total character length
+     - first 3 characters
+     - last 2 characters
+     - whether it contains a space, tab, newline, or carriage return
+   - It will not log the full key or any middle characters.
 
-## 1. Add the Resend API key
+2. **Confirm the exact secret lookup and backend location**
+   - Report the exact `Deno.env.get(...)` string copied from the code.
+   - Confirm this project is using Lovable Cloud.
+   - Deploy the temporary function to the same Lovable Cloud backend where Cloud → Secrets are stored.
 
-I'll request `RESEND_API_KEY` via the secure secret form. You paste the key from Resend → API Keys (Sending access) once and it's stored server-side for the edge function. Nothing to copy into code.
+3. **Trigger the function and collect raw diagnostics**
+   - Invoke `send-lead-email` with a test payload.
+   - Read the edge function logs.
+   - Report, in one message:
+     - the safe secret diagnostics from the log
+     - the exact `Deno.env.get(...)` string
+     - Lovable Cloud/backend deployment confirmation
+     - Resend HTTP status code and the complete raw JSON error body exactly as returned by Resend
 
-## 2. Verify end-to-end
-
-Once the key is saved I'll:
-
-- Confirm the `send-lead-email` edge function is deployed with the latest code.
-- Send a test submission through the live site (Contact page form) using Playwright.
-- Check the `leads` table row was created with `email_status = 'sent'`.
-- Check function logs for the Resend response.
-- Confirm both the notification (to mutidan@gmail.com) and the auto-reply were accepted by Resend.
-
-If anything fails (e.g. `from` domain mismatch, DNS not fully propagated), I'll surface the exact Resend error and fix it.
-
-## Nothing else changes
-
-No new features, no UI changes. The forms, table, and function are already in place from the previous step — this just activates delivery.
+4. **Stop before cleanup**
+   - Make no auth/header/function-logic changes.
+   - Do not request or re-enter the secret.
+   - Wait for your confirmation.
+   - After you confirm the diagnosis, remove the temporary debug logging and redeploy.

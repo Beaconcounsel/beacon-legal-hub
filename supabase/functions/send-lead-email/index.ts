@@ -52,6 +52,13 @@ Deno.serve(async (req) => {
   if (req.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
 
   const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+  console.log("[send-lead-email] RESEND_API_KEY diagnostics", {
+    isMissing: RESEND_API_KEY == null,
+    length: RESEND_API_KEY?.length ?? 0,
+    first3: RESEND_API_KEY?.slice(0, 3) ?? null,
+    last2: RESEND_API_KEY?.slice(-2) ?? null,
+    hasWhitespace: RESEND_API_KEY == null ? null : /[ \t\n\r]/.test(RESEND_API_KEY),
+  });
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
   const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
