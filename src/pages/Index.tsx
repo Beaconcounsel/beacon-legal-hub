@@ -11,6 +11,7 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SEOHead from "@/components/SEOHead";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
+import LeadFormDialog from "@/components/LeadFormDialog";
 
 const HomePage = () => {
   const location = useLocation();
