@@ -4,7 +4,7 @@ import { z } from "npm:zod@3.23.8";
 import { corsHeaders } from "../_shared/cors.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
-const FROM_EMAIL = "onboarding@resend.dev";
+const FROM_EMAIL = "Beacon Attorneyes <noreply@beaconattorneys.rw>";
 const RESEND_API = "https://api.resend.com/emails";
 
 const bodySchema = z.object({
