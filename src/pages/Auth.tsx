@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -30,6 +30,11 @@ const getAuthErrorMessage = (error: unknown) => {
 
 const AuthPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const rawNext = searchParams.get("next");
+  // Only same-origin relative paths are safe as post-auth targets.
+  const nextPath = rawNext && rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : null;
+  const postAuthTarget = nextPath ?? "/admin";
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,9 +42,12 @@ const AuthPage = () => {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate("/admin", { replace: true });
+      if (data.session) {
+        if (nextPath) window.location.href = nextPath;
+        else navigate("/admin", { replace: true });
+      }
     });
-  }, [navigate]);
+  }, [navigate, nextPath]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +58,7 @@ const AuthPage = () => {
         const { error } = await supabase.auth.signUp({
           email: cleanEmail,
           password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` },
+          options: { emailRedirectTo: `${window.location.origin}${postAuthTarget}` },
         });
         if (error) {
           toast.error(getAuthErrorMessage(error));
@@ -64,7 +72,8 @@ const AuthPage = () => {
           toast.error(getAuthErrorMessage(error));
           return;
         }
-        navigate("/admin", { replace: true });
+        if (nextPath) window.location.href = nextPath;
+        else navigate("/admin", { replace: true });
       }
     } catch (error) {
       toast.error(getAuthErrorMessage(error));
