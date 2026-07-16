@@ -6,6 +6,8 @@ import {
   getCalendarBusy,
   createCalendarEvent,
   sendGmail,
+  isValidEmail,
+  isSafeHeaderValue,
 } from "../_shared/google.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
@@ -18,6 +20,18 @@ Deno.serve(async (req) => {
     const { slotStartUtc, slotEndUtc, client } = body ?? {};
     if (!slotStartUtc || !slotEndUtc || !client?.name || !client?.email) {
       return json({ ok: false, error: "Missing required fields" }, 400);
+    }
+
+    // Server-side validation of email/name to prevent email header injection
+    // via directly-callable public edge function (bypasses client-side zod).
+    if (!isValidEmail(client.email)) {
+      return json({ ok: false, error: "Invalid email address" }, 400);
+    }
+    if (!isSafeHeaderValue(client.name, 200)) {
+      return json({ ok: false, error: "Invalid name" }, 400);
+    }
+    if (client.phone && !isSafeHeaderValue(String(client.phone), 50)) {
+      return json({ ok: false, error: "Invalid phone" }, 400);
     }
 
     const supabase = adminClient();
