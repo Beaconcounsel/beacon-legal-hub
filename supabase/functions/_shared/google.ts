@@ -8,6 +8,22 @@ export function adminClient(): SupabaseClient {
   );
 }
 
+/** Reject strings that would allow email header injection or unreasonable lengths. */
+export function isSafeHeaderValue(s: string, maxLen = 200): boolean {
+  if (typeof s !== "string") return false;
+  if (s.length === 0 || s.length > maxLen) return false;
+  // No CR/LF/NUL — these enable header injection.
+  if (/[\r\n\u0000]/.test(s)) return false;
+  return true;
+}
+
+export function isValidEmail(s: string): boolean {
+  if (!isSafeHeaderValue(s, 320)) return false;
+  // Conservative RFC-5321-ish check; must not contain angle brackets, commas, or quotes.
+  if (/[<>,"\s]/.test(s)) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+}
+
 /** Returns a valid access_token, refreshing if needed. Returns null if no token row. */
 export async function getGoogleAccessToken(supabase: SupabaseClient): Promise<{ accessToken: string; email: string } | null> {
   const { data } = await supabase
