@@ -5,6 +5,8 @@ import {
   getGoogleAccessToken,
   deleteCalendarEvent,
   sendGmail,
+  isValidEmail,
+  isSafeHeaderValue,
 } from "../_shared/google.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
@@ -16,6 +18,12 @@ Deno.serve(async (req) => {
     if (!token || !fullName || !email) {
       return json({ ok: false, error: "Missing required fields" }, 400);
     }
+    if (!isValidEmail(email)) {
+      return json({ ok: false, error: "Invalid email address" }, 400);
+    }
+    if (!isSafeHeaderValue(fullName, 200)) {
+      return json({ ok: false, error: "Invalid name" }, 400);
+    }
 
     const supabase = adminClient();
     const { data: rows } = await supabase
@@ -26,6 +34,13 @@ Deno.serve(async (req) => {
     if (!rows || rows.length === 0) return json({ ok: false, error: "Booking not found." }, 404);
     const b = rows[0];
     if (b.status === "cancelled") return json({ ok: false, error: "Already cancelled." }, 409);
+
+    // Ensure the submitted email matches the booking's real client_email so
+    // outbound cancellation emails cannot be redirected by a caller who
+    // guesses/leaks a cancellation token.
+    if (String(b.client_email).toLowerCase() !== String(email).toLowerCase()) {
+      return json({ ok: false, error: "Email does not match the booking." }, 403);
+    }
 
     const within24h = new Date(b.slot_start).getTime() - Date.now() < 24 * 3600_000;
 
