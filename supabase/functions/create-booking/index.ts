@@ -5,12 +5,27 @@ import {
   getGoogleAccessToken,
   getCalendarBusy,
   createCalendarEvent,
-  sendGmail,
   isValidEmail,
   isSafeHeaderValue,
 } from "../_shared/google.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
+const FROM_EMAIL = "Beacon Attorneyes <noreply@beaconattorneys.rw>";
+const RESEND_API = "https://api.resend.com/emails";
+
+async function sendResend(payload: Record<string, unknown>, apiKey: string) {
+  const res = await fetch(RESEND_API, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`Resend ${res.status}: ${text}`);
+  return text;
+}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
@@ -133,12 +148,10 @@ Deno.serve(async (req) => {
 
     const apptDisplay = formatKigali(slotStartUtc);
 
-    if (accessToken && connectedEmail) {
-      // Email to client
-      await sendGmail(accessToken, {
-        to: client.email,
-        subject: `Consultation confirmed — ${apptDisplay}`,
-        text:
+    // Send confirmation + admin notification via Resend (independent of Google).
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    if (RESEND_API_KEY) {
+      const clientText =
 `Dear ${client.name},
 
 Your consultation with Daniel Mutiganda is confirmed for:
@@ -151,16 +164,9 @@ ${cancelUrl}
 
 Cancellation policy: cancellations made at least 24 hours before the appointment are free of charge. Late cancellations and no-shows are subject to the full consultation fee.
 
-Beacon Attorneyes & Consultants`,
-        fromEmail: connectedEmail,
-        fromName: "Beacon Attorneyes & Consultants",
-      });
+Beacon Attorneyes & Consultants`;
 
-      // Email to admin
-      await sendGmail(accessToken, {
-        to: ADMIN_EMAIL,
-        subject: `New booking — ${client.name} — ${apptDisplay}`,
-        text:
+      const adminText =
 `New consultation booking:
 
 When: ${apptDisplay} (Africa/Kigali)
@@ -172,10 +178,30 @@ Jurisdiction: ${client.jurisdiction ?? "—"}
 Matter: ${client.matterType ?? "—"}
 
 Message:
-${client.message ?? ""}`,
-        fromEmail: connectedEmail,
-        fromName: "Beacon Bookings",
+${client.message ?? ""}`;
+
+      const results = await Promise.allSettled([
+        sendResend({
+          from: FROM_EMAIL,
+          to: [client.email],
+          subject: `Consultation confirmed — ${apptDisplay}`,
+          text: clientText,
+        }, RESEND_API_KEY),
+        sendResend({
+          from: FROM_EMAIL,
+          to: [ADMIN_EMAIL],
+          subject: `New booking — ${client.name} — ${apptDisplay}`,
+          text: adminText,
+          reply_to: client.email,
+        }, RESEND_API_KEY),
+      ]);
+      results.forEach((r, i) => {
+        if (r.status === "rejected") {
+          console.error(`[create-booking] email ${i === 0 ? "client" : "admin"} failed`, r.reason?.toString?.());
+        }
       });
+    } else {
+      console.error("[create-booking] RESEND_API_KEY not configured — booking saved but no email sent");
     }
 
     return json({ ok: true, bookingId: inserted.id, cancellationToken: inserted.cancellation_token });
