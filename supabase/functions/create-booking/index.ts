@@ -5,12 +5,27 @@ import {
   getGoogleAccessToken,
   getCalendarBusy,
   createCalendarEvent,
-  sendGmail,
   isValidEmail,
   isSafeHeaderValue,
 } from "../_shared/google.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
+const FROM_EMAIL = "Beacon Attorneyes <noreply@beaconattorneys.rw>";
+const RESEND_API = "https://api.resend.com/emails";
+
+async function sendResend(payload: Record<string, unknown>, apiKey: string) {
+  const res = await fetch(RESEND_API, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`Resend ${res.status}: ${text}`);
+  return text;
+}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
