@@ -1,36 +1,16 @@
 ## Goal
-Diagnose the current `RESEND_API_KEY` value and Resend failure without exposing the full secret, changing email logic, or asking for the key again.
+Verify that the booking flow now sends both emails via Resend from `noreply@beaconattorneys.rw`.
 
-## Plan
-1. **Add temporary safe debug logging**
-   - In `supabase/functions/send-lead-email/index.ts`, add a short log immediately after:
-     ```ts
-     Deno.env.get("RESEND_API_KEY")
-     ```
-   - The log will include only:
-     - whether the value is missing/nullish
-     - total character length
-     - first 3 characters
-     - last 2 characters
-     - whether it contains a space, tab, newline, or carriage return
-   - It will not log the full key or any middle characters.
+## Steps
+1. Trigger `create-booking` with a test payload (test client email + your admin email) against the deployed edge function.
+2. Read `send-lead-email`/`create-booking` edge function logs to confirm:
+   - Resend HTTP 200 for the client confirmation
+   - Resend HTTP 200 for the admin notification
+3. Query the `bookings` table to confirm the row was inserted and check any email_status fields.
+4. Report back:
+   - Raw Resend status codes for both sends
+   - Booking row ID
+   - Whether Google Calendar step was skipped (expected, since Google not reconnected yet)
+5. Clean up the test booking row so your calendar/admin view isn't polluted.
 
-2. **Confirm the exact secret lookup and backend location**
-   - Report the exact `Deno.env.get(...)` string copied from the code.
-   - Confirm this project is using Lovable Cloud.
-   - Deploy the temporary function to the same Lovable Cloud backend where Cloud → Secrets are stored.
-
-3. **Trigger the function and collect raw diagnostics**
-   - Invoke `send-lead-email` with a test payload.
-   - Read the edge function logs.
-   - Report, in one message:
-     - the safe secret diagnostics from the log
-     - the exact `Deno.env.get(...)` string
-     - Lovable Cloud/backend deployment confirmation
-     - Resend HTTP status code and the complete raw JSON error body exactly as returned by Resend
-
-4. **Stop before cleanup**
-   - Make no auth/header/function-logic changes.
-   - Do not request or re-enter the secret.
-   - Wait for your confirmation.
-   - After you confirm the diagnosis, remove the temporary debug logging and redeploy.
+No code changes.
