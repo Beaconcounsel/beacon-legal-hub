@@ -11,6 +11,7 @@ const bodySchema = z.object({
   phone: z.string().trim().max(30).optional().or(z.literal("")).transform((v) => (v ? v : null)),
   message: z.string().trim().min(10).max(2000),
   source_page: z.string().trim().min(1).max(120),
+  language: z.enum(["en", "fr"]).default("en"),
 });
 
 function json(body: unknown, status = 200) {
@@ -70,7 +71,7 @@ Deno.serve(async (req) => {
       400,
     );
   }
-  const { name, email, phone, message, source_page } = parsed.data;
+  const { name, email, phone, message, source_page, language } = parsed.data;
 
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE, {
     auth: { persistSession: false, autoRefreshToken: false },
@@ -117,7 +118,7 @@ Deno.serve(async (req) => {
     ),
     sendTransactionalEmail(
       supabase,
-      "lead-confirmation",
+      language === "fr" ? "lead-confirmation-fr" : "lead-confirmation",
       email,
       `lead-confirmation-${leadId}`,
       { name, email, message },
