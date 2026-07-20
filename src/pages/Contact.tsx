@@ -56,8 +56,8 @@ const ContactPage = () => {
                 </a>
               ))}
               <div className="flex items-start gap-3 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <WhatsAppIcon className="w-5 h-5 text-primary" />
+                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <WhatsAppIcon className="w-6 h-6 text-primary" />
                 </div>
                 <div className="min-w-0">
                   <WhatsAppLink
