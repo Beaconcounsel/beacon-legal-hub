@@ -117,6 +117,7 @@ Deno.serve(async (req) => {
         leadId,
         createdAt,
       },
+      email,
     ),
     sendTransactionalEmail(
       supabase,
