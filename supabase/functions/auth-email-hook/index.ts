@@ -17,12 +17,12 @@ const corsHeaders = {
 }
 
 const EMAIL_SUBJECTS: Record<string, string> = {
-  signup: 'Confirm your email',
-  invite: "You've been invited",
-  magiclink: 'Your login link',
-  recovery: 'Reset your password',
-  email_change: 'Confirm your new email',
-  reauthentication: 'Your verification code',
+  signup: 'Confirm your email — Beacon Attorneyes & Consultants',
+  invite: "You've been invited to Beacon Attorneyes & Consultants",
+  magiclink: 'Your login link — Beacon Attorneyes & Consultants',
+  recovery: 'Reset your password — Beacon Attorneyes & Consultants',
+  email_change: 'Confirm your new email — Beacon Attorneyes & Consultants',
+  reauthentication: 'Your verification code — Beacon Attorneyes & Consultants',
 }
 
 // Template mapping
@@ -36,10 +36,11 @@ const EMAIL_TEMPLATES: Record<string, React.ComponentType<any>> = {
 }
 
 // Configuration
-const SITE_NAME = "https-beaconattorneys-rw"
+const SITE_NAME = "Beacon Attorneyes & Consultants"
 const SENDER_DOMAIN = "notify.beaconattorneys.rw"
 const ROOT_DOMAIN = "beaconattorneys.rw"
 const FROM_DOMAIN = "beaconattorneys.rw" // Domain shown in From address (may be root or sender subdomain)
+const LOGO_URL = `https://${ROOT_DOMAIN}/beacon-logo.png`
 
 // Sample data for preview mode ONLY (not used in actual email sending).
 // URLs are baked in at scaffold time from the project's real data.
@@ -52,30 +53,37 @@ const SAMPLE_DATA: Record<string, object> = {
   signup: {
     siteName: SITE_NAME,
     siteUrl: SAMPLE_PROJECT_URL,
+    logoUrl: LOGO_URL,
     recipient: SAMPLE_EMAIL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   magiclink: {
     siteName: SITE_NAME,
+    logoUrl: LOGO_URL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   recovery: {
     siteName: SITE_NAME,
+    logoUrl: LOGO_URL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   invite: {
     siteName: SITE_NAME,
     siteUrl: SAMPLE_PROJECT_URL,
+    logoUrl: LOGO_URL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   email_change: {
     siteName: SITE_NAME,
+    logoUrl: LOGO_URL,
     oldEmail: SAMPLE_EMAIL,
     email: SAMPLE_EMAIL,
     newEmail: SAMPLE_EMAIL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   reauthentication: {
+    siteName: SITE_NAME,
+    logoUrl: LOGO_URL,
     token: '123456',
   },
 }
@@ -222,6 +230,7 @@ async function handleWebhook(req: Request): Promise<Response> {
   const templateProps = {
     siteName: SITE_NAME,
     siteUrl: `https://${ROOT_DOMAIN}`,
+    logoUrl: LOGO_URL,
     recipient: payload.data.email,
     confirmationUrl: payload.data.url,
     token: payload.data.token,

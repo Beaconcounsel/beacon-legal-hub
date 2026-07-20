@@ -9,17 +9,20 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Preview,
   Text,
 } from 'npm:@react-email/components@0.0.22'
 
 interface RecoveryEmailProps {
   siteName: string
+  logoUrl?: string
   confirmationUrl: string
 }
 
 export const RecoveryEmail = ({
   siteName,
+  logoUrl,
   confirmationUrl,
 }: RecoveryEmailProps) => (
   <Html lang="en" dir="ltr">
@@ -27,18 +30,18 @@ export const RecoveryEmail = ({
     <Preview>Reset your password for {siteName}</Preview>
     <Body style={main}>
       <Container style={container}>
+        {logoUrl && <Img src={logoUrl} alt={siteName} width="160" style={logo} />}
         <Heading style={h1}>Reset your password</Heading>
-        <Text style={text}>
-          We received a request to reset your password for {siteName}. Click
-          the button below to choose a new password.
+        <Text style={paragraph}>
+          We received a request to reset your password for your account. Click the button below to choose a new password.
         </Text>
         <Button style={button} href={confirmationUrl}>
-          Reset Password
+          Reset password
         </Button>
-        <Text style={footer}>
-          If you didn't request a password reset, you can safely ignore this
-          email. Your password will not be changed.
+        <Text style={paragraph}>
+          If you did not request a password reset, you can safely ignore this email. Your password will not be changed.
         </Text>
+        <Text style={footer}>Beacon Attorneyes & Consultants · KG 190 St, RIM House, 1st Floor, Kigali, Rwanda</Text>
       </Container>
     </Body>
   </Html>
@@ -46,26 +49,53 @@ export const RecoveryEmail = ({
 
 export default RecoveryEmail
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
-const container = { padding: '20px 25px' }
+const main = {
+  backgroundColor: '#ffffff',
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  color: '#2c2c2c',
+}
+
+const container = {
+  padding: '32px 24px',
+  maxWidth: '560px',
+  margin: '0 auto',
+}
+
+const logo = {
+  margin: '0 0 24px',
+  display: 'block',
+}
+
 const h1 = {
-  fontSize: '22px',
-  fontWeight: 'bold' as const,
-  color: '#000000',
+  color: '#1d535e',
+  fontSize: '24px',
+  fontWeight: '600' as const,
+  margin: '0 0 16px',
+  letterSpacing: '-0.01em',
+}
+
+const paragraph = {
+  color: '#2c2c2c',
+  fontSize: '15px',
+  lineHeight: '1.6',
   margin: '0 0 20px',
 }
-const text = {
-  fontSize: '14px',
-  color: '#55575d',
-  lineHeight: '1.5',
-  margin: '0 0 25px',
-}
+
 const button = {
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: '#c9a84c',
+  color: '#0f2d34',
   fontSize: '14px',
-  borderRadius: '8px',
-  padding: '12px 20px',
+  fontWeight: '600' as const,
+  borderRadius: '6px',
+  padding: '12px 24px',
   textDecoration: 'none',
+  display: 'inline-block',
+  margin: '0 0 20px',
 }
-const footer = { fontSize: '12px', color: '#999999', margin: '30px 0 0' }
+
+const footer = {
+  color: '#888888',
+  fontSize: '12px',
+  margin: '32px 0 0',
+  lineHeight: '1.5',
+}
