@@ -19,6 +19,7 @@ import { supabase } from "@/integrations/supabase/client";
 import BookingCalendar from "@/components/booking/BookingCalendar";
 import { formatAppointmentDisplay, type Slot } from "@/lib/booking-slots";
 import { cn } from "@/lib/utils";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const MATTER_TYPES = [
   "Corporate & Commercial",
@@ -271,6 +272,18 @@ const BookConsultation = () => {
               <CalendarDays className="w-5 h-5 mr-2" />
               {t("bookConsult.ctaButton")}
             </Button>
+            <div className="mt-4 flex justify-center">
+              <WhatsAppLink
+                source="consultation_section"
+                variant="button"
+                className="border-primary/30 text-primary hover:bg-primary/5"
+              >
+                {t("bookConsult.whatsappCta")}
+              </WhatsAppLink>
+            </div>
+            <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
+              {t("bookConsult.disclaimer")}
+            </p>
           </div>
         ) : (
           <div className="max-w-3xl mx-auto space-y-4">

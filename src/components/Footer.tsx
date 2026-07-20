@@ -4,6 +4,9 @@ import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
 import LeadFormDialog from "@/components/LeadFormDialog";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import { WHATSAPP_DISPLAY, buildWhatsAppUrl, trackWhatsAppClick } from "@/lib/whatsapp";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -90,6 +93,16 @@ const Footer = () => {
               <a href="https://www.instagram.com/beaconattorneys" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-gold transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
+              <a
+                href={buildWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact Beacon Attorneys on WhatsApp"
+                onClick={() => trackWhatsAppClick("footer_social")}
+                className="text-ivory/70 hover:text-gold transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -105,6 +118,18 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-gold" />
                 <a href="tel:+250788559603" className="hover:text-gold transition-colors">+250 788 55 96 03</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <WhatsAppIcon className="w-3.5 h-3.5 text-gold" />
+                <WhatsAppLink
+                  source="footer"
+                  variant="inline"
+                  showIcon={false}
+                  className="text-ivory/75 hover:text-gold"
+                  ariaLabel="Contact Beacon Attorneys on WhatsApp"
+                >
+                  <span className="text-xs">WhatsApp {WHATSAPP_DISPLAY}</span>
+                </WhatsAppLink>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-gold" />
