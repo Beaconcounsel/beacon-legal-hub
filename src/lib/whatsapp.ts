@@ -80,6 +80,13 @@ export function buildWhatsAppUrl(customMessage?: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 }
 
+// Deep-link scheme — opens WhatsApp Desktop / mobile app directly via the OS.
+// Bypasses wa.me's redirect to api.whatsapp.com (which is blocked on some networks).
+export function buildWhatsAppDeepLink(customMessage?: string): string {
+  const text = encodeURIComponent(customMessage ?? DEFAULT_WHATSAPP_MESSAGE);
+  return `whatsapp://send?phone=${WHATSAPP_NUMBER}&text=${text}`;
+}
+
 export function trackWhatsAppClick({
   ctaLocation,
   practiceArea = "general",
