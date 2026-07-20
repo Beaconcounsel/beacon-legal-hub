@@ -663,6 +663,9 @@
     "matterType": "Matter Type",
     "selectMatter": "Select matter type",
     "required": "required",
-    "emailLabel": "Email Address"
+    "emailLabel": "Email Address",
+    "whatsappCta": "Chat on WhatsApp",
+    "orWhatsapp": "or chat with us on WhatsApp",
+    "disclaimer": "Sending a message does not create a lawyer-client relationship. Please do not send confidential or sensitive information until the firm confirms that it is able to act for you."
   }
 }
