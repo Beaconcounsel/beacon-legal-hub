@@ -17,6 +17,7 @@ async function sendTransactionalEmail(
   recipientEmail: string,
   idempotencyKey: string,
   templateData: Record<string, any>,
+  replyTo?: string,
 ) {
   const { data, error } = await supabase.functions.invoke("send-transactional-email", {
     body: {
@@ -24,6 +25,7 @@ async function sendTransactionalEmail(
       recipientEmail,
       idempotencyKey,
       templateData,
+      replyTo,
     },
   });
 
@@ -45,9 +47,12 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { slotStartUtc, slotEndUtc, client } = body ?? {};
+    const { slotStartUtc, slotEndUtc, client, language = "en" } = body ?? {};
     if (!slotStartUtc || !slotEndUtc || !client?.name || !client?.email) {
       return json({ ok: false, error: "Missing required fields" }, 400);
+    }
+    if (language !== "en" && language !== "fr") {
+      return json({ ok: false, error: "Invalid language" }, 400);
     }
 
     // Server-side validation of email/name to prevent email header injection
@@ -162,12 +167,12 @@ Deno.serve(async (req) => {
     const results = await Promise.allSettled([
       sendTransactionalEmail(
         supabase,
-        "booking-confirmation",
+        language === "fr" ? "booking-confirmation-fr" : "booking-confirmation",
         client.email,
         `booking-confirmation-${inserted.id}`,
         {
           name: client.name,
-          appointmentTime: formatKigali(slotStartUtc),
+          appointmentTime: formatKigali(slotStartUtc, language),
           matterType: client.matterType ?? "—",
           cancelUrl,
         },
@@ -188,6 +193,7 @@ Deno.serve(async (req) => {
           message: client.message ?? "—",
           appointmentTime: formatKigali(slotStartUtc),
         },
+        client.email,
       ),
     ]);
 
@@ -207,11 +213,19 @@ Deno.serve(async (req) => {
   }
 });
 
-function formatKigali(iso: string): string {
+function formatKigali(iso: string, lang: "en" | "fr" = "en"): string {
   const d = new Date(iso);
   const local = new Date(d.getTime() + 2 * 3600_000);
-  const dows = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  if (lang === "fr") {
+    const dows = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+    const months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+    const h = local.getUTCHours().toString().padStart(2, "0");
+    return `${dows[local.getUTCDay()]} ${local.getUTCDate()} ${months[local.getUTCMonth()]} ${local.getUTCFullYear()} à ${h}:00`;
+  }
+
+  const dows = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const h = local.getUTCHours();
   const h12 = h > 12 ? h - 12 : h === 0 ? 12 : h;
   const ampm = h >= 12 ? "PM" : "AM";

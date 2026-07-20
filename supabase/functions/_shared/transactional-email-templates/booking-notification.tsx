@@ -11,7 +11,7 @@ interface Props {
   jurisdiction?: string | null
   matterType?: string | null
   message?: string | null
-  appointmentDisplay?: string
+  appointmentTime?: string
   cancelUrl?: string
 }
 
@@ -24,7 +24,7 @@ const Email = (props: Props) => {
   const safeJurisdiction = props.jurisdiction || '—'
   const safeMatter = props.matterType || '—'
   const safeMessage = props.message || '—'
-  const safeAppt = props.appointmentDisplay || '—'
+  const safeAppt = props.appointmentTime || '—'
   const safeCancelUrl = props.cancelUrl || '#'
 
   return (
@@ -77,7 +77,7 @@ const Email = (props: Props) => {
 
 export const template = {
   component: Email,
-  subject: ({ clientName, appointmentDisplay }: Props) => `New booking — ${clientName || 'client'} — ${appointmentDisplay || 'consultation'}`,
+  subject: ({ clientName, appointmentTime }: Props) => `New booking — ${clientName || 'client'} — ${appointmentTime || 'consultation'}`,
   displayName: 'Booking notification (admin)',
   previewData: {
     clientName: 'Jane Doe',
@@ -88,7 +88,7 @@ export const template = {
     jurisdiction: 'Rwanda',
     matterType: 'Corporate',
     message: 'We need help with a contract review.',
-    appointmentDisplay: 'Monday, July 21, 2026 at 10:00 AM',
+    appointmentTime: 'Monday, July 21, 2026 at 10:00 AM',
     cancelUrl: 'https://beaconattorneys.rw/booking/cancel?token=sample',
   },
 } satisfies TemplateEntry

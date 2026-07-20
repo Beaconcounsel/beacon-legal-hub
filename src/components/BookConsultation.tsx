@@ -114,7 +114,7 @@ const StepCard = ({
 };
 
 const BookConsultation = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [opened, setOpened] = useState(false);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
   const [step1Done, setStep1Done] = useState(false);
@@ -195,6 +195,7 @@ const BookConsultation = () => {
         body: {
           slotStartUtc: slot.startUtc,
           slotEndUtc: slot.endUtc,
+          language: i18n.language,
           client: {
             name: data.name,
             email: data.email,

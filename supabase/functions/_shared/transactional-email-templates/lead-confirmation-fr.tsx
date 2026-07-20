@@ -9,41 +9,41 @@ interface Props {
 }
 
 const Email = ({ name, email, message }: Props) => {
-  const safeName = name || 'there'
+  const safeName = name || 'Madame, Monsieur'
   const safeEmail = email || ''
 
   return (
-    <Html lang="en" dir="ltr">
+    <Html lang="fr" dir="ltr">
       <Head />
-      <Preview>Your inquiry has been received — Beacon Attorneyes & Consultants</Preview>
+      <Preview>Votre demande a bien été reçue — Beacon Attorneyes & Consultants</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>Inquiry received</Heading>
-          <Text style={paragraph}>Dear {safeName},</Text>
+          <Heading style={h1}>Demande bien reçue</Heading>
+          <Text style={paragraph}>Bonjour {safeName},</Text>
           <Text style={paragraph}>
-            Thank you for contacting <strong>Beacon Attorneyes & Consultants</strong>. We confirm that your inquiry has been received and is being reviewed by the appropriate legal team.
+            Nous vous remercions d'avoir contacté <strong>Beacon Attorneyes & Consultants</strong>. Nous confirmons que votre demande a bien été reçue et est en cours d'examen par l'équipe juridique compétente.
           </Text>
           <Text style={paragraph}>
-            We aim to respond within one business day. If your matter is time-sensitive, please contact us directly at{' '}
-            <Link href="tel:+250788559603" style={link}>+250 788 55 96 03</Link> or{' '}
+            Nous nous efforçons de vous répondre dans un délai d'un jour ouvrable. Si votre affaire est urgente, veuillez nous contacter directement au{' '}
+            <Link href="tel:+250788559603" style={link}>+250 788 55 96 03</Link> ou à l'adresse{' '}
             <Link href="mailto:info@beaconattorneys.rw" style={link}>info@beaconattorneys.rw</Link>.
           </Text>
 
           <Hr style={hr} />
 
           <Section>
-            <Text style={label}>For your reference, a copy of your message is included below:</Text>
+            <Text style={label}>Pour votre référence, voici une copie de votre message :</Text>
             <Text style={messageBox}>{message || '—'}</Text>
           </Section>
 
           <Hr style={hr} />
 
           <Text style={paragraph}>
-            The information you provide is treated as confidential and is intended solely for the purpose of assessing your matter. This email does not constitute legal advice and does not create a solicitor-client relationship.
+            Les informations que vous nous communiquez sont traitées de manière confidentielle et sont destinées uniquement à l'évaluation de votre demande. Le présent courriel ne constitue pas un avis juridique et ne crée aucune relation avocat-client.
           </Text>
 
           <Text style={signature}>
-            Sincerely,
+            Cordialement,
             <br />
             <strong>Beacon Attorneyes & Consultants</strong>
             <br />
@@ -53,7 +53,7 @@ const Email = ({ name, email, message }: Props) => {
             <Link href="mailto:info@beaconattorneys.rw" style={link}>info@beaconattorneys.rw</Link>
           </Text>
 
-          <Text style={footer}>This is an automated confirmation. Please do not reply to this address.</Text>
+          <Text style={footer}>Ceci est une confirmation automatique. Veuillez ne pas répondre à cette adresse.</Text>
         </Container>
       </Body>
     </Html>
@@ -62,12 +62,12 @@ const Email = ({ name, email, message }: Props) => {
 
 export const template = {
   component: Email,
-  subject: 'We have received your inquiry — Beacon Attorneyes & Consultants',
-  displayName: 'Lead confirmation (visitor)',
+  subject: 'Nous avons bien reçu votre demande — Beacon Attorneyes & Consultants',
+  displayName: 'Lead confirmation FR (visitor)',
   previewData: {
-    name: 'Jane Doe',
-    email: 'jane@example.com',
-    message: 'I need assistance with a corporate governance matter.',
+    name: 'Jean Dupont',
+    email: 'jean@example.com',
+    message: 'Je souhaite obtenir des conseils en matière de gouvernance d\'entreprise.',
   },
 } satisfies TemplateEntry
 

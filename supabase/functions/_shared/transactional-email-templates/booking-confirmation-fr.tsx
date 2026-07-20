@@ -10,21 +10,21 @@ interface Props {
 }
 
 const Email = ({ name, appointmentTime, matterType, cancelUrl }: Props) => {
-  const safeName = name || 'there'
-  const safeAppt = appointmentTime || 'your selected time'
+  const safeName = name || 'Madame, Monsieur'
+  const safeAppt = appointmentTime || "l'horaire sélectionné"
   const safeMatter = matterType || '—'
   const safeCancelUrl = cancelUrl || '#'
 
   return (
-    <Html lang="en" dir="ltr">
+    <Html lang="fr" dir="ltr">
       <Head />
-      <Preview>Your consultation with Beacon Attorneyes & Consultants is confirmed for {safeAppt}.</Preview>
+      <Preview>Votre consultation avec Beacon Attorneyes & Consultants est confirmée pour le {safeAppt}.</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>Consultation confirmed</Heading>
-          <Text style={paragraph}>Dear {safeName},</Text>
+          <Heading style={h1}>Consultation confirmée</Heading>
+          <Text style={paragraph}>Bonjour {safeName},</Text>
           <Text style={paragraph}>
-            We are writing to confirm your upcoming consultation with <strong>Beacon Attorneyes & Consultants</strong>.
+            Nous avons le plaisir de confirmer votre prochaine consultation avec <strong>Beacon Attorneyes & Consultants</strong>.
           </Text>
 
           <Section style={highlightBox}>
@@ -32,30 +32,30 @@ const Email = ({ name, appointmentTime, matterType, cancelUrl }: Props) => {
             <Text style={highlightSub}>Kigali, Rwanda · Africa/Kigali (CAT)</Text>
           </Section>
 
-          <Text style={label}>Host</Text>
+          <Text style={label}>Conseiller</Text>
           <Text style={value}>Daniel Mutiganda</Text>
 
-          <Text style={label}>Matter</Text>
+          <Text style={label}>Matière</Text>
           <Text style={value}>{safeMatter}</Text>
 
           <Hr style={hr} />
 
           <Text style={paragraph}>
-            Should you need to cancel or reschedule your appointment, please use the link below. Cancellations received at least 24 hours prior to the scheduled time are free of charge. Late cancellations and no-shows will be subject to the full consultation fee.
+            Si vous devez annuler ou reporter votre rendez-vous, veuillez utiliser le lien ci-dessous. Les annulations reçues au moins 24 heures avant l'heure prévue sont gratuites. Les annulations tardives et les absences non excusées seront soumises à l'intégralité des honoraires de consultation.
           </Text>
 
-          <Button href={safeCancelUrl} style={button}>Cancel or reschedule</Button>
+          <Button href={safeCancelUrl} style={button}>Annuler ou reporter</Button>
 
           <Text style={paragraph}>
-            A calendar invitation will be sent to you shortly. Please retain this email for your records.
+            Vous recevrez sous peu une invitation à ajouter ce rendez-vous à votre calendrier. Nous vous invitons à conserver le présent courriel pour vos archives.
           </Text>
 
           <Text style={paragraph}>
-            The information shared in connection with this consultation is treated as confidential. This email does not constitute legal advice and does not establish a solicitor-client relationship.
+            Les informations échangées dans le cadre de cette consultation sont traitées de manière confidentielle. Le présent courriel ne constitue pas un avis juridique et ne crée aucune relation avocat-client.
           </Text>
 
           <Text style={signature}>
-            Sincerely,
+            Cordialement,
             <br />
             <strong>Beacon Attorneyes & Consultants</strong>
             <br />
@@ -65,7 +65,7 @@ const Email = ({ name, appointmentTime, matterType, cancelUrl }: Props) => {
             <Link href="mailto:info@beaconattorneys.rw" style={link}>info@beaconattorneys.rw</Link>
           </Text>
 
-          <Text style={footer}>This is an automated confirmation. Please do not reply to this address.</Text>
+          <Text style={footer}>Ceci est une confirmation automatique. Veuillez ne pas répondre à cette adresse.</Text>
         </Container>
       </Body>
     </Html>
@@ -74,12 +74,12 @@ const Email = ({ name, appointmentTime, matterType, cancelUrl }: Props) => {
 
 export const template = {
   component: Email,
-  subject: ({ appointmentTime }: Props) => `Consultation confirmed — ${appointmentTime || 'Beacon Attorneyes & Consultants'}`,
-  displayName: 'Booking confirmation (client)',
+  subject: ({ appointmentTime }: Props) => `Consultation confirmée — ${appointmentTime || 'Beacon Attorneyes & Consultants'}`,
+  displayName: 'Booking confirmation FR (client)',
   previewData: {
-    name: 'Jane Doe',
-    appointmentTime: 'Monday, July 21, 2026 at 10:00 AM',
-    matterType: 'Corporate & Commercial',
+    name: 'Jean Dupont',
+    appointmentTime: 'lundi 21 juillet 2026 à 10:00',
+    matterType: "Droit des sociétés et commercial",
     cancelUrl: 'https://beaconattorneys.rw/booking/cancel?token=sample',
   },
 } satisfies TemplateEntry
