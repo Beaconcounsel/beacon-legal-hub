@@ -1,27 +1,59 @@
-## What I confirmed
-- `https://www.beaconattorneys.rw` is online and returns `200 OK`.
-- `https://beaconattorneys.rw` currently resolves to `185.158.133.1` but returns `403 Forbidden`.
-- The Cloudflare message you quoted is an advisory recommending proxy mode. It is not, by itself, the outage cause.
 
-## Key point
-Because the domain is using Cloudflare, there are two valid setup paths. Mixing them can keep the root domain offline.
+## Goal
 
-## Recommended recovery plan
-1. In Lovable, open the custom domain setup for `beaconattorneys.rw`.
-2. If you want Cloudflare proxy/security features, enable the advanced option: **“Domain uses Cloudflare or a similar proxy.”**
-3. Follow the DNS records Lovable shows after enabling that option. This usually changes the setup away from the normal A-record-only flow.
-4. In Cloudflare, set the affected records exactly as Lovable shows for proxy mode.
-5. Add both domains in Lovable separately:
-   - `beaconattorneys.rw`
-   - `www.beaconattorneys.rw`
-6. Choose one as Primary, usually `www.beaconattorneys.rw`, so the other redirects to it.
-7. After saving DNS, wait for verification/SSL to complete, then I can re-check both URLs.
+Make the "Book a Consultation" and Contact form actually deliver email — to the visitor and to `mutidan@gmail.com` — from your own domain `beaconattorneys.rw`, replacing the currently-broken Resend path (Resend is returning 403 "domain not verified").
 
-## If you do not need Cloudflare proxy features
-1. Keep both `@` and `www` records as DNS-only/grey-cloud.
-2. Keep both pointing to `185.158.133.1`.
-3. Ignore Cloudflare’s “Proxying is required...” advisory.
-4. Re-check the domain status in Lovable and click retry/complete setup if available.
+## What the user will see
 
-## Why this matters
-The earlier instruction to turn proxy off is correct for Lovable’s standard A-record setup. Cloudflare’s warning is only saying you will not get Cloudflare security/performance features while DNS-only is enabled. If you want those features, switch the domain setup in Lovable to Cloudflare/proxy mode instead of simply turning the orange cloud back on.
+Emails will arrive from:
+
+```
+Beacon Attorneyes & Consultants <noreply@beaconattorneys.rw>
+```
+
+Technically sent through a delegated subdomain (e.g. `notify.beaconattorneys.rw`) that Lovable manages. Your regular mailboxes on `beaconattorneys.rw` are untouched.
+
+## Plan
+
+### 1. Set up the email domain (one-time, requires you)
+
+Open the email setup dialog and enter `beaconattorneys.rw`. Lovable will show a small set of **NS records** to add at your DNS provider (Cloudflare) for the delegated subdomain. You add them; DNS verification usually completes within minutes to a few hours.
+
+You don't need Resend, SPF, or DKIM records — Lovable manages them inside the delegated subdomain.
+
+### 2. Set up email infrastructure
+
+Once the domain is added, Lovable provisions the sending queue, retry logic, delivery log, suppression list, and unsubscribe handling automatically. No action from you.
+
+### 3. Migrate the lead form off Resend
+
+- Scaffold app email templates (branded to Beacon: navy + gold, serif headings) for:
+  - **Lead confirmation** — sent to the visitor who submitted the form.
+  - **Lead notification** — sent to `mutidan@gmail.com` with the full submission.
+- Update `supabase/functions/send-lead-email/index.ts` to enqueue via the Lovable send function instead of calling Resend directly. The lead row still gets inserted first (source of truth), then two emails are enqueued using an idempotency key derived from the lead ID.
+- Keep the existing 200/400/500 response contract so `LeadForm.tsx` needs no changes.
+
+### 4. Migrate booking notifications
+
+- `supabase/functions/create-booking/index.ts` and `cancel-booking/index.ts` currently rely on Resend / Gmail-through-Google-OAuth. Switch the booking + cancellation notifications (to client and to admin) to Lovable Emails templates so delivery no longer depends on the Google OAuth connection or Resend verification.
+
+### 5. Verify end-to-end
+
+- Submit a real lead through the Contact form and Book a Consultation flow in the sandbox.
+- Confirm the `leads` row is inserted, both emails show `sent` in the delivery log, and inboxes receive them.
+- Test a booking + cancellation the same way.
+
+## What you need to do vs what I do
+
+**You:**
+1. Click "Set up email domain" and enter `beaconattorneys.rw`.
+2. Add the NS records Lovable shows you at Cloudflare (grey cloud / DNS only — no proxy on NS records).
+3. Tell me when it's added — I'll pick up from there.
+
+**Me (once DNS is added):**
+- Scaffold branded templates, rewrite the three edge functions to use Lovable Emails, deploy, and verify delivery.
+
+## Notes / trade-offs
+
+- The current `RESEND_API_KEY` secret becomes unused after migration. We can leave it in place or delete it once everything is verified.
+- If you'd rather keep Resend, the only fix is verifying `beaconattorneys.rw` inside the Resend workspace that owns your API key — that happens in the Resend dashboard, not in code. Lovable Emails is the more reliable option since everything is managed inside this project.
