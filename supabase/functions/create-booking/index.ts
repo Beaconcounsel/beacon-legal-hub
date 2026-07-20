@@ -10,21 +10,34 @@ import {
 } from "../_shared/google.ts";
 
 const ADMIN_EMAIL = "mutidan@gmail.com";
-const FROM_EMAIL = "Beacon Attorneyes <noreply@beaconattorneys.rw>";
-const RESEND_API = "https://api.resend.com/emails";
 
-async function sendResend(payload: Record<string, unknown>, apiKey: string) {
-  const res = await fetch(RESEND_API, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
+async function sendTransactionalEmail(
+  supabase: any,
+  templateName: string,
+  recipientEmail: string,
+  idempotencyKey: string,
+  templateData: Record<string, any>,
+) {
+  const { data, error } = await supabase.functions.invoke("send-transactional-email", {
+    body: {
+      templateName,
+      recipientEmail,
+      idempotencyKey,
+      templateData,
     },
-    body: JSON.stringify(payload),
   });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`Resend ${res.status}: ${text}`);
-  return text;
+
+  if (error) {
+    console.error(`[create-booking] ${templateName} invoke failed`, error);
+    return { ok: false, error: error.message };
+  }
+
+  if (!data?.success) {
+    console.error(`[create-booking] ${templateName} send failed`, data);
+    return { ok: false, error: data?.reason || "send failed" };
+  }
+
+  return { ok: true };
 }
 
 Deno.serve(async (req) => {
@@ -140,69 +153,52 @@ Deno.serve(async (req) => {
       }
     }
 
-    // Send confirmation emails
+    // Send confirmation emails via Lovable Emails
     const appOrigin = (req.headers.get("origin") || req.headers.get("referer") || "").replace(/\/$/, "");
     const cancelUrl = appOrigin
       ? `${appOrigin}/booking/cancel?token=${inserted.cancellation_token}`
       : `https://id-preview--77ebf12f-1901-496b-826b-4c99fb6e3670.lovable.app/booking/cancel?token=${inserted.cancellation_token}`;
 
-    const apptDisplay = formatKigali(slotStartUtc);
+    const results = await Promise.allSettled([
+      sendTransactionalEmail(
+        supabase,
+        "booking-confirmation",
+        client.email,
+        `booking-confirmation-${inserted.id}`,
+        {
+          name: client.name,
+          appointmentTime: formatKigali(slotStartUtc),
+          matterType: client.matterType ?? "—",
+          cancelUrl,
+        },
+      ),
+      sendTransactionalEmail(
+        supabase,
+        "booking-notification",
+        ADMIN_EMAIL,
+        `booking-notification-${inserted.id}`,
+        {
+          clientName: client.name,
+          clientEmail: client.email,
+          clientPhone: client.phone ?? "—",
+          organization: client.organization ?? "—",
+          entityType: client.entityType ?? "—",
+          jurisdiction: client.jurisdiction ?? "—",
+          matterType: client.matterType ?? "—",
+          message: client.message ?? "—",
+          appointmentTime: formatKigali(slotStartUtc),
+        },
+      ),
+    ]);
 
-    // Send confirmation + admin notification via Resend (independent of Google).
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    if (RESEND_API_KEY) {
-      const clientText =
-`Dear ${client.name},
-
-Your consultation with Daniel Mutiganda is confirmed for:
-${apptDisplay} (Africa/Kigali, CAT)
-
-Matter: ${client.matterType ?? "—"}
-
-Need to cancel? Use this link:
-${cancelUrl}
-
-Cancellation policy: cancellations made at least 24 hours before the appointment are free of charge. Late cancellations and no-shows are subject to the full consultation fee.
-
-Beacon Attorneyes & Consultants`;
-
-      const adminText =
-`New consultation booking:
-
-When: ${apptDisplay} (Africa/Kigali)
-Client: ${client.name} <${client.email}>
-Phone: ${client.phone ?? "—"}
-Organization: ${client.organization ?? "—"}
-Entity: ${client.entityType ?? "—"}
-Jurisdiction: ${client.jurisdiction ?? "—"}
-Matter: ${client.matterType ?? "—"}
-
-Message:
-${client.message ?? ""}`;
-
-      const results = await Promise.allSettled([
-        sendResend({
-          from: FROM_EMAIL,
-          to: [client.email],
-          subject: `Consultation confirmed — ${apptDisplay}`,
-          text: clientText,
-        }, RESEND_API_KEY),
-        sendResend({
-          from: FROM_EMAIL,
-          to: [ADMIN_EMAIL],
-          subject: `New booking — ${client.name} — ${apptDisplay}`,
-          text: adminText,
-          reply_to: client.email,
-        }, RESEND_API_KEY),
-      ]);
-      results.forEach((r, i) => {
-        if (r.status === "rejected") {
-          console.error(`[create-booking] email ${i === 0 ? "client" : "admin"} failed`, r.reason?.toString?.());
-        }
-      });
-    } else {
-      console.error("[create-booking] RESEND_API_KEY not configured — booking saved but no email sent");
-    }
+    results.forEach((r, i) => {
+      if (r.status === "rejected" || (r.status === "fulfilled" && !r.value.ok)) {
+        console.error(
+          `[create-booking] email ${i === 0 ? "client" : "admin"} failed`,
+          r.status === "rejected" ? r.reason?.toString?.() : r.value?.error,
+        );
+      }
+    });
 
     return json({ ok: true, bookingId: inserted.id, cancellationToken: inserted.cancellation_token });
   } catch (e) {
