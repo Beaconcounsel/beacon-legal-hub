@@ -6,6 +6,8 @@ export const DEFAULT_WHATSAPP_MESSAGE =
 
 const WHATSAPP_MESSAGES = {
   homepage: DEFAULT_WHATSAPP_MESSAGE,
+  practiceAreas:
+    "Hello Beacon Attorneys and Consultants. I reviewed your practice areas and would like guidance on a legal matter.",
   corporateCommercial:
     "Hello Beacon Attorneys and Consultants. I would like assistance regarding a corporate or commercial legal matter.",
   employmentLaw:
@@ -45,6 +47,7 @@ export function getWhatsAppPracticeArea(pathname = "", hash = ""): WhatsAppPract
 export function getWhatsAppMessage(pathname = "", hash = ""): string {
   const normalizedPath = pathname.toLowerCase();
   if (normalizedPath.includes("/contact")) return WHATSAPP_MESSAGES.contact;
+  if (normalizedPath.includes("/practice-areas")) return WHATSAPP_MESSAGES.practiceAreas;
 
   const practiceArea = getWhatsAppPracticeArea(pathname, hash);
   if (practiceArea === "corporate_commercial") return WHATSAPP_MESSAGES.corporateCommercial;
@@ -77,11 +80,6 @@ export function buildWhatsAppUrl(customMessage?: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 }
 
-export function buildWhatsAppFallbackUrl(customMessage?: string): string {
-  const text = encodeURIComponent(customMessage ?? DEFAULT_WHATSAPP_MESSAGE);
-  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
-}
-
 export function trackWhatsAppClick({
   ctaLocation,
   practiceArea = "general",
@@ -103,9 +101,8 @@ export function trackWhatsAppClick({
       device_type: getDeviceType(),
     };
 
-    if (Array.isArray(w.dataLayer)) {
-      w.dataLayer.push({ event: "whatsapp_click", ...payload });
-    }
+    w.dataLayer = Array.isArray(w.dataLayer) ? w.dataLayer : [];
+    w.dataLayer.push({ event: "whatsapp_click", ...payload });
     if (typeof w.gtag === "function") {
       w.gtag("event", "whatsapp_click", payload);
     }

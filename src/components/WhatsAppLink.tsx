@@ -2,7 +2,6 @@ import { forwardRef, MouseEvent, ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import {
-  buildWhatsAppFallbackUrl,
   buildWhatsAppUrl,
   getWhatsAppCtaLocation,
   getWhatsAppMessage,
@@ -41,7 +40,6 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
     const location = useLocation();
     const message = customMessage ?? getWhatsAppMessage(location.pathname, location.hash);
     const href = buildWhatsAppUrl(message);
-    const fallbackHref = buildWhatsAppFallbackUrl(message);
     const ctaLocation = getWhatsAppCtaLocation(source, location.pathname);
     const practiceArea = getWhatsAppPracticeArea(location.pathname, location.hash);
 
@@ -68,7 +66,6 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
         data-cta-location={ctaLocation}
         data-practice-area={practiceArea}
         data-whatsapp-primary-url={href}
-        data-whatsapp-fallback-url={fallbackHref}
         className={cn(base, className)}
       >
         {showIcon && (
