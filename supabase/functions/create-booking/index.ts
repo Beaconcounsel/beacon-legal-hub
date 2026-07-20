@@ -193,6 +193,7 @@ Deno.serve(async (req) => {
           message: client.message ?? "—",
           appointmentTime: formatKigali(slotStartUtc),
         },
+        client.email,
       ),
     ]);
 
