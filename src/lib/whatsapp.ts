@@ -2,22 +2,22 @@ export const WHATSAPP_NUMBER = "250788559603";
 export const WHATSAPP_DISPLAY = "+250 788 55 96 03";
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Hello Beacon Attorneys and Consultants. I visited your website and would like to request an initial consultation.";
+  "Hello Beacon Attorneyes and Consultants. I visited your website and would like to request an initial consultation.";
 
 const WHATSAPP_MESSAGES = {
   homepage: DEFAULT_WHATSAPP_MESSAGE,
   practiceAreas:
     "Hello Beacon Attorneys and Consultants. I reviewed your practice areas and would like guidance on a legal matter.",
   corporateCommercial:
-    "Hello Beacon Attorneys and Consultants. I would like assistance regarding a corporate or commercial legal matter.",
+    "Hello Beacon Attorneyes and Consultants. I would like assistance regarding a corporate or commercial legal matter.",
   employmentLaw:
-    "Hello Beacon Attorneys and Consultants. I would like assistance regarding an employment-law matter.",
+    "Hello Beacon Attorneyes and Consultants. I would like assistance regarding an employment-law matter.",
   intellectualProperty:
-    "Hello Beacon Attorneys and Consultants. I would like assistance regarding an intellectual-property matter.",
+    "Hello Beacon Attorneyes and Consultants. I would like assistance regarding an intellectual-property matter.",
   disputeResolution:
-    "Hello Beacon Attorneys and Consultants. I would like assistance regarding mediation, arbitration or dispute resolution.",
+    "Hello Beacon Attorneyes and Consultants. I would like assistance regarding mediation, arbitration or dispute resolution.",
   contact:
-    "Hello Beacon Attorneys and Consultants. I visited your Contact page and would like to speak with your legal team.",
+    "Hello Beacon Attorneyes and Consultants. I visited your Contact page and would like to speak with your legal team.",
 } as const;
 
 export type WhatsAppPracticeArea =

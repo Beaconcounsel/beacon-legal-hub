@@ -96,11 +96,11 @@ const Footer = () => {
               <WhatsAppLink
                 source="footer"
                 variant="icon"
-                ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
+                ariaLabel="Contact Beacon Attorneyes and Consultants on WhatsApp"
                 className="text-ivory/70 hover:text-gold focus-visible:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
                 iconClassName="w-4 h-4"
               >
-                <span className="sr-only">Contact Beacon Attorneys and Consultants on WhatsApp</span>
+                <span className="sr-only">Contact Beacon Attorneyes and Consultants on WhatsApp</span>
               </WhatsAppLink>
             </div>
           </div>
@@ -125,7 +125,7 @@ const Footer = () => {
                   variant="inline"
                   showIcon={false}
                   className="text-ivory/75 hover:text-gold"
-                  ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
+                  ariaLabel="Contact Beacon Attorneyes and Consultants on WhatsApp"
                 >
                   <span className="text-xs">WhatsApp {WHATSAPP_DISPLAY}</span>
                 </WhatsAppLink>

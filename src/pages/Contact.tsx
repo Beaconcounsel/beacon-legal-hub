@@ -64,7 +64,7 @@ const ContactPage = () => {
                     source="contact_page"
                     variant="inline"
                     showIcon={false}
-                    ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
+                    ariaLabel="Contact Beacon Attorneyes and Consultants on WhatsApp"
                     className="text-sm text-foreground leading-relaxed font-medium hover:text-primary"
                   >
                     {t("bookConsult.whatsappCta")}

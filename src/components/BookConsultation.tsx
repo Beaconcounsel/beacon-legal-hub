@@ -281,7 +281,7 @@ const BookConsultation = () => {
                 source="consultation_section"
                 variant="button"
                 className="border-primary/30 text-primary hover:bg-primary/5"
-                ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
+                ariaLabel="Contact Beacon Attorneyes and Consultants on WhatsApp"
               >
                 {t("bookConsult.whatsappCta")}
               </WhatsAppLink>
