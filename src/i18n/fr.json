@@ -663,6 +663,9 @@
     "matterType": "Type de Dossier",
     "selectMatter": "Sélectionner le type de dossier",
     "required": "requis",
-    "emailLabel": "Adresse E-mail"
+    "emailLabel": "Adresse E-mail",
+    "whatsappCta": "Discuter sur WhatsApp",
+    "orWhatsapp": "ou discutez avec nous sur WhatsApp",
+    "disclaimer": "L’envoi d’un message ne crée pas de relation avocat-client. Veuillez ne pas transmettre d’informations confidentielles ou sensibles avant que le cabinet ne confirme pouvoir agir pour vous."
   }
 }
