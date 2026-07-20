@@ -144,6 +144,10 @@ const Footer = () => {
                 <a href="tel:+250788559603" className="sr-only">Call {WHATSAPP_DISPLAY}</a>
               </li>
               <li className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-gold" />
+                <span className="text-ivory/75">{t("footer.officeHours")}</span>
+              </li>
+              <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold" />
                 <LeadFormDialog
                   sourcePage="footer"
