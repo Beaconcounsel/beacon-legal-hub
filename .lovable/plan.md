@@ -1,16 +1,21 @@
-## Goal
-Verify that the booking flow now sends both emails via Resend from `noreply@beaconattorneys.rw`.
+Plan: Restore custom domain after DNS mismatch on Cloudflare
 
-## Steps
-1. Trigger `create-booking` with a test payload (test client email + your admin email) against the deployed edge function.
-2. Read `send-lead-email`/`create-booking` edge function logs to confirm:
-   - Resend HTTP 200 for the client confirmation
-   - Resend HTTP 200 for the admin notification
-3. Query the `bookings` table to confirm the row was inserted and check any email_status fields.
-4. Report back:
-   - Raw Resend status codes for both sends
-   - Booking row ID
-   - Whether Google Calendar step was skipped (expected, since Google not reconnected yet)
-5. Clean up the test booking row so your calendar/admin view isn't polluted.
+1. **Confirm current state**
+   - Open **Project Settings → Project → Domains** and note the exact status for `beaconattorneys.rw` / `www.beaconattorneys.rw` (Offline, Verifying, Action required, etc.).
+   - Open Cloudflare DNS and confirm whether the **orange cloud (proxy)** is on or off for the root (`@`) and `www` records.
 
-No code changes.
+2. **Choose the correct setup path based on Cloudflare proxy mode**
+   - **Path A — Cloudflare proxy is OFF**: keep both A records pointing directly to `185.158.133.1` (Lovable IP) and ensure the TXT record `_lovable` with `lovable_verify=...` is present.
+   - **Path B — Cloudflare proxy is ON**: go to **Project Settings → Domains → Configure** for the domain, expand **Advanced**, and enable **"Domain uses Cloudflare or a similar proxy"**. This switches Lovable to CNAME-based verification. Then replace the A records with the CNAME records Lovable provides for both `@` and `www`, and keep the TXT record as shown.
+
+3. **Remove conflicting records**
+   - In Cloudflare, delete any old A, CNAME, or ALIAS records for `@` or `www` that point to a different host or IP, leaving only the correct set from step 2.
+
+4. **Wait and verify**
+   - DNS propagation can take up to 72 hours. In Lovable, use the domain status check or **Retry** if it shows Failed. The site should return to Active once records match.
+
+5. **Test the live site**
+   - Visit `https://www.beaconattorneys.rw` and the Lovable `.lovable.app` URL to confirm the site loads with HTTPS. If the Lovable URL works but the custom domain does not, the issue is purely DNS-related.
+
+6. **Plan outcome**
+   - The custom domain returns to Active status and the site is reachable at `https://www.beaconattorneys.rw`.
