@@ -19,6 +19,7 @@ import { supabase } from "@/integrations/supabase/client";
 import BookingCalendar from "@/components/booking/BookingCalendar";
 import { formatAppointmentDisplay, type Slot } from "@/lib/booking-slots";
 import { cn } from "@/lib/utils";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const MATTER_TYPES = [
   "Corporate & Commercial",
