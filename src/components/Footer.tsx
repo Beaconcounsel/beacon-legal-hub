@@ -81,7 +81,7 @@ const Footer = () => {
         <p className="text-center italic text-gold text-[14px] md:text-[15px] tracking-wide pb-4 mb-5 border-b border-ivory/10">
           {t("footer.taglineFull")}
         </p>
-        <div className="grid md:grid-cols-[1fr_1.5fr_1fr_1fr] gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr] gap-8">
           <div>
             <div className="flex items-center gap-3 mt-1">
               <a href="https://www.linkedin.com/company/beaconattorneys" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-gold transition-colors">
