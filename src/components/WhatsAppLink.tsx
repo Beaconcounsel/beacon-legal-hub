@@ -79,7 +79,7 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
         className={cn(base, className)}
       >
         {showIcon && (
-          <WhatsAppIcon className={cn(variant === "icon" ? "w-4 h-4" : "w-4 h-4", iconClassName)} />
+          <WhatsAppIcon className={cn(variant === "icon" ? "w-5 h-5" : "w-5 h-5", iconClassName)} />
         )}
         {children}
       </a>
