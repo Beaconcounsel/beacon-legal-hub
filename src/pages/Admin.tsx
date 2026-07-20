@@ -174,7 +174,7 @@ const AdminPage = () => {
           <h1 className="text-2xl font-serif text-navy mb-2">Not authorized</h1>
           <p className="text-sm text-muted-foreground mb-3">
             Your account does not have admin access. Sign in with the admin email
-            (mutidan@gmail.com).
+            (mutidan@beaconattorneys.rw).
           </p>
           <Button onClick={handleSignOut} variant="outline">Sign out</Button>
         </div>
@@ -265,7 +265,7 @@ const AdminPage = () => {
                   <XCircle className="w-4 h-4" /> Not connected
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Connect your Google account (mutidan@gmail.com) to enable calendar sync
+                  Connect your Google account (mutidan@beaconattorneys.rw) to enable calendar sync
                   and send booking emails from your Gmail.
                 </p>
                 <Button onClick={handleConnectGoogle} variant="gold">

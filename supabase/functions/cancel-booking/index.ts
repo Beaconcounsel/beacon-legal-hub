@@ -9,7 +9,7 @@ import {
   isSafeHeaderValue,
 } from "../_shared/google.ts";
 
-const ADMIN_EMAIL = "mutidan@gmail.com";
+const ADMIN_EMAIL = "mutidan@beaconattorneys.rw";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
