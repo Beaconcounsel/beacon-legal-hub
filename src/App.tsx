@@ -48,6 +48,7 @@ const AppRoutes = () => (
       <Route path="/cookie-policy" element={<CookiePolicy />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />
+      <Route path="/unsubscribe" element={<Unsubscribe />} />
 
       {/* French routes */}
       <Route path="/fr" element={<Landing />} />
