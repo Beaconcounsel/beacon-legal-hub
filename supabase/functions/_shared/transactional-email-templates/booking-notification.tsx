@@ -11,7 +11,7 @@ interface Props {
   jurisdiction?: string | null
   matterType?: string | null
   message?: string | null
-  appointmentDisplay?: string
+  appointmentTime?: string
   cancelUrl?: string
 }
 
@@ -24,7 +24,7 @@ const Email = (props: Props) => {
   const safeJurisdiction = props.jurisdiction || '—'
   const safeMatter = props.matterType || '—'
   const safeMessage = props.message || '—'
-  const safeAppt = props.appointmentDisplay || '—'
+  const safeAppt = props.appointmentTime || '—'
   const safeCancelUrl = props.cancelUrl || '#'
 
   return (
