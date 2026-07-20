@@ -285,9 +285,6 @@ const BookConsultation = () => {
                 {t("bookConsult.whatsappCta")}
               </WhatsAppLink>
             </div>
-            <a href="tel:+250788559603" className="mt-3 inline-flex text-xs text-muted-foreground hover:text-primary transition-colors">
-              WhatsApp: {WHATSAPP_DISPLAY}
-            </a>
             {pathname.includes("/contact") && (
               <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
                 {t("bookConsult.clientIntakeNotice")}
