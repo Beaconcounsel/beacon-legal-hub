@@ -1,6 +1,13 @@
 import { forwardRef, MouseEvent, ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { buildWhatsAppUrl, trackWhatsAppClick } from "@/lib/whatsapp";
+import {
+  buildWhatsAppUrl,
+  getWhatsAppCtaLocation,
+  getWhatsAppMessage,
+  getWhatsAppPracticeArea,
+  trackWhatsAppClick,
+} from "@/lib/whatsapp";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 type Variant = "button" | "icon" | "inline";
@@ -30,7 +37,11 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
     },
     ref,
   ) => {
-    const href = buildWhatsAppUrl(customMessage);
+    const location = useLocation();
+    const message = customMessage ?? getWhatsAppMessage(location.pathname, location.hash);
+    const href = buildWhatsAppUrl(message);
+    const ctaLocation = getWhatsAppCtaLocation(source, location.pathname);
+    const practiceArea = getWhatsAppPracticeArea(location.pathname, location.hash);
 
     const base =
       variant === "button"
@@ -40,7 +51,7 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
         : "inline-flex items-center gap-1.5 text-sm font-medium transition-colors";
 
     const handleClick = (_e: MouseEvent<HTMLAnchorElement>) => {
-      trackWhatsAppClick(source);
+      trackWhatsAppClick({ ctaLocation, practiceArea });
     };
 
     return (
@@ -49,10 +60,12 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={ariaLabel ?? "Contact Beacon Attorneys on WhatsApp"}
+        aria-label={ariaLabel ?? "Contact Beacon Attorneyes and Consultants on WhatsApp"}
         onClick={handleClick}
-        data-analytics="whatsapp_cta_click"
-        data-source={source}
+        data-analytics="whatsapp_click"
+        data-cta-location={ctaLocation}
+        data-practice-area={practiceArea}
+        data-whatsapp-primary-url={href}
         className={cn(base, className)}
       >
         {showIcon && (

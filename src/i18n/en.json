@@ -664,8 +664,11 @@
     "selectMatter": "Select matter type",
     "required": "required",
     "emailLabel": "Email Address",
-    "whatsappCta": "Chat on WhatsApp",
+    "whatsappCta": "Request a Consultation on WhatsApp",
     "orWhatsapp": "or chat with us on WhatsApp",
-    "disclaimer": "Sending a message does not create a lawyer-client relationship. Please do not send confidential or sensitive information until the firm confirms that it is able to act for you."
+    "disclaimer": "Sending a message does not create a lawyer-client relationship. Please do not send confidential or sensitive information until the firm confirms that it is able to act for you.",
+    "clientIntakeNotice": "Please do not send confidential documents or sensitive information through WhatsApp before the firm confirms that it is able to accept the matter. Contacting the firm does not, by itself, create a lawyer-client relationship.",
+    "whatsappConfidence": "Send us a brief message and our team will respond during business hours.",
+    "businessHours": "Monday–Friday, 8:00 a.m.–5:00 p.m. Kigali time."
   }
 }

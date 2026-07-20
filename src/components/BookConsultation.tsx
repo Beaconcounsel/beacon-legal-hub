@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { z } from "zod";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ import BookingCalendar from "@/components/booking/BookingCalendar";
 import { formatAppointmentDisplay, type Slot } from "@/lib/booking-slots";
 import { cn } from "@/lib/utils";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 const MATTER_TYPES = [
   "Corporate & Commercial",
@@ -116,6 +118,7 @@ const StepCard = ({
 
 const BookConsultation = () => {
   const { t, i18n } = useTranslation();
+  const { pathname } = useLocation();
   const [opened, setOpened] = useState(false);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
   const [step1Done, setStep1Done] = useState(false);
@@ -262,7 +265,8 @@ const BookConsultation = () => {
           </div>
         ) : !opened ? (
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-sm text-muted-foreground mb-4">{t("bookConsult.respondWithin24h")}</p>
+            <p className="text-sm text-muted-foreground mb-2">{t("bookConsult.whatsappConfidence")}</p>
+            <p className="text-xs text-muted-foreground mb-4">{t("bookConsult.businessHours")}</p>
             <Button
               variant="gold"
               size="lg"
@@ -277,13 +281,19 @@ const BookConsultation = () => {
                 source="consultation_section"
                 variant="button"
                 className="border-primary/30 text-primary hover:bg-primary/5"
+                ariaLabel="Contact Beacon Attorneyes and Consultants on WhatsApp"
               >
                 {t("bookConsult.whatsappCta")}
               </WhatsAppLink>
             </div>
-            <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
-              {t("bookConsult.disclaimer")}
-            </p>
+            <a href="tel:+250788559603" className="mt-3 inline-flex text-xs text-muted-foreground hover:text-primary transition-colors">
+              WhatsApp: {WHATSAPP_DISPLAY}
+            </a>
+            {pathname.includes("/contact") && (
+              <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
+                {t("bookConsult.clientIntakeNotice")}
+              </p>
+            )}
           </div>
         ) : (
           <div className="max-w-3xl mx-auto space-y-4">
