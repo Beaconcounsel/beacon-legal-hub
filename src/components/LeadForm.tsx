@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Loader2, Check, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ interface Props {
 }
 
 const LeadForm = ({ sourcePage, compact = false, onDone }: Props) => {
+  const { i18n } = useTranslation();
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -59,6 +61,7 @@ const LeadForm = ({ sourcePage, compact = false, onDone }: Props) => {
           phone: parsed.data.phone || "",
           message: parsed.data.message,
           source_page: sourcePage,
+          language: i18n.language,
         },
       });
 
