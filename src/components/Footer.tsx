@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Linkedin, Instagram } from "lucide-react";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
 import LeadFormDialog from "@/components/LeadFormDialog";
