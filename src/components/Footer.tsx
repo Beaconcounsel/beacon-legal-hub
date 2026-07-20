@@ -110,7 +110,7 @@ const Footer = () => {
             <ul className="space-y-2 text-xs text-ivory/75">
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 mt-0.5 text-gold" />
-                <a href="https://www.google.com/maps/search/KG+190+St,+RIM+House,+Kigali,+Rwanda" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+                <a href="https://www.google.com/maps/search/KK+698+St,+Gikondo+Business+Center,+Kigali,+Rwanda" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                   {t("footer.address")}
                 </a>
               </li>
