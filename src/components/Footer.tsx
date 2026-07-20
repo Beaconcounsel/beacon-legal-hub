@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { MapPin, Phone, Mail, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Linkedin, Instagram } from "lucide-react";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
 import LeadFormDialog from "@/components/LeadFormDialog";
@@ -142,6 +142,10 @@ const Footer = () => {
                   <span className="text-xs">{WHATSAPP_DISPLAY}</span>
                 </WhatsAppLink>
                 <a href="tel:+250788559603" className="sr-only">Call {WHATSAPP_DISPLAY}</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-gold" />
+                <span className="text-ivory/75">{t("footer.officeHours")}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold" />
