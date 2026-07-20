@@ -81,7 +81,7 @@ const Footer = () => {
         <p className="text-center italic text-gold text-[14px] md:text-[15px] tracking-wide pb-4 mb-5 border-b border-ivory/10">
           {t("footer.taglineFull")}
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr] gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr] gap-8">
           <div>
             <div className="flex items-center gap-3 mt-1">
               <a href="https://www.linkedin.com/company/beaconattorneys" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-gold transition-colors">
@@ -102,6 +102,18 @@ const Footer = () => {
               >
                 <span className="sr-only">Contact Beacon Attorneyes and Consultants on WhatsApp</span>
               </WhatsAppLink>
+            </div>
+            <div className="mt-6">
+              <h4 className="text-sm font-medium uppercase tracking-[0.12em] text-gold mb-2">{t("footer.legalResources")}</h4>
+              <ul className="space-y-1 text-xs text-ivory/75">
+                <li><a href="https://www.minijust.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.minijust")}</a></li>
+                <li><a href="https://www.judiciary.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.judiciary")}</a></li>
+                <li><a href="https://www.rwandabar.org.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.bar")}</a></li>
+                <li><a href="https://www.rdb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rdb")}</a></li>
+                <li><a href="https://www.rgb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rgb")}</a></li>
+                <li><a href="https://www.rra.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rra")}</a></li>
+                <li><a href="https://kifc.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.kifc")}</a></li>
+              </ul>
             </div>
           </div>
 
@@ -142,19 +154,6 @@ const Footer = () => {
                   }
                 />
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-medium uppercase tracking-[0.12em] text-gold mb-2">{t("footer.legalResources")}</h4>
-            <ul className="space-y-1 text-xs text-ivory/75">
-              <li><a href="https://www.minijust.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.minijust")}</a></li>
-              <li><a href="https://www.judiciary.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.judiciary")}</a></li>
-              <li><a href="https://www.rwandabar.org.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.bar")}</a></li>
-              <li><a href="https://www.rdb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rdb")}</a></li>
-              <li><a href="https://www.rgb.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rgb")}</a></li>
-              <li><a href="https://www.rra.gov.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.rra")}</a></li>
-              <li><a href="https://kifc.rw" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t("footer.resources.kifc")}</a></li>
             </ul>
           </div>
 
