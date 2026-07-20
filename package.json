@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "prebuild": "node scripts/audit-whatsapp.mjs",
+    "build": "vite build && node scripts/audit-whatsapp.mjs",
+    "build:dev": "vite build --mode development && node scripts/audit-whatsapp.mjs",
+    "audit:whatsapp": "node scripts/audit-whatsapp.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
