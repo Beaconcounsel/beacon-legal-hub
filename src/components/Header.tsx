@@ -6,6 +6,7 @@ import ResponsiveImage from "@/components/ResponsiveImage";
 import { Menu, X, ChevronDown } from "lucide-react";
 import LanguageSwitch from "./LanguageSwitch";
 import { useLocalizedPath } from "@/hooks/use-localized-path";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -239,6 +240,13 @@ const Header = () => {
                 )}
               </div>
             ))}
+            <WhatsAppLink
+              source="mobile_menu"
+              variant="inline"
+              className="mt-2 px-4 py-3 rounded-md text-sm font-medium text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
+            >
+              {t("bookConsult.whatsappCta")}
+            </WhatsAppLink>
           </nav>
         </div>
       )}
