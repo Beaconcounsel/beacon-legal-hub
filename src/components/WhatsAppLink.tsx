@@ -40,10 +40,8 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
   ) => {
     const location = useLocation();
     const message = customMessage ?? getWhatsAppMessage(location.pathname, location.hash);
-    // Primary href = wa.me (works everywhere, and on mobile opens the app directly
-    // without hitting api.whatsapp.com). On desktop, wa.me would 302 to api.whatsapp.com
-    // which is blocked on some networks — so on click we swap to the whatsapp:// scheme,
-    // which the OS hands to the installed WhatsApp Desktop / phone app with no HTTP hop.
+    // Primary href = wa.me (mobile opens the app directly). On desktop we swap to the
+    // whatsapp:// deep link on click to avoid wa.me's redirect through a blocked host.
     const href = buildWhatsAppUrl(message);
     const deepLink = buildWhatsAppDeepLink(message);
     const ctaLocation = getWhatsAppCtaLocation(source, location.pathname);
@@ -58,9 +56,7 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
       trackWhatsAppClick({ ctaLocation, practiceArea });
-      // On desktop, prefer the whatsapp:// deep link to avoid the wa.me → api.whatsapp.com
-      // redirect (blocked on some corporate/ISP networks). Mobile keeps wa.me for the
-      // smoothest in-app handoff.
+      // Desktop: use whatsapp:// deep link (bypasses wa.me's HTTP redirect chain).
       if (typeof window === "undefined") return;
       const isMobile = /android|iphone|ipad|ipod/i.test(window.navigator.userAgent);
       if (isMobile) return;
