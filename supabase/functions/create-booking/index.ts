@@ -165,12 +165,12 @@ Deno.serve(async (req) => {
     const results = await Promise.allSettled([
       sendTransactionalEmail(
         supabase,
-        "booking-confirmation",
+        language === "fr" ? "booking-confirmation-fr" : "booking-confirmation",
         client.email,
         `booking-confirmation-${inserted.id}`,
         {
           name: client.name,
-          appointmentTime: formatKigali(slotStartUtc),
+          appointmentTime: formatKigali(slotStartUtc, language),
           matterType: client.matterType ?? "—",
           cancelUrl,
         },
