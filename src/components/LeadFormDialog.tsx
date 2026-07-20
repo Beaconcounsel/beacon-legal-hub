@@ -35,6 +35,7 @@ const LeadFormDialog = ({ sourcePage, trigger, title, description }: Props) => {
           <WhatsAppLink
             source={`lead_dialog:${sourcePage}`}
             variant="inline"
+            ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
             className="text-primary hover:text-primary/80"
           >
             {t("bookConsult.orWhatsapp")}

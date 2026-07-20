@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import LeadForm from "@/components/LeadForm";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { WHATSAPP_DISPLAY, buildWhatsAppUrl, trackWhatsAppClick } from "@/lib/whatsapp";
+import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -55,25 +55,30 @@ const ContactPage = () => {
                   <p className="text-sm text-foreground leading-relaxed">{text}</p>
                 </a>
               ))}
-              <a
-                href={buildWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact Beacon Attorneys on WhatsApp"
-                onClick={() => trackWhatsAppClick("contact_page")}
-                className="flex items-start gap-3 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors"
-              >
+              <div className="flex items-start gap-3 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <WhatsAppIcon className="w-5 h-5 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm text-foreground leading-relaxed font-medium">{t("bookConsult.whatsappCta")}</p>
-                  <p className="text-xs text-muted-foreground">{WHATSAPP_DISPLAY}</p>
+                  <WhatsAppLink
+                    source="contact_page"
+                    variant="inline"
+                    showIcon={false}
+                    ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
+                    className="text-sm text-foreground leading-relaxed font-medium hover:text-primary"
+                  >
+                    {t("bookConsult.whatsappCta")}
+                  </WhatsAppLink>
+                  <a href="tel:+250788559603" className="mt-1 block text-xs text-muted-foreground hover:text-primary">
+                    WhatsApp: {WHATSAPP_DISPLAY}
+                  </a>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{t("bookConsult.whatsappConfidence")}</p>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{t("bookConsult.businessHours")}</p>
                 </div>
-              </a>
+              </div>
             </div>
             <p className="mt-4 max-w-4xl text-xs text-muted-foreground/80 leading-relaxed reveal">
-              {t("bookConsult.disclaimer")}
+              {t("bookConsult.clientIntakeNotice")}
             </p>
 
             <div className="mt-10 max-w-2xl reveal">

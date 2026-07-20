@@ -243,6 +243,7 @@ const Header = () => {
             <WhatsAppLink
               source="mobile_menu"
               variant="inline"
+              ariaLabel="Contact Beacon Attorneys and Consultants on WhatsApp"
               className="mt-2 px-4 py-3 rounded-md text-sm font-medium text-[#1a5c6b] hover:bg-[#1a5c6b]/5"
             >
               {t("bookConsult.whatsappCta")}
