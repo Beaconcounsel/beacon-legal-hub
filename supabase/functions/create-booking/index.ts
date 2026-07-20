@@ -210,11 +210,19 @@ Deno.serve(async (req) => {
   }
 });
 
-function formatKigali(iso: string): string {
+function formatKigali(iso: string, lang: "en" | "fr" = "en"): string {
   const d = new Date(iso);
   const local = new Date(d.getTime() + 2 * 3600_000);
-  const dows = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  if (lang === "fr") {
+    const dows = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+    const months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+    const h = local.getUTCHours().toString().padStart(2, "0");
+    return `${dows[local.getUTCDay()]} ${local.getUTCDate()} ${months[local.getUTCMonth()]} ${local.getUTCFullYear()} à ${h}:00`;
+  }
+
+  const dows = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const h = local.getUTCHours();
   const h12 = h > 12 ? h - 12 : h === 0 ? 12 : h;
   const ampm = h >= 12 ? "PM" : "AM";
