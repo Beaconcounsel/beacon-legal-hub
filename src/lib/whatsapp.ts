@@ -6,7 +6,14 @@ export const DEFAULT_WHATSAPP_MESSAGE =
 
 export function buildWhatsAppUrl(customMessage?: string): string {
   const text = encodeURIComponent(customMessage ?? DEFAULT_WHATSAPP_MESSAGE);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  const isMobile =
+    typeof navigator !== "undefined" &&
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  // On desktop, wa.me redirects to api.whatsapp.com which some networks block.
+  // Use web.whatsapp.com directly on desktop; keep wa.me on mobile for native app handoff.
+  return isMobile
+    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`
+    : `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
 }
 
 export function trackWhatsAppClick(source: string): void {
