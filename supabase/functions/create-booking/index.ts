@@ -45,9 +45,12 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { slotStartUtc, slotEndUtc, client } = body ?? {};
+    const { slotStartUtc, slotEndUtc, client, language = "en" } = body ?? {};
     if (!slotStartUtc || !slotEndUtc || !client?.name || !client?.email) {
       return json({ ok: false, error: "Missing required fields" }, 400);
+    }
+    if (language !== "en" && language !== "fr") {
+      return json({ ok: false, error: "Invalid language" }, 400);
     }
 
     // Server-side validation of email/name to prevent email header injection
