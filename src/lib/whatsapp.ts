@@ -2,7 +2,7 @@ export const WHATSAPP_NUMBER = "250788559603";
 export const WHATSAPP_DISPLAY = "+250 788 55 96 03";
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Hello Beacon Attorneys, I visited your website, and would like guidance your on legal issue I have, when can you be available for discussion?";
+  "Hello Beacon Attorneys, I visited your website and appreciated your experience and focus on business law, I would like your guidance on legal issue I have, when can you be available to discuss it?";
 
 const WHATSAPP_MESSAGES = {
   homepage: DEFAULT_WHATSAPP_MESSAGE,
