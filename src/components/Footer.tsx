@@ -109,17 +109,17 @@ const Footer = () => {
             <h4 className="text-sm font-medium uppercase tracking-[0.12em] text-gold mb-2">{t("footer.contact")}</h4>
             <ul className="space-y-2 text-xs text-ivory/75">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4.5 h-4.5 mt-0.5 text-gold" />
+                <MapPin className="w-4 h-4 mt-0.5 text-gold" />
                 <a href="https://www.google.com/maps/search/KK+698+St,+Gikondo+Business+Center,+Kigali,+Rwanda" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                   {t("footer.address")}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4.5 h-4.5 text-gold" />
+                <Phone className="w-4 h-4 text-gold" />
                 <a href="tel:+250788559603" className="hover:text-gold transition-colors">+250 788 55 96 03</a>
               </li>
               <li className="flex items-center gap-2">
-                <WhatsAppIcon className="w-4.5 h-4.5 text-gold" />
+                <WhatsAppIcon className="w-4 h-4 text-gold" />
                 <WhatsAppLink
                   source="footer"
                   variant="inline"
@@ -132,7 +132,7 @@ const Footer = () => {
                 <a href="tel:+250788559603" className="sr-only">Call {WHATSAPP_DISPLAY}</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4.5 h-4.5 text-gold" />
+                <Mail className="w-4 h-4 text-gold" />
                 <LeadFormDialog
                   sourcePage="footer"
                   trigger={
