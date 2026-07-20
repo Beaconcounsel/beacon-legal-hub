@@ -27,6 +27,7 @@ async function sendTransactionalEmail(
   recipientEmail: string,
   idempotencyKey: string,
   templateData: Record<string, any>,
+  replyTo?: string,
 ) {
   const { data, error } = await supabase.functions.invoke("send-transactional-email", {
     body: {
@@ -34,6 +35,7 @@ async function sendTransactionalEmail(
       recipientEmail,
       idempotencyKey,
       templateData,
+      replyTo,
     },
   });
 
