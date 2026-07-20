@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -92,6 +93,7 @@ interface Props {
 }
 
 const BookingForm = ({ slot, onCancel, onBooked }: Props) => {
+  const { i18n } = useTranslation();
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -121,6 +123,7 @@ const BookingForm = ({ slot, onCancel, onBooked }: Props) => {
         body: {
           slotStartUtc: slot.startUtc,
           slotEndUtc: slot.endUtc,
+          language: i18n.language,
           client: {
             name: parsed.data.name,
             email: parsed.data.email,
