@@ -1,39 +1,27 @@
-Plan: Fix the beaconattorneys.rw outage caused by Cloudflare Error 1000
+## What I confirmed
+- `https://www.beaconattorneys.rw` is online and returns `200 OK`.
+- `https://beaconattorneys.rw` currently resolves to `185.158.133.1` but returns `403 Forbidden`.
+- The Cloudflare message you quoted is an advisory recommending proxy mode. It is not, by itself, the outage cause.
 
-Current state found:
-- `https://www.beaconattorneys.rw` loads fine (HTTP 200).
-- `https://beaconattorneys.rw` returns Cloudflare Error 1000: "DNS points to prohibited IP".
-- Both root and `www` have A records pointing to Lovable's IP `185.158.133.1`.
-- The `.lovable.app` published URL also redirects to `https://www.beaconattorneys.rw/`.
-- Cloudflare is currently proxying (orange cloud) the domain, which is incompatible with the current A-record setup.
+## Key point
+Because the domain is using Cloudflare, there are two valid setup paths. Mixing them can keep the root domain offline.
 
-Recommended fix (fastest path to restore the site):
+## Recommended recovery plan
+1. In Lovable, open the custom domain setup for `beaconattorneys.rw`.
+2. If you want Cloudflare proxy/security features, enable the advanced option: **“Domain uses Cloudflare or a similar proxy.”**
+3. Follow the DNS records Lovable shows after enabling that option. This usually changes the setup away from the normal A-record-only flow.
+4. In Cloudflare, set the affected records exactly as Lovable shows for proxy mode.
+5. Add both domains in Lovable separately:
+   - `beaconattorneys.rw`
+   - `www.beaconattorneys.rw`
+6. Choose one as Primary, usually `www.beaconattorneys.rw`, so the other redirects to it.
+7. After saving DNS, wait for verification/SSL to complete, then I can re-check both URLs.
 
-1. **Open Cloudflare DNS for beaconattorneys.rw**
-   - Find the `@` (root) and `www` records.
+## If you do not need Cloudflare proxy features
+1. Keep both `@` and `www` records as DNS-only/grey-cloud.
+2. Keep both pointing to `185.158.133.1`.
+3. Ignore Cloudflare’s “Proxying is required...” advisory.
+4. Re-check the domain status in Lovable and click retry/complete setup if available.
 
-2. **Turn off Cloudflare proxy for both records**
-   - Click the orange cloud icon to make it grey for both `@` and `www`.
-   - Keep the A records pointed to `185.158.133.1`.
-   - Keep the `_lovable` TXT record as is: `lovable_verify=c4952dc804653fd622ceb0d88a1ec9593aeb6f2d7c38489937b1a80b464df6a9`.
-
-3. **Remove any conflicting DNS records**
-   - Delete any additional A/CNAME records for `@` or `www` that point elsewhere.
-
-4. **Wait for DNS propagation**
-   - Changes can take up to a few minutes to a few hours, rarely 72 hours.
-
-5. **Verify the fix**
-   - `https://beaconattorneys.rw` should stop returning Cloudflare Error 1000 and either load the site or redirect to `https://www.beaconattorneys.rw/`.
-   - `https://www.beaconattorneys.rw` should continue loading with HTTP 200.
-
-Optional alternative (if you need Cloudflare proxy features):
-
-1. In **Lovable → Project Settings → Domains → Configure** for the domain, expand **Advanced**, and enable **"Domain uses Cloudflare or a similar proxy"**.
-2. Lovable will switch to CNAME-based verification.
-3. In Cloudflare, replace the A records for `@` and `www` with the CNAME records Lovable provides (Cloudflare supports CNAME flattening at the root).
-4. Keep the TXT record as shown.
-
-Plan outcome:
-- The root domain `beaconattorneys.rw` no longer serves Cloudflare Error 1000.
-- Both root and `www` resolve correctly to the live site.
+## Why this matters
+The earlier instruction to turn proxy off is correct for Lovable’s standard A-record setup. Cloudflare’s warning is only saying you will not get Cloudflare security/performance features while DNS-only is enabled. If you want those features, switch the domain setup in Lovable to Cloudflare/proxy mode instead of simply turning the orange cloud back on.
