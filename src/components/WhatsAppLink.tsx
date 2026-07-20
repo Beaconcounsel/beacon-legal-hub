@@ -62,11 +62,12 @@ const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={ariaLabel ?? "Contact Beacon Attorneys on WhatsApp"}
+        aria-label={ariaLabel ?? "Contact Beacon Attorneys and Consultants on WhatsApp"}
         onClick={handleClick}
         data-analytics="whatsapp_click"
         data-cta-location={ctaLocation}
         data-practice-area={practiceArea}
+        data-whatsapp-primary-url={href}
         data-whatsapp-fallback-url={fallbackHref}
         className={cn(base, className)}
       >

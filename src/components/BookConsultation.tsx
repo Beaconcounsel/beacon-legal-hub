@@ -21,6 +21,7 @@ import BookingCalendar from "@/components/booking/BookingCalendar";
 import { formatAppointmentDisplay, type Slot } from "@/lib/booking-slots";
 import { cn } from "@/lib/utils";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 const MATTER_TYPES = [
   "Corporate & Commercial",
@@ -285,6 +286,9 @@ const BookConsultation = () => {
                 {t("bookConsult.whatsappCta")}
               </WhatsAppLink>
             </div>
+            <a href="tel:+250788559603" className="mt-3 inline-flex text-xs text-muted-foreground hover:text-primary transition-colors">
+              WhatsApp: {WHATSAPP_DISPLAY}
+            </a>
             {pathname.includes("/contact") && (
               <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
                 {t("bookConsult.clientIntakeNotice")}

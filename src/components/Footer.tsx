@@ -129,6 +129,7 @@ const Footer = () => {
                 >
                   <span className="text-xs">WhatsApp {WHATSAPP_DISPLAY}</span>
                 </WhatsAppLink>
+                <a href="tel:+250788559603" className="sr-only">Call {WHATSAPP_DISPLAY}</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-gold" />
