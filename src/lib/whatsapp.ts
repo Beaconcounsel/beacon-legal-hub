@@ -7,7 +7,7 @@ export const DEFAULT_WHATSAPP_MESSAGE =
 const WHATSAPP_MESSAGES = {
   homepage: DEFAULT_WHATSAPP_MESSAGE,
   practiceAreas:
-    "Hello Beacon Attorneys and Consultants. I reviewed your practice areas and would like guidance on a legal matter.",
+    "Hello Beacon Attorneyes and Consultants. I reviewed your practice areas and would like guidance on a legal matter.",
   corporateCommercial:
     "Hello Beacon Attorneyes and Consultants. I would like assistance regarding a corporate or commercial legal matter.",
   employmentLaw:
