@@ -38,7 +38,7 @@ const SEOHead = ({ titleKey, descKey, noindex = false, canonicalPath }: SEOHeadP
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const lang = i18n.language?.startsWith("fr") ? "fr" : "en";
-  const basePath = canonicalPath ?? location.pathname.replace(/^\/fr/, "") || "/";
+  const basePath = canonicalPath ?? (location.pathname.replace(/^\/fr/, "") || "/");
   const enUrl = `${SITE_URL}${basePath}`;
   const frUrl = `${SITE_URL}/fr${basePath === "/" ? "" : basePath}`;
   const canonical = lang === "fr" ? frUrl : enUrl;
