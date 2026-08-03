@@ -5,14 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/audit-whatsapp.mjs",
-    "build": "vite build && node scripts/audit-whatsapp.mjs",
+    "prebuild": "node scripts/audit-whatsapp.mjs && node scripts/generate-sitemap.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs && node scripts/audit-whatsapp.mjs",
     "build:dev": "vite build --mode development && node scripts/audit-whatsapp.mjs",
     "audit:whatsapp": "node scripts/audit-whatsapp.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "prerender": "node scripts/prerender.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -84,7 +87,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
-    "jsdom": "^20.0.3",
+    "jsdom": "^30.0.1",
     "lovable-tagger": "^1.1.13",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",

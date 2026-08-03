@@ -29,7 +29,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const AppRoutes = () => (
+export const AppRoutes = () => (
   <Routes>
     <Route element={<LanguageRouter />}>
       {/* English routes */}
