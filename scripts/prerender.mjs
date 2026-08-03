@@ -145,13 +145,13 @@ function assertMeaningfulHtml(appHtml, route) {
   const fragment = JSDOM.fragment(`<div id="root">${appHtml}</div>`);
   const root = fragment.querySelector("#root");
   const text = root?.textContent?.replace(/\s+/g, " ").trim() ?? "";
-  const expectedText = tr(route.lang, route.expectedTextKey);
+  const expectedText = route.expectedText ?? tr(route.lang, route.expectedTextKey);
 
   if (text.length < 300) {
     throw new Error(`${route.url} rendered only ${text.length} characters of visible text`);
   }
   if (!expectedText || !text.includes(expectedText)) {
-    throw new Error(`${route.url} is missing expected page text from ${route.expectedTextKey}`);
+    throw new Error(`${route.url} is missing expected page text from ${route.expectedTextKey ?? "route assertion"}`);
   }
 }
 

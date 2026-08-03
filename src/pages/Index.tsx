@@ -17,6 +17,9 @@ const HomePage = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const { localePath } = useLocalizedPath();
+  const isDiscoveryAlias = ["/about", "/about-us", "/team", "/our-people"].includes(
+    location.pathname.replace(/^\/fr/, ""),
+  );
 
   const trustItems = [
     { icon: Shield, label: t("home.trust.experience") },
@@ -80,7 +83,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" />
+      <SEOHead titleKey="seo.homeTitle" descKey="seo.homeDesc" canonicalPath={isDiscoveryAlias ? "/home" : undefined} />
       {/* Hero — fits in one viewport */}
       <section className="relative w-full h-[70vh] overflow-hidden bg-navy flex flex-col pt-[54px] md:pt-[64px]">
         <div className="flex-1 min-h-0 w-full">

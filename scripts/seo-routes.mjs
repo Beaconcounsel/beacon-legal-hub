@@ -19,11 +19,11 @@ const BASE_ROUTES = [
   { path: "/", titleKey: "seo.landingTitle", descKey: "seo.landingDesc", expectedTextKey: "landing.whyBeacon", changefreq: "weekly", priority: "1.0" },
   { path: "/home", titleKey: "seo.homeTitle", descKey: "seo.homeDesc", expectedTextKey: "home.whoWeAre", changefreq: "weekly", priority: "0.9" },
   { path: "/practice-areas", titleKey: "seo.practiceAreasTitle", descKey: "seo.practiceAreasDesc", expectedTextKey: "practiceAreas.heroTagline1", changefreq: "monthly", priority: "0.8" },
-  { path: "/insights", titleKey: "seo.insightsTitle", descKey: "seo.insightsDesc", expectedTextKey: "nav.proBonoServices", changefreq: "monthly", priority: "0.8" },
-  { path: "/research", titleKey: "seo.researchTitle", descKey: "seo.researchDesc", expectedTextKey: "nav.research", changefreq: "monthly", priority: "0.8" },
-  { path: "/our-approach", titleKey: "seo.approachTitle", descKey: "seo.approachDesc", expectedTextKey: "nav.ourApproach", changefreq: "monthly", priority: "0.8" },
-  { path: "/contact", titleKey: "seo.contactTitle", descKey: "seo.contactDesc", expectedTextKey: "nav.getInTouch", changefreq: "monthly", priority: "0.8" },
-  { path: "/booking", titleKey: "seo.bookingTitle", descKey: "seo.bookingDesc", expectedTextKey: "nav.bookConsultation", changefreq: "monthly", priority: "0.7" },
+  { path: "/insights", titleKey: "seo.insightsTitle", descKey: "seo.insightsDesc", expectedTextKey: "insights.title", changefreq: "monthly", priority: "0.8" },
+  { path: "/research", titleKey: "seo.researchTitle", descKey: "seo.researchDesc", expectedTextKey: "research.research", changefreq: "monthly", priority: "0.8" },
+  { path: "/our-approach", titleKey: "seo.approachTitle", descKey: "seo.approachDesc", expectedTextKey: "approach.heroTagline", changefreq: "monthly", priority: "0.8" },
+  { path: "/contact", titleKey: "seo.contactTitle", descKey: "seo.contactDesc", expectedTextKey: "contact.reachUs", changefreq: "monthly", priority: "0.8" },
+  { path: "/booking", titleKey: "seo.bookingTitle", descKey: "seo.bookingDesc", expectedText: "Loading consultation booking", changefreq: "monthly", priority: "0.7" },
   { path: "/cookie-policy", titleKey: "cookiePolicy.title", descKey: "cookiePolicy.whatAreCookies.text", expectedTextKey: "cookiePolicy.title", changefreq: "yearly", priority: "0.3" },
   { path: "/privacy-policy", titleKey: "privacyPolicy.title", descKey: "privacyPolicy.infoWeCollect.text", expectedTextKey: "privacyPolicy.title", changefreq: "yearly", priority: "0.3" },
   { path: "/terms-of-use", titleKey: "termsOfUse.title", descKey: "termsOfUse.acceptance.text", expectedTextKey: "termsOfUse.title", changefreq: "yearly", priority: "0.3" },
@@ -34,8 +34,8 @@ const BASE_ROUTES = [
 const BASE_ALIASES = [
   { path: "/about", section: "about", expectedTextKey: "home.whoWeAre" },
   { path: "/about-us", section: "about", expectedTextKey: "home.whoWeAre" },
-  { path: "/team", section: "team", expectedTextKey: "home.ourPeople" },
-  { path: "/our-people", section: "team", expectedTextKey: "home.ourPeople" },
+  { path: "/team", section: "team", expectedText: "Daniel Mutiganda" },
+  { path: "/our-people", section: "team", expectedText: "Daniel Mutiganda" },
 ];
 
 /** Every public route in both languages. */
