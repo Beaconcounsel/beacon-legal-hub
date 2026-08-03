@@ -1,6 +1,6 @@
 // Build-time prerendering: renders every public route to static HTML in dist/.
 // Runs after `vite build` (client) + `vite build --ssr`.
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSDOM } from "jsdom";
@@ -171,6 +171,8 @@ async function main() {
     writeFileSync(outFile, html);
     console.log(`[prerender] ${route.url} -> ${outFile.replace(resolve("."), ".")}`);
   }
+  // The SSR bundle is a build artefact only — keep it out of the published output.
+  rmSync(resolve("dist/server"), { recursive: true, force: true });
   console.log(`[prerender] ${routes.length} pages written`);
 }
 
