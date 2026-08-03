@@ -9,6 +9,7 @@ interface SEOHeadProps {
   titleKey: string;
   descKey: string;
   noindex?: boolean;
+  canonicalPath?: string;
 }
 
 const setMeta = (attr: "name" | "property", key: string, content: string) => {
@@ -33,11 +34,11 @@ const setLink = (rel: string, href: string, hreflang?: string) => {
   el.href = href;
 };
 
-const SEOHead = ({ titleKey, descKey, noindex = false }: SEOHeadProps) => {
+const SEOHead = ({ titleKey, descKey, noindex = false, canonicalPath }: SEOHeadProps) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const lang = i18n.language?.startsWith("fr") ? "fr" : "en";
-  const basePath = location.pathname.replace(/^\/fr/, "") || "/";
+  const basePath = canonicalPath ?? (location.pathname.replace(/^\/fr/, "") || "/");
   const enUrl = `${SITE_URL}${basePath}`;
   const frUrl = `${SITE_URL}/fr${basePath === "/" ? "" : basePath}`;
   const canonical = lang === "fr" ? frUrl : enUrl;

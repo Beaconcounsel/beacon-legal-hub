@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node
 import { resolve, dirname } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSDOM } from "jsdom";
-import { ROUTES, MAX_PRERENDER_PAGES, SITE_URL, absoluteUrl, alternatesFor } from "./seo-routes.mjs";
+import { PRERENDER_ROUTES, MAX_PRERENDER_PAGES, SITE_URL, absoluteUrl, alternatesFor } from "./seo-routes.mjs";
 
 const OG_IMAGE = `${SITE_URL}/beacon-logo.png`;
 
@@ -110,8 +110,13 @@ const PEOPLE_JSONLD = JSON.stringify([
 function headFor(route) {
   const title = tr(route.lang, route.titleKey);
   const description = clamp(tr(route.lang, route.descKey));
-  const canonical = absoluteUrl(route.url);
-  const alt = alternatesFor(route.path);
+  const canonicalPath = route.canonicalPath ?? route.path;
+  const canonical = absoluteUrl(
+    route.lang === "fr"
+      ? canonicalPath === "/" ? "/fr" : `/fr${canonicalPath}`
+      : canonicalPath,
+  );
+  const alt = alternatesFor(canonicalPath);
   const tags = [
     `<title>${escapeAttr(title)}</title>`,
     `<meta name="description" content="${escapeAttr(description)}" />`,
@@ -136,6 +141,20 @@ function headFor(route) {
   return tags.join("\n    ");
 }
 
+function assertMeaningfulHtml(appHtml, route) {
+  const fragment = JSDOM.fragment(`<div id="root">${appHtml}</div>`);
+  const root = fragment.querySelector("#root");
+  const text = root?.textContent?.replace(/\s+/g, " ").trim() ?? "";
+  const expectedText = route.expectedText ?? tr(route.lang, route.expectedTextKey);
+
+  if (text.length < 300) {
+    throw new Error(`${route.url} rendered only ${text.length} characters of visible text`);
+  }
+  if (!expectedText || !text.includes(expectedText)) {
+    throw new Error(`${route.url} is missing expected page text from ${route.expectedTextKey ?? "route assertion"}`);
+  }
+}
+
 function applyHead(template, route) {
   let html = template
     .replace(/<title>[\s\S]*?<\/title>\s*/i, "")
@@ -154,13 +173,14 @@ async function main() {
   const template = readFileSync(resolve("dist/index.html"), "utf8");
   const { render } = await import(pathToFileURL(serverEntry).href);
 
-  const routes = ROUTES.slice(0, MAX_PRERENDER_PAGES);
-  if (ROUTES.length > MAX_PRERENDER_PAGES) {
-    console.warn(`[prerender] capped at ${MAX_PRERENDER_PAGES} of ${ROUTES.length} routes`);
+  const routes = PRERENDER_ROUTES.slice(0, MAX_PRERENDER_PAGES);
+  if (PRERENDER_ROUTES.length > MAX_PRERENDER_PAGES) {
+    console.warn(`[prerender] capped at ${MAX_PRERENDER_PAGES} of ${PRERENDER_ROUTES.length} routes`);
   }
 
   for (const route of routes) {
     const appHtml = await render(route.url);
+    assertMeaningfulHtml(appHtml, route);
     const html = applyHead(template, route).replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`,
