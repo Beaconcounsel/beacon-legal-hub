@@ -176,7 +176,12 @@ async function main() {
   console.log(`[prerender] ${routes.length} pages written`);
 }
 
-main().catch((error) => {
-  console.error("[prerender] failed:", error);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // jsdom keeps timers alive; exit explicitly so the build never hangs.
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error("[prerender] failed:", error);
+    process.exit(1);
+  });
