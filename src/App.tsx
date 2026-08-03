@@ -35,6 +35,10 @@ export const AppRoutes = () => (
       {/* English routes */}
       <Route path="/" element={<Landing />} />
       <Route path="/home" element={<Index />} />
+      <Route path="/about" element={<Index />} />
+      <Route path="/about-us" element={<Index />} />
+      <Route path="/team" element={<Index />} />
+      <Route path="/our-people" element={<Index />} />
       <Route path="/practice-areas" element={<PracticeAreas />} />
       <Route path="/insights" element={<Insights />} />
       <Route path="/research" element={<Research />} />
@@ -53,6 +57,10 @@ export const AppRoutes = () => (
       {/* French routes */}
       <Route path="/fr" element={<Landing />} />
       <Route path="/fr/home" element={<Index />} />
+      <Route path="/fr/about" element={<Index />} />
+      <Route path="/fr/about-us" element={<Index />} />
+      <Route path="/fr/team" element={<Index />} />
+      <Route path="/fr/our-people" element={<Index />} />
       <Route path="/fr/practice-areas" element={<PracticeAreas />} />
       <Route path="/fr/insights" element={<Insights />} />
       <Route path="/fr/research" element={<Research />} />

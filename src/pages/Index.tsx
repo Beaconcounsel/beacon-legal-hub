@@ -49,8 +49,11 @@ const HomePage = () => {
   const activeSection = useMemo(() => {
     const hash = location.hash.replace("#", "");
     if (["about", "team", "industries"].includes(hash)) return hash;
+    const path = location.pathname.replace(/^\/fr/, "");
+    if (["/about", "/about-us"].includes(path)) return "about";
+    if (["/team", "/our-people"].includes(path)) return "team";
     return null;
-  }, [location.hash]);
+  }, [location.hash, location.pathname]);
 
   const revealRef = useScrollReveal([activeSection]);
   const show = (section: string) => !activeSection || activeSection === section;

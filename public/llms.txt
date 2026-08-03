@@ -1,0 +1,25 @@
+# Beacon Attorneys & Consultants
+
+Beacon Attorneys & Consultants is a business law firm based in Kigali, Rwanda. The firm advises businesses, institutions, investors, and international clients across corporate, commercial, regulatory, transactional, and dispute matters.
+
+Canonical website: https://www.beaconattorneys.rw/
+
+## Core pages
+
+- About the firm: https://www.beaconattorneys.rw/about
+- Our people: https://www.beaconattorneys.rw/our-people
+- Practice areas: https://www.beaconattorneys.rw/practice-areas
+- Our approach: https://www.beaconattorneys.rw/our-approach
+- Research and development: https://www.beaconattorneys.rw/research
+- Contact: https://www.beaconattorneys.rw/contact
+
+## French pages
+
+- À propos: https://www.beaconattorneys.rw/fr/about
+- Notre équipe: https://www.beaconattorneys.rw/fr/our-people
+- Domaines de pratique: https://www.beaconattorneys.rw/fr/practice-areas
+- Notre approche: https://www.beaconattorneys.rw/fr/our-approach
+- Recherche et développement: https://www.beaconattorneys.rw/fr/research
+- Contact: https://www.beaconattorneys.rw/fr/contact
+
+The information on this website is general information and does not constitute legal advice or create an attorney-client relationship.
