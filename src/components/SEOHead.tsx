@@ -2,52 +2,76 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
+const SITE_URL = "https://www.beaconattorneys.rw";
+const OG_IMAGE = `${SITE_URL}/beacon-logo.png`;
+
 interface SEOHeadProps {
   titleKey: string;
   descKey: string;
+  noindex?: boolean;
 }
 
-const SEOHead = ({ titleKey, descKey }: SEOHeadProps) => {
+const setMeta = (attr: "name" | "property", key: string, content: string) => {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+};
+
+const setLink = (rel: string, href: string, hreflang?: string) => {
+  const selector = hreflang ? `link[rel="${rel}"][hreflang="${hreflang}"]` : `link[rel="${rel}"]:not([hreflang])`;
+  let el = document.head.querySelector<HTMLLinkElement>(selector);
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = rel;
+    if (hreflang) el.hreflang = hreflang;
+    document.head.appendChild(el);
+  }
+  el.href = href;
+};
+
+const SEOHead = ({ titleKey, descKey, noindex = false }: SEOHeadProps) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const lang = i18n.language;
+  const lang = i18n.language?.startsWith("fr") ? "fr" : "en";
   const basePath = location.pathname.replace(/^\/fr/, "") || "/";
-  const enUrl = `https://beaconattorneys.rw${basePath}`;
-  const frUrl = `https://beaconattorneys.rw/fr${basePath === "/" ? "" : basePath}`;
+  const enUrl = `${SITE_URL}${basePath}`;
+  const frUrl = `${SITE_URL}/fr${basePath === "/" ? "" : basePath}`;
+  const canonical = lang === "fr" ? frUrl : enUrl;
 
   useEffect(() => {
-    document.title = t(titleKey);
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", t(descKey));
+    const title = t(titleKey);
+    const description = t(descKey).replace(/\s+/g, " ").trim().slice(0, 158);
 
+    document.title = title;
     document.documentElement.lang = lang;
 
-    // Manage hreflang tags
-    const existingHreflangs = document.querySelectorAll('link[hreflang]');
-    existingHreflangs.forEach((el) => el.remove());
+    setMeta("name", "description", description);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:url", canonical);
+    setMeta("property", "og:type", "website");
+    setMeta("property", "og:locale", lang === "fr" ? "fr_FR" : "en_US");
+    setMeta("property", "og:image", OG_IMAGE);
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:image", OG_IMAGE);
 
-    const enLink = document.createElement("link");
-    enLink.rel = "alternate";
-    enLink.hreflang = "en";
-    enLink.href = enUrl;
-    document.head.appendChild(enLink);
+    if (noindex) {
+      setMeta("name", "robots", "noindex, nofollow");
+    } else {
+      document.head.querySelector('meta[name="robots"]')?.remove();
+    }
 
-    const frLink = document.createElement("link");
-    frLink.rel = "alternate";
-    frLink.hreflang = "fr";
-    frLink.href = frUrl;
-    document.head.appendChild(frLink);
-
-    const defaultLink = document.createElement("link");
-    defaultLink.rel = "alternate";
-    defaultLink.hreflang = "x-default";
-    defaultLink.href = enUrl;
-    document.head.appendChild(defaultLink);
-
-    return () => {
-      document.querySelectorAll('link[hreflang]').forEach((el) => el.remove());
-    };
-  }, [t, titleKey, descKey, lang, enUrl, frUrl]);
+    setLink("canonical", canonical);
+    setLink("alternate", enUrl, "en");
+    setLink("alternate", frUrl, "fr");
+    setLink("alternate", enUrl, "x-default");
+  }, [t, titleKey, descKey, lang, enUrl, frUrl, canonical, noindex]);
 
   return null;
 };
