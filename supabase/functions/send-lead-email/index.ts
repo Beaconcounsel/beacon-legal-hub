@@ -102,23 +102,7 @@ Deno.serve(async (req) => {
   const createdAt = inserted.created_at as string;
 
   // 2. Queue admin notification and visitor confirmation via Lovable Emails.
-  const [notifyResult, autoReplyResult] = await Promise.allSettled([
-    sendTransactionalEmail(
-      supabase,
-      "lead-notification",
-      ADMIN_EMAIL,
-      `lead-notification-${leadId}`,
-      {
-        name,
-        email,
-        phone,
-        message,
-        sourcePage: source_page,
-        leadId,
-        createdAt,
-      },
-      email,
-    ),
+  const [autoReplyResult, ...notifyResults] = await Promise.allSettled([
     sendTransactionalEmail(
       supabase,
       language === "fr" ? "lead-confirmation-fr" : "lead-confirmation",
@@ -126,16 +110,35 @@ Deno.serve(async (req) => {
       `lead-confirmation-${leadId}`,
       { name, email, message },
     ),
+    ...ADMIN_EMAILS.map((adminEmail) =>
+      sendTransactionalEmail(
+        supabase,
+        "lead-notification",
+        adminEmail,
+        `lead-notification-${leadId}-${adminEmail}`,
+        {
+          name,
+          email,
+          phone,
+          message,
+          sourcePage: source_page,
+          leadId,
+          createdAt,
+        },
+        email,
+      ),
+    ),
   ]);
 
-  const notifyOk = notifyResult.status === "fulfilled" && notifyResult.value.ok;
+  const notifyOk = notifyResults.some((r) => r.status === "fulfilled" && r.value.ok);
   const autoReplyOk = autoReplyResult.status === "fulfilled" && autoReplyResult.value.ok;
 
   if (!notifyOk) {
     console.error("[send-lead-email] notification email failed", {
       leadId,
-      reason: (notifyResult as PromiseRejectedResult).reason?.toString?.() ||
-        (notifyResult as PromiseFulfilledResult<any>).value?.error,
+      reasons: notifyResults.map((r) =>
+        r.status === "rejected" ? r.reason?.toString?.() : (r as PromiseFulfilledResult<any>).value?.error
+      ),
     });
   }
   if (!autoReplyOk) {
