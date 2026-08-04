@@ -9,7 +9,7 @@ import {
   isSafeHeaderValue,
 } from "../_shared/google.ts";
 
-const ADMIN_EMAIL = "mutidan@beaconattorneys.rw";
+const ADMIN_EMAILS = ["mutidan@beaconattorneys.rw", "mutidan@gmail.com"];
 
 async function sendTransactionalEmail(
   supabase: any,
@@ -177,12 +177,13 @@ Deno.serve(async (req) => {
           cancelUrl,
         },
       ),
-      sendTransactionalEmail(
-        supabase,
-        "booking-notification",
-        ADMIN_EMAIL,
-        `booking-notification-${inserted.id}`,
-        {
+      ...ADMIN_EMAILS.map((adminEmail) =>
+        sendTransactionalEmail(
+          supabase,
+          "booking-notification",
+          adminEmail,
+          `booking-notification-${inserted.id}-${adminEmail}`,
+          {
           clientName: client.name,
           clientEmail: client.email,
           clientPhone: client.phone ?? "—",
@@ -192,8 +193,9 @@ Deno.serve(async (req) => {
           matterType: client.matterType ?? "—",
           message: client.message ?? "—",
           appointmentTime: formatKigali(slotStartUtc),
-        },
-        client.email,
+          },
+          client.email,
+        ),
       ),
     ]);
 

@@ -41,7 +41,7 @@ export const RecoveryEmail = ({
         <Text style={paragraph}>
           If you did not request a password reset, you can safely ignore this email. Your password will not be changed.
         </Text>
-        <Text style={footer}>Beacon Attorneyes & Consultants · KG 190 St, RIM House, 1st Floor, Kigali, Rwanda</Text>
+        <Text style={footer}>Beacon Attorneyes & Consultants · KK 698 St, 2nd Floor, Gikondo Business Center, Kigali, Rwanda</Text>
       </Container>
     </Body>
   </Html>

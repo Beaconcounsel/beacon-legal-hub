@@ -285,6 +285,9 @@ const BookConsultation = () => {
                 {t("bookConsult.whatsappCta")}
               </WhatsAppLink>
             </div>
+            <p className="mt-2 text-xs text-muted-foreground/80">
+              {t("bookConsult.whatsappFallback")}
+            </p>
             {pathname.includes("/contact") && (
               <p className="mt-5 text-xs text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
                 {t("bookConsult.clientIntakeNotice")}

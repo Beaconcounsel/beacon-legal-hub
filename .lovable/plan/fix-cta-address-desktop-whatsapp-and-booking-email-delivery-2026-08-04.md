@@ -15,6 +15,7 @@ Fix: replace every occurrence with the website address, then redeploy the affect
 Cause: on desktop the link handler currently cancels the normal link and forces the `whatsapp://` app protocol. If WhatsApp Desktop is not installed (or the browser blocks the protocol), nothing happens — exactly the behaviour you see.
 
 Fix:
+
 - Let the link open normally in a new tab on desktop (wa.me handles the handoff to WhatsApp Web or the desktop app).
 - Keep the app deep link only as a user-triggered fallback, not an automatic hijack.
 - Add a small fallback line next to the desktop CTA ("Trouble opening WhatsApp? Copy +250 788 55 96 03") so a blocked handoff never leaves the visitor stuck.
@@ -22,10 +23,11 @@ Fix:
 
 ## 3. Booking appointment emails not reaching Beacon mailboxes
 
-Checked the send log: the latest booking on 4 Aug sent both emails successfully — the client confirmation and the notification to mutidan@beaconattorneys.rw are both recorded as sent with no errors, and neither address is on the suppression list. The emails are leaving the system; they are being filtered or landing somewhere other than the mailbox you are watching.
+Checked the send log: the latest booking on 4 Aug sent both emails successfully — the client confirmation and the notification to [mutidan@beaconattorneys.rw](mailto:mutidan@beaconattorneys.rw) are both recorded as sent with no errors, and neither address is on the suppression list. The emails are leaving the system; they are being filtered or landing somewhere other than the mailbox you are watching.
 
 Actions:
-- Send booking and inquiry notifications to both `mutidan@beaconattorneys.rw` and `info@beaconattorneys.rw` so they reach the shared firm inbox as well as the personal one.
+
+- Send booking and inquiry notifications to both `mutidan@beaconattorneys.rw` and `mutidan@gmail.com` so they reach the shared firm inbox as well as the personal one.
 - Run a live test booking after the change and report the exact delivery status per recipient.
 - If a recipient still reports nothing while the log says sent, the message is being caught by mailbox-side spam/routing rules; I'll tell you exactly which sender to whitelist.
 
