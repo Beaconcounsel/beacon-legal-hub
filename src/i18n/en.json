@@ -666,6 +666,7 @@
     "required": "required",
     "emailLabel": "Email Address",
     "whatsappCta": "Request a Consultation on WhatsApp",
+    "whatsappFallback": "If WhatsApp does not open on your computer, message us on +250 788 55 96 03.",
     "orWhatsapp": "or chat with us on WhatsApp",
     "disclaimer": "Sending a message does not create a lawyer-client relationship. Please do not send confidential or sensitive information until the firm confirms that it is able to act for you.",
     "clientIntakeNotice": "Please do not send confidential documents or sensitive information through WhatsApp before the firm confirms that it is able to accept the matter. Contacting the firm does not, by itself, create a lawyer-client relationship.",

@@ -666,6 +666,7 @@
     "required": "requis",
     "emailLabel": "Adresse E-mail",
     "whatsappCta": "Demander une Consultation sur WhatsApp",
+    "whatsappFallback": "Si WhatsApp ne s'ouvre pas sur votre ordinateur, écrivez-nous au +250 788 55 96 03.",
     "orWhatsapp": "ou discutez avec nous sur WhatsApp",
     "disclaimer": "L’envoi d’un message ne crée pas de relation avocat-client. Veuillez ne pas transmettre d’informations confidentielles ou sensibles avant que le cabinet ne confirme pouvoir agir pour vous.",
     "clientIntakeNotice": "Veuillez ne pas transmettre de documents confidentiels ou d’informations sensibles par WhatsApp avant que le cabinet ne confirme pouvoir accepter le dossier. Contacter le cabinet ne crée pas, en soi, une relation avocat-client.",
