@@ -9,7 +9,7 @@ import {
   isSafeHeaderValue,
 } from "../_shared/google.ts";
 
-const ADMIN_EMAIL = "mutidan@beaconattorneys.rw";
+const ADMIN_EMAILS = ["mutidan@beaconattorneys.rw", "mutidan@gmail.com"];
 
 async function sendTransactionalEmail(
   supabase: any,
