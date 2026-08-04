@@ -3,7 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.45.0";
 import { z } from "npm:zod@3.23.8";
 import { corsHeaders } from "../_shared/cors.ts";
 
-const ADMIN_EMAIL = "mutidan@beaconattorneys.rw";
+const ADMIN_EMAILS = ["mutidan@beaconattorneys.rw", "mutidan@gmail.com"];
 
 const bodySchema = z.object({
   name: z.string().trim().min(1).max(100),
