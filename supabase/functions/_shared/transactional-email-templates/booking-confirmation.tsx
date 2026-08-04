@@ -59,7 +59,7 @@ const Email = ({ name, appointmentTime, matterType, cancelUrl }: Props) => {
             <br />
             <strong>Beacon Attorneyes & Consultants</strong>
             <br />
-            KG 190 St, RIM House, 1st Floor, Kigali, Rwanda
+            KK 698 St, 2nd Floor, Gikondo Business Center, Kigali, Rwanda
             <br />
             <Link href="tel:+250788559603" style={link}>+250 788 55 96 03</Link> ·{' '}
             <Link href="mailto:info@beaconattorneys.rw" style={link}>info@beaconattorneys.rw</Link>

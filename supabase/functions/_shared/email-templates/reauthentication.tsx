@@ -30,7 +30,7 @@ export const ReauthenticationEmail = ({ siteName, logoUrl, token }: Reauthentica
         <Text style={paragraph}>Use the verification code below to complete your request:</Text>
         <Text style={code}>{token}</Text>
         <Text style={paragraph}>This code will expire shortly. If you did not request this, you can safely ignore this email.</Text>
-        <Text style={footer}>Beacon Attorneyes & Consultants · KG 190 St, RIM House, 1st Floor, Kigali, Rwanda</Text>
+        <Text style={footer}>Beacon Attorneyes & Consultants · KK 698 St, 2nd Floor, Gikondo Business Center, Kigali, Rwanda</Text>
       </Container>
     </Body>
   </Html>
