@@ -4,7 +4,6 @@ import {
   adminClient,
   getGoogleAccessToken,
   getCalendarBusy,
-  createCalendarEvent,
   isValidEmail,
   isSafeHeaderValue,
 } from "../_shared/google.ts";
@@ -83,7 +82,7 @@ Deno.serve(async (req) => {
     const { data: conflicts } = await supabase
       .from("bookings")
       .select("id")
-      .eq("status", "confirmed")
+      .in("status", ["confirmed", "pending"])
       .eq("slot_start", new Date(slotStartUtc).toISOString());
     if (conflicts && conflicts.length > 0) {
       return json({ ok: false, error: "This slot is no longer available." }, 409);
@@ -120,7 +119,7 @@ Deno.serve(async (req) => {
         jurisdiction: client.jurisdiction ?? null,
         matter_type: client.matterType ?? null,
         message: client.message ?? null,
-        status: "confirmed",
+        status: "pending",
       })
       .select("id, cancellation_token")
       .single();
@@ -129,37 +128,12 @@ Deno.serve(async (req) => {
       return json({ ok: false, error: "Could not save booking." }, 500);
     }
 
-    // Create Google Calendar event
-    let googleEventId: string | null = null;
-    if (accessToken) {
-      const description = [
-        `Client: ${client.name} <${client.email}>`,
-        client.phone ? `Phone: ${client.phone}` : null,
-        client.organization ? `Organization: ${client.organization}` : null,
-        client.entityType ? `Entity: ${client.entityType}` : null,
-        client.jurisdiction ? `Jurisdiction: ${client.jurisdiction}` : null,
-        client.matterType ? `Matter: ${client.matterType}` : null,
-        ``,
-        `Message:`,
-        client.message ?? "",
-      ].filter(Boolean).join("\n");
-
-      const evt = await createCalendarEvent(accessToken, {
-        summary: `Consultation — ${client.name}`,
-        description,
-        startIso: slotStartUtc,
-        endIso: slotEndUtc,
-        attendeeEmail: client.email,
-        attendeeName: client.name,
-      });
-      if (evt) {
-        googleEventId = evt.id;
-        await supabase.from("bookings").update({ google_event_id: googleEventId }).eq("id", inserted.id);
-      }
-    }
+    // No calendar event is created yet — the request must first be approved
+    // by a senior counsel via the admin dashboard (decide-booking).
 
     // Send confirmation emails via Lovable Emails
     const appOrigin = (req.headers.get("origin") || req.headers.get("referer") || "").replace(/\/$/, "");
+    const appBase = appOrigin || "https://beaconattorneys.rw";
     const cancelUrl = appOrigin
       ? `${appOrigin}/booking/cancel?token=${inserted.cancellation_token}`
       : `https://id-preview--77ebf12f-1901-496b-826b-4c99fb6e3670.lovable.app/booking/cancel?token=${inserted.cancellation_token}`;
@@ -167,14 +141,13 @@ Deno.serve(async (req) => {
     const results = await Promise.allSettled([
       sendTransactionalEmail(
         supabase,
-        language === "fr" ? "booking-confirmation-fr" : "booking-confirmation",
+        language === "fr" ? "booking-request-received-fr" : "booking-request-received",
         client.email,
-        `booking-confirmation-${inserted.id}`,
+        `booking-request-received-${inserted.id}`,
         {
           name: client.name,
           appointmentTime: formatKigali(slotStartUtc, language),
           matterType: client.matterType ?? "—",
-          cancelUrl,
         },
       ),
       ...ADMIN_EMAILS.map((adminEmail) =>
@@ -193,6 +166,7 @@ Deno.serve(async (req) => {
           matterType: client.matterType ?? "—",
           message: client.message ?? "—",
           appointmentTime: formatKigali(slotStartUtc),
+          reviewUrl: `${appBase}/admin`,
           },
           client.email,
         ),
@@ -208,7 +182,12 @@ Deno.serve(async (req) => {
       }
     });
 
-    return json({ ok: true, bookingId: inserted.id, cancellationToken: inserted.cancellation_token });
+    return json({
+      ok: true,
+      status: "pending",
+      bookingId: inserted.id,
+      cancellationToken: inserted.cancellation_token,
+    });
   } catch (e) {
     console.error(e);
     return json({ ok: false, error: (e as Error).message }, 500);

@@ -29,6 +29,7 @@ const AdminPage = () => {
   const [bookings, setBookings] = useState<BookingRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [testing, setTesting] = useState(false);
+  const [deciding, setDeciding] = useState<string | null>(null);
   const [credCheck, setCredCheck] = useState<{
     ok: boolean;
     message?: string;
@@ -124,6 +125,36 @@ const AdminPage = () => {
   };
 
   const handleTestCredentials = async () => {
+    return handleTestCredentialsInner();
+  };
+
+  const handleDecision = async (id: string, decision: "approve" | "decline") => {
+    setDeciding(id);
+    try {
+      const { data, error } = await supabase.functions.invoke("decide-booking", {
+        body: { bookingId: id, decision },
+      });
+      const result = data as { ok?: boolean; error?: string; status?: string };
+      if (error || !result?.ok) {
+        toast.error(result?.error || error?.message || "Could not update this booking.");
+        return;
+      }
+      setBookings((prev) =>
+        prev.map((b) => (b.id === id ? { ...b, status: result.status ?? b.status } : b)),
+      );
+      toast.success(
+        decision === "approve"
+          ? "Booking approved — confirmation sent to the client."
+          : "Booking declined — the client has been notified.",
+      );
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setDeciding(null);
+    }
+  };
+
+  const handleTestCredentialsInner = async () => {
     setTesting(true);
     setCredCheck(null);
     try {
@@ -301,15 +332,45 @@ const AdminPage = () => {
                         <div className="text-xs text-muted-foreground italic mt-1">{b.matter_type}</div>
                       )}
                     </div>
-                    <span
-                      className={`text-xs uppercase tracking-wider px-2 py-1 rounded-full ${
-                        b.status === "confirmed"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      {b.status}
-                    </span>
+                    <div className="flex flex-col items-start md:items-end gap-2">
+                      <span
+                        className={`text-xs uppercase tracking-wider px-2 py-1 rounded-full ${
+                          b.status === "confirmed"
+                            ? "bg-primary/10 text-primary"
+                            : b.status === "pending"
+                              ? "bg-secondary text-secondary-foreground"
+                              : b.status === "declined"
+                                ? "bg-destructive/10 text-destructive"
+                                : "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {b.status === "pending" ? "pending approval" : b.status}
+                      </span>
+                      {b.status === "pending" && (
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="gold"
+                            disabled={deciding === b.id}
+                            onClick={() => handleDecision(b.id, "approve")}
+                          >
+                            {deciding === b.id ? (
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                            ) : (
+                              "Approve"
+                            )}
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            disabled={deciding === b.id}
+                            onClick={() => handleDecision(b.id, "decline")}
+                          >
+                            Decline
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

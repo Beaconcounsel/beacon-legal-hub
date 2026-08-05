@@ -13,6 +13,7 @@ interface Props {
   message?: string | null
   appointmentTime?: string
   cancelUrl?: string
+  reviewUrl?: string
 }
 
 const Email = (props: Props) => {
@@ -26,14 +27,15 @@ const Email = (props: Props) => {
   const safeMessage = props.message || '—'
   const safeAppt = props.appointmentTime || '—'
   const safeCancelUrl = props.cancelUrl || '#'
+  const safeReviewUrl = props.reviewUrl || ''
 
   return (
     <Html lang="en" dir="ltr">
       <Head />
-      <Preview>New consultation booking from {safeName} — {safeAppt}</Preview>
+      <Preview>Action required — pending approval: consultation request from {safeName} — {safeAppt}</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>New consultation booking</Heading>
+          <Heading style={h1}>Action required — booking pending approval</Heading>
 
           <Section style={highlightBox}>
             <Text style={highlightText}>{safeAppt}</Text>
@@ -65,6 +67,13 @@ const Email = (props: Props) => {
           <Text style={label}>Message</Text>
           <Text style={messageBox}>{safeMessage}</Text>
 
+          {safeReviewUrl ? (
+            <>
+              <Text style={label}>Approve or decline</Text>
+              <Text style={value}><Link href={safeReviewUrl} style={link}>{safeReviewUrl}</Link></Text>
+            </>
+          ) : null}
+
           <Text style={label}>Cancellation link</Text>
           <Text style={value}><Link href={safeCancelUrl} style={link}>{safeCancelUrl}</Link></Text>
 
@@ -77,7 +86,7 @@ const Email = (props: Props) => {
 
 export const template = {
   component: Email,
-  subject: ({ clientName, appointmentTime }: Props) => `New booking — ${clientName || 'client'} — ${appointmentTime || 'consultation'}`,
+  subject: ({ clientName, appointmentTime }: Props) => `Action required — pending approval: ${clientName || 'client'} — ${appointmentTime || 'consultation'}`,
   displayName: 'Booking notification (admin)',
   previewData: {
     clientName: 'Jane Doe',
