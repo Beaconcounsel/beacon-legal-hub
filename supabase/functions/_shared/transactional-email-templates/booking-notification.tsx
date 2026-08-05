@@ -13,6 +13,7 @@ interface Props {
   message?: string | null
   appointmentTime?: string
   cancelUrl?: string
+  reviewUrl?: string
 }
 
 const Email = (props: Props) => {
@@ -26,6 +27,7 @@ const Email = (props: Props) => {
   const safeMessage = props.message || '—'
   const safeAppt = props.appointmentTime || '—'
   const safeCancelUrl = props.cancelUrl || '#'
+  const safeReviewUrl = props.reviewUrl || ''
 
   return (
     <Html lang="en" dir="ltr">
@@ -64,6 +66,13 @@ const Email = (props: Props) => {
 
           <Text style={label}>Message</Text>
           <Text style={messageBox}>{safeMessage}</Text>
+
+          {safeReviewUrl ? (
+            <>
+              <Text style={label}>Approve or decline</Text>
+              <Text style={value}><Link href={safeReviewUrl} style={link}>{safeReviewUrl}</Link></Text>
+            </>
+          ) : null}
 
           <Text style={label}>Cancellation link</Text>
           <Text style={value}><Link href={safeCancelUrl} style={link}>{safeCancelUrl}</Link></Text>

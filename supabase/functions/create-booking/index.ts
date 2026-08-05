@@ -133,6 +133,7 @@ Deno.serve(async (req) => {
 
     // Send confirmation emails via Lovable Emails
     const appOrigin = (req.headers.get("origin") || req.headers.get("referer") || "").replace(/\/$/, "");
+    const appBase = appOrigin || "https://beaconattorneys.rw";
     const cancelUrl = appOrigin
       ? `${appOrigin}/booking/cancel?token=${inserted.cancellation_token}`
       : `https://id-preview--77ebf12f-1901-496b-826b-4c99fb6e3670.lovable.app/booking/cancel?token=${inserted.cancellation_token}`;
@@ -165,6 +166,7 @@ Deno.serve(async (req) => {
           matterType: client.matterType ?? "—",
           message: client.message ?? "—",
           appointmentTime: formatKigali(slotStartUtc),
+          reviewUrl: `${appBase}/admin`,
           },
           client.email,
         ),
