@@ -125,6 +125,36 @@ const AdminPage = () => {
   };
 
   const handleTestCredentials = async () => {
+    return handleTestCredentialsInner();
+  };
+
+  const handleDecision = async (id: string, decision: "approve" | "decline") => {
+    setDeciding(id);
+    try {
+      const { data, error } = await supabase.functions.invoke("decide-booking", {
+        body: { bookingId: id, decision },
+      });
+      const result = data as { ok?: boolean; error?: string; status?: string };
+      if (error || !result?.ok) {
+        toast.error(result?.error || error?.message || "Could not update this booking.");
+        return;
+      }
+      setBookings((prev) =>
+        prev.map((b) => (b.id === id ? { ...b, status: result.status ?? b.status } : b)),
+      );
+      toast.success(
+        decision === "approve"
+          ? "Booking approved — confirmation sent to the client."
+          : "Booking declined — the client has been notified.",
+      );
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setDeciding(null);
+    }
+  };
+
+  const handleTestCredentialsInner = async () => {
     setTesting(true);
     setCredCheck(null);
     try {
