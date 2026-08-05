@@ -146,7 +146,7 @@ const BookingForm = ({ slot, onCancel, onBooked }: Props) => {
         toast.error(result?.error || "Booking failed");
         return;
       }
-      toast.success("Booking confirmed! Check your email for details.");
+      toast.success("Request submitted — a senior counsel will review and confirm by email.");
       setForm(initial);
       onBooked();
     } catch (err) {
@@ -301,10 +301,10 @@ const BookingForm = ({ slot, onCancel, onBooked }: Props) => {
           {submitting ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Confirming…
+              Submitting…
             </>
           ) : (
-            "Confirm Booking"
+            "Submit Booking Request"
           )}
         </Button>
         <Button type="button" variant="outline" size="lg" onClick={onCancel} disabled={submitting}>
