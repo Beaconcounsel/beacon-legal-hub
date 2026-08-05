@@ -332,15 +332,45 @@ const AdminPage = () => {
                         <div className="text-xs text-muted-foreground italic mt-1">{b.matter_type}</div>
                       )}
                     </div>
-                    <span
-                      className={`text-xs uppercase tracking-wider px-2 py-1 rounded-full ${
-                        b.status === "confirmed"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      {b.status}
-                    </span>
+                    <div className="flex flex-col items-start md:items-end gap-2">
+                      <span
+                        className={`text-xs uppercase tracking-wider px-2 py-1 rounded-full ${
+                          b.status === "confirmed"
+                            ? "bg-primary/10 text-primary"
+                            : b.status === "pending"
+                              ? "bg-secondary text-secondary-foreground"
+                              : b.status === "declined"
+                                ? "bg-destructive/10 text-destructive"
+                                : "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {b.status === "pending" ? "pending approval" : b.status}
+                      </span>
+                      {b.status === "pending" && (
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="gold"
+                            disabled={deciding === b.id}
+                            onClick={() => handleDecision(b.id, "approve")}
+                          >
+                            {deciding === b.id ? (
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                            ) : (
+                              "Approve"
+                            )}
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            disabled={deciding === b.id}
+                            onClick={() => handleDecision(b.id, "decline")}
+                          >
+                            Decline
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
