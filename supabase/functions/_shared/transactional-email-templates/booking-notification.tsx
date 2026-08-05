@@ -30,10 +30,10 @@ const Email = (props: Props) => {
   return (
     <Html lang="en" dir="ltr">
       <Head />
-      <Preview>New consultation booking from {safeName} — {safeAppt}</Preview>
+      <Preview>Action required — pending approval: consultation request from {safeName} — {safeAppt}</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>New consultation booking</Heading>
+          <Heading style={h1}>Action required — booking pending approval</Heading>
 
           <Section style={highlightBox}>
             <Text style={highlightText}>{safeAppt}</Text>
@@ -77,7 +77,7 @@ const Email = (props: Props) => {
 
 export const template = {
   component: Email,
-  subject: ({ clientName, appointmentTime }: Props) => `New booking — ${clientName || 'client'} — ${appointmentTime || 'consultation'}`,
+  subject: ({ clientName, appointmentTime }: Props) => `Action required — pending approval: ${clientName || 'client'} — ${appointmentTime || 'consultation'}`,
   displayName: 'Booking notification (admin)',
   previewData: {
     clientName: 'Jane Doe',
