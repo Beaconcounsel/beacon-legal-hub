@@ -29,6 +29,7 @@ const AdminPage = () => {
   const [bookings, setBookings] = useState<BookingRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [testing, setTesting] = useState(false);
+  const [deciding, setDeciding] = useState<string | null>(null);
   const [credCheck, setCredCheck] = useState<{
     ok: boolean;
     message?: string;
